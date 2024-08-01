@@ -13,16 +13,15 @@ export MIDSCENE_MODEL_NAME='gpt-4o'
 
 
 ```bash
-# You need to run the pnpm install command in the Top-level directory
-pnpm install 
+npm install 
 
-pnpm run e2e
+npm run e2e
 # Priority read cache
-pnpm run e2e:cache
+npm run e2e:cache
 
 # with ui
-pnpm run e2e:ui
-pnpm run e2e:ui:cache
+npm run e2e:ui
+npm run e2e:ui:cache
 
 
 # read report
