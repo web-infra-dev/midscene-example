@@ -1,6 +1,6 @@
 {
   "pkgName": "@midscene/web",
-  "pkgVersion": "0.1.3",
+  "pkgVersion": "0.1.4",
   "taskFile": "online-order-zh.spec.ts:9",
   "taskTitle": "ai online order",
   "aiTasks": [

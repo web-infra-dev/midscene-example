@@ -1,6 +1,6 @@
 {
   "pkgName": "@midscene/web",
-  "pkgVersion": "0.1.3",
+  "pkgVersion": "0.1.4",
   "taskFile": "todo-mvc-en.spec.ts:8",
   "taskTitle": "ai todo - English Prompt",
   "aiTasks": [
