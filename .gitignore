@@ -5,7 +5,7 @@ node_modules/
 /playwright/.cache/
 
 # MidScene.js dump files
-**/midscene_run/midscene-report/
+**/midscene_run/report/
 **/midscene_run/dump/
 playwright-report/
 dist/
