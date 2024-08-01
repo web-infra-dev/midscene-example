@@ -1,0 +1,13 @@
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+
+# MidScene.js dump files
+**/midscene_run/midscene-report/
+**/midscene_run/dump/
+playwright-report/
+dist/
+test-results/
+.env
