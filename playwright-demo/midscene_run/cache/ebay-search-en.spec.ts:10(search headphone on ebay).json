@@ -1,0 +1,7 @@
+{
+  "pkgName": "@midscene/web",
+  "pkgVersion": "0.1.1",
+  "taskFile": "ebay-search-en.spec.ts:10",
+  "taskTitle": "search headphone on ebay",
+  "aiTasks": []
+}
