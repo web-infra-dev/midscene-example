@@ -1,0 +1,17 @@
+{
+  "name": "puppeteer-demo",
+  "private": true,
+  "version": "1.0.0",
+  "description": "> quick start",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@midscene/web": "^0.1.1",
+    "puppeteer": "^22.15.0",
+    "ts-node": "^10.9.2"
+  }
+}

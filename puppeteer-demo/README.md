@@ -1,4 +1,4 @@
-# playwright-demo
+# puppeteer-demo
 
 > quick start
 
