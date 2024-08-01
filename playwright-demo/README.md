@@ -15,12 +15,16 @@ export MIDSCENE_MODEL_NAME='gpt-4o'
 ```bash
 npm install 
 
+# run e2e test
 npm run e2e
-# Priority read cache
+
+# prefer using cache
 npm run e2e:cache
 
-# with ui
+# run e2e with playwright ui
 npm run e2e:ui
+
+# run e2e with playwright ui + cache
 npm run e2e:ui:cache
 
 
