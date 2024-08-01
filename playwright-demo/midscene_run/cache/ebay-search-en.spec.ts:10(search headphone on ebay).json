@@ -1,7 +1,65 @@
 {
   "pkgName": "@midscene/web",
-  "pkgVersion": "0.1.1",
+  "pkgVersion": "0.1.3",
   "taskFile": "ebay-search-en.spec.ts:10",
   "taskTitle": "search headphone on ebay",
-  "aiTasks": []
+  "aiTasks": [
+    {
+      "type": "plan",
+      "pageContext": {
+        "url": "https://www.ebay.com/",
+        "size": {
+          "width": 400,
+          "height": 905
+        }
+      },
+      "prompt": "type \"Headphones\" in search box, hit Enter",
+      "response": {
+        "plans": [
+          {
+            "thought": "根据页面描述，找到搜索框元素，用于输入关键词“Headphones”。",
+            "type": "Locate",
+            "param": {
+              "prompt": "带有‘搜索任何物品’占位符的搜索框在页面顶部中央。"
+            }
+          },
+          {
+            "thought": "输入关键词‘Headphones’",
+            "type": "Input",
+            "param": {
+              "value": "Headphones"
+            }
+          },
+          {
+            "thought": "点击Enter键以开始搜索",
+            "type": "KeyboardPress",
+            "param": {
+              "value": "Enter"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "locate",
+      "pageContext": {
+        "url": "https://www.ebay.com/",
+        "size": {
+          "width": 400,
+          "height": 905
+        }
+      },
+      "prompt": "带有‘搜索任何物品’占位符的搜索框在页面顶部中央。",
+      "response": {
+        "elements": [
+          {
+            "reason": "This element matches the description of a search box with the placeholder text '搜索任何物品' and is located at the top-center of the page.",
+            "text": "搜索任何物品",
+            "id": "233c54d5ec"
+          }
+        ],
+        "errors": []
+      }
+    }
+  ]
 }

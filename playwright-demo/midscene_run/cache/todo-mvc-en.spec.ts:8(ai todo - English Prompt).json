@@ -1,0 +1,356 @@
+{
+  "pkgName": "@midscene/web",
+  "pkgVersion": "0.1.3",
+  "taskFile": "todo-mvc-en.spec.ts:8",
+  "taskTitle": "ai todo - English Prompt",
+  "aiTasks": [
+    {
+      "type": "plan",
+      "pageContext": {
+        "url": "https://todomvc.com/examples/react/dist/",
+        "size": {
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "prompt": "Input 'Study JS today' in the task box input and press the Enter key",
+      "response": {
+        "plans": [
+          {
+            "thought": "To fulfill the task, first locate the input box where the user wants to type, recognizable by its placeholder text 'What needs to be done?'. Then, input 'Study JS today' and press the Enter key.",
+            "type": "Locate",
+            "param": {
+              "prompt": "The text input box with placeholder text 'What needs to be done?'"
+            }
+          },
+          {
+            "thought": "Proceed to enter the task description as specified.",
+            "type": "Input",
+            "param": {
+              "value": "Study JS today"
+            }
+          },
+          {
+            "thought": "After entering the task description, press the Enter key to add the task.",
+            "type": "KeyboardPress",
+            "param": {
+              "value": "Enter"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "locate",
+      "pageContext": {
+        "url": "https://todomvc.com/examples/react/dist/",
+        "size": {
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "prompt": "The text input box with placeholder text 'What needs to be done?'",
+      "response": {
+        "elements": [
+          {
+            "reason": "The element has a placeholder text 'What needs to be done?' which matches the description of the text input box.",
+            "text": "What needs to be done?",
+            "id": "3530a9c1eb"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "type": "plan",
+      "pageContext": {
+        "url": "https://todomvc.com/examples/react/dist/",
+        "size": {
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "prompt": "Input 'Study Rust tomorrow' in the task box input and press the Enter key",
+      "response": {
+        "plans": [
+          {
+            "thought": "Identifying the task box input area to add the new task.",
+            "type": "Locate",
+            "param": {
+              "prompt": "The input box with placeholder text 'What needs to be done?'"
+            }
+          },
+          {
+            "thought": "Inputting the task 'Study Rust tomorrow' into the identified input box.",
+            "type": "Input",
+            "param": {
+              "value": "Study Rust tomorrow"
+            }
+          },
+          {
+            "thought": "Submitting the input task by pressing the Enter key.",
+            "type": "KeyboardPress",
+            "param": {
+              "value": "Enter"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "locate",
+      "pageContext": {
+        "url": "https://todomvc.com/examples/react/dist/",
+        "size": {
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "prompt": "The input box with placeholder text 'What needs to be done?'",
+      "response": {
+        "elements": [
+          {
+            "reason": "Found an INPUT Node with the 'placeholder' attribute matching 'What needs to be done?'. The coordinates and size match the input box in the screenshot.",
+            "text": "What needs to be done?",
+            "id": "3530a9c1eb"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "type": "plan",
+      "pageContext": {
+        "url": "https://todomvc.com/examples/react/dist/",
+        "size": {
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "prompt": "Input 'Study AI the day after tomorrow' in the task box input and press the Enter key",
+      "response": {
+        "plans": [
+          {
+            "thought": "Identifying the task input box based on its placeholder text.",
+            "type": "Locate",
+            "param": {
+              "prompt": "The input box with placeholder text 'What needs to be done?'"
+            }
+          },
+          {
+            "thought": "Typing the task into the input box.",
+            "type": "Input",
+            "param": {
+              "value": "Study AI the day after tomorrow"
+            }
+          },
+          {
+            "thought": "Adding the task to the list by pressing the Enter key.",
+            "type": "KeyboardPress",
+            "param": {
+              "value": "Enter"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "locate",
+      "pageContext": {
+        "url": "https://todomvc.com/examples/react/dist/",
+        "size": {
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "prompt": "The input box with placeholder text 'What needs to be done?'",
+      "response": {
+        "elements": [
+          {
+            "reason": "The placeholder text 'What needs to be done?' matches the user description, and the JSON object has associated 'INPUT Node' attributes",
+            "text": "What needs to be done?",
+            "id": "3530a9c1eb"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "type": "plan",
+      "pageContext": {
+        "url": "https://todomvc.com/examples/react/dist/",
+        "size": {
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "prompt": "Move the mouse to the second item in the task list and click the delete button on the right of the second task",
+      "response": {
+        "plans": [
+          {
+            "thought": "The user wants to interact with the second task in the task list, namely 'Study Rust tomorrow'. First, I need to locate this task item.",
+            "type": "Locate",
+            "param": {
+              "prompt": "The second task item with the content 'Study Rust tomorrow'"
+            }
+          },
+          {
+            "thought": "Now that we've located the second task item, the user wants to click the delete button on the right of this task. I need to locate this delete button.",
+            "type": "Locate",
+            "param": {
+              "prompt": "The delete button on the right of the second task item with the content 'Study Rust tomorrow'"
+            }
+          },
+          {
+            "thought": "With the delete button observed, we now need to click on it.",
+            "type": "Tap",
+            "param": null
+          }
+        ]
+      }
+    },
+    {
+      "type": "locate",
+      "pageContext": {
+        "url": "https://todomvc.com/examples/react/dist/",
+        "size": {
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "prompt": "The second task item with the content 'Study Rust tomorrow'",
+      "response": {
+        "elements": [
+          {
+            "reason": "The task item with the content 'Study Rust tomorrow' is the required element. It matches the description given.",
+            "text": "Study Rust tomorrow",
+            "id": "277022d9f0"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "type": "locate",
+      "pageContext": {
+        "url": "https://todomvc.com/examples/react/dist/",
+        "size": {
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "prompt": "The delete button on the right of the second task item with the content 'Study Rust tomorrow'",
+      "response": {
+        "elements": [
+          {
+            "reason": "The element with ID '277022d9f0' matches the description of the task label 'Study Rust tomorrow'. The delete button would be adjacent to this label.",
+            "text": "Study Rust tomorrow",
+            "id": "277022d9f0"
+          },
+          {
+            "reason": "The element with ID 'c0751f3b26' matches the description of being a checkbox for the task item 'Study Rust tomorrow'.",
+            "text": "",
+            "id": "c0751f3b26"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "type": "plan",
+      "pageContext": {
+        "url": "https://todomvc.com/examples/react/dist/",
+        "size": {
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "prompt": "Click the check button on the left of the second task",
+      "response": {
+        "plans": [
+          {
+            "thought": "The user wants to mark the second task as completed by clicking the checkbox next to 'Study Rust tomorrow'.",
+            "type": "Locate",
+            "param": {
+              "prompt": "The checkbox to the left of 'Study Rust tomorrow'"
+            }
+          },
+          {
+            "thought": "Clicking the located checkbox will mark the second task as completed.",
+            "type": "Tap",
+            "param": null
+          }
+        ]
+      }
+    },
+    {
+      "type": "locate",
+      "pageContext": {
+        "url": "https://todomvc.com/examples/react/dist/",
+        "size": {
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "prompt": "The checkbox to the left of 'Study Rust tomorrow'",
+      "response": {
+        "elements": [
+          {
+            "reason": "The description specifically asks for a checkbox to the left of 'Study Rust tomorrow'. Based on the provided list of element descriptions and rect properties, the checkbox with id 'c0751f3b26' closely matches this requirement.",
+            "text": "",
+            "id": "c0751f3b26"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "type": "plan",
+      "pageContext": {
+        "url": "https://todomvc.com/examples/react/dist/",
+        "size": {
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "prompt": "Click the 'completed' status button below the task list",
+      "response": {
+        "plans": [
+          {
+            "thought": "The user wants to view completed tasks by clicking the 'completed' status button below the task list.",
+            "type": "Locate",
+            "param": {
+              "prompt": "The 'Completed' button located below the task list, next to 'Active'."
+            }
+          },
+          {
+            "thought": "Clicking the 'Completed' button will filter the tasks to show only completed items.",
+            "type": "Tap",
+            "param": null
+          }
+        ]
+      }
+    },
+    {
+      "type": "locate",
+      "pageContext": {
+        "url": "https://todomvc.com/examples/react/dist/",
+        "size": {
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "prompt": "The 'Completed' button located below the task list, next to 'Active'.",
+      "response": {
+        "elements": [
+          {
+            "reason": "The element is a TEXT Node type located by the content 'Completed', and it is positioned next to 'Active' button in the task list footer, aligning with the given description.",
+            "text": "Completed",
+            "id": "0f8f471e06"
+          }
+        ],
+        "errors": []
+      }
+    }
+  ]
+}
