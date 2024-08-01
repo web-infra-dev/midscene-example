@@ -11,8 +11,8 @@ importers:
   playwright-demo:
     devDependencies:
       '@midscene/web':
-        specifier: 0.1.0
-        version: 0.1.0(@playwright/test@1.45.3)(@types/react-dom@18.3.0)(@types/react@18.3.3)(immer@9.0.21)(playwright@1.45.3)
+        specifier: 0.1.1
+        version: 0.1.1(@playwright/test@1.45.3)(@types/react-dom@18.3.0)(@types/react@18.3.3)(immer@9.0.21)(playwright@1.45.3)
       '@modern-js/module-tools':
         specifier: 2.56.1
         version: 2.56.1(eslint@8.57.0)(typescript@5.0.4)
@@ -1501,19 +1501,19 @@ packages:
   '@manypkg/get-packages@1.1.3':
     resolution: {integrity: sha512-fo+QhuU3qE/2TQMQmbVMqaQ6EWbMhi4ABWP+O4AM1NqPBuy0OrApV5LO6BrrgnhtAHS2NH6RrVk9OL181tTi8A==}
 
-  '@midscene/core@0.1.0':
-    resolution: {integrity: sha512-J8HflsZ8+nwLLWJoRlbTc1zjxew9ZMagEoosXbqHZfur+xKam/tW7c5ejuMMKP9J7zg1V5eJ/aJhajUFxKJqNw==}
+  '@midscene/core@0.1.1':
+    resolution: {integrity: sha512-ShXMdGSC/3cTwicsGAURH9lD6APV9Isj7HN9ndkrp8Y680Lsticn1pPUJ3puDJYNlnOeDrTNUhjE3f2wr6BLqA==}
     engines: {node: '>=16.0.0'}
 
-  '@midscene/visualizer-report@0.1.0':
-    resolution: {integrity: sha512-uE/afi9p7IoCEOeEAJkAlIHN0WMXLs9TU3zzELNL92zwFtmQ58jEW+VJjlITgRiLs16trZtyOJEVL7THbAhNBg==}
+  '@midscene/visualizer-report@0.1.1':
+    resolution: {integrity: sha512-z1ncqtUx1a5iL8FMfuPxvf78RksBLQ+Rr+xSLf1jvC+HzFduvlM+hYmueeRAIWOnlTAGJVCcwIdGJdTAvsEKag==}
     engines: {node: '>=16.18.1'}
 
-  '@midscene/visualizer@0.1.0':
-    resolution: {integrity: sha512-jPicQPNjlf6JE0eYghe4nnbmnoEt2aM4OzW+C3JmEd8n8hhSgDGKkvFMaKnXcsk25xEtZcIP7cDE/BxnmcCgzg==}
+  '@midscene/visualizer@0.1.1':
+    resolution: {integrity: sha512-H/m/BHqAtW2X8yQkEBCH8Yow25UHFXZI5B+g1EP9ySnmlgnn/TgkqCcyknzmBglMO0UZ1q3bYVMMP6d5Q5By8g==}
 
-  '@midscene/web@0.1.0':
-    resolution: {integrity: sha512-pC8V7wpI2Qq2nNdOW2fN9mt50BVx5gbDrPcQShJmPcGZqqCEXKVKWsmi1lSgUQ+SkpydvJlL74N4yzxDREu8kw==}
+  '@midscene/web@0.1.1':
+    resolution: {integrity: sha512-uuyCYvMWaOpY4D2NvBr3nvjOCd34geSv5fPO+hmjlau3I4TniJHgpecHwi1VQjDXRNIKHunpy79BgXHtSY08kg==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       '@playwright/test': ^1.44.1
@@ -6626,16 +6626,16 @@ snapshots:
       globby: 11.1.0
       read-yaml-file: 1.1.0
 
-  '@midscene/core@0.1.0':
+  '@midscene/core@0.1.1':
     dependencies:
       openai: 4.47.1
       sharp: 0.33.3
     transitivePeerDependencies:
       - encoding
 
-  '@midscene/visualizer-report@0.1.0(@types/react-dom@18.3.0)(@types/react@18.3.3)(immer@9.0.21)':
+  '@midscene/visualizer-report@0.1.1(@types/react-dom@18.3.0)(@types/react@18.3.3)(immer@9.0.21)':
     dependencies:
-      '@midscene/visualizer': 0.1.0(@types/react-dom@18.3.0)(@types/react@18.3.3)(immer@9.0.21)
+      '@midscene/visualizer': 0.1.1(@types/react-dom@18.3.0)(@types/react@18.3.3)(immer@9.0.21)
       '@modern-js/runtime': 2.56.2(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       antd: 5.19.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       react: 18.2.0
@@ -6650,10 +6650,10 @@ snapshots:
       - moment
       - supports-color
 
-  '@midscene/visualizer@0.1.0(@types/react-dom@18.3.0)(@types/react@18.3.3)(immer@9.0.21)':
+  '@midscene/visualizer@0.1.1(@types/react-dom@18.3.0)(@types/react@18.3.3)(immer@9.0.21)':
     dependencies:
       '@ant-design/icons': 5.3.7(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      '@midscene/core': 0.1.0
+      '@midscene/core': 0.1.1
       '@modern-js/runtime': 2.56.2(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       antd: 5.17.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       dayjs: 1.11.11
@@ -6672,10 +6672,10 @@ snapshots:
       - moment
       - supports-color
 
-  '@midscene/web@0.1.0(@playwright/test@1.45.3)(@types/react-dom@18.3.0)(@types/react@18.3.3)(immer@9.0.21)(playwright@1.45.3)':
+  '@midscene/web@0.1.1(@playwright/test@1.45.3)(@types/react-dom@18.3.0)(@types/react@18.3.3)(immer@9.0.21)(playwright@1.45.3)':
     dependencies:
-      '@midscene/core': 0.1.0
-      '@midscene/visualizer-report': 0.1.0(@types/react-dom@18.3.0)(@types/react@18.3.3)(immer@9.0.21)
+      '@midscene/core': 0.1.1
+      '@midscene/visualizer-report': 0.1.1(@types/react-dom@18.3.0)(@types/react@18.3.3)(immer@9.0.21)
       inquirer: 10.1.5
       openai: 4.47.1
       playwright: 1.45.3
@@ -7548,7 +7548,7 @@ snapshots:
     dependencies:
       '@ant-design/colors': 7.1.0
       '@ant-design/cssinjs': 1.21.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      '@ant-design/icons': 5.3.7(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@ant-design/icons': 5.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@ant-design/react-slick': 1.1.2(react@18.2.0)
       '@babel/runtime': 7.25.0
       '@ctrl/tinycolor': 3.6.1
@@ -7558,7 +7558,7 @@ snapshots:
       '@rc-component/trigger': 2.2.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       classnames: 2.5.1
       copy-to-clipboard: 3.3.3
-      dayjs: 1.11.11
+      dayjs: 1.11.12
       qrcode.react: 3.1.0(react@18.2.0)
       rc-cascader: 3.26.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       rc-checkbox: 3.3.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -7575,7 +7575,7 @@ snapshots:
       rc-motion: 2.9.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       rc-notification: 5.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       rc-pagination: 4.0.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      rc-picker: 4.5.0(dayjs@1.11.11)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      rc-picker: 4.5.0(dayjs@1.11.12)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       rc-progress: 4.0.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       rc-rate: 2.12.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       rc-resize-observer: 1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -9801,7 +9801,7 @@ snapshots:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
 
-  rc-picker@4.5.0(dayjs@1.11.11)(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
+  rc-picker@4.5.0(dayjs@1.11.12)(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
     dependencies:
       '@babel/runtime': 7.25.0
       '@rc-component/trigger': 2.2.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -9812,7 +9812,7 @@ snapshots:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     optionalDependencies:
-      dayjs: 1.11.11
+      dayjs: 1.11.12
 
   rc-picker@4.6.11(dayjs@1.11.12)(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
     dependencies:

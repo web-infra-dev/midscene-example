@@ -1,6 +1,6 @@
 {
   "pkgName": "@midscene/web",
-  "pkgVersion": "0.1.0",
+  "pkgVersion": "0.1.1",
   "taskFile": "ai-auto-todo.spec.ts:7",
   "taskTitle": "ai todo",
   "aiTasks": [
@@ -49,11 +49,11 @@
           "height": 720
         }
       },
-      "prompt": "根据描述, 用户需要在输入框中输入内容。这可以通过定位输入框来实现。",
+      "prompt": "页面中央大写的输入框，显示 'What needs to be done?'",
       "response": {
         "elements": [
           {
-            "reason": "This element is an input field where the user can type in the task. The description mentions the placeholder text 'What needs to be done?' which matches this input field.",
+            "reason": "This element is an input box located in the center of the page with the placeholder 'What needs to be done?' which matches the description.",
             "text": "What needs to be done?",
             "id": "3530a9c1eb"
           }
@@ -106,12 +106,12 @@
           "height": 720
         }
       },
-      "prompt": "用户要求在任务框中输入新任务。这可以通过定位输入框来实现。",
+      "prompt": "任务框，包含占位符文本 'What needs to be done?'",
       "response": {
         "elements": [
           {
-            "reason": "The element 'What needs to be done?' is a placeholder for the task entry input box. The element has an INPUT node type and is located in the task entry area.",
-            "text": "What needs to be done?",
+            "reason": "The element has the placeholder text 'What needs to be done?', which matches the description provided.",
+            "text": "",
             "id": "3530a9c1eb"
           }
         ],
@@ -163,11 +163,11 @@
           "height": 720
         }
       },
-      "prompt": "根据页面信息，此任务需要在待办事项输入框中输入内容并提交。",
+      "prompt": "任务框上方有“ What needs to be done?”占位符的输入框",
       "response": {
         "elements": [
           {
-            "reason": "The description requires identifying the '待办事项输入框' (Todo Item Input Box). The 'todo-input' element matches this as it is an INPUT node with the placeholder 'What needs to be done?' indicating it is where to enter a new todo item.",
+            "reason": "The element with the placeholder 'What needs to be done?' is an INPUT node located above the task list, matching the specified location criteria and containing the specified text.",
             "text": "What needs to be done?",
             "id": "3530a9c1eb"
           }
@@ -223,11 +223,11 @@
           "height": 720
         }
       },
-      "prompt": "需要找到任务列表中的第二项。",
+      "prompt": "任务列表中的第二项，文本内容是“明天学习 Rust”的那个任务项",
       "response": {
         "elements": [
           {
-            "reason": "The second item in the task list is specified by the user, and it is identified by its content '明天学习 Rust' (Study Rust Tomorrow).",
+            "reason": "The task item with text '明天学习 Rust' matches the description '任务列表中的第二项，文本内容是“明天学习 Rust”的那个任务项'.",
             "text": "明天学习 Rust",
             "id": "f1de75d2a5"
           }
@@ -244,11 +244,11 @@
           "height": 720
         }
       },
-      "prompt": "点击第二项任务右边的删除按钮。",
+      "prompt": "第二项任务右边的删除按钮",
       "response": {
         "elements": [
           {
-            "reason": "The element is the delete button next to the second task, as described in the user's instruction and verified by its position in the screenshot and the element information.",
+            "reason": "The description is for the delete button to the right of the second task. The identified element has the '×' content and is positioned correctly on the right side.",
             "text": "×",
             "id": "7ccd467339"
           }
@@ -292,11 +292,11 @@
           "height": 720
         }
       },
-      "prompt": "需要找到页面中提到的第二个任务左边的勾选按钮",
+      "prompt": "第二条任务左边的圆形勾选按钮",
       "response": {
         "elements": [
           {
-            "reason": "The checkbox (勾选按钮) adjacent to the second task (第二个任务), i.e., '后天学习 AI', is identified by its 'type' attribute which is 'checkbox' alongside its position in the element rectangle.",
+            "reason": "The target element is described as '第二条任务左边的圆形勾选按钮', which translates to 'The circular checkbox button to the left of the second task.' Based on this description, the second task in the list is '后天学习 AI'. The circular checkbox button to the left of this task is identified as the element with ID 'c0751f3b26' with INPUT node type.",
             "text": "",
             "id": "c0751f3b26"
           }
@@ -340,11 +340,11 @@
           "height": 720
         }
       },
-      "prompt": "用户需要点击页面底部的 'completed' 状态按钮，以查看已完成的任务。",
+      "prompt": "底部 'Completed' 状态按钮",
       "response": {
         "elements": [
           {
-            "reason": "The element at the bottom of the page with the text 'Completed' matches the user's description of wanting to click the 'completed' status button.",
+            "reason": "The 'Completed' button is located at the bottom of the interface alongside 'All' and 'Active' buttons.",
             "text": "Completed",
             "id": "663a34de3b"
           }
