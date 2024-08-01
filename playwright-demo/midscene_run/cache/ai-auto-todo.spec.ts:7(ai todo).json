@@ -1,0 +1,356 @@
+{
+  "pkgName": "@midscene/web",
+  "pkgVersion": "0.1.0",
+  "taskFile": "ai-auto-todo.spec.ts:7",
+  "taskTitle": "ai todo",
+  "aiTasks": [
+    {
+      "type": "plan",
+      "pageContext": {
+        "url": "https://todomvc.com/examples/react/dist/",
+        "size": {
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "prompt": "在任务框 input 输入 今天学习 JS，按回车键",
+      "response": {
+        "plans": [
+          {
+            "thought": "根据描述, 用户需要在输入框中输入内容。这可以通过定位输入框来实现。",
+            "type": "Locate",
+            "param": {
+              "prompt": "页面中央大写的输入框，显示 'What needs to be done?'"
+            }
+          },
+          {
+            "thought": "找到了输入框后，需要在其中输入指定内容。",
+            "type": "Input",
+            "param": {
+              "value": "今天学习 JS"
+            }
+          },
+          {
+            "thought": "输入完成后，需要按下回车键以确认输入。",
+            "type": "KeyboardPress",
+            "param": {
+              "value": "Enter"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "locate",
+      "pageContext": {
+        "url": "https://todomvc.com/examples/react/dist/",
+        "size": {
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "prompt": "根据描述, 用户需要在输入框中输入内容。这可以通过定位输入框来实现。",
+      "response": {
+        "elements": [
+          {
+            "reason": "This element is an input field where the user can type in the task. The description mentions the placeholder text 'What needs to be done?' which matches this input field.",
+            "text": "What needs to be done?",
+            "id": "3530a9c1eb"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "type": "plan",
+      "pageContext": {
+        "url": "https://todomvc.com/examples/react/dist/",
+        "size": {
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "prompt": "在任务框 input 输入 明天学习 Rust，按回车键",
+      "response": {
+        "plans": [
+          {
+            "thought": "用户要求在任务框中输入新任务。这可以通过定位输入框来实现。",
+            "type": "Locate",
+            "param": {
+              "prompt": "任务框，包含占位符文本 'What needs to be done?'"
+            }
+          },
+          {
+            "thought": "在定位到的输入框中输入 '明天学习 Rust'。",
+            "type": "Input",
+            "param": {
+              "value": "明天学习 Rust"
+            }
+          },
+          {
+            "thought": "在输入完任务后按下回车键以添加任务。",
+            "type": "KeyboardPress",
+            "param": {
+              "value": "Enter"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "locate",
+      "pageContext": {
+        "url": "https://todomvc.com/examples/react/dist/",
+        "size": {
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "prompt": "用户要求在任务框中输入新任务。这可以通过定位输入框来实现。",
+      "response": {
+        "elements": [
+          {
+            "reason": "The element 'What needs to be done?' is a placeholder for the task entry input box. The element has an INPUT node type and is located in the task entry area.",
+            "text": "What needs to be done?",
+            "id": "3530a9c1eb"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "type": "plan",
+      "pageContext": {
+        "url": "https://todomvc.com/examples/react/dist/",
+        "size": {
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "prompt": "在任务框 input 输入后天学习 AI，按回车键",
+      "response": {
+        "plans": [
+          {
+            "thought": "根据页面信息，此任务需要在待办事项输入框中输入内容并提交。",
+            "type": "Locate",
+            "param": {
+              "prompt": "任务框上方有“ What needs to be done?”占位符的输入框"
+            }
+          },
+          {
+            "thought": "在输入框中输入后天学习 AI。",
+            "type": "Input",
+            "param": {
+              "value": "后天学习 AI"
+            }
+          },
+          {
+            "thought": "按下回车键以提交输入的任务。",
+            "type": "KeyboardPress",
+            "param": {
+              "value": "Enter"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "locate",
+      "pageContext": {
+        "url": "https://todomvc.com/examples/react/dist/",
+        "size": {
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "prompt": "根据页面信息，此任务需要在待办事项输入框中输入内容并提交。",
+      "response": {
+        "elements": [
+          {
+            "reason": "The description requires identifying the '待办事项输入框' (Todo Item Input Box). The 'todo-input' element matches this as it is an INPUT node with the placeholder 'What needs to be done?' indicating it is where to enter a new todo item.",
+            "text": "What needs to be done?",
+            "id": "3530a9c1eb"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "type": "plan",
+      "pageContext": {
+        "url": "https://todomvc.com/examples/react/dist/",
+        "size": {
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "prompt": "将鼠标移动到任务列表中的第二项，点击第二项任务右边的删除按钮",
+      "response": {
+        "plans": [
+          {
+            "thought": "需要找到任务列表中的第二项。",
+            "type": "Locate",
+            "param": {
+              "prompt": "任务列表中的第二项，文本内容是“明天学习 Rust”的那个任务项"
+            }
+          },
+          {
+            "thought": "将鼠标移动到该任务项。",
+            "type": "Hover",
+            "param": null
+          },
+          {
+            "thought": "点击第二项任务右边的删除按钮。",
+            "type": "Locate",
+            "param": {
+              "prompt": "第二项任务右边的删除按钮"
+            }
+          },
+          {
+            "thought": "执行点击操作以删除任务。",
+            "type": "Tap",
+            "param": null
+          }
+        ]
+      }
+    },
+    {
+      "type": "locate",
+      "pageContext": {
+        "url": "https://todomvc.com/examples/react/dist/",
+        "size": {
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "prompt": "需要找到任务列表中的第二项。",
+      "response": {
+        "elements": [
+          {
+            "reason": "The second item in the task list is specified by the user, and it is identified by its content '明天学习 Rust' (Study Rust Tomorrow).",
+            "text": "明天学习 Rust",
+            "id": "f1de75d2a5"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "type": "locate",
+      "pageContext": {
+        "url": "https://todomvc.com/examples/react/dist/",
+        "size": {
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "prompt": "点击第二项任务右边的删除按钮。",
+      "response": {
+        "elements": [
+          {
+            "reason": "The element is the delete button next to the second task, as described in the user's instruction and verified by its position in the screenshot and the element information.",
+            "text": "×",
+            "id": "7ccd467339"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "type": "plan",
+      "pageContext": {
+        "url": "https://todomvc.com/examples/react/dist/",
+        "size": {
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "prompt": "点击第二条任务左边的勾选按钮",
+      "response": {
+        "plans": [
+          {
+            "thought": "需要找到页面中提到的第二个任务左边的勾选按钮",
+            "type": "Locate",
+            "param": {
+              "prompt": "第二条任务左边的圆形勾选按钮"
+            }
+          },
+          {
+            "thought": "点击勾选按钮",
+            "type": "Tap",
+            "param": null
+          }
+        ]
+      }
+    },
+    {
+      "type": "locate",
+      "pageContext": {
+        "url": "https://todomvc.com/examples/react/dist/",
+        "size": {
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "prompt": "需要找到页面中提到的第二个任务左边的勾选按钮",
+      "response": {
+        "elements": [
+          {
+            "reason": "The checkbox (勾选按钮) adjacent to the second task (第二个任务), i.e., '后天学习 AI', is identified by its 'type' attribute which is 'checkbox' alongside its position in the element rectangle.",
+            "text": "",
+            "id": "c0751f3b26"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "type": "plan",
+      "pageContext": {
+        "url": "https://todomvc.com/examples/react/dist/",
+        "size": {
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "prompt": "点击任务列表下面的 completed 状态按钮",
+      "response": {
+        "plans": [
+          {
+            "thought": "用户需要点击页面底部的 'completed' 状态按钮，以查看已完成的任务。",
+            "type": "Locate",
+            "param": {
+              "prompt": "底部 'Completed' 状态按钮"
+            }
+          },
+          {
+            "thought": "找到目标按钮后，点击此按钮。",
+            "type": "Tap",
+            "param": null
+          }
+        ]
+      }
+    },
+    {
+      "type": "locate",
+      "pageContext": {
+        "url": "https://todomvc.com/examples/react/dist/",
+        "size": {
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "prompt": "用户需要点击页面底部的 'completed' 状态按钮，以查看已完成的任务。",
+      "response": {
+        "elements": [
+          {
+            "reason": "The element at the bottom of the page with the text 'Completed' matches the user's description of wanting to click the 'completed' status button.",
+            "text": "Completed",
+            "id": "663a34de3b"
+          }
+        ],
+        "errors": []
+      }
+    }
+  ]
+}
