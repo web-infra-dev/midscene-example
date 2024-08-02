@@ -255,6 +255,81 @@
         ],
         "errors": []
       }
+    },
+    {
+      "type": "plan",
+      "pageContext": {
+        "url": "https://todomvc.com/examples/react/dist/",
+        "size": {
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "prompt": "点击第二条任务左边的勾选按钮",
+      "response": {
+        "plans": [
+          {
+            "thought": "用户想要点击第二条任务左边的勾选按钮，该按钮位于屏幕下方较中央的位置，符合第二个任务的描述.",
+            "type": "Locate",
+            "param": {
+              "prompt": "右侧文字为'后天学习 AI'的勾选按钮"
+            }
+          },
+          {
+            "thought": "找到并点击第二个勾选按钮.",
+            "type": "Tap",
+            "param": null
+          }
+        ]
+      }
+    },
+    {
+      "type": "locate",
+      "pageContext": {
+        "url": "https://todomvc.com/examples/react/dist/",
+        "size": {
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "prompt": "右侧文字为'后天学习 AI'的勾选按钮",
+      "response": {
+        "elements": [
+          {
+            "reason": "The element with ID '5ff975ce81' matches the description because it contains the text '后天学习 AI' which appears on the right side in the provided image.",
+            "text": "后天学习 AI",
+            "id": "5ff975ce81"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "type": "plan",
+      "pageContext": {
+        "url": "https://todomvc.com/examples/react/dist/",
+        "size": {
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "prompt": "点击任务列表下面的 completed 状态按钮",
+      "response": {
+        "plans": [
+          {
+            "thought": "需要找到并点击页面上的 'Completed' 按钮。",
+            "type": "Locate",
+            "param": {
+              "prompt": "页面底部写有 'Completed' 文字的按钮。"
+            }
+          },
+          {
+            "thought": "确认找到了 'Completed' 按钮后进行点击。",
+            "type": "Tap",
+            "param": null
+          }
+        ]
+      }
     }
   ]
 }
