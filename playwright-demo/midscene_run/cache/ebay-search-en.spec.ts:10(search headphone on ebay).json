@@ -17,25 +17,30 @@
       "response": {
         "plans": [
           {
-            "thought": "找到搜索框并在其中输入“Headphones”。",
+            "thought": "找到搜索框输入框",
             "type": "Locate",
             "param": {
-              "prompt": "搜索框，右边有一个蓝色的 '搜索' 按钮"
+              "prompt": "位于页面顶部，中间位置，带有占位符“搜索任何物品”的搜索框"
             }
           },
           {
-            "thought": "在搜索框中输入关键词。",
+            "thought": "输入关键词“Headphones”",
             "type": "Input",
             "param": {
               "value": "Headphones"
             }
           },
           {
-            "thought": "按 Enter 键进行搜索。",
-            "type": "KeyboardPress",
+            "thought": "点击搜索按钮",
+            "type": "Locate",
             "param": {
-              "value": "Enter"
+              "prompt": "搜索框右侧的蓝色按钮，带有标签“搜索”"
             }
+          },
+          {
+            "thought": "点击以触发搜索",
+            "type": "Tap",
+            "param": null
           }
         ]
       }
@@ -49,11 +54,32 @@
           "height": 800
         }
       },
-      "prompt": "搜索框，右边有一个蓝色的 '搜索' 按钮",
+      "prompt": "位于页面顶部，中间位置，带有占位符“搜索任何物品”的搜索框",
       "response": {
         "elements": [
           {
-            "reason": "The element matches the user's description of a search box with a blue '搜索' button to its right. It is an INPUT Node for text entry and has a BUTTON Node adjacent to it with a class indicating it is styled as a primary button.",
+            "reason": "The element matches the description: an input element located at the top middle of the page, with a placeholder '搜索任何物品'.",
+            "text": "搜索任何物品",
+            "id": "3392b55a50"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "type": "locate",
+      "pageContext": {
+        "url": "https://www.ebay.com/",
+        "size": {
+          "width": 1280,
+          "height": 800
+        }
+      },
+      "prompt": "搜索框右侧的蓝色按钮，带有标签“搜索”",
+      "response": {
+        "elements": [
+          {
+            "reason": "In the description, the required element is specified as a 'blue button to the right of the search box with the label 搜索'. The element with ID 'c610bff1b8' matches this description closely. It is a BUTTON node with a 'submit' type, positioned immediately to the right of the search box, and has the label attributed to it.",
             "text": "搜索",
             "id": "c610bff1b8"
           }

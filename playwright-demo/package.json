@@ -3,8 +3,8 @@
   "private": true,
   "version": "0.0.1",
   "scripts": {
-    "e2e": "playwright test --config=playwright.config.ts --reporter=list",
-    "e2e:cache": "MIDSCENE_CACHE=true playwright test --config=playwright.config.ts --reporter=list",
+    "e2e": "playwright test --config=playwright.config.ts",
+    "e2e:cache": "MIDSCENE_CACHE=true playwright test --config=playwright.config.ts",
     "e2e:ui": "playwright test --config=playwright.config.ts --ui",
     "e2e:ui:cache": "MIDSCENE_CACHE=true playwright test --config=playwright.config.ts --ui"
   },

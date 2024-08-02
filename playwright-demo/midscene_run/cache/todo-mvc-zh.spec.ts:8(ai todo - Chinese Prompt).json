@@ -17,21 +17,21 @@
       "response": {
         "plans": [
           {
-            "thought": "需要在任务框里输入内容，首先定位任务输入框。",
+            "thought": "用户想在任务框内输入内容并按回车键，页面上存在一个带有占位符“What needs to be done?”的输入框。",
             "type": "Locate",
             "param": {
-              "prompt": "任务输入框，带有'What needs to be done?'的占位符"
+              "prompt": "带有占位符“What needs to be done?”的输入框"
             }
           },
           {
-            "thought": "已定位到目标元素，现在输入指定内容。",
+            "thought": "在任务框内输入“今天学习 JS”。",
             "type": "Input",
             "param": {
               "value": "今天学习 JS"
             }
           },
           {
-            "thought": "输入完成后需要按回车键，以提交任务。",
+            "thought": "按回车键以提交输入的内容。",
             "type": "KeyboardPress",
             "param": {
               "value": "Enter"
@@ -49,11 +49,11 @@
           "height": 720
         }
       },
-      "prompt": "任务输入框，带有'What needs to be done?'的占位符",
+      "prompt": "带有占位符“What needs to be done?”的输入框",
       "response": {
         "elements": [
           {
-            "reason": "The element 'todo-input' is an INPUT Node with data-testid 'text-input' and has a placeholder 'What needs to be done?', matching the user's description.",
+            "reason": "The element is an input box and matches the placeholder 'What needs to be done?'. It also has the corresponding text input type and data-testid.",
             "text": "What needs to be done?",
             "id": "3530a9c1eb"
           }
@@ -74,21 +74,21 @@
       "response": {
         "plans": [
           {
-            "thought": "页面上有一个输入框，用户希望在此输入框中输入 '明天学习 Rust' 并按下回车键。",
+            "thought": "需要定位输入框以输入任务并按回车键。",
             "type": "Locate",
             "param": {
-              "prompt": "占位符为 'What needs to be done?' 的输入框"
+              "prompt": "占位符为'What needs to be done?'的输入框"
             }
           },
           {
-            "thought": "定位输入框后，在输入框中输入 '明天学习 Rust'。",
+            "thought": "确定找到任务框输入区域后，进行输入。",
             "type": "Input",
             "param": {
               "value": "明天学习 Rust"
             }
           },
           {
-            "thought": "输入完成后，按下回车键以添加任务。",
+            "thought": "输入完成后，按下回车键以提交任务。",
             "type": "KeyboardPress",
             "param": {
               "value": "Enter"
@@ -106,11 +106,11 @@
           "height": 720
         }
       },
-      "prompt": "占位符为 'What needs to be done?' 的输入框",
+      "prompt": "占位符为'What needs to be done?'的输入框",
       "response": {
         "elements": [
           {
-            "reason": "The element has an 'INPUT Node' type, a 'placeholder' attribute with the value 'What needs to be done?' and its position matches the input box in the image.",
+            "reason": "找到元素3530a9c1eb：它是页面上的输入框，具有占位符文本'What needs to be done?'. 符合用户描述。",
             "text": "What needs to be done?",
             "id": "3530a9c1eb"
           }
@@ -131,21 +131,21 @@
       "response": {
         "plans": [
           {
-            "thought": "用户希望在页面的任务输入框中输入文本'后天学习 AI'并按下回车键。",
+            "thought": "用户希望在任务框中输入'后天学习 AI'并按回车键。",
             "type": "Locate",
             "param": {
-              "prompt": "The input box with the placeholder 'What needs to be done?' near the top center of the page."
+              "prompt": "任务框中写有'What needs to be done?'的输入框"
             }
           },
           {
-            "thought": "定位到了输入框，接下来需要输入指定文本。",
+            "thought": "找到输入框后，输入'后天学习 AI'。",
             "type": "Input",
             "param": {
               "value": "后天学习 AI"
             }
           },
           {
-            "thought": "在输入了指定文本后，接下来需要按下回车键以添加任务。",
+            "thought": "最后按下回车键以添加新任务。",
             "type": "KeyboardPress",
             "param": {
               "value": "Enter"
@@ -163,12 +163,12 @@
           "height": 720
         }
       },
-      "prompt": "The input box with the placeholder 'What needs to be done?' near the top center of the page.",
+      "prompt": "任务框中写有'What needs to be done?'的输入框",
       "response": {
         "elements": [
           {
-            "reason": "The input field with the placeholder 'What needs to be done?' is located near the top center of the page, identified as an INPUT Node with a placeholder attribute matching the description provided.",
-            "text": "",
+            "reason": "The element described is an input box with the placeholder text 'What needs to be done?'. This matches the element with the ID 3530a9c1eb, which is an INPUT Node with the placeholder 'What needs to be done?' located at the specified position in the image.",
+            "text": "What needs to be done?",
             "id": "3530a9c1eb"
           }
         ],
@@ -188,26 +188,26 @@
       "response": {
         "plans": [
           {
-            "thought": "根据页面上下文，先定位第二项任务。",
+            "thought": "用户想要将鼠标移动到任务列表中的第二项，并点击其右边的删除按钮。这是通过悬停到特定任务项并点击按钮来实现的。",
             "type": "Locate",
             "param": {
-              "prompt": "明天学习 Rust 的任务"
+              "prompt": "第二项任务 '明天学习 Rust'"
             }
           },
           {
-            "thought": "将鼠标移动到第二项任务",
+            "thought": "悬停到第二项任务，以显示删除按钮。",
             "type": "Hover",
             "param": null
           },
           {
-            "thought": "找到删除按钮",
+            "thought": "定位第二项任务右边的删除按钮。",
             "type": "Locate",
             "param": {
-              "prompt": "在 明天学习 Rust 右边的删除按钮"
+              "prompt": "第二项任务右边的删除按钮"
             }
           },
           {
-            "thought": "点击删除按钮",
+            "thought": "点击删除按钮。",
             "type": "Tap",
             "param": null
           }
@@ -223,11 +223,11 @@
           "height": 720
         }
       },
-      "prompt": "明天学习 Rust 的任务",
+      "prompt": "第二项任务 '明天学习 Rust'",
       "response": {
         "elements": [
           {
-            "reason": "The element has the content that matches the description '明天学习 Rust' and is a TEXT Node.",
+            "reason": "The text description specifically mentioned '明天学习 Rust' which matches the text content of the target element.",
             "text": "明天学习 Rust",
             "id": "f1de75d2a5"
           }
@@ -244,11 +244,11 @@
           "height": 720
         }
       },
-      "prompt": "在 明天学习 Rust 右边的删除按钮",
+      "prompt": "第二项任务右边的删除按钮",
       "response": {
         "elements": [
           {
-            "reason": "The description is '在 明天学习 Rust 右边的删除按钮', which means the delete button to the right of '明天学习 Rust'. The element ID '7ccd467339' is a button node located to the right of the item with text '明天学习 Rust'.",
+            "reason": "The element with ID 7ccd467339 is the delete button ('×') and is located to the right of the second task '明天学习 Rust', which matches the user's description of '第二项任务右边的删除按钮'.",
             "text": "×",
             "id": "7ccd467339"
           }
@@ -269,14 +269,14 @@
       "response": {
         "plans": [
           {
-            "thought": "用户想要点击第二条任务左边的勾选按钮，该按钮位于屏幕下方较中央的位置，符合第二个任务的描述.",
+            "thought": "用户希望点击第二条任务左边的勾选按钮",
             "type": "Locate",
             "param": {
-              "prompt": "右侧文字为'后天学习 AI'的勾选按钮"
+              "prompt": "页面上第二条任务 '后天学习 AI' 左边的圆形勾选按钮"
             }
           },
           {
-            "thought": "找到并点击第二个勾选按钮.",
+            "thought": "点击第二条任务左边的勾选按钮",
             "type": "Tap",
             "param": null
           }
@@ -292,13 +292,13 @@
           "height": 720
         }
       },
-      "prompt": "右侧文字为'后天学习 AI'的勾选按钮",
+      "prompt": "页面上第二条任务 '后天学习 AI' 左边的圆形勾选按钮",
       "response": {
         "elements": [
           {
-            "reason": "The element with ID '5ff975ce81' matches the description because it contains the text '后天学习 AI' which appears on the right side in the provided image.",
-            "text": "后天学习 AI",
-            "id": "5ff975ce81"
+            "reason": "The element represents the checkbox for the task '后天学习 AI', which is indeed the second task on the page as depicted in the provided screenshot.",
+            "text": "",
+            "id": "c0751f3b26"
           }
         ],
         "errors": []
@@ -317,18 +317,39 @@
       "response": {
         "plans": [
           {
-            "thought": "需要找到并点击页面上的 'Completed' 按钮。",
+            "thought": "需要点击页面底部的 'Completed' 按钮，该按钮位于任务列表下方。",
             "type": "Locate",
             "param": {
-              "prompt": "页面底部写有 'Completed' 文字的按钮。"
+              "prompt": "底部的 'Completed' 状态按钮"
             }
           },
           {
-            "thought": "确认找到了 'Completed' 按钮后进行点击。",
+            "thought": "找到 'Completed' 按钮之后，点击该按钮。",
             "type": "Tap",
             "param": null
           }
         ]
+      }
+    },
+    {
+      "type": "locate",
+      "pageContext": {
+        "url": "https://todomvc.com/examples/react/dist/",
+        "size": {
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "prompt": "底部的 'Completed' 状态按钮",
+      "response": {
+        "elements": [
+          {
+            "reason": "The element with the text 'Completed' aligns with the user's request for a 'Completed' button at the bottom.",
+            "text": "Completed",
+            "id": "663a34de3b"
+          }
+        ],
+        "errors": []
       }
     }
   ]

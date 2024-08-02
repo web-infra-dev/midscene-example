@@ -22,7 +22,7 @@ pnpm run e2e
 # prefer using cache
 pnpm run e2e:cache
 
-# run e2e with playwright ui
+# run e2e with playwright ui, remember to click the little "Play" button on the upper-left corner
 pnpm run e2e:ui
 
 # run e2e with playwright ui + cache
