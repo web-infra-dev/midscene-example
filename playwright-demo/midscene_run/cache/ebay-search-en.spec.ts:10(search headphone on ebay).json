@@ -3,5 +3,63 @@
   "pkgVersion": "0.1.1",
   "taskFile": "ebay-search-en.spec.ts:10",
   "taskTitle": "search headphone on ebay",
-  "aiTasks": []
+  "aiTasks": [
+    {
+      "type": "plan",
+      "pageContext": {
+        "url": "https://www.ebay.com/",
+        "size": {
+          "width": 400,
+          "height": 905
+        }
+      },
+      "prompt": "type \"Headphones\" in search box, hit Enter",
+      "response": {
+        "plans": [
+          {
+            "thought": "根据任务描述，首先需要定位搜索框。",
+            "type": "Locate",
+            "param": {
+              "prompt": "页面中部靠上的搜索框，里面有占位符“搜索任何物品”"
+            }
+          },
+          {
+            "thought": "在搜索框中输入“Headphones”。",
+            "type": "Input",
+            "param": {
+              "value": "Headphones"
+            }
+          },
+          {
+            "thought": "按下Enter键进行搜索。",
+            "type": "KeyboardPress",
+            "param": {
+              "value": "Enter"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "locate",
+      "pageContext": {
+        "url": "https://www.ebay.com/",
+        "size": {
+          "width": 400,
+          "height": 905
+        }
+      },
+      "prompt": "页面中部靠上的搜索框，里面有占位符“搜索任何物品”",
+      "response": {
+        "elements": [
+          {
+            "reason": "The element located closely matches the description '搜索框，里面有占位符“搜索任何物品”'. The element with ID '233c54d5ec' is an INPUT Node with the placeholder '搜索任何物品', and its position is towards the top center of the page, aligned with the description '页面中部靠上的搜索框'.",
+            "text": "",
+            "id": "233c54d5ec"
+          }
+        ],
+        "errors": []
+      }
+    }
+  ]
 }
