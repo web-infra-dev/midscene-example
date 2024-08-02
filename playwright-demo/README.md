@@ -13,19 +13,19 @@ export OPENAI_API_KEY="sk-abcdefghijklmnopqrstuvwxyz"
 
 
 ```bash
-npm install 
+pnpm install 
 
 # run e2e test
-npm run e2e
+pnpm run e2e
 
 # prefer using cache
-npm run e2e:cache
+pnpm run e2e:cache
 
 # run e2e with playwright ui
-npm run e2e:ui
+pnpm run e2e:ui
 
 # run e2e with playwright ui + cache
-npm run e2e:ui:cache
+pnpm run e2e:ui:cache
 
 
 # read report
