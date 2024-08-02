@@ -2,7 +2,7 @@ import { expect } from "@playwright/test";
 import { test } from "./fixture";
 
 test.beforeEach(async ({ page }) => {
-  page.setViewportSize({ width: 400, height: 905 });
+  page.setViewportSize({ width: 1280, height: 800 });
   await page.goto("https://www.ebay.com");
   await page.waitForLoadState("networkidle");
 });
