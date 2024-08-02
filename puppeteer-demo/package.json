@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@midscene/web": "0.*",
+    "@midscene/web": "latest",
     "puppeteer": "^22.15.0",
     "ts-node": "^10.9.2"
   }
