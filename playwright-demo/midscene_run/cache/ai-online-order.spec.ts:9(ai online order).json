@@ -1,0 +1,549 @@
+{
+  "pkgName": "@midscene/web",
+  "pkgVersion": "0.1.2",
+  "taskFile": "ai-online-order.spec.ts:9",
+  "taskTitle": "ai online order",
+  "aiTasks": [
+    {
+      "type": "plan",
+      "pageContext": {
+        "url": "https://heyteavivocity.meuu.online/home",
+        "size": {
+          "width": 400,
+          "height": 905
+        }
+      },
+      "prompt": "点击左上角语言切换按钮(英文、中文)，在弹出的下拉列表中点击中文",
+      "response": {
+        "plans": [
+          {
+            "thought": "用户需要在页面中切换语言。首先定位到当前显示的语言按钮。",
+            "type": "Locate",
+            "param": {
+              "prompt": "页面左上角标有 'English' 的语言切换按钮。"
+            }
+          },
+          {
+            "thought": "点击语言切换按钮以显示语言选择的下拉菜单。",
+            "type": "Tap",
+            "param": null
+          },
+          {
+            "thought": "点击中文选项以切换语言。",
+            "type": "Locate",
+            "param": {
+              "prompt": "显示的下拉列表中标有 '中文' 的选项。"
+            }
+          },
+          {
+            "thought": "点击选中中文选项。",
+            "type": "Tap",
+            "param": null
+          }
+        ]
+      }
+    },
+    {
+      "type": "locate",
+      "pageContext": {
+        "url": "https://heyteavivocity.meuu.online/home",
+        "size": {
+          "width": 400,
+          "height": 905
+        }
+      },
+      "prompt": "页面左上角标有 'English' 的语言切换按钮。",
+      "response": {
+        "elements": [
+          {
+            "reason": "The element with 'English' is located in the upper left corner, which matches the criteria described.",
+            "text": "English",
+            "id": "57c026f0b8"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "type": "locate",
+      "pageContext": {
+        "url": "https://heyteavivocity.meuu.online/home",
+        "size": {
+          "width": 400,
+          "height": 905
+        }
+      },
+      "prompt": "显示的下拉列表中标有 '中文' 的选项。",
+      "response": {
+        "elements": [
+          {
+            "reason": "The dropdown list item marked '中文' matches the user's description.",
+            "text": "中文",
+            "id": "efc0b2ff38"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "type": "plan",
+      "pageContext": {
+        "url": "https://heyteavivocity.meuu.online/home",
+        "size": {
+          "width": 400,
+          "height": 905
+        }
+      },
+      "prompt": "在向下滚动一屏",
+      "response": {
+        "plans": [
+          {
+            "thought": "用户希望向下滚动一屏，页面内容显示出用户需要浏览的内容，向下滚动是可行的。",
+            "type": "Scroll",
+            "param": {
+              "scrollType": "ScrollDown"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "plan",
+      "pageContext": {
+        "url": "https://heyteavivocity.meuu.online/home",
+        "size": {
+          "width": 400,
+          "height": 905
+        }
+      },
+      "prompt": "直接点击多肉葡萄的规格按钮",
+      "response": {
+        "plans": [
+          {
+            "thought": "根据用户的指示，我们需要点击页面上的多肉葡萄的'规格按钮'。在页面截图中，可以看到多肉葡萄廉品的规格按钮，这个按钮的位置位于页面中间靠下方。",
+            "type": "Locate",
+            "param": {
+              "prompt": "多肉葡萄项下的黄色 '选规格' 按钮"
+            }
+          },
+          {
+            "thought": "点击多肉葡萄的规格按钮。",
+            "type": "Tap",
+            "param": null
+          }
+        ]
+      }
+    },
+    {
+      "type": "locate",
+      "pageContext": {
+        "url": "https://heyteavivocity.meuu.online/home",
+        "size": {
+          "width": 400,
+          "height": 905
+        }
+      },
+      "prompt": "多肉葡萄项下的黄色 '选规格' 按钮",
+      "response": {
+        "elements": [
+          {
+            "reason": "The element '选规格' ('Select Specification' button) is located under 多肉葡萄 (First creation).",
+            "text": "选规格",
+            "id": "427d3179c2"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "type": "plan",
+      "pageContext": {
+        "url": "https://heyteavivocity.meuu.online/home",
+        "size": {
+          "width": 400,
+          "height": 905
+        }
+      },
+      "prompt": "点击不使用吸管、点击冰沙推荐、点击正常冰推荐",
+      "response": {
+        "plans": [
+          {
+            "thought": "用户想要选择不使用吸管，在页面中看到对应选项。",
+            "type": "Locate",
+            "param": {
+              "prompt": "页面中 '不使用吸管' 的复选框"
+            }
+          },
+          {
+            "thought": "选择不使用吸管。",
+            "type": "Tap",
+            "param": null
+          },
+          {
+            "thought": "用户想要选择冰沙推荐，在页面中看到对应选项。",
+            "type": "Locate",
+            "param": {
+              "prompt": "页面中 '冰沙（推荐）' 的复选框"
+            }
+          },
+          {
+            "thought": "选择冰沙推荐。",
+            "type": "Tap",
+            "param": null
+          },
+          {
+            "thought": "用户想要选择正常冰推荐，在页面中看到对应选项。",
+            "type": "Locate",
+            "param": {
+              "prompt": "页面中 '正常冰（推荐）' 的复选框"
+            }
+          },
+          {
+            "thought": "选择正常冰推荐。",
+            "type": "Tap",
+            "param": null
+          }
+        ]
+      }
+    },
+    {
+      "type": "locate",
+      "pageContext": {
+        "url": "https://heyteavivocity.meuu.online/home",
+        "size": {
+          "width": 400,
+          "height": 905
+        }
+      },
+      "prompt": "页面中 '不使用吸管' 的复选框",
+      "response": {
+        "elements": [
+          {
+            "reason": "The element matches the description '页面中 '不使用吸管' 的复选框'. It is located beside the text '不使用吸管' in the screenshot, indicating that it is the corresponding checkbox.",
+            "text": "",
+            "id": "6384a887d9"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "type": "locate",
+      "pageContext": {
+        "url": "https://heyteavivocity.meuu.online/home",
+        "size": {
+          "width": 400,
+          "height": 905
+        }
+      },
+      "prompt": "页面中 '冰沙（推荐）' 的复选框",
+      "response": {
+        "elements": [
+          {
+            "reason": "The element with ID 'e673260398' contains the text '冰沙（推荐）' and is a TEXT node, located near the top-left corner corresponding to the checkbox label indicated in the user's query.",
+            "text": "冰沙（推荐）",
+            "id": "e673260398"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "type": "locate",
+      "pageContext": {
+        "url": "https://heyteavivocity.meuu.online/home",
+        "size": {
+          "width": 400,
+          "height": 905
+        }
+      },
+      "prompt": "页面中 '正常冰（推荐）' 的复选框",
+      "response": {
+        "elements": [
+          {
+            "reason": "'正常冰（推荐）' 位于 '状态' 部分下的复选框。根据给定的元素描述和位置， ID '0b385ab4dc' 对应此复选框。",
+            "text": "正常冰（推荐）",
+            "id": "0b385ab4dc"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "type": "plan",
+      "pageContext": {
+        "url": "https://heyteavivocity.meuu.online/home",
+        "size": {
+          "width": 400,
+          "height": 905
+        }
+      },
+      "prompt": "在向下滚动一屏",
+      "response": {
+        "plans": [
+          {
+            "thought": "为响应用户要求向下滚动一屏，可以在当前页面上实现。",
+            "type": "Scroll",
+            "param": {
+              "scrollType": "ScrollDown"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "plan",
+      "pageContext": {
+        "url": "https://heyteavivocity.meuu.online/home",
+        "size": {
+          "width": 400,
+          "height": 905
+        }
+      },
+      "prompt": "点击标准甜、点击绿妍（推荐）、点击标准口味",
+      "response": {
+        "plans": [
+          {
+            "thought": "点击标准甜，以确保选择了推荐的甜度。",
+            "type": "Locate",
+            "param": {
+              "prompt": "左侧标记为'标准甜（推荐）'旁边的复选框"
+            }
+          },
+          {
+            "thought": "确认选择甜度。",
+            "type": "Tap",
+            "param": null
+          },
+          {
+            "thought": "点击绿妍，选择推荐的茶底。",
+            "type": "Locate",
+            "param": {
+              "prompt": "左侧标记为'绿妍（推荐）'旁边的复选框"
+            }
+          },
+          {
+            "thought": "确认茶底选择。",
+            "type": "Tap",
+            "param": null
+          },
+          {
+            "thought": "点击标准口味，以确保选择推荐的口味。",
+            "type": "Locate",
+            "param": {
+              "prompt": "左侧标记为'标准口味（推荐）'旁边的复选框"
+            }
+          },
+          {
+            "thought": "确认口味选择。",
+            "type": "Tap",
+            "param": null
+          }
+        ]
+      }
+    },
+    {
+      "type": "locate",
+      "pageContext": {
+        "url": "https://heyteavivocity.meuu.online/home",
+        "size": {
+          "width": 400,
+          "height": 905
+        }
+      },
+      "prompt": "左侧标记为'标准甜（推荐）'旁边的复选框",
+      "response": {
+        "elements": [
+          {
+            "reason": "The element with ID 'd13770ad97' is the text node with content '标准甜（推荐）' which matches the required description. The checkbox next to it is identified by the input node with ID '5280c060a7'",
+            "text": "标准甜（推荐）",
+            "id": "5280c060a7"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "type": "locate",
+      "pageContext": {
+        "url": "https://heyteavivocity.meuu.online/home",
+        "size": {
+          "width": 400,
+          "height": 905
+        }
+      },
+      "prompt": "左侧标记为'绿妍（推荐）'旁边的复选框",
+      "response": {
+        "elements": [
+          {
+            "reason": "The element is identified as a checkbox (type='checkbox') next to '绿妍（推荐）', which matches the user's description.",
+            "text": "绿妍（推荐）",
+            "id": "5570045013"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "type": "locate",
+      "pageContext": {
+        "url": "https://heyteavivocity.meuu.online/home",
+        "size": {
+          "width": 400,
+          "height": 905
+        }
+      },
+      "prompt": "左侧标记为'标准口味（推荐）'旁边的复选框",
+      "response": {
+        "elements": [
+          {
+            "reason": "The target is the checkbox next to the text '标准口味（推荐）'. The corresponding checkbox element has a 'type' attribute of 'checkbox' and is located close to the text element.",
+            "text": "",
+            "id": "0d204274f0"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "type": "plan",
+      "pageContext": {
+        "url": "https://heyteavivocity.meuu.online/home",
+        "size": {
+          "width": 400,
+          "height": 905
+        }
+      },
+      "prompt": "滚动到最下面",
+      "response": {
+        "plans": [
+          {
+            "thought": "用户请求滚动到页面的底部。",
+            "type": "Scroll",
+            "param": {
+              "scrollType": "ScrollUntilBottom"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "plan",
+      "pageContext": {
+        "url": "https://heyteavivocity.meuu.online/home",
+        "size": {
+          "width": 400,
+          "height": 905
+        }
+      },
+      "prompt": "点击选好了按钮",
+      "response": {
+        "plans": [
+          {
+            "thought": "用户想点击页面底部的“选好了”按钮，以确认选择的商品。",
+            "type": "Locate",
+            "param": {
+              "prompt": "页面底部黄色的‘选好了’按钮"
+            }
+          },
+          {
+            "thought": "点击按钮来确认选择的商品。",
+            "type": "Tap",
+            "param": null
+          }
+        ]
+      }
+    },
+    {
+      "type": "locate",
+      "pageContext": {
+        "url": "https://heyteavivocity.meuu.online/home",
+        "size": {
+          "width": 400,
+          "height": 905
+        }
+      },
+      "prompt": "页面底部黄色的‘选好了’按钮",
+      "response": {
+        "elements": [
+          {
+            "reason": "The button labeled '选好了' is located at the bottom of the page and is highlighted in yellow in the screenshot.",
+            "text": "选好了",
+            "id": "c9de916ef0"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "type": "plan",
+      "pageContext": {
+        "url": "https://heyteavivocity.meuu.online/home",
+        "size": {
+          "width": 400,
+          "height": 905
+        }
+      },
+      "prompt": "点击右上角商品图标按钮",
+      "response": {
+        "plans": [
+          {
+            "thought": "用户想点击右上角的商品图标按钮，该图标可能用于查看购物车或商品信息。",
+            "type": "Locate",
+            "param": {
+              "prompt": "右上角的商品图标按钮"
+            }
+          },
+          {
+            "thought": "在找到商品图标按钮后，点击该按钮。",
+            "type": "Tap",
+            "param": null
+          }
+        ]
+      }
+    },
+    {
+      "type": "locate",
+      "pageContext": {
+        "url": "https://heyteavivocity.meuu.online/home",
+        "size": {
+          "width": 400,
+          "height": 905
+        }
+      },
+      "prompt": "右上角的商品图标按钮",
+      "response": {
+        "elements": [
+          {
+            "reason": "The element is located in the upper right corner and is an image type.",
+            "text": "",
+            "id": "f775c69cb4"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "type": "plan",
+      "pageContext": {
+        "url": "https://heyteavivocity.meuu.online/home",
+        "size": {
+          "width": 400,
+          "height": 905
+        }
+      },
+      "prompt": "滚动到最下面",
+      "response": {
+        "plans": [
+          {
+            "thought": "用户要求滚动到页面的最底部。当前页面中包含一个滚动区域，因此需要执行滚动到最底部的操作。",
+            "type": "Scroll",
+            "param": {
+              "scrollType": "ScrollUntilBottom"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
