@@ -14,6 +14,7 @@ export OPENAI_API_KEY="sk-abcdefghijklmnopqrstuvwxyz"
 
 ```bash
 pnpm install 
+pnpm exec playwright install
 
 # run e2e test
 pnpm run e2e
