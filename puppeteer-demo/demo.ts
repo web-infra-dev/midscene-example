@@ -18,19 +18,20 @@ Promise.resolve(
     await page.goto("https://www.ebay.com");
     await sleep(5000);
 
-    // 👀 初始化 MidScene agent
+    // 👀 init Midscene agent
     const mid = new PuppeteerAgent(page);
 
-    // 👀 执行搜索
-    // 注：尽管这是一个英文页面，你也可以用中文指令控制它
-    await mid.aiAction('在搜索框输入 "Headphones" ，敲回车');
+    // 👀 type keywords, perform a search
+    await mid.aiAction('type "Headphones" in search box, hit Enter');
     await sleep(5000);
 
-    // 👀 理解页面，提取数据
+    // 👀 understand the page content, find the items
     const items = await mid.aiQuery(
-      "{itemTitle: string, price: Number}[], 找到列表里的商品标题和价格"
+      "{itemTitle: string, price: Number}[], find item in list and corresponding price"
     );
-    console.log("耳机商品信息", items);
+    console.log("headphones in stock", items);
+
+    await mid.aiAssert("There is a category filter on the left");
 
     await browser.close();
   })()
