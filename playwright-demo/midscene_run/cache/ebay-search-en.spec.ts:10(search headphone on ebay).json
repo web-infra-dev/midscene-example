@@ -1,6 +1,6 @@
 {
   "pkgName": "@midscene/web",
-  "pkgVersion": "0.1.5-beta-20240805233542.0",
+  "pkgVersion": "0.2.0",
   "taskFile": "ebay-search-en.spec.ts:10",
   "taskTitle": "search headphone on ebay",
   "aiTasks": [
@@ -17,21 +17,21 @@
       "response": {
         "plans": [
           {
-            "thought": "需要在搜索框中输入关键字，通过页面描述和截图，可以看到搜索框的特征并找到该元素。",
+            "thought": "Identify the search bar where text can be inputted.",
             "type": "Locate",
             "param": {
-              "prompt": "顶部有“搜索任何物品”占位符的搜索框"
+              "prompt": "Search box with placeholder text 'Search for anything' located in the top center of the page."
             }
           },
           {
-            "thought": "找到搜索框后，输入关键词。",
+            "thought": "Input the keyword 'Headphones' into the search bar.",
             "type": "Input",
             "param": {
               "value": "Headphones"
             }
           },
           {
-            "thought": "输入完成后，按下Enter键执行搜索。",
+            "thought": "Press 'Enter' to initiate the search.",
             "type": "KeyboardPress",
             "param": {
               "value": "Enter"
@@ -49,13 +49,13 @@
           "height": 800
         }
       },
-      "prompt": "顶部有“搜索任何物品”占位符的搜索框",
+      "prompt": "Search box with placeholder text 'Search for anything' located in the top center of the page.",
       "response": {
         "elements": [
           {
-            "reason": "The element matches the description since its attributes include a placeholder '搜索任何物品' and it is positioned at the top of the page.",
-            "text": "搜索任何物品",
-            "id": "3392b55a50"
+            "reason": "The element with ID 'beae4dcc8d' is the search box with the placeholder text 'Search for anything' located at the top center of the page. This matches the given description",
+            "text": "Search for anything",
+            "id": "beae4dcc8d"
           }
         ],
         "errors": []

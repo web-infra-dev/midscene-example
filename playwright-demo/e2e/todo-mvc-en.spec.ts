@@ -5,7 +5,11 @@ test.beforeEach(async ({ page }) => {
   await page.goto("https://todomvc.com/examples/react/dist/");
 });
 
-test("ai todo - English Prompt", async ({ ai, aiQuery, aiAssert }) => {
+test("ai todo - English Prompt - should fail", async ({
+  ai,
+  aiQuery,
+  aiAssert,
+}) => {
   await ai(
     "Input 'Study JS today' in the task box input and press the Enter key"
   );
