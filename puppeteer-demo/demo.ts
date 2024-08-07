@@ -31,6 +31,7 @@ Promise.resolve(
     );
     console.log("headphones in stock", items);
 
+    // 👀 assert by AI
     await mid.aiAssert("There is a category filter on the left");
 
     await browser.close();

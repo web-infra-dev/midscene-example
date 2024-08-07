@@ -5,7 +5,7 @@ test.beforeEach(async ({ page }) => {
   await page.goto("https://todomvc.com/examples/react/dist/");
 });
 
-test("ai todo - English Prompt", async ({ ai, aiQuery }) => {
+test("ai todo - English Prompt", async ({ ai, aiQuery, aiAssert }) => {
   await ai(
     "Input 'Study JS today' in the task box input and press the Enter key"
   );
@@ -24,4 +24,7 @@ test("ai todo - English Prompt", async ({ ai, aiQuery }) => {
   const list = await aiQuery("string[], the complete task list");
 
   expect(list.length).toEqual(1);
+
+  // expect an error here. AI will give you the reason in error message.
+  await aiAssert('At the bottom of the page, it shows "3 items left".');
 });
