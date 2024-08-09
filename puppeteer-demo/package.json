@@ -5,7 +5,7 @@
   "description": "> quick start",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "ts-node demo.ts"
   },
   "author": "",
   "license": "ISC",

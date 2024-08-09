@@ -8,7 +8,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test("search headphone on ebay", async ({ ai, aiQuery, aiAssert }) => {
-  // 👀 perform a search
+  // 👀 type keywords, perform a search
   await ai('type "Headphones" in search box, hit Enter');
 
   // 👀 find the items
@@ -19,5 +19,6 @@ test("search headphone on ebay", async ({ ai, aiQuery, aiAssert }) => {
   console.log("headphones in stock", items);
   expect(items?.length).toBeGreaterThan(0);
 
+  // 👀 assert by AI
   await aiAssert("There is a category filter on the left");
 });
