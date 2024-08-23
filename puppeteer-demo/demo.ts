@@ -1,5 +1,5 @@
 import puppeteer from "puppeteer";
-import { PuppeteerAgent } from "@midscene/web";
+import { PuppeteerAgent } from "@midscene/web/puppeteer";
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 Promise.resolve(
