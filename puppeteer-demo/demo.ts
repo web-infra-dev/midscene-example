@@ -23,7 +23,11 @@ Promise.resolve(
 
     // 👀 type keywords, perform a search
     await mid.aiAction('type "Headphones" in search box, hit Enter');
-    await sleep(5000);
+
+    // 👀 wait for the loading
+    await mid.aiWaitFor("there is at least one headphone item on page");
+    // or you may use a plain sleep:
+    // await sleep(5000);
 
     // 👀 understand the page content, find the items
     const items = await mid.aiQuery(
