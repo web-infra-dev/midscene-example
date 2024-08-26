@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# use --headed if you want to see the browser in action
-midscene --url https://www.ebay.com --viewport-width 1280 --viewport-height 800 --viewport-scale 1 \
+# --headed means start a browser window
+midscene --headed --url https://www.ebay.com --viewport-width 1280 --viewport-height 800 \
   --sleep 2000 \
   --action "type 'Headphones' in search box, hit Enter" \
   --wait-for "there is at least one headphone item on page" \
