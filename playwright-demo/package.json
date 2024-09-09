@@ -9,16 +9,19 @@
     "e2e:ui:cache": "MIDSCENE_CACHE=true playwright test --config=playwright.config.ts --ui"
   },
   "devDependencies": {
+    "@midscene/web": "latest",
     "@playwright/test": "1.45.3",
-    "@types/jest": "~29.2.4",
-    "@types/node": "~16.11.7",
+    "@types/jest": "~29.2.6",
+    "@types/node": "~16.11.68",
+    "dotenv": "16.4.5",
     "eslint-plugin-prettier": "~4.2.1",
     "rimraf": "~3.0.2",
-    "@midscene/web": "latest",
-    "typescript": "~5.0.4",
-    "dotenv": "16.4.5"
+    "typescript": "~5.0.4"
   },
   "publishConfig": {
     "access": "public"
+  },
+  "overrides": {
+    "@midscene/web": "latest"
   }
 }

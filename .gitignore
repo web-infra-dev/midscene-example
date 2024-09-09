@@ -13,3 +13,5 @@ playwright-report/
 dist/
 test-results/
 .env
+
+.DS_Store

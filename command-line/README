@@ -21,11 +21,11 @@ export OPENAI_API_KEY="sk-abcdefghijklmnopqrstuvwxyz"
 # Extract status info from github status page
 ./extract-github-status.sh
 
-# Perform a search on ebay.com
-./search-headphone-on-ebay.sh
-
-# A testing case on sauce demo
+# A testing case on sauce demo, expect to throw error
 ./sauce-demo-expect-fail.sh
+
+# Perform a search on ebay.com, headed mode (i.e. you can see the browser window when running)
+./search-headphone-on-ebay.sh
 ```
 
 # Reference

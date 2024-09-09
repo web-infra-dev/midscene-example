@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 
+=======
+*.json
+>>>>>>> @{-1}
 # Midscene.js dump files
 midscene_run/report
 midscene_run/dump
