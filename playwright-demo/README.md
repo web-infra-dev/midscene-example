@@ -33,3 +33,9 @@ pnpm run e2e:ui:cache
 # You must run the pnpm run e2e or pnpm e2e:cache to view the report
 node ./midscene_run/midscene-report/index.js
 ```
+
+
+# Reference 
+
+https://midscenejs.com/docs/getting-started/quick-start.html
+https://midscenejs.com/docs/usage/API.html

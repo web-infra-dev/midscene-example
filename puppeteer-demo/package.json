@@ -1,17 +1,17 @@
 {
-  "name": "puppeteer-demo",
-  "private": true,
-  "version": "1.0.0",
-  "description": "> quick start",
-  "main": "index.js",
-  "scripts": {
-    "test": "ts-node demo.ts"
-  },
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@midscene/web": "latest",
-    "puppeteer": "^22.15.0",
-    "ts-node": "^10.9.2"
-  }
+    "name": "puppeteer-demo",
+    "private": true,
+    "version": "1.0.0",
+    "description": "> quick start",
+    "main": "index.js",
+    "scripts": {
+      "test": "ts-node demo.ts"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@midscene/web": "beta",
+        "puppeteer": "^23.1.0",
+        "ts-node": "^10.9.2"
+      }
 }

@@ -7,9 +7,17 @@ test.beforeEach(async ({ page }) => {
   await page.waitForLoadState("networkidle");
 });
 
-test("search headphone on ebay", async ({ ai, aiQuery, aiAssert }) => {
+test("search headphone on ebay", async ({
+  ai,
+  aiQuery,
+  aiAssert,
+  aiWaitFor,
+}) => {
   // 👀 type keywords, perform a search
   await ai('type "Headphones" in search box, hit Enter');
+
+  // 👀 wait for the loading
+  await aiWaitFor("there is at least one headphone item on page");
 
   // 👀 find the items
   const items = await aiQuery(

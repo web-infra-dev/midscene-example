@@ -1,8 +1,10 @@
+.DS_Store
 node_modules/
 /test-results/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+/command-line/*.json
 
 # MidScene.js dump files
 **/midscene_run/report/**
@@ -11,3 +13,5 @@ playwright-report/
 dist/
 test-results/
 .env
+
+.DS_Store
