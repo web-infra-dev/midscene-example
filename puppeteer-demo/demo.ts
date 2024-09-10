@@ -5,7 +5,7 @@ const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 Promise.resolve(
   (async () => {
     const browser = await puppeteer.launch({
-      headless: false, // here we use headed mode to help debug
+      headless: false, // 'false' means we can see the browser
     });
 
     const page = await browser.newPage();
