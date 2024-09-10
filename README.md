@@ -1,6 +1,6 @@
-# MidScene Examples
+# Midscene Examples
 
-Examples for [MidScene](https://github.com/web-infra-dev/midscene).
+Examples for [Midscene](https://github.com/web-infra-dev/midscene).
 
 ## Examples
 
