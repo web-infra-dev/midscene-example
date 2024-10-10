@@ -1,65 +1,7 @@
 {
   "pkgName": "@midscene/web",
-  "pkgVersion": "0.3.3-beta-20240823053906.0",
+  "pkgVersion": "0.4.0",
   "taskFile": "ebay-search-en.spec.ts",
   "taskTitle": "search headphone on ebay",
-  "aiTasks": [
-    {
-      "type": "plan",
-      "pageContext": {
-        "url": "https://www.ebay.com/",
-        "size": {
-          "width": 1280,
-          "height": 800
-        }
-      },
-      "prompt": "type \"Headphones\" in search box, hit Enter",
-      "response": {
-        "plans": [
-          {
-            "thought": "The user wants to search for 'Headphones' on the eBay page. First, locate the search box.",
-            "type": "Locate",
-            "param": {
-              "prompt": "The search box with placeholder '搜索任何物品' located at the top center of the page."
-            }
-          },
-          {
-            "thought": "Input the search term 'Headphones' into the search box.",
-            "type": "Input",
-            "param": {
-              "value": "Headphones"
-            }
-          },
-          {
-            "thought": "Press Enter to initiate the search.",
-            "type": "KeyboardPress",
-            "param": {
-              "value": "Enter"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "type": "locate",
-      "pageContext": {
-        "url": "https://www.ebay.com/",
-        "size": {
-          "width": 1280,
-          "height": 800
-        }
-      },
-      "prompt": "The search box with placeholder '搜索任何物品' located at the top center of the page.",
-      "response": {
-        "elements": [
-          {
-            "reason": "The element with placeholder '搜索任何物品' is an input field located at the top center of the page, matching the description provided.",
-            "text": "搜索任何物品",
-            "id": "3392b55a50"
-          }
-        ],
-        "errors": []
-      }
-    }
-  ]
+  "aiTasks": []
 }

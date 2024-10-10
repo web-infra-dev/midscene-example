@@ -15,3 +15,8 @@ test-results/
 .env
 
 .DS_Store
+
+
+
+# Midscene.js dump files
+**/midscene_run/
