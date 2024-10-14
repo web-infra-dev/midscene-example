@@ -9,7 +9,7 @@ export OPENAI_API_KEY="sk-abcdefghijklmnopqrstuvwxyz"
 npm install 
 
 # run demo.ts
-npx ts-node demo.ts
+npx tsx demo.ts
 ```
 
 # Reference 

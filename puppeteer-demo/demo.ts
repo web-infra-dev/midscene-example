@@ -1,18 +1,19 @@
 import puppeteer from "puppeteer";
+import os from "node:os";
 import { PuppeteerAgent } from "@midscene/web/puppeteer";
 
-const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 Promise.resolve(
   (async () => {
     const browser = await puppeteer.launch({
-      headless: false, // 'false' means we can see the browser
+      headless: false, // 'false' means we can see the browser window
     });
 
     const page = await browser.newPage();
     await page.setViewport({
       width: 1280,
       height: 800,
-      deviceScaleFactor: 1,
+      deviceScaleFactor: os.platform() === "darwin" ? 2 : 1, // this is used to avoid flashing on UI Mode when doing screenshot on Mac
     });
 
     await page.goto("https://www.ebay.com");

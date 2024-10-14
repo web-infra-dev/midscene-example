@@ -4,14 +4,15 @@
     "version": "1.0.0",
     "description": "> quick start",
     "main": "index.js",
+    "type": "module",
     "scripts": {
-      "test": "ts-node demo.ts"
+        "test": "tsx demo.ts"
     },
     "author": "",
     "license": "ISC",
     "devDependencies": {
-        "@midscene/web": "beta",
-        "puppeteer": "^23.1.0",
-        "ts-node": "^10.9.2"
-      }
+        "@midscene/web": "latest",
+        "puppeteer": "^23.4.0",
+        "tsx": "^4.19.1"
+    }
 }
