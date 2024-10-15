@@ -19,4 +19,5 @@ test-results/
 
 
 # Midscene.js dump files
-**/midscene_run/
+**/midscene_run/midscene-report
+**/midscene_run/dump-logger
