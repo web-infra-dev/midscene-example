@@ -7,7 +7,8 @@
     "e2e:cache": "MIDSCENE_CACHE=true playwright test --config=playwright.config.ts",
     "e2e:ui": "playwright test --config=playwright.config.ts --ui",
     "e2e:ui:cache": "MIDSCENE_CACHE=true playwright test --config=playwright.config.ts --ui",
-    "preinstall": "pnpm update @midscene/web --latest"
+    "preinstall": "pnpm update @midscene/web --latest",
+    "postinstall": "pnpm exec playwright install"
   },
   "devDependencies": {
     "@midscene/web": "0.6.2",

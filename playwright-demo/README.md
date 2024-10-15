@@ -14,7 +14,6 @@ export OPENAI_API_KEY="YOUR_TOKEN"
 
 ```bash
 pnpm install --no-frozen-lockfile
-pnpm exec playwright install
 
 # run e2e test
 pnpm run e2e
