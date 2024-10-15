@@ -6,14 +6,14 @@ create `.env` file
 
 ```shell
 # replace by your own
-export OPENAI_API_KEY="sk-abcdefghijklmnopqrstuvwxyz"
+export OPENAI_API_KEY="YOUR_TOKEN"
 ```
 
 > e2e command
 
 
 ```bash
-pnpm install --no-frozen-lockfile 
+pnpm install --no-frozen-lockfile
 pnpm exec playwright install
 
 # run e2e test
