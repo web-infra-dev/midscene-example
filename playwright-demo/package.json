@@ -22,8 +22,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "overrides": {
-    "@midscene/web": "latest"
   }
 }
