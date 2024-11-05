@@ -22,20 +22,24 @@ Promise.resolve(
     // 👀 init Midscene agent
     const mid = new PuppeteerAgent(page);
 
+    console.log("1");
     // 👀 type keywords, perform a search
     await mid.aiAction('type "Headphones" in search box, hit Enter');
 
+    console.log("2");
     // 👀 wait for the loading
     await mid.aiWaitFor("there is at least one headphone item on page");
     // or you may use a plain sleep:
     // await sleep(5000);
 
+    console.log("3");
     // 👀 understand the page content, find the items
     const items = await mid.aiQuery(
       "{itemTitle: string, price: Number}[], find item in list and corresponding price"
     );
     console.log("headphones in stock", items);
 
+    console.log("4");
     // 👀 assert by AI
     await mid.aiAssert("There is a category filter on the left");
 

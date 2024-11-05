@@ -1,5 +1,7 @@
 import { expect } from "@playwright/test";
 import { test } from "./fixture";
+import dotenv from "dotenv";
+dotenv.config();
 
 test.beforeEach(async ({ page }) => {
   page.setViewportSize({ width: 1280, height: 800 });

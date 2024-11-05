@@ -1,6 +1,6 @@
 {
   "pkgName": "@midscene/core",
-  "pkgVersion": "0.6.2",
+  "pkgVersion": "0.7.2",
   "cacheId": "ebay-search-en.spec.ts-1",
   "aiTasks": [
     {
@@ -23,7 +23,7 @@
                   "prompt": "The search bar"
                 },
                 "quickAnswer": {
-                  "id": "a3de19a55d",
+                  "id": "834f7a743f",
                   "reason": "Reason for finding element 4: It is located in the upper right corner, is an input type, and according to the screenshot, it is a search bar",
                   "text": "搜索任何物品"
                 },
