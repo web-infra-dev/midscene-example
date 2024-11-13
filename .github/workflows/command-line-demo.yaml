@@ -10,7 +10,7 @@ on:
       output_folder:
         description: 'Midscene report'
         required: true
-        default: 'command-line/midscene-run/report'
+        default: 'midscene-run/report'
 
 jobs:
   run_script:
@@ -33,4 +33,4 @@ jobs:
         with:
           if-no-files-found: error
           name: ${{ github.event.inputs.output_folder }}
-          path: ${{ github.event.inputs.output_folder }}
+          path: ${{ github.workspace }}/command-line/${{ github.event.inputs.output_folder }}
