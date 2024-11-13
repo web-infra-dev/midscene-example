@@ -14,5 +14,5 @@ npx tsx demo.ts
 
 # Reference 
 
-https://midscenejs.com/docs/getting-started/quick-start.html
-https://midscenejs.com/docs/usage/API.html
+https://midscenejs.com/integrate-with-playwright.html
+https://midscenejs.com/api.html

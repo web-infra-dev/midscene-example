@@ -30,4 +30,4 @@ export OPENAI_API_KEY="sk-abcdefghijklmnopqrstuvwxyz"
 
 # Reference
 
-A complete guide: https://midscenejs.com/docs/usage/cli.html
+A complete guide: https://midscenejs.com/cli.html
