@@ -10,7 +10,7 @@ on:
       output_folder:
         description: 'Midscene report'
         required: true
-        default: 'midscene-run/report'
+        default: 'midscene-run/report/'
 
 jobs:
   run_script:
