@@ -6,7 +6,10 @@ on:
       output_folder:
         description: 'Midscene report dir'
         required: true
-        default: 'playwright-demo/midscene-run/report'
+        default: 'playwright-demo/midscene_run/report'
+  push:
+    branches:
+      - main
 
 jobs:
   run_script:
