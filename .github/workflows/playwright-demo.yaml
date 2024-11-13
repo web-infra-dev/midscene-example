@@ -30,7 +30,6 @@ jobs:
           pnpm run e2e
         continue-on-error: true
 
-
       - name: Upload output folder
         uses: actions/upload-artifact@v4
         with:
