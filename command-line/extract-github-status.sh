@@ -1,6 +1,6 @@
 #!/bin/bash
 
-midscene --url https://www.githubstatus.com/ \
+npx @midscene/cli --url https://www.githubstatus.com/ \
   --query-output status.json \
   --query '{name: string, status: string}[], service status of github page'
 
