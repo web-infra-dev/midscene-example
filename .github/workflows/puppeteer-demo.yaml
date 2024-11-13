@@ -6,7 +6,7 @@ on:
       output_folder:
         description: 'Midscene report dir'
         required: true
-        default: 'puppeteer-demo/midscene-run/report'
+        default: 'puppeteer-demo/midscene_run/report'
 
 jobs:
   run_script:
