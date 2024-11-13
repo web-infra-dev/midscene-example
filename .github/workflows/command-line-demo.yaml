@@ -7,8 +7,12 @@ on:
         description: 'The script name to run'
         required: true
         default: './command-line/extract-github-status.sh'
+      tag:
+        description: 'The tag name of @midscene/cli'
+        required: true
+        default: 'latest'
       output_folder:
-        description: 'Midscene report'
+        description: 'Midscene report dir'
         required: true
         default: './command-line/midscene-run/report'
 
@@ -21,6 +25,7 @@ jobs:
 
       - name: Run script
         run: |
+          npm i -g @midscene/cli@${{ github.event.inputs.tag }}
           chmod +x ${{ github.event.inputs.script_name }}
           ${{ github.event.inputs.script_name }}
 
