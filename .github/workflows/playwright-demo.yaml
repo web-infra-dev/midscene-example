@@ -21,8 +21,9 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
           cd playwright-demo
-          npm i
-          npm run e2e
+          npm i pnpm -g
+          pnpm install
+          pnpm run e2e
 
       - name: Upload output folder
         uses: actions/upload-artifact@v4
