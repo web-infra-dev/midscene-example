@@ -1,0 +1,31 @@
+name: Command Line Demo
+
+on:
+  workflow_dispatch:
+    inputs:
+      script_name:
+        description: 'The script name to run'
+        required: true
+        default: './command-line/extract-github-status.sh'
+      output_folder:
+        description: 'Midscene report'
+        required: true
+        default: './command-line/midscene-run/report'
+
+jobs:
+  run_script:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run script
+        run: |
+          chmod +x ${{ github.event.inputs.script_name }}
+          ${{ github.event.inputs.script_name }}
+
+      - name: Upload output folder
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ github.event.inputs.output_folder }}
+          path: ${{ github.event.inputs.output_folder }}
