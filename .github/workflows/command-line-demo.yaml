@@ -8,9 +8,9 @@ on:
         required: true
         default: 'latest'
       output_folder:
-        description: 'Midscene report dir'
+        description: 'Midscene report'
         required: true
-        default: './midscene-run/report'
+        default: 'command-line/midscene-run/report'
 
 jobs:
   run_script:
@@ -25,10 +25,12 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
           npm i -g @midscene/cli@${{ github.event.inputs.tag }}
-          ./command-line/sauce-demo.sh
+          cd command-line
+          ./sauce-demo.sh
 
       - name: Upload output folder
         uses: actions/upload-artifact@v4
         with:
+          if-no-files-found: error
           name: ${{ github.event.inputs.output_folder }}
           path: ${{ github.event.inputs.output_folder }}
