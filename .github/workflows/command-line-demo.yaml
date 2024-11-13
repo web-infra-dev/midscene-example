@@ -26,8 +26,11 @@ jobs:
         run: |
           npm i -g @midscene/cli@${{ github.event.inputs.tag }}
           cd command-line
+          echo "Run sauce-demo.sh"
           ./sauce-demo.sh
+          echo "Run extract-github-status.sh"
           ./extract-github-status.sh
+          echo "Run local-static-server.sh"
           ./local-static-server.sh
 
       - name: List directory contents
