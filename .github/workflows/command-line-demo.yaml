@@ -11,6 +11,9 @@ on:
         description: 'Midscene report directory'
         required: true
         default: 'command-line/midscene_run/report/'
+  push:
+    branches:
+      - main
 
 jobs:
   run_script:

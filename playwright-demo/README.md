@@ -27,7 +27,6 @@ pnpm run e2e:ui
 # run e2e with playwright ui + cache
 pnpm run e2e:ui:cache
 
-
 # read report
 # You must run the pnpm run e2e or pnpm e2e:cache to view the report
 node ./midscene_run/midscene-report/index.js
