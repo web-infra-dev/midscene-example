@@ -1,4 +1,4 @@
-name: Command Line Demo
+name: Playwright Demo
 
 on:
   workflow_dispatch:
