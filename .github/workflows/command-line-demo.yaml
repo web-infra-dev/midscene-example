@@ -27,6 +27,9 @@ jobs:
           npm i -g @midscene/cli@${{ github.event.inputs.tag }}
           cd command-line
           ./sauce-demo.sh
+          ./extract-github-status.sh
+          ./search-headphone-on-ebay.sh
+          ./local-static-server.sh
 
       - name: List directory contents
         run: ls -R ${{ github.workspace }}
