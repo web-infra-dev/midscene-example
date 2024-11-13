@@ -3,10 +3,6 @@ name: Command Line Demo
 on:
   workflow_dispatch:
     inputs:
-      script_name:
-        description: 'The script name to run'
-        required: true
-        default: './command-line/extract-github-status.sh'
       tag:
         description: 'The tag name of @midscene/cli'
         required: true
@@ -14,7 +10,7 @@ on:
       output_folder:
         description: 'Midscene report dir'
         required: true
-        default: './command-line/midscene-run/report'
+        default: './midscene-run/report'
 
 jobs:
   run_script:
@@ -29,8 +25,10 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
           npm i -g @midscene/cli@${{ github.event.inputs.tag }}
-          chmod +x ${{ github.event.inputs.script_name }}
-          ${{ github.event.inputs.script_name }}
+          ./command-line/extract-github-status.sh
+          ./command-line/sauce-demo.sh
+          ./command-line/search-headphone-on-ebay.sh
+          ./command-line/local-static-server.sh
 
       - name: Upload output folder
         uses: actions/upload-artifact@v4
