@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# install midscene cli:
+# npm i -g @midscene/cli
+
 # --headed means start a browser window
 midscene --headed --url https://www.ebay.com --viewport-width 1280 --viewport-height 800 \
   --sleep 2000 \

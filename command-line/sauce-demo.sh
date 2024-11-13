@@ -5,6 +5,9 @@
 echo 'In this demo, we will extract the items info into ./items.json. Then you should see the assertion fails with a detailed reason.'
 echo 'By viewing the report file, you can see the entire process.'
 
+# install midscene cli:
+# npm i -g @midscene/cli
+
 midscene --url https://www.saucedemo.com/ \
   --action "type 'standard_user' in user name input, type 'secret_sauce' in password, click 'Login'" \
   --query-output items.json \

@@ -17,17 +17,30 @@ export OPENAI_API_KEY="sk-abcdefghijklmnopqrstuvwxyz"
 
 ## Run
 
+Extract status info from github status page
+
 ```shell
-# Extract status info from github status page
 ./extract-github-status.sh
+```
 
-# A testing case on sauce demo, expect to throw error
+A testing case on sauce demo, expect to throw error
+
+```shell
 ./sauce-demo-expect-fail.sh
+```
 
-# Perform a search on ebay.com, headed mode (i.e. you can see the browser window when running)
+Perform a search on ebay.com, headed mode (i.e. you can see the browser window when running)
+
+```shell
 ./search-headphone-on-ebay.sh
+```
+
+Serve the `server_root` folder as a static server and test the `index.html` file
+
+```shell
+./local-static-server.sh
 ```
 
 # Reference
 
-A complete guide: https://midscenejs.com/docs/usage/cli.html
+A complete guide: https://midscenejs.com/cli.html

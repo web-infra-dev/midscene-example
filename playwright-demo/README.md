@@ -36,5 +36,5 @@ node ./midscene_run/midscene-report/index.js
 
 # Reference 
 
-https://midscenejs.com/docs/getting-started/quick-start.html
-https://midscenejs.com/docs/usage/API.html
+https://midscenejs.com/integrate-with-playwright.html
+https://midscenejs.com/api.html
