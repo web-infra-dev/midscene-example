@@ -25,10 +25,7 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
           npm i -g @midscene/cli@${{ github.event.inputs.tag }}
-          ./command-line/extract-github-status.sh
           ./command-line/sauce-demo.sh
-          ./command-line/search-headphone-on-ebay.sh
-          ./command-line/local-static-server.sh
 
       - name: Upload output folder
         uses: actions/upload-artifact@v4
