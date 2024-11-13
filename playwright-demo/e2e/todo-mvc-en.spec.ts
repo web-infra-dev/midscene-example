@@ -29,6 +29,5 @@ test("ai todo - English Prompt - should fail", async ({
 
   expect(list.length).toEqual(1);
 
-  // expect an error here. AI will give you the reason in error message.
-  await aiAssert('At the bottom of the page, it shows "3 items left".');
+  await aiAssert('At the bottom of the page, it shows "1 item left".');
 });

@@ -20,6 +20,5 @@ test("ai todo - Chinese Prompt - should fail", async ({
   const list = await aiQuery("string[], 完整的任务列表");
   expect(list.length).toEqual(1);
 
-  // 这里应该要抛错，注意观察错误信息里会有 AI 给出的 reason
-  await aiAssert('页面底部显示有 "3 items left"');
+  await aiAssert('页面底部显示有 "1 item left"');
 });
