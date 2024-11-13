@@ -28,6 +28,9 @@ jobs:
           cd command-line
           ./sauce-demo.sh
 
+      - name: List directory contents
+        run: ls -R ${{ github.workspace }}
+
       - name: Upload output folder
         uses: actions/upload-artifact@v4
         with:
