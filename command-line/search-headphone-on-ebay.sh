@@ -1,7 +1,10 @@
 #!/bin/bash
 
+# install midscene cli:
+# npm i -g @midscene/cli
+
 # --headed means start a browser window
-npx @midscene/cli --headed --url https://www.ebay.com --viewport-width 1280 --viewport-height 800 \
+midscene --headed --url https://www.ebay.com --viewport-width 1280 --viewport-height 800 \
   --sleep 2000 \
   --action "type 'Headphones' in search box, hit Enter" \
   --wait-for "there is at least one headphone item on page" \
