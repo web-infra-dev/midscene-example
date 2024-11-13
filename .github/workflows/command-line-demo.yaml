@@ -8,7 +8,7 @@ on:
         required: true
         default: 'latest'
       output_folder:
-        description: 'Midscene report'
+        description: 'Midscene report directory'
         required: true
         default: 'midscene_run/report/'
 
@@ -35,5 +35,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           if-no-files-found: error
-          name: ${{ github.event.inputs.output_folder }}
+          name: Midscene Report 
           path: ${{ github.workspace }}/command-line/${{ github.event.inputs.output_folder }}
