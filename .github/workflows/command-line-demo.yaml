@@ -28,7 +28,6 @@ jobs:
           cd command-line
           ./sauce-demo.sh
           ./extract-github-status.sh
-          ./search-headphone-on-ebay.sh
           ./local-static-server.sh
 
       - name: List directory contents
