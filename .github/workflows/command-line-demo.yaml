@@ -24,6 +24,9 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run script
+        env:
+          OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
           npm i -g @midscene/cli@${{ github.event.inputs.tag }}
           chmod +x ${{ github.event.inputs.script_name }}
