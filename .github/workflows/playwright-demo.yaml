@@ -16,6 +16,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run script
+        id: run-script
         env:
           OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
@@ -24,6 +25,8 @@ jobs:
           npm i pnpm -g
           pnpm install
           pnpm run e2e
+        continue-on-error: true
+
 
       - name: Upload output folder
         uses: actions/upload-artifact@v4
@@ -31,3 +34,7 @@ jobs:
           if-no-files-found: error
           name: Midscene Report 
           path: ${{ github.workspace }}/${{ github.event.inputs.output_folder }}
+
+      - name: Check if script failed
+        if: steps.run-script.outcome == 'failure'
+        run: exit 1
