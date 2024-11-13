@@ -1,0 +1,32 @@
+name: Command Line Demo
+
+on:
+  workflow_dispatch:
+    inputs:
+      output_folder:
+        description: 'Midscene report dir'
+        required: true
+        default: 'playwright-demo/midscene-run/report'
+
+jobs:
+  run_script:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run script
+        env:
+          OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          cd playwright-demo
+          npm i
+          npm run e2e
+
+      - name: Upload output folder
+        uses: actions/upload-artifact@v4
+        with:
+          if-no-files-found: error
+          name: Midscene Report 
+          path: ${{ github.workspace }}/${{ github.event.inputs.output_folder }}
