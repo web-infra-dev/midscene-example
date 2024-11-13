@@ -3,14 +3,10 @@ name: Command Line Demo
 on:
   workflow_dispatch:
     inputs:
-      tag:
-        description: 'The tag name of @midscene/cli'
-        required: true
-        default: 'latest'
       output_folder:
-        description: 'Midscene report directory'
+        description: 'Midscene report dir'
         required: true
-        default: 'command-line/midscene_run/report/'
+        default: 'playwright-demo/midscene-run/report'
 
 jobs:
   run_script:
@@ -24,17 +20,9 @@ jobs:
           OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
-          npm i -g @midscene/cli@${{ github.event.inputs.tag }}
-          cd command-line
-          echo "Run sauce-demo.sh"
-          ./sauce-demo.sh
-          echo "Run extract-github-status.sh"
-          ./extract-github-status.sh
-          echo "Run local-static-server.sh"
-          ./local-static-server.sh
-
-      - name: List directory contents
-        run: ls -R ${{ github.workspace }}
+          cd playwright-demo
+          npm i
+          npm run e2e
 
       - name: Upload output folder
         uses: actions/upload-artifact@v4
