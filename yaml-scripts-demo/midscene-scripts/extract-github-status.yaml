@@ -1,0 +1,10 @@
+# Extract github service status into a json file
+
+target:
+  url: https://www.githubstatus.com/
+  output: ./output/github-status.json
+
+flow:
+  - aiQuery: >
+      {name: string, status: string}[], service status of github page
+    name: status
