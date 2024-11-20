@@ -1,0 +1,58 @@
+{
+  "pkgName": "playwright-demo",
+  "pkgVersion": "0.0.1",
+  "cacheId": "online-order-zh.spec.ts(ai online order)",
+  "aiTasks": [
+    {
+      "prompt": "点击左上角语言切换按钮(英文、中文)，在弹出的下拉列表中点击中文",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "https://heyteavivocity.meuu.online/home",
+            "size": {
+              "width": 400,
+              "height": 905,
+              "dpr": 1
+            }
+          },
+          "prompt": "点击左上角语言切换按钮(英文、中文)，在弹出的下拉列表中点击中文",
+          "response": {
+            "plans": [
+              {
+                "thought": "找到左上角的语言切换按钮",
+                "type": "Locate",
+                "param": {
+                  "prompt": "左上角的语言切换按钮，显示为'English'"
+                },
+                "quickAnswer": {
+                  "reason": "找到元素1：它位于页面左上角，是一个文本节点，内容为'English'",
+                  "text": "English",
+                  "id": "ca756f91d9"
+                }
+              },
+              {
+                "thought": "点击语言切换按钮",
+                "type": "Tap",
+                "param": null
+              },
+              {
+                "thought": "找到下拉列表中的'中文'选项",
+                "type": "Locate",
+                "param": {
+                  "prompt": "下拉列表中的'中文'选项"
+                },
+                "quickAnswer": null
+              },
+              {
+                "thought": "点击'中文'选项",
+                "type": "Tap",
+                "param": null
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

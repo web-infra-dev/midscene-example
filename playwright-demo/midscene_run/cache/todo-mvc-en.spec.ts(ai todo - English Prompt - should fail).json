@@ -1,0 +1,194 @@
+{
+  "pkgName": "playwright-demo",
+  "pkgVersion": "0.0.1",
+  "cacheId": "todo-mvc-en.spec.ts(ai todo - English Prompt - should fail)",
+  "aiTasks": [
+    {
+      "prompt": "Input 'Study JS today' in the task box input and press the Enter key",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "https://todomvc.com/examples/react/dist/",
+            "size": {
+              "width": 1280,
+              "height": 720,
+              "dpr": 1
+            }
+          },
+          "prompt": "Input 'Study JS today' in the task box input and press the Enter key",
+          "response": {
+            "plans": [
+              {
+                "thought": "Locate the task input box",
+                "type": "Locate",
+                "param": {
+                  "prompt": "The input box with placeholder 'What needs to be done?'"
+                },
+                "quickAnswer": {
+                  "reason": "Reason for finding element: It is located in the center of the page, is an input type, and according to the screenshot, it has the placeholder 'What needs to be done?'",
+                  "text": "What needs to be done?",
+                  "id": "fbc2d0029b"
+                }
+              },
+              {
+                "thought": "Input 'Study JS today' in the task box",
+                "type": "Input",
+                "param": {
+                  "value": "Study JS today"
+                }
+              },
+              {
+                "thought": "Press the Enter key to submit the task",
+                "type": "KeyboardPress",
+                "param": {
+                  "value": "Enter"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "Input 'Study Rust tomorrow' in the task box input and press the Enter key",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "https://todomvc.com/examples/react/dist/",
+            "size": {
+              "width": 1280,
+              "height": 720,
+              "dpr": 1
+            }
+          },
+          "prompt": "Input 'Study Rust tomorrow' in the task box input and press the Enter key",
+          "response": {
+            "plans": [
+              {
+                "thought": "Locate the task box input field",
+                "type": "Locate",
+                "param": {
+                  "prompt": "The input field with placeholder 'What needs to be done?'"
+                },
+                "quickAnswer": {
+                  "reason": "Reason for finding element 1: It is located in the center, is an input type, and according to the screenshot, it has the placeholder 'What needs to be done?'",
+                  "text": "What needs to be done?",
+                  "id": "fbc2d0029b"
+                }
+              },
+              {
+                "thought": "Input 'Study Rust tomorrow' in the task box input field",
+                "type": "Input",
+                "param": {
+                  "value": "Study Rust tomorrow"
+                }
+              },
+              {
+                "thought": "Press the Enter key to add the task",
+                "type": "KeyboardPress",
+                "param": {
+                  "value": "Enter"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "Input 'Study AI the day after tomorrow' in the task box input and press the Enter key",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "https://todomvc.com/examples/react/dist/",
+            "size": {
+              "width": 1280,
+              "height": 720,
+              "dpr": 1
+            }
+          },
+          "prompt": "Input 'Study AI the day after tomorrow' in the task box input and press the Enter key",
+          "response": {
+            "plans": [
+              {
+                "thought": "Locate the task input box",
+                "type": "Locate",
+                "param": {
+                  "prompt": "The input box with placeholder 'What needs to be done?'"
+                },
+                "quickAnswer": {
+                  "reason": "Reason for finding element 1: It is located in the upper center, is an input type, and according to the screenshot, it is the task input box",
+                  "text": "What needs to be done?",
+                  "id": "fbc2d0029b"
+                }
+              },
+              {
+                "thought": "Input the task 'Study AI the day after tomorrow' in the task input box",
+                "type": "Input",
+                "param": {
+                  "value": "Study AI the day after tomorrow"
+                }
+              },
+              {
+                "thought": "Press the Enter key to add the task",
+                "type": "KeyboardPress",
+                "param": {
+                  "value": "Enter"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "Move the mouse to the second item in the task list and click the delete button on the right of the second task",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "https://todomvc.com/examples/react/dist/",
+            "size": {
+              "width": 1280,
+              "height": 720,
+              "dpr": 1
+            }
+          },
+          "prompt": "Move the mouse to the second item in the task list and click the delete button on the right of the second task",
+          "response": {
+            "plans": [
+              {
+                "thought": "Locate the second item in the task list",
+                "type": "Locate",
+                "param": {
+                  "prompt": "The text 'Study Rust tomorrow'"
+                },
+                "quickAnswer": {
+                  "reason": "Reason for finding element 7: It is located in the middle of the task list, is a text node, and according to the screenshot, it is the second task item",
+                  "text": "Study Rust tomorrow",
+                  "id": "bdc4a34474"
+                }
+              },
+              {
+                "thought": "Locate the delete button on the right of the second task",
+                "type": "Locate",
+                "param": {
+                  "prompt": "The delete button on the right of the text 'Study Rust tomorrow'"
+                },
+                "quickAnswer": null
+              },
+              {
+                "thought": "Click the delete button",
+                "type": "Tap",
+                "param": null
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
