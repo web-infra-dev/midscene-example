@@ -1,4 +1,5 @@
 output/
+package-lock.json
 
 # Midscene.js dump files
 midscene_run/report

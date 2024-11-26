@@ -4,9 +4,14 @@ target:
   url: https://www.saucedemo.com/
   output: ./output/sauce-demo-items.json
 
-flow:
-  - aiAction: type 'standard_user' in user name input, type 'secret_sauce' in password, click 'Login'
-  - aiQuery: >
-      {name: string, price: number, actionBtnName: string}[], return item name, price and the action button name on the lower right corner of each item (like 'Remove')
-    name: items
-  - aiAssert: The price of 'Sauce Labs Fleece Jacket' is 49.99
+tasks:
+  - name: login
+    flow:
+      - aiAction: type 'standard_user' in user name input, type 'secret_sauce' in password, click 'Login'
+
+  - name: extract items info
+    flow:
+      - aiQuery: >
+          {name: string, price: number, actionBtnName: string}[], return item name, price and the action button name on the lower right corner of each item (like 'Remove')
+        name: items
+      - aiAssert: The price of 'Sauce Labs Fleece Jacket' is 49.99
