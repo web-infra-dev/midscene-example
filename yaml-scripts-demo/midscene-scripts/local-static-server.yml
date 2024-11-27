@@ -1,0 +1,10 @@
+# serve a local static server and assert the button text
+
+target:
+  serve: ./public
+  url: index.html
+
+tasks:
+  - name: assert button text
+    flow:
+      - aiAssert: The button text is 'Start'

@@ -9,7 +9,7 @@
         "test": "tsx demo.ts"
     },
     "author": "",
-    "license": "ISC",
+    "license": "MIT",
     "devDependencies": {
         "@midscene/web": "latest",
         "puppeteer": "^23.4.0",

@@ -1,0 +1,10 @@
+target:
+  url: https://www.githubstatus.com/
+  output: ./output/github-status.json
+
+tasks:
+  - name: extract github status
+    flow:
+      - aiQuery: >
+          {name: string, status: string}[], service status of github page
+        name: status

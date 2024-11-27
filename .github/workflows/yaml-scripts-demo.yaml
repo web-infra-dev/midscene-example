@@ -1,4 +1,4 @@
-name: Command Line Demo
+name: Yaml Scripts Demo
 
 on:
   workflow_dispatch:
@@ -10,7 +10,7 @@ on:
       output_folder:
         description: 'Midscene report directory'
         required: true
-        default: 'command-line/midscene_run/report/'
+        default: 'yaml-scripts/midscene_run/report/'
   push:
     branches:
       - main
@@ -29,13 +29,8 @@ jobs:
           MIDSCENE_DEBUG_AI_PROFILE: 1
         run: |
           npm i -g @midscene/cli@${{ github.event.inputs.tag }}
-          cd command-line
-          echo "Run sauce-demo.sh"
-          ./sauce-demo.sh
-          echo "Run extract-github-status.sh"
-          ./extract-github-status.sh
-          echo "Run local-static-server.sh"
-          ./local-static-server.sh
+          cd yaml-scripts
+          midscene ./midscene-scripts/
 
       - name: List directory contents
         run: ls -R ${{ github.workspace }}
