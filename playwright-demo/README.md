@@ -6,7 +6,7 @@ create `.env` file
 
 ```shell
 # replace by your own
-export OPENAI_API_KEY="YOUR_TOKEN"
+OPENAI_API_KEY="YOUR_TOKEN"
 ```
 
 > e2e command
