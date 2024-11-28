@@ -10,7 +10,7 @@ on:
       output_folder:
         description: 'Midscene report directory'
         required: true
-        default: 'yaml-scripts/midscene_run/report/'
+        default: 'yaml-scripts-demo/midscene_run/report/'
   push:
     branches:
       - main
@@ -29,7 +29,7 @@ jobs:
           MIDSCENE_DEBUG_AI_PROFILE: 1
         run: |
           npm i -g @midscene/cli@${{ github.event.inputs.tag }}
-          cd yaml-scripts
+          cd yaml-scripts-demo
           midscene ./midscene-scripts/
 
       - name: List directory contents
