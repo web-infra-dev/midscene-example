@@ -1,9 +1,13 @@
 # puppeteer-demo
 
+create `.env` file
+
 ```shell
 # replace by your own
-export OPENAI_API_KEY="sk-abcdefghijklmnopqrstuvwxyz"
+OPENAI_API_KEY="YOUR_TOKEN"
 ```
+
+run demo
 
 ```bash
 npm install 

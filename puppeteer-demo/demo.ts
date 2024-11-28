@@ -1,6 +1,7 @@
 import puppeteer from "puppeteer";
 import os from "node:os";
 import { PuppeteerAgent } from "@midscene/web/puppeteer";
+import "dotenv/config";
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 Promise.resolve(
