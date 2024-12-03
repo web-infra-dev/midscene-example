@@ -3,10 +3,10 @@ name: Playwright Demo
 on:
   workflow_dispatch:
     inputs:
-      output_folder:
-        description: 'Midscene report dir'
+      tag:
+        description: 'The tag name of @midscene/'
         required: true
-        default: 'playwright-demo/midscene_run/report'
+        default: 'latest'
   push:
     branches:
       - main
@@ -26,6 +26,7 @@ jobs:
         run: |
           cd playwright-demo
           npm i pnpm -g
+          pnpm i @midscene/web@${{ github.event.inputs.tag }} --save-dev
           pnpm install
           pnpm run e2e
         continue-on-error: true
@@ -35,7 +36,7 @@ jobs:
         with:
           if-no-files-found: error
           name: Midscene Report 
-          path: ${{ github.workspace }}/${{ github.event.inputs.output_folder }}
+          path: ${{ github.workspace }}/playwright-demo/midscene_run/report
 
       - name: Check if script failed
         if: steps.run-script.outcome == 'failure'
