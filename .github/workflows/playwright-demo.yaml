@@ -6,7 +6,10 @@ on:
       tag:
         description: 'The tag name of @midscene/'
         required: true
-        default: 'latest'
+        default: 'beta'
+  push:
+    branches:
+      - main
 
 jobs:
   run_script:
