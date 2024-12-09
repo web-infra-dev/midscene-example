@@ -1,0 +1,58 @@
+name: Run All Demos
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'The tag name of @midscene/'
+        required: true
+        default: 'latest'
+  push:
+    branches:
+      - main
+
+jobs:
+  trigger_workflows:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Playwright Demo
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'playwright-demo.yaml',
+              ref: context.ref,
+              inputs: {
+                tag: '${{ github.event.inputs.tag }}'
+              }
+            });
+
+      - name: Trigger Puppeteer Demo
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'puppeteer-demo.yaml',
+              ref: context.ref,
+              inputs: {
+                tag: '${{ github.event.inputs.tag }}'
+              }
+            });
+
+      - name: Trigger Yaml Scripts Demo
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'yaml-scripts-demo.yaml',
+              ref: context.ref,
+              inputs: {
+                tag: '${{ github.event.inputs.tag }}'
+              }
+            });

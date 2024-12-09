@@ -7,10 +7,7 @@ on:
         description: 'The tag name of @midscene/'
         required: true
         default: 'latest'
-  push:
-    branches:
-      - main
-
+        
 jobs:
   run_script:
     runs-on: ubuntu-latest
