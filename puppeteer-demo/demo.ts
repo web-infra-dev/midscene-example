@@ -8,6 +8,7 @@ Promise.resolve(
   (async () => {
     const browser = await puppeteer.launch({
       headless: true, // 'true' means we can't see the browser window
+      args: ["--no-sandbox", "--disable-setuid-sandbox"],
     });
 
     const page = await browser.newPage();
