@@ -11,6 +11,9 @@ on:
     branches:
       - main
 
+env:
+  TAG: ${{ github.event.inputs.tag || 'beta' }}
+
 jobs:
   run_script:
     runs-on: ubuntu-latest
@@ -26,7 +29,7 @@ jobs:
         run: |
           cd puppeteer-demo
           npm i pnpm -g
-          pnpm i @midscene/web@${{ github.event.inputs.tag }} --save-dev
+          pnpm i @midscene/web@${{ env.TAG }} --save-dev
           pnpm install
           pnpm run test
         continue-on-error: true
