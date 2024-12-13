@@ -5,11 +5,7 @@ test.beforeEach(async ({ page }) => {
   await page.goto("https://todomvc.com/examples/react/dist/");
 });
 
-test("ai todo - Chinese Prompt - should fail", async ({
-  ai,
-  aiQuery,
-  aiAssert,
-}) => {
+test("ai todo - Chinese Prompt", async ({ ai, aiQuery, aiAssert }) => {
   await ai("在任务框 input 输入 今天学习 JS，按回车键");
   await ai("在任务框 input 输入 明天学习 Rust，按回车键");
   await ai("在任务框 input 输入后天学习 AI，按回车键");
@@ -20,5 +16,5 @@ test("ai todo - Chinese Prompt - should fail", async ({
   const list = await aiQuery("string[], 完整的任务列表");
   expect(list.length).toEqual(1);
 
-  await aiAssert('页面底部显示有 "1 item left"');
+  await aiAssert('页面下方有一个区域显示有 "1 item left"');
 });
