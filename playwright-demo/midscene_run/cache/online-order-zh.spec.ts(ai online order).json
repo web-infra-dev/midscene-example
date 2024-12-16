@@ -4,7 +4,7 @@
   "cacheId": "online-order-zh.spec.ts(ai online order)",
   "aiTasks": [
     {
-      "prompt": "点击左上角语言切换按钮(英文、中文)，在弹出的下拉列表中点击中文",
+      "prompt": "点击左上角语言切换按钮(English、中文)，在弹出的下拉列表中点击中文",
       "tasks": [
         {
           "type": "plan",
@@ -16,40 +16,388 @@
               "dpr": 1
             }
           },
-          "prompt": "点击左上角语言切换按钮(英文、中文)，在弹出的下拉列表中点击中文",
+          "prompt": "点击左上角语言切换按钮(English、中文)，在弹出的下拉列表中点击中文",
           "response": {
-            "plans": [
+            "actions": [
               {
-                "thought": "找到左上角的语言切换按钮",
-                "type": "Locate",
-                "param": {
-                  "prompt": "左上角的语言切换按钮，显示为'English'"
-                },
-                "quickAnswer": {
-                  "reason": "找到元素1：它位于页面左上角，是一个文本节点，内容为'English'",
-                  "text": "English",
-                  "id": "ca756f91d9"
+                "thought": "Click the language switch button to open the language options.",
+                "type": "Tap",
+                "param": null,
+                "locate": {
+                  "id": "ca756f91d900cdbe",
+                  "prompt": "the language switch button with the text 'English'"
                 }
               },
               {
-                "thought": "点击语言切换按钮",
+                "thought": "Locate the '中文' option in the language menu.",
                 "type": "Tap",
-                "param": null
-              },
-              {
-                "thought": "找到下拉列表中的'中文'选项",
-                "type": "Locate",
-                "param": {
-                  "prompt": "下拉列表中的'中文'选项"
-                },
-                "quickAnswer": null
-              },
-              {
-                "thought": "点击'中文'选项",
-                "type": "Tap",
-                "param": null
+                "param": null,
+                "locate": null
               }
-            ]
+            ],
+            "taskWillBeAccomplished": false,
+            "furtherPlan": {
+              "whatHaveDone": "Clicked the language switch button.",
+              "whatToDoNext": "Find the '中文' option and click on it."
+            },
+            "error": null
+          }
+        },
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "https://heyteavivocity.meuu.online/home",
+            "size": {
+              "width": 400,
+              "height": 905,
+              "dpr": 1
+            }
+          },
+          "prompt": "Find the '中文' option and click on it.",
+          "response": {
+            "actions": [
+              {
+                "thought": "The '中文' option is visible in the dropdown menu, so I can directly click on it.",
+                "type": "Tap",
+                "param": null,
+                "locate": {
+                  "id": "9aee8c53182a7623",
+                  "prompt": "the '中文' option in the dropdown menu"
+                }
+              }
+            ],
+            "taskWillBeAccomplished": true,
+            "furtherPlan": null,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "向下滚动一屏",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "https://heyteavivocity.meuu.online/home",
+            "size": {
+              "width": 400,
+              "height": 905,
+              "dpr": 1
+            }
+          },
+          "prompt": "向下滚动一屏",
+          "response": {
+            "actions": [
+              {
+                "thought": "The user wants to scroll down one screen to view more content.",
+                "type": "Scroll",
+                "param": {
+                  "scrollType": "scrollDownOneScreen"
+                },
+                "locate": null
+              }
+            ],
+            "taskWillBeAccomplished": true,
+            "furtherPlan": null,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "直接点击多肉葡萄的规格按钮",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "https://heyteavivocity.meuu.online/home",
+            "size": {
+              "width": 400,
+              "height": 905,
+              "dpr": 1
+            }
+          },
+          "prompt": "直接点击多肉葡萄的规格按钮",
+          "response": {
+            "actions": [
+              {
+                "thought": "Locate and click the '选规格' button for 多肉葡萄.",
+                "type": "Tap",
+                "param": null,
+                "locate": {
+                  "id": "724aed60ef7208b9",
+                  "prompt": "the '选规格' button for 多肉葡萄"
+                }
+              }
+            ],
+            "taskWillBeAccomplished": true,
+            "furtherPlan": null,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "点击不使用吸管、点击冰沙推荐、点击正常冰推荐",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "https://heyteavivocity.meuu.online/home",
+            "size": {
+              "width": 400,
+              "height": 905,
+              "dpr": 1
+            }
+          },
+          "prompt": "点击不使用吸管、点击冰沙推荐、点击正常冰推荐",
+          "response": {
+            "actions": [
+              {
+                "thought": "Locate and click the '不使用吸管' checkbox.",
+                "type": "Tap",
+                "param": null,
+                "locate": {
+                  "id": "b35fb3e3c64d70f8",
+                  "prompt": "the '不使用吸管' checkbox"
+                }
+              },
+              {
+                "thought": "Locate and click the '冰沙（推荐）' checkbox.",
+                "type": "Tap",
+                "param": null,
+                "locate": {
+                  "id": "7f64175377f47df4",
+                  "prompt": "the '冰沙（推荐）' checkbox"
+                }
+              },
+              {
+                "thought": "Locate and click the '正常冰（推荐）' checkbox.",
+                "type": "Tap",
+                "param": null,
+                "locate": {
+                  "id": "f0a06f09ae22dd62",
+                  "prompt": "the '正常冰（推荐）' checkbox"
+                }
+              }
+            ],
+            "taskWillBeAccomplished": true,
+            "furtherPlan": null,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "向下滚动一屏",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "https://heyteavivocity.meuu.online/home",
+            "size": {
+              "width": 400,
+              "height": 905,
+              "dpr": 1
+            }
+          },
+          "prompt": "向下滚动一屏",
+          "response": {
+            "actions": [
+              {
+                "thought": "Scroll down one screen to view more content on the page.",
+                "type": "Scroll",
+                "param": {
+                  "scrollType": "scrollDownOneScreen"
+                },
+                "locate": null
+              }
+            ],
+            "taskWillBeAccomplished": true,
+            "furtherPlan": null,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "点击标准甜、点击绿妍（推荐）、点击标准口味",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "https://heyteavivocity.meuu.online/home",
+            "size": {
+              "width": 400,
+              "height": 905,
+              "dpr": 1
+            }
+          },
+          "prompt": "点击标准甜、点击绿妍（推荐）、点击标准口味",
+          "response": {
+            "actions": [
+              {
+                "thought": "Click the checkbox for '标准甜（推荐）' to select the standard sweetness option.",
+                "type": "Tap",
+                "param": null,
+                "locate": {
+                  "id": "3c3916a23e668dca",
+                  "prompt": "the checkbox for '标准甜（推荐）'"
+                }
+              },
+              {
+                "thought": "Click the checkbox for '绿妍（推荐）' to select the recommended tea base option.",
+                "type": "Tap",
+                "param": null,
+                "locate": {
+                  "id": "332a26929cf09339",
+                  "prompt": "the checkbox for '绿妍（推荐）'"
+                }
+              },
+              {
+                "thought": "Click the checkbox for '标准口味（推荐）' to select the standard flavor option.",
+                "type": "Tap",
+                "param": null,
+                "locate": {
+                  "id": "8ff3424c09bf1d6a",
+                  "prompt": "the checkbox for '标准口味（推荐）'"
+                }
+              }
+            ],
+            "taskWillBeAccomplished": true,
+            "furtherPlan": null,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "滚动到最下面",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "https://heyteavivocity.meuu.online/home",
+            "size": {
+              "width": 400,
+              "height": 905,
+              "dpr": 1
+            }
+          },
+          "prompt": "滚动到最下面",
+          "response": {
+            "actions": [
+              {
+                "thought": "Scroll to the bottom of the page to view all options.",
+                "type": "Scroll",
+                "param": {
+                  "scrollType": "scrollUntilBottom"
+                },
+                "locate": null
+              }
+            ],
+            "taskWillBeAccomplished": true,
+            "furtherPlan": null,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "点击选好了按钮",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "https://heyteavivocity.meuu.online/home",
+            "size": {
+              "width": 400,
+              "height": 905,
+              "dpr": 1
+            }
+          },
+          "prompt": "点击选好了按钮",
+          "response": {
+            "actions": [
+              {
+                "thought": "The task is to click the '选好了' button to proceed with the selection.",
+                "type": "Tap",
+                "param": null,
+                "locate": {
+                  "id": "193d9a1f72fdee7c",
+                  "prompt": "the '选好了' button"
+                }
+              }
+            ],
+            "taskWillBeAccomplished": true,
+            "furtherPlan": null,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "点击右上角商品图标按钮",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "https://heyteavivocity.meuu.online/home",
+            "size": {
+              "width": 400,
+              "height": 905,
+              "dpr": 1
+            }
+          },
+          "prompt": "点击右上角商品图标按钮",
+          "response": {
+            "actions": [
+              {
+                "thought": "The task is to click the shopping cart icon located at the top right corner of the page.",
+                "type": "Tap",
+                "param": null,
+                "locate": {
+                  "id": "5ead026c3c299bea",
+                  "prompt": "the shopping cart icon at the top right corner"
+                }
+              }
+            ],
+            "taskWillBeAccomplished": true,
+            "furtherPlan": null,
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "滚动到最下面",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "https://heyteavivocity.meuu.online/home",
+            "size": {
+              "width": 400,
+              "height": 905,
+              "dpr": 1
+            }
+          },
+          "prompt": "滚动到最下面",
+          "response": {
+            "actions": [
+              {
+                "thought": "The task is to scroll to the bottom of the page. This can be achieved by performing a scroll action until the bottom is reached.",
+                "type": "Scroll",
+                "param": {
+                  "scrollType": "scrollUntilBottom"
+                },
+                "locate": null
+              }
+            ],
+            "taskWillBeAccomplished": true,
+            "furtherPlan": null,
+            "error": null
           }
         }
       ]

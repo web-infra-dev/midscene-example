@@ -5,11 +5,7 @@ test.beforeEach(async ({ page }) => {
   await page.goto("https://todomvc.com/examples/react/dist/");
 });
 
-test("ai todo - English Prompt - should fail", async ({
-  ai,
-  aiQuery,
-  aiAssert,
-}) => {
+test("ai todo - English Prompt", async ({ ai, aiQuery, aiAssert }) => {
   await ai(
     "Input 'Study JS today' in the task box input and press the Enter key"
   );
@@ -29,5 +25,7 @@ test("ai todo - English Prompt - should fail", async ({
 
   expect(list.length).toEqual(1);
 
-  await aiAssert('At the bottom of the page, it shows "1 item left".');
+  await aiAssert(
+    'Near the bottom of the page, there is a tip shows "1 item left".'
+  );
 });
