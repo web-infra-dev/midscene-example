@@ -12,7 +12,7 @@ const result = dotenv.config({
 if (result.error) {
   throw result.error;
 }
-// uncomment to see the parsed result
+// uncomment to see the parsed result. It may include some credentials.
 // console.log(".env file parsed result");
 // console.log(result.parsed);
 
@@ -23,13 +23,15 @@ vi.setConfig({
 const imagePath = join(__dirname, "some_logo.png");
 const imageBase64 = base64Encoded(imagePath);
 
-describe("Use OpenAI SDK", () => {
+describe("Use OpenAI SDK directly", () => {
+  const model = process.env.MIDSCENE_MODEL_NAME || "gpt-4o";
   it("basic call", async () => {
     const openai = new OpenAI({
       apiKey: process.env.OPENAI_API_KEY,
+      baseURL: process.env.OPENAI_BASE_URL,
     });
     const response = await openai.chat.completions.create({
-      model: "gpt-4o",
+      model: model,
       messages: [{ role: "user", content: "Hello, how are you?" }],
     });
     // console.log(response);
@@ -39,10 +41,11 @@ describe("Use OpenAI SDK", () => {
   it("with image input", async () => {
     const openai = new OpenAI({
       apiKey: process.env.OPENAI_API_KEY,
+      baseURL: process.env.OPENAI_BASE_URL,
     });
 
     const response = await openai.chat.completions.create({
-      model: "gpt-4o",
+      model: model,
       messages: [
         { role: "user", content: "Tell me what is in this image" },
         {
@@ -58,7 +61,7 @@ describe("Use OpenAI SDK", () => {
         },
       ],
     });
-
+    // console.log(response.choices[0].message.content);
     expect(response.choices[0].message.content).toBeTruthy();
   });
 });
@@ -86,7 +89,7 @@ describe("Use Midscene wrapped OpenAI SDK", () => {
       ],
       2 /* AIActionType.EXTRACT_DATA */
     );
-    console.log(result.content.content);
+    // console.log(result.content.content);
     expect(result.content.content.length).toBeGreaterThan(5);
   });
 });
