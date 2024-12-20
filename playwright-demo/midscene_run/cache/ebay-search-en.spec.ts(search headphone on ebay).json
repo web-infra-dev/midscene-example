@@ -1,0 +1,50 @@
+{
+  "pkgName": "playwright-demo",
+  "pkgVersion": "0.0.1",
+  "cacheId": "ebay-search-en.spec.ts(search headphone on ebay)",
+  "aiTasks": [
+    {
+      "prompt": "type \"Headphones\" in search box, hit Enter",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "https://www.ebay.com/",
+            "size": {
+              "width": 1280,
+              "height": 800,
+              "dpr": 1
+            }
+          },
+          "prompt": "type \"Headphones\" in search box, hit Enter",
+          "response": {
+            "actions": [
+              {
+                "locate": {
+                  "id": "834f7a74",
+                  "prompt": "the search bar"
+                },
+                "param": {
+                  "value": "Headphones"
+                },
+                "thought": "Input 'Headphones' into the search bar.",
+                "type": "Input"
+              },
+              {
+                "locate": null,
+                "param": {
+                  "value": "Enter"
+                },
+                "thought": "Press Enter to initiate the search.",
+                "type": "KeyboardPress"
+              }
+            ],
+            "error": null,
+            "furtherPlan": null,
+            "taskWillBeAccomplished": true
+          }
+        }
+      ]
+    }
+  ]
+}

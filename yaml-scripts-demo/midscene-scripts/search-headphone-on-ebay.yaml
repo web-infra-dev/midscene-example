@@ -13,15 +13,15 @@ tasks:
   - name: search headphones
     flow:
       - aiAction: type 'Headphones' in search box, hit Enter
-      - aiWaitFor: there is at least one headphone item on page
-        timeout: 10000
+      - sleep: 5000
+      - aiAction: scroll down the page for 800px
 
   - name: extract headphones info
     flow:
       - aiQuery: >
-          {name: string, price: number, actionBtnName: string}[], return item name, price and the action button name on the lower right corner of each item (like 'Remove')
+          {name: string, price: number, subTitle: string}[], return item name, price and the subTitle on the lower right corner of each item
         name: headphones
 
-  - name: assert shopping cart icon
+  - name: assert Filter button
     flow:
-      - aiAssert: There is a shopping cart icon on the top right
+      - aiAssert: There is a Filter button on the page

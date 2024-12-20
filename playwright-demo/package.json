@@ -10,7 +10,7 @@
     "postinstall": "pnpm exec playwright install"
   },
   "devDependencies": {
-    "@midscene/web": "beta",
+    "@midscene/web": "latest",
     "@playwright/test": "1.48.0",
     "@types/jest": "~29.5.14",
     "@types/node": "~22.7.9",

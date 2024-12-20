@@ -9,8 +9,8 @@ importers:
   .:
     devDependencies:
       '@midscene/web':
-        specifier: 0.8.6-beta-20241213041618.0
-        version: 0.8.6-beta-20241213041618.0(@playwright/test@1.48.0)(playwright@1.48.0)
+        specifier: latest
+        version: 0.8.7(@playwright/test@1.48.0)(playwright@1.48.0)
       '@playwright/test':
         specifier: 1.48.0
         version: 1.48.0
@@ -338,15 +338,15 @@ packages:
   '@jimp/utils@0.22.12':
     resolution: {integrity: sha512-yJ5cWUknGnilBq97ZXOyOS0HhsHOyAyjHwYfHxGbSyMTohgQI6sVyE8KPgDwH8HHW/nMKXk8TrSwAE71zt716Q==}
 
-  '@midscene/core@0.8.6-beta-20241213041618.0':
-    resolution: {integrity: sha512-jikw2AA8GWYhClS+M4IEbY/hxUvGQvkuwyh5RFohwCc/4Xr1sudOxoi3KUCDKVcaZE2ve+BXbaKEKbKUfOYPGQ==}
+  '@midscene/core@0.8.7':
+    resolution: {integrity: sha512-rMsPhzt2HXwOehuGWQVcLkxWreQRDCFZ3U/YXQPhYbaQaL/EhcqM9NgepbVtgcw9kGLQNGBl3JbvpQXFovQKrg==}
     engines: {node: '>=16.0.0'}
 
-  '@midscene/shared@0.8.6-beta-20241213041618.0':
-    resolution: {integrity: sha512-bqdagoV+T0Z78a9clwZu3VtevKXAsBjXx/3z7jq5eJsgdLw1Wn403d7YqQnZmcKrc1/UG2E1gkfmxwVghlv7Qw==}
+  '@midscene/shared@0.8.7':
+    resolution: {integrity: sha512-PBBt90y5j1yNJvHW+WauOY0lWMlI9JqrDG2H2HCogCoE808we9I9gmY+oxS5AwFWBW0e9DZkBpisLTY5eQsTYw==}
 
-  '@midscene/web@0.8.6-beta-20241213041618.0':
-    resolution: {integrity: sha512-aOHOmJdipUdVhkZ9+8CsGH6M/IXJUFRoW6seBqangNQ8KYtLLBAB1DzCNwB7qvdkZbjznQ01hLBbNUl+MUgxgQ==}
+  '@midscene/web@0.8.7':
+    resolution: {integrity: sha512-jyz7F07j9/8TrqeEa9l4ZUjgLJCEs0aKuAKfjhoTl/O5RFkpde35SbXWBF0PQg4ZQA6etDrKFP5WMas71Jm6UQ==}
     engines: {node: '>=16.0.0'}
     hasBin: true
     peerDependencies:
@@ -1963,10 +1963,10 @@ snapshots:
     dependencies:
       regenerator-runtime: 0.13.11
 
-  '@midscene/core@0.8.6-beta-20241213041618.0':
+  '@midscene/core@0.8.7':
     dependencies:
       optional: 0.1.4
-      '@midscene/shared': 0.8.6-beta-20241213041618.0
+      '@midscene/shared': 0.8.7
       openai: 4.57.1
       socks-proxy-agent: 8.0.4
     transitivePeerDependencies:
@@ -1975,17 +1975,17 @@ snapshots:
       - supports-color
       - zod
 
-  '@midscene/shared@0.8.6-beta-20241213041618.0':
+  '@midscene/shared@0.8.7':
     dependencies:
       jimp: 0.22.12
     transitivePeerDependencies:
       - debug
       - encoding
 
-  '@midscene/web@0.8.6-beta-20241213041618.0(@playwright/test@1.48.0)(playwright@1.48.0)':
+  '@midscene/web@0.8.7(@playwright/test@1.48.0)(playwright@1.48.0)':
     dependencies:
-      '@midscene/core': 0.8.6-beta-20241213041618.0
-      '@midscene/shared': 0.8.6-beta-20241213041618.0
+      '@midscene/core': 0.8.7
+      '@midscene/shared': 0.8.7
       '@xmldom/xmldom': 0.8.10
       cors: 2.8.5
       express: 4.21.1

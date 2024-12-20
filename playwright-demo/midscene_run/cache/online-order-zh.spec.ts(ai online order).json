@@ -20,27 +20,35 @@
           "response": {
             "actions": [
               {
-                "thought": "Click the language switch button to open the language options.",
-                "type": "Tap",
-                "param": null,
                 "locate": {
-                  "id": "ca756f91d900cdbe",
+                  "id": "ca756f91",
                   "prompt": "the language switch button with the text 'English'"
-                }
+                },
+                "param": null,
+                "thought": "Click the language switch button to open the language options.",
+                "type": "Tap"
               },
               {
-                "thought": "Locate the '中文' option in the language menu.",
-                "type": "Tap",
+                "locate": null,
+                "param": {
+                  "timeMs": 1000
+                },
+                "thought": "Wait for 1 second to ensure the language options are displayed.",
+                "type": "Sleep"
+              },
+              {
+                "locate": null,
                 "param": null,
-                "locate": null
+                "thought": "Locate the '中文' option in the language menu.",
+                "type": "Tap"
               }
             ],
-            "taskWillBeAccomplished": false,
+            "error": null,
             "furtherPlan": {
-              "whatHaveDone": "Clicked the language switch button.",
+              "whatHaveDone": "Clicked the language switch button and waited 1s.",
               "whatToDoNext": "Find the '中文' option and click on it."
             },
-            "error": null
+            "taskWillBeAccomplished": false
           }
         },
         {
@@ -57,18 +65,18 @@
           "response": {
             "actions": [
               {
-                "thought": "The '中文' option is visible in the dropdown menu, so I can directly click on it.",
-                "type": "Tap",
-                "param": null,
                 "locate": {
-                  "id": "9aee8c53182a7623",
-                  "prompt": "the '中文' option in the dropdown menu"
-                }
+                  "id": "9aee8c53",
+                  "prompt": "the '中文' option in the dropdown list"
+                },
+                "param": null,
+                "thought": "Locate and click the '中文' option in the dropdown list to switch the language.",
+                "type": "Tap"
               }
             ],
-            "taskWillBeAccomplished": true,
+            "error": null,
             "furtherPlan": null,
-            "error": null
+            "taskWillBeAccomplished": true
           }
         }
       ]
@@ -90,17 +98,19 @@
           "response": {
             "actions": [
               {
-                "thought": "The user wants to scroll down one screen to view more content.",
-                "type": "Scroll",
+                "locate": null,
                 "param": {
-                  "scrollType": "scrollDownOneScreen"
+                  "direction": "down",
+                  "scrollType": "once",
+                  "distance": null
                 },
-                "locate": null
+                "thought": "The user wants to scroll down the page by one screen to view more content.",
+                "type": "Scroll"
               }
             ],
-            "taskWillBeAccomplished": true,
+            "error": null,
             "furtherPlan": null,
-            "error": null
+            "taskWillBeAccomplished": true
           }
         }
       ]
@@ -122,18 +132,18 @@
           "response": {
             "actions": [
               {
-                "thought": "Locate and click the '选规格' button for 多肉葡萄.",
-                "type": "Tap",
-                "param": null,
                 "locate": {
-                  "id": "724aed60ef7208b9",
-                  "prompt": "the '选规格' button for 多肉葡萄"
-                }
+                  "id": "724aed60",
+                  "prompt": "the '选规格' button for 多肉葡萄（首创）"
+                },
+                "param": null,
+                "thought": "Locate and tap the '选规格' button for the item 多肉葡萄（首创）.",
+                "type": "Tap"
               }
             ],
-            "taskWillBeAccomplished": true,
+            "error": null,
             "furtherPlan": null,
-            "error": null
+            "taskWillBeAccomplished": true
           }
         }
       ]
@@ -155,36 +165,36 @@
           "response": {
             "actions": [
               {
-                "thought": "Locate and click the '不使用吸管' checkbox.",
-                "type": "Tap",
-                "param": null,
                 "locate": {
-                  "id": "b35fb3e3c64d70f8",
-                  "prompt": "the '不使用吸管' checkbox"
-                }
+                  "id": "b35fb3e3",
+                  "prompt": "the checkbox for '不使用吸管'"
+                },
+                "param": null,
+                "thought": "Click the checkbox for '不使用吸管' to select this option.",
+                "type": "Tap"
               },
               {
-                "thought": "Locate and click the '冰沙（推荐）' checkbox.",
-                "type": "Tap",
-                "param": null,
                 "locate": {
-                  "id": "7f64175377f47df4",
-                  "prompt": "the '冰沙（推荐）' checkbox"
-                }
+                  "id": "7f641753",
+                  "prompt": "the checkbox for '冰沙（推荐）'"
+                },
+                "param": null,
+                "thought": "Click the checkbox for '冰沙（推荐）' to select this option.",
+                "type": "Tap"
               },
               {
-                "thought": "Locate and click the '正常冰（推荐）' checkbox.",
-                "type": "Tap",
-                "param": null,
                 "locate": {
-                  "id": "f0a06f09ae22dd62",
-                  "prompt": "the '正常冰（推荐）' checkbox"
-                }
+                  "id": "f0a06f09",
+                  "prompt": "the checkbox for '正常冰（推荐）'"
+                },
+                "param": null,
+                "thought": "Click the checkbox for '正常冰（推荐）' to select this option.",
+                "type": "Tap"
               }
             ],
-            "taskWillBeAccomplished": true,
+            "error": null,
             "furtherPlan": null,
-            "error": null
+            "taskWillBeAccomplished": true
           }
         }
       ]
@@ -206,17 +216,19 @@
           "response": {
             "actions": [
               {
-                "thought": "Scroll down one screen to view more content on the page.",
-                "type": "Scroll",
+                "locate": null,
                 "param": {
-                  "scrollType": "scrollDownOneScreen"
+                  "direction": "down",
+                  "scrollType": "once",
+                  "distance": null
                 },
-                "locate": null
+                "thought": "Scroll down one screen to view more content on the page.",
+                "type": "Scroll"
               }
             ],
-            "taskWillBeAccomplished": true,
+            "error": null,
             "furtherPlan": null,
-            "error": null
+            "taskWillBeAccomplished": true
           }
         }
       ]
@@ -238,36 +250,36 @@
           "response": {
             "actions": [
               {
-                "thought": "Click the checkbox for '标准甜（推荐）' to select the standard sweetness option.",
-                "type": "Tap",
-                "param": null,
                 "locate": {
-                  "id": "3c3916a23e668dca",
-                  "prompt": "the checkbox for '标准甜（推荐）'"
-                }
+                  "id": "3c3916a2",
+                  "prompt": "the checkbox for 标准甜（推荐）"
+                },
+                "param": null,
+                "thought": "Click the checkbox for 标准甜（推荐） to select the standard sweetness option.",
+                "type": "Tap"
               },
               {
-                "thought": "Click the checkbox for '绿妍（推荐）' to select the recommended tea base option.",
-                "type": "Tap",
-                "param": null,
                 "locate": {
-                  "id": "332a26929cf09339",
-                  "prompt": "the checkbox for '绿妍（推荐）'"
-                }
+                  "id": "332a2692",
+                  "prompt": "the checkbox for 绿妍（推荐）"
+                },
+                "param": null,
+                "thought": "Click the checkbox for 绿妍（推荐） to select the recommended tea base option.",
+                "type": "Tap"
               },
               {
-                "thought": "Click the checkbox for '标准口味（推荐）' to select the standard flavor option.",
-                "type": "Tap",
-                "param": null,
                 "locate": {
-                  "id": "8ff3424c09bf1d6a",
-                  "prompt": "the checkbox for '标准口味（推荐）'"
-                }
+                  "id": "8ff3424c",
+                  "prompt": "the checkbox for 标准口味（推荐）"
+                },
+                "param": null,
+                "thought": "Click the checkbox for 标准口味（推荐） to select the standard flavor option.",
+                "type": "Tap"
               }
             ],
-            "taskWillBeAccomplished": true,
+            "error": null,
             "furtherPlan": null,
-            "error": null
+            "taskWillBeAccomplished": true
           }
         }
       ]
@@ -289,17 +301,19 @@
           "response": {
             "actions": [
               {
-                "thought": "Scroll to the bottom of the page to view all options.",
-                "type": "Scroll",
+                "locate": null,
                 "param": {
-                  "scrollType": "scrollUntilBottom"
+                  "direction": "down",
+                  "scrollType": "untilBottom",
+                  "distance": null
                 },
-                "locate": null
+                "thought": "Scroll to the bottom of the page to view all options.",
+                "type": "Scroll"
               }
             ],
-            "taskWillBeAccomplished": true,
+            "error": null,
             "furtherPlan": null,
-            "error": null
+            "taskWillBeAccomplished": true
           }
         }
       ]
@@ -321,18 +335,18 @@
           "response": {
             "actions": [
               {
-                "thought": "The task is to click the '选好了' button to proceed with the selection.",
-                "type": "Tap",
-                "param": null,
                 "locate": {
-                  "id": "193d9a1f72fdee7c",
-                  "prompt": "the '选好了' button"
-                }
+                  "id": "193d9a1f",
+                  "prompt": "the button with the text '选好了'"
+                },
+                "param": null,
+                "thought": "Click the '选好了' button to proceed with the selection.",
+                "type": "Tap"
               }
             ],
-            "taskWillBeAccomplished": true,
+            "error": null,
             "furtherPlan": null,
-            "error": null
+            "taskWillBeAccomplished": true
           }
         }
       ]
@@ -354,18 +368,18 @@
           "response": {
             "actions": [
               {
-                "thought": "The task is to click the shopping cart icon located at the top right corner of the page.",
-                "type": "Tap",
-                "param": null,
                 "locate": {
-                  "id": "5ead026c3c299bea",
-                  "prompt": "the shopping cart icon at the top right corner"
-                }
+                  "id": "5ead026c",
+                  "prompt": "the top right product icon button"
+                },
+                "param": null,
+                "thought": "Click the top right product icon button as instructed.",
+                "type": "Tap"
               }
             ],
-            "taskWillBeAccomplished": true,
+            "error": null,
             "furtherPlan": null,
-            "error": null
+            "taskWillBeAccomplished": true
           }
         }
       ]
@@ -387,17 +401,19 @@
           "response": {
             "actions": [
               {
-                "thought": "The task is to scroll to the bottom of the page. This can be achieved by performing a scroll action until the bottom is reached.",
-                "type": "Scroll",
+                "locate": null,
                 "param": {
-                  "scrollType": "scrollUntilBottom"
+                  "direction": "down",
+                  "scrollType": "untilBottom",
+                  "distance": null
                 },
-                "locate": null
+                "thought": "Scroll to the bottom of the page to view all content.",
+                "type": "Scroll"
               }
             ],
-            "taskWillBeAccomplished": true,
+            "error": null,
             "furtherPlan": null,
-            "error": null
+            "taskWillBeAccomplished": true
           }
         }
       ]
