@@ -1,0 +1,21 @@
+{
+    "name": "puppeteer-demo",
+    "private": true,
+    "version": "1.0.0",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "test": "vitest ./tests/connectivity.test.ts"
+    },
+    "author": "",
+    "license": "MIT",
+    "devDependencies": {
+        "@midscene/core": "latest",
+        "@midscene/shared": "latest",
+        "dotenv": "^16.4.5",
+        "openai": "4.57.1",
+        "puppeteer": "^23.4.0",
+        "tsx": "^4.19.1",
+        "vitest": "^2.1.8"
+    }
+}
