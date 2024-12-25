@@ -1,4 +1,4 @@
-name: Puppeteer Demo
+name: Puppeteer with Vitest Demo
 
 on:
   workflow_dispatch:
