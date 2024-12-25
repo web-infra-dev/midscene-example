@@ -16,5 +16,5 @@ test("ai todo - Chinese Prompt", async ({ ai, aiQuery, aiAssert }) => {
   const list = await aiQuery("string[], 完整的任务列表");
   expect(list.length).toEqual(1);
 
-  await aiAssert('页面下方有一个区域显示有 "1 item left"');
+  await aiAssert('列表下方有一个区域显示有 "1 item left"');
 });

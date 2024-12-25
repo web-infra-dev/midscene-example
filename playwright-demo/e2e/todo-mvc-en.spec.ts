@@ -26,6 +26,6 @@ test("ai todo - English Prompt", async ({ ai, aiQuery, aiAssert }) => {
   expect(list.length).toEqual(1);
 
   await aiAssert(
-    'Near the bottom of the page, there is a tip shows "1 item left".'
+    'Near the bottom of the list, there is a tip shows "1 item left".'
   );
 });

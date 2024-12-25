@@ -9,6 +9,7 @@ Here are some examples you can refer to:
 - [Automate with Scripts in YAML](./yaml-scripts-demo/): Automate with scripts in YAML. This is the easiest way to integrate Midscene with your existing project.
 - [Integrate with Playwright](./playwright-demo/): Integrate Midscene with Playwright, including ai action, query ,cache, and report.
 - [Integrate with Puppeteer](./puppeteer-demo/): Integrate Midscene with Puppeteer, including ai action, query, cache, and report.
+- [Integrate with Puppeteer and Vitest](./puppeteer-with-vitest-demo/): Integrate Midscene with Puppeteer and Vitest. This is an alternative way to do test without Playwright.
 
 ## Connectivity Test
 

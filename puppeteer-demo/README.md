@@ -1,4 +1,8 @@
-# puppeteer-demo
+# Puppeteer Demo
+
+This is a demo to show how to use Puppeteer to do some automation tasks.
+
+If you want to use Puppeteer with Vitest, please refer to [puppeteer-with-vitest-demo](../puppeteer-with-vitest-demo).
 
 create `.env` file
 
@@ -18,5 +22,5 @@ npx tsx demo.ts
 
 # Reference 
 
-https://midscenejs.com/integrate-with-playwright.html
+https://midscenejs.com/integrate-with-puppeteer.html
 https://midscenejs.com/api.html
