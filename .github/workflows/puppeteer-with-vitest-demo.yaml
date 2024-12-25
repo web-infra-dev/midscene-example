@@ -1,0 +1,46 @@
+name: Puppeteer Demo
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'The tag name of @midscene/'
+        required: true
+        default: 'beta'
+  push:
+    branches:
+      - main
+
+env:
+  TAG: ${{ github.event.inputs.tag || 'beta' }}
+
+jobs:
+  run_script:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run script
+        id: run-script
+        env:
+          OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          cd puppeteer-with-vitest-demo
+          npm i pnpm -g
+          pnpm i @midscene/web@${{ env.TAG }} --save-dev
+          pnpm install
+          pnpm run test
+        continue-on-error: true
+
+      - name: Upload output folder
+        uses: actions/upload-artifact@v4
+        with:
+          if-no-files-found: error
+          name: Midscene Report 
+          path: ${{ github.workspace }}/puppeteer-with-vitest-demo/midscene_run/report
+
+      - name: Check if script failed
+        if: steps.run-script.outcome == 'failure'
+        run: exit 1
