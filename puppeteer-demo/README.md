@@ -2,7 +2,7 @@
 
 This is a demo to show how to use Puppeteer to do some automation tasks.
 
-If you want to use Puppeteer with Vitest, please refer to [puppeteer-with-vitest-demo](./puppeteer-with-vitest-demo).
+If you want to use Puppeteer with Vitest, please refer to [puppeteer-with-vitest-demo](../puppeteer-with-vitest-demo).
 
 create `.env` file
 
