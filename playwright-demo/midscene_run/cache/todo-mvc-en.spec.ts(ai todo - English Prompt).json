@@ -27,7 +27,7 @@
                 "param": {
                   "value": "Study JS today"
                 },
-                "thought": "Input 'Study JS today' into the task box.",
+                "thought": "Input 'Study JS today' into the task box input.",
                 "type": "Input"
               },
               {
@@ -65,12 +65,12 @@
               {
                 "locate": {
                   "id": "fbc2d002",
-                  "prompt": "the task box input with placeholder 'What needs to be done?'"
+                  "prompt": "the input box with placeholder 'What needs to be done?'"
                 },
                 "param": {
                   "value": "Study Rust tomorrow"
                 },
-                "thought": "Input 'Study Rust tomorrow' in the task box input.",
+                "thought": "Input 'Study Rust tomorrow' in the task box input to add a new task.",
                 "type": "Input"
               },
               {
@@ -78,7 +78,7 @@
                 "param": {
                   "value": "Enter"
                 },
-                "thought": "Press the Enter key to add the task.",
+                "thought": "Press the Enter key to submit the new task.",
                 "type": "KeyboardPress"
               }
             ],
@@ -113,7 +113,7 @@
                 "param": {
                   "value": "Study AI the day after tomorrow"
                 },
-                "thought": "Input the task 'Study AI the day after tomorrow' into the task input box.",
+                "thought": "Input the new task 'Study AI the day after tomorrow' into the task input box.",
                 "type": "Input"
               },
               {
@@ -121,7 +121,7 @@
                 "param": {
                   "value": "Enter"
                 },
-                "thought": "Press the Enter key to add the task.",
+                "thought": "Press the Enter key to add the new task to the list.",
                 "type": "KeyboardPress"
               }
             ],
@@ -221,7 +221,7 @@
               {
                 "locate": {
                   "id": "a2b47f27",
-                  "prompt": "the check button on the left of the second task"
+                  "prompt": "the check button on the left of the second task 'Study AI the day after tomorrow'"
                 },
                 "param": null,
                 "thought": "Click the check button to mark the second task as completed.",
