@@ -1,6 +1,6 @@
 # Midscene Examples
 
-Examples for [Midscene](https://github.com/web-infra-dev/midscene).
+Examples for [Midscene.js](https://github.com/web-infra-dev/midscene).
 
 ## Examples
 
@@ -14,3 +14,7 @@ Here are some examples you can refer to:
 ## Connectivity Test
 
 - [Connectivity Test](./connectivity-test/): Use this folder to test the connectivity of the LLM Service.
+
+## Feedback
+
+To open a issue, please go to [https://github.com/web-infra-dev/midscene/issues](https://github.com/web-infra-dev/midscene/issues).
