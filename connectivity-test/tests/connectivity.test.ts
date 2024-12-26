@@ -8,6 +8,7 @@ import { callToGetJSONObject } from "@midscene/core/ai-model";
 // read and parse .env file
 const result = dotenv.config({
   debug: true,
+  override: true,
 });
 if (result.error) {
   throw result.error;
@@ -25,7 +26,7 @@ const imageBase64 = base64Encoded(imagePath);
 
 describe("Use OpenAI SDK directly", () => {
   const model = process.env.MIDSCENE_MODEL_NAME || "gpt-4o";
-  it("basic call", async () => {
+  it(`basic call with ${model}`, async () => {
     const openai = new OpenAI({
       apiKey: process.env.OPENAI_API_KEY,
       baseURL: process.env.OPENAI_BASE_URL,
@@ -38,7 +39,7 @@ describe("Use OpenAI SDK directly", () => {
     expect(response.choices[0].message.content).toBeTruthy();
   });
 
-  it("with image input", async () => {
+  it(`with image input with ${model}`, async () => {
     const openai = new OpenAI({
       apiKey: process.env.OPENAI_API_KEY,
       baseURL: process.env.OPENAI_BASE_URL,
