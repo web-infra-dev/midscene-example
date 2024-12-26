@@ -8,11 +8,11 @@ import { callToGetJSONObject } from "@midscene/core/ai-model";
 // read and parse .env file
 const result = dotenv.config({
   debug: true,
-  override: true,
 });
 if (result.error) {
   throw result.error;
 }
+
 // uncomment to see the parsed result. It may include some credentials.
 // console.log(".env file parsed result");
 // console.log(result.parsed);
@@ -39,7 +39,7 @@ describe("Use OpenAI SDK directly", () => {
     expect(response.choices[0].message.content).toBeTruthy();
   });
 
-  it(`with image input with ${model}`, async () => {
+  it(`image input with ${model}`, async () => {
     const openai = new OpenAI({
       apiKey: process.env.OPENAI_API_KEY,
       baseURL: process.env.OPENAI_BASE_URL,
