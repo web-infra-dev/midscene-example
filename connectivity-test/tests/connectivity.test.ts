@@ -1,9 +1,13 @@
 import { describe, it, expect, vi } from "vitest";
 import dotenv from "dotenv";
-import OpenAI from "openai";
+import OpenAI, { AzureOpenAI } from "openai";
 import { join } from "node:path";
 import { base64Encoded } from "@midscene/shared/img";
 import { callToGetJSONObject } from "@midscene/core/ai-model";
+import {
+  DefaultAzureCredential,
+  getBearerTokenProvider,
+} from "@azure/identity";
 
 // read and parse .env file
 const result = dotenv.config({
@@ -24,8 +28,8 @@ vi.setConfig({
 const imagePath = join(__dirname, "some_logo.png");
 const imageBase64 = base64Encoded(imagePath);
 
+const model = process.env.MIDSCENE_MODEL_NAME || "gpt-4o";
 describe("Use OpenAI SDK directly", () => {
-  const model = process.env.MIDSCENE_MODEL_NAME || "gpt-4o";
   it(`basic call with ${model}`, async () => {
     const openai = new OpenAI({
       apiKey: process.env.OPENAI_API_KEY,
@@ -92,5 +96,35 @@ describe("Use Midscene wrapped OpenAI SDK", () => {
     );
     // console.log(result.content.content);
     expect(result.content.content.length).toBeGreaterThan(5);
+  });
+});
+
+// remove the ".skip" if you want to test Azure OpenAI Service
+describe.skip("Azure OpenAI Service", () => {
+  it("basic call", async () => {
+    // sample code: https://github.com/Azure/azure-sdk-for-js/blob/main/sdk/openai/openai/samples/cookbook/simpleCompletionsPage/app.js
+    const scope = process.env.MIDSCENE_AZURE_OPENAI_SCOPE;
+    if (typeof scope !== "string") {
+      throw new Error("MIDSCENE_AZURE_OPENAI_SCOPE is required");
+    }
+
+    const credential = new DefaultAzureCredential();
+    const tokenProvider = getBearerTokenProvider(credential, scope);
+
+    const extraAzureConfig = JSON.parse(
+      process.env.MIDSCENE_AZURE_OPENAI_INIT_CONFIG_JSON || "{}"
+    );
+    // console.log(extraAzureConfig);
+    const openai = new AzureOpenAI({
+      azureADTokenProvider: tokenProvider,
+      ...extraAzureConfig,
+    });
+
+    const response = await openai.chat.completions.create({
+      model: model,
+      messages: [{ role: "user", content: "Hello, how are you?" }],
+    });
+
+    expect(response.choices[0].message.content).toBeTruthy();
   });
 });
