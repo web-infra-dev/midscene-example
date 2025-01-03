@@ -21,13 +21,13 @@
             "actions": [
               {
                 "locate": {
-                  "id": "834f7a74",
-                  "prompt": "the search bar with placeholder text '搜索任何物品'"
+                  "id": "c528580a",
+                  "prompt": "the search bar"
                 },
                 "param": {
                   "value": "Headphones"
                 },
-                "thought": "Input 'Headphones' into the search bar to search for the item.",
+                "thought": "Input 'Headphones' into the search bar to search for headphones.",
                 "type": "Input"
               },
               {
@@ -35,7 +35,7 @@
                 "param": {
                   "value": "Enter"
                 },
-                "thought": "Press the Enter key to initiate the search for 'Headphones'.",
+                "thought": "Press the Enter key to initiate the search.",
                 "type": "KeyboardPress"
               }
             ],

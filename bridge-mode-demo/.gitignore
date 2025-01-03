@@ -1,0 +1,8 @@
+package-lock.json
+.env
+
+# Midscene.js dump files
+midscene_run/midscene-report
+midscene_run/dump-logger
+
+midscene_run/cache

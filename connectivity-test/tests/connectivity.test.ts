@@ -100,7 +100,7 @@ describe("Use Midscene wrapped OpenAI SDK", () => {
 });
 
 // remove the ".skip" if you want to test Azure OpenAI Service
-describe.skip("Azure OpenAI Service", () => {
+describe.skip("Azure OpenAI Service by ADT Credential", () => {
   it("basic call", async () => {
     // sample code: https://github.com/Azure/azure-sdk-for-js/blob/main/sdk/openai/openai/samples/cookbook/simpleCompletionsPage/app.js
     const scope = process.env.MIDSCENE_AZURE_OPENAI_SCOPE;
