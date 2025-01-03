@@ -30,6 +30,14 @@
               },
               {
                 "locate": null,
+                "param": {
+                  "timeMs": 1000
+                },
+                "thought": "Wait for 1 second to ensure the language options are displayed.",
+                "type": "Sleep"
+              },
+              {
+                "locate": null,
                 "param": null,
                 "thought": "Locate the '中文' option in the language menu.",
                 "type": "Tap"
@@ -37,8 +45,8 @@
             ],
             "error": null,
             "furtherPlan": {
-              "whatHaveDone": "Clicked the language switch button to open the language options.",
-              "whatToDoNext": "Find the '中文' option in the dropdown list and click on it."
+              "whatHaveDone": "Click the language switch button and wait 1s",
+              "whatToDoNext": "find the '中文' option and click on it"
             },
             "taskWillBeAccomplished": false
           }
@@ -53,51 +61,17 @@
               "dpr": 1
             }
           },
-          "prompt": "Find the '中文' option in the dropdown list and click on it.",
+          "prompt": "find the '中文' option and click on it",
           "response": {
             "actions": [
               {
                 "locate": {
                   "id": "9aee8c53",
-                  "prompt": "the '中文' option in the dropdown list"
+                  "prompt": "the '中文' option in the language dropdown"
                 },
                 "param": null,
-                "thought": "Locate and click the '中文' option in the dropdown list.",
+                "thought": "Locate and click the '中文' option in the language dropdown menu.",
                 "type": "Tap"
-              }
-            ],
-            "error": null,
-            "furtherPlan": null,
-            "taskWillBeAccomplished": true
-          }
-        }
-      ]
-    },
-    {
-      "prompt": "向下滚动一屏",
-      "tasks": [
-        {
-          "type": "plan",
-          "pageContext": {
-            "url": "https://heyteavivocity.meuu.online/home",
-            "size": {
-              "width": 400,
-              "height": 905,
-              "dpr": 1
-            }
-          },
-          "prompt": "向下滚动一屏",
-          "response": {
-            "actions": [
-              {
-                "locate": null,
-                "param": {
-                  "direction": "down",
-                  "scrollType": "once",
-                  "distance": null
-                },
-                "thought": "Scroll down one screen to view more content.",
-                "type": "Scroll"
               }
             ],
             "error": null,
