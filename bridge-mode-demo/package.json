@@ -6,7 +6,8 @@
     "main": "index.js",
     "type": "module",
     "scripts": {
-        "demo": "npx tsx demo-new-tab.ts"
+        "demo": "npx tsx demo-new-tab.ts",
+        "demo-current-tab": "npx tsx demo-current-tab.ts"
     },
     "author": "",
     "license": "MIT",

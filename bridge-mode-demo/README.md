@@ -26,6 +26,12 @@ Remember to click the "Allow connection" button from Chrome extension while runn
 npm run demo
 ```
 
+Run demo to connect to the active tab.
+
+```bash
+npm run demo-current-tab
+```
+
 # Reference 
 
 https://midscenejs.com/bridge-mode-by-chrome-extension
