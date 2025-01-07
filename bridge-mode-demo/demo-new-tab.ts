@@ -13,7 +13,7 @@ Promise.resolve(
     console.log("connected to a new tab !");
 
     // these are the same as normal Midscene agent
-    await agent.ai('type "AI 101" and hit Enter');
+    await agent.aiAction('type "AI 101" and hit Enter');
     await sleep(3000);
 
     await agent.aiAssert("there are some search results");
