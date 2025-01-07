@@ -1,0 +1,19 @@
+{
+    "name": "bridge-mode-demo",
+    "private": true,
+    "version": "1.0.0",
+    "description": "> quick start",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "demo": "npx tsx demo-new-tab.ts",
+        "demo-current-tab": "npx tsx demo-current-tab.ts"
+    },
+    "author": "",
+    "license": "MIT",
+    "devDependencies": {
+        "@midscene/web": "latest",
+        "dotenv": "^16.4.5",
+        "tsx": "^4.19.1"
+    }
+}
