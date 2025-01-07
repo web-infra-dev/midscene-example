@@ -19,6 +19,8 @@ export OPENAI_API_KEY="sk-abcdefghijklmnopqrstuvwxyz"
 
 Run all scripts
 
+> For windows, you need to replace `./` with `.\`, like `midscene .\midscene-scripts\`.
+
 ```shell
 midscene ./midscene-scripts/
 ```
@@ -58,7 +60,7 @@ midscene --headed ./midscene-scripts/sauce-demo.yaml
 Keep the browser window open after the script finishes
 
 ```shell
-midscene --keep-open ./midscene-scripts/sauce-demo.yaml
+midscene --keep-window ./midscene-scripts/sauce-demo.yaml
 ```
 
 # Reference
