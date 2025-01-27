@@ -5,6 +5,9 @@ target:
   url: index.html
 
 tasks:
-  - name: assert button text
+  - name: page redirect
     flow:
-      - aiAssert: The button text is 'Start'
+      - aiAction: click the link 'Go to planet list'
+      - sleep: 1000
+      - aiAssert: The page contains 'Earth'
+

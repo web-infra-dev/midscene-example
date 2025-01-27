@@ -13,7 +13,7 @@ OPENAI_API_KEY="YOUR_TOKEN"
 
 
 ```bash
-pnpm install --no-frozen-lockfile
+pnpm install
 
 # run e2e test
 pnpm run e2e

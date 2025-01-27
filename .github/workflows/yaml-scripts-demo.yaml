@@ -30,6 +30,7 @@ jobs:
         run: |
           cd yaml-scripts-demo
           npm i -g @midscene/cli@${{ env.TAG }}
+          midscene --version
           midscene ./midscene-scripts/
         continue-on-error: true
 
