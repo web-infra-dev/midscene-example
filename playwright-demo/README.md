@@ -28,8 +28,8 @@ pnpm run e2e:ui
 pnpm run e2e:ui:cache
 
 # read report
-# You must run the pnpm run e2e or pnpm e2e:cache to view the report
-node ./midscene_run/midscene-report/index.js
+
+After the above command executes successfully, the console will output: Midscene - report file updated: ./current_cwd/midscene_run/report/some_id.html. You can open this file in a browser to view the report.
 ```
 
 
