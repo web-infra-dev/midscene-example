@@ -1,6 +1,6 @@
 # playwright-demo
 
-> quick start
+## Steps
 
 create `.env` file
 
@@ -9,8 +9,7 @@ create `.env` file
 OPENAI_API_KEY="YOUR_TOKEN"
 ```
 
-> e2e command
-
+run e2e test
 
 ```bash
 pnpm install
@@ -26,12 +25,9 @@ pnpm run e2e:ui
 
 # run e2e with playwright ui + cache
 pnpm run e2e:ui:cache
-
-# read report
-
-After the above command executes successfully, the console will output: Midscene - report file updated: ./current_cwd/midscene_run/report/some_id.html. You can open this file in a browser to view the report.
 ```
 
+After the above command executes successfully, the console will output: `Midscene - report file updated: ./current_cwd/midscene_run/report/some_id.html.` You can open this file in a browser to view the report.
 
 # Reference 
 
