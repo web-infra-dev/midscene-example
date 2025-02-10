@@ -6,7 +6,8 @@
     "main": "index.js",
     "type": "module",
     "scripts": {
-        "test": "tsx demo.ts"
+        "test": "tsx demo.ts",
+        "test-yaml": "tsx demo-run-yaml.ts"
     },
     "author": "",
     "license": "MIT",
