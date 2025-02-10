@@ -16,7 +16,7 @@ test-results/
 
 .DS_Store
 
-
+pnpm-lock.yaml
 
 # Midscene.js dump files
 **/midscene_run/midscene-report
