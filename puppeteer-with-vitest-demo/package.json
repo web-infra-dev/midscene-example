@@ -12,7 +12,7 @@
     "devDependencies": {
         "@midscene/web": "latest",
         "dotenv": "^16.4.5",
-        "puppeteer": "^23.4.0",
+        "puppeteer": "^24.0.0",
         "vitest": "^2.1.8"
     }
 }
