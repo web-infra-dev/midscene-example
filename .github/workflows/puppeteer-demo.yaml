@@ -33,6 +33,7 @@ jobs:
           pnpm install
           pnpx puppeteer browsers install chrome
           pnpm run test
+          pnpm run test-yaml
         continue-on-error: true
 
       - name: Upload output folder

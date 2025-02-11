@@ -20,6 +20,9 @@ npm install
 
 # run demo.ts
 npx tsx demo.ts
+
+# run demo with a `.runYaml` call
+npx tsx demo-run-yaml.ts
 ```
 
 # Reference 
