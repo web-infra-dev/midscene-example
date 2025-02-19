@@ -1,5 +1,5 @@
 import { AgentOverChromeBridge } from "@midscene/web/bridge-mode";
-import "dotenv/config";
+import "dotenv/config"; // read environment variables from .env file
 
 Promise.resolve(
   (async () => {

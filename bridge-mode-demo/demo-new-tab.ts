@@ -1,5 +1,5 @@
 import { AgentOverChromeBridge } from "@midscene/web/bridge-mode";
-import "dotenv/config";
+import "dotenv/config"; // read environment variables from .env file
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 Promise.resolve(
