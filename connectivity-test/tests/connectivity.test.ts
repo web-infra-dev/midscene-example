@@ -66,7 +66,7 @@ describe("Use OpenAI SDK directly", () => {
         },
       ],
     });
-    console.log(response.choices[0].message.content);
+    // console.log(response.choices[0].message.content);
     expect(response.choices[0].message.content).toBeTruthy();
   });
 });
