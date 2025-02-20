@@ -12,6 +12,7 @@ import {
 // read and parse .env file
 const result = dotenv.config({
   debug: true,
+  override: true,
 });
 if (result.error) {
   throw result.error;
@@ -25,7 +26,7 @@ vi.setConfig({
   testTimeout: 30000,
 });
 
-const imagePath = join(__dirname, "some_logo.png");
+const imagePath = join(__dirname, "dot.png");
 const imageBase64 = base64Encoded(imagePath);
 
 const model = process.env.MIDSCENE_MODEL_NAME || "gpt-4o";
@@ -43,16 +44,22 @@ describe("Use OpenAI SDK directly", () => {
     expect(response.choices[0].message.content).toBeTruthy();
   });
 
-  it(`image input with ${model}`, async () => {
+  it.only(`image input with ${model}`, async () => {
     const openai = new OpenAI({
       apiKey: process.env.OPENAI_API_KEY,
       baseURL: process.env.OPENAI_BASE_URL,
     });
 
     const response = await openai.chat.completions.create({
+      // vl_high_resolution_images: true,
       model: model,
       messages: [
-        { role: "user", content: "Tell me what is in this image" },
+        {
+          role: "user",
+          content:
+            "Tell me the bbox of the dot, and also the size of the image ([width: number, height: number])",
+          // "Tell me the size of the image ([width: number, height: number])",
+        },
         {
           role: "user",
           content: [
@@ -65,8 +72,8 @@ describe("Use OpenAI SDK directly", () => {
           ],
         },
       ],
-    });
-    // console.log(response.choices[0].message.content);
+    } as any);
+    console.log(response.choices[0].message.content);
     expect(response.choices[0].message.content).toBeTruthy();
   });
 });
