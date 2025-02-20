@@ -50,7 +50,6 @@ describe("Use OpenAI SDK directly", () => {
     });
 
     const response = await openai.chat.completions.create({
-      // vl_high_resolution_images: true,
       model: model,
       messages: [
         { role: "user", content: "Tell me what is in this image" },
