@@ -12,7 +12,6 @@ import {
 // read and parse .env file
 const result = dotenv.config({
   debug: true,
-  override: true,
 });
 if (result.error) {
   throw result.error;
@@ -44,7 +43,7 @@ describe("Use OpenAI SDK directly", () => {
     expect(response.choices[0].message.content).toBeTruthy();
   });
 
-  it.only(`image input with ${model}`, async () => {
+  it(`image input with ${model}`, async () => {
     const openai = new OpenAI({
       apiKey: process.env.OPENAI_API_KEY,
       baseURL: process.env.OPENAI_BASE_URL,
@@ -54,12 +53,7 @@ describe("Use OpenAI SDK directly", () => {
       // vl_high_resolution_images: true,
       model: model,
       messages: [
-        {
-          role: "user",
-          content:
-            "Tell me the bbox of the dot, and also the size of the image ([width: number, height: number])",
-          // "Tell me the size of the image ([width: number, height: number])",
-        },
+        { role: "user", content: "Tell me what is in this image" },
         {
           role: "user",
           content: [
@@ -72,7 +66,7 @@ describe("Use OpenAI SDK directly", () => {
           ],
         },
       ],
-    } as any);
+    });
     console.log(response.choices[0].message.content);
     expect(response.choices[0].message.content).toBeTruthy();
   });
