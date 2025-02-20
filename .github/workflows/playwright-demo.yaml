@@ -7,6 +7,11 @@ on:
         description: 'The tag name of @midscene/'
         required: true
         default: 'beta'
+      MIDSCENE_USE_QWEN_VL:
+        description: 'Qwen-VL mode'
+        type: boolean
+        required: false
+        default: true
   push:
     branches:
       - main
@@ -24,8 +29,11 @@ jobs:
       - name: Run script
         id: run-script
         env:
-          OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_BASE_URL: ${{ github.event.inputs.MIDSCENE_USE_QWEN_VL && secrets.QWEN_OPENAI_BASE_URL || secrets.OPENAI_BASE_URL }}
+          OPENAI_API_KEY: ${{ github.event.inputs.MIDSCENE_USE_QWEN_VL && secrets.QWEN_OPENAI_API_KEY || secrets.OPENAI_API_KEY }}
+          MIDSCENE_MODEL_NAME: ${{ github.event.inputs.MIDSCENE_USE_QWEN_VL && 'qwen-vl-max-latest' }}
+          MIDSCENE_USE_QWEN_VL: ${{ github.event.inputs.MIDSCENE_USE_QWEN_VL && '1' }}
+          MIDSCENE_DEBUG_AI_PROFILE: 1
         run: |
           cd playwright-demo
           npm i pnpm -g
