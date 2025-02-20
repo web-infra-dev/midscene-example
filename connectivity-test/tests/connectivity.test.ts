@@ -25,7 +25,7 @@ vi.setConfig({
   testTimeout: 30000,
 });
 
-const imagePath = join(__dirname, "dot.png");
+const imagePath = join(__dirname, "some_logo.png");
 const imageBase64 = base64Encoded(imagePath);
 
 const model = process.env.MIDSCENE_MODEL_NAME || "gpt-4o";
