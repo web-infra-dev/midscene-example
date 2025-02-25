@@ -14,7 +14,7 @@ Promise.resolve(
     const page = await browser.newPage();
     await page.setViewport({
       width: 1280,
-      height: 800,
+      height: 768,
       deviceScaleFactor: os.platform() === "darwin" ? 2 : 1, // this is used to avoid flashing on UI Mode when doing screenshot on Mac
     });
 

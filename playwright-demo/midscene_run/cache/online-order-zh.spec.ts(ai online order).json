@@ -21,34 +21,31 @@
             "actions": [
               {
                 "locate": {
-                  "id": "ca756f91",
-                  "prompt": "the language switch button with the text 'English'"
+                  "id": "jebfb",
+                  "prompt": "The language switch button labeled 'English'"
                 },
                 "param": null,
-                "thought": "Click the language switch button to open the language options.",
-                "type": "Tap"
-              },
-              {
-                "locate": null,
-                "param": {
-                  "timeMs": 1000
-                },
-                "thought": "Wait for 1 second to ensure the language options are displayed.",
-                "type": "Sleep"
-              },
-              {
-                "locate": null,
-                "param": null,
-                "thought": "Locate the '中文' option in the language menu.",
+                "thought": "Click the language switch button to open the dropdown menu.",
                 "type": "Tap"
               }
             ],
             "error": null,
-            "furtherPlan": {
-              "whatHaveDone": "Click the language switch button and wait 1s",
-              "whatToDoNext": "find the '中文' option and click on it"
-            },
-            "taskWillBeAccomplished": false
+            "finish": false,
+            "log": "Click the language switch button to open the dropdown menu.",
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"locate\": {\n        \"id\": \"jebfb\",\n        \"prompt\": \"The language switch button labeled 'English'\"\n      },\n      \"param\": null,\n      \"thought\": \"Click the language switch button to open the dropdown menu.\",\n      \"type\": \"Tap\"\n    }\n  ],\n  \"error\": null,\n  \"finish\": false,\n  \"log\": \"Click the language switch button to open the dropdown menu.\"\n}",
+            "usage": {
+              "completion_tokens": 68,
+              "prompt_tokens": 3620,
+              "total_tokens": 3688,
+              "completion_tokens_details": {
+                "audio_tokens": 0,
+                "reasoning_tokens": 0
+              },
+              "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+              }
+            }
           }
         },
         {
@@ -61,22 +58,499 @@
               "dpr": 1
             }
           },
-          "prompt": "find the '中文' option and click on it",
+          "prompt": "点击左上角语言切换按钮(English、中文)，在弹出的下拉列表中点击中文",
           "response": {
             "actions": [
               {
                 "locate": {
-                  "id": "9aee8c53",
-                  "prompt": "the '中文' option in the language dropdown"
+                  "id": "mdbil",
+                  "prompt": "The '中文' option in the language dropdown menu"
                 },
                 "param": null,
-                "thought": "Locate and click the '中文' option in the language dropdown menu.",
+                "thought": "Select the '中文' option from the dropdown menu.",
                 "type": "Tap"
               }
             ],
             "error": null,
-            "furtherPlan": null,
-            "taskWillBeAccomplished": true
+            "finish": true,
+            "log": "Select the '中文' option from the dropdown menu.",
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"locate\": {\n        \"id\": \"mdbil\",\n        \"prompt\": \"The '中文' option in the language dropdown menu\"\n      },\n      \"param\": null,\n      \"thought\": \"Select the '中文' option from the dropdown menu.\",\n      \"type\": \"Tap\"\n    }\n  ],\n  \"error\": null,\n  \"finish\": true,\n  \"log\": \"Select the '中文' option from the dropdown menu.\"\n}",
+            "usage": {
+              "completion_tokens": 70,
+              "prompt_tokens": 3785,
+              "total_tokens": 3855,
+              "completion_tokens_details": {
+                "audio_tokens": 0,
+                "reasoning_tokens": 0
+              },
+              "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "向下滚动一屏",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "https://heyteavivocity.meuu.online/home",
+            "size": {
+              "width": 400,
+              "height": 905,
+              "dpr": 1
+            }
+          },
+          "prompt": "向下滚动一屏",
+          "response": {
+            "actions": [
+              {
+                "locate": null,
+                "param": {
+                  "direction": "down",
+                  "distance": null,
+                  "scrollType": "once"
+                },
+                "thought": "Scroll down the page by one screen to reveal more content.",
+                "type": "Scroll"
+              }
+            ],
+            "error": null,
+            "finish": true,
+            "log": "Scrolled down the page by one screen.",
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"locate\": null,\n      \"param\": {\n        \"direction\": \"down\",\n        \"distance\": null,\n        \"scrollType\": \"once\"\n      },\n      \"thought\": \"Scroll down the page by one screen to reveal more content.\",\n      \"type\": \"Scroll\"\n    }\n  ],\n  \"error\": null,\n  \"finish\": true,\n  \"log\": \"Scrolled down the page by one screen.\"\n}",
+            "usage": {
+              "completion_tokens": 63,
+              "prompt_tokens": 3727,
+              "total_tokens": 3790,
+              "completion_tokens_details": {
+                "audio_tokens": 0,
+                "reasoning_tokens": 0
+              },
+              "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "直接点击多肉葡萄的规格按钮",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "https://heyteavivocity.meuu.online/home",
+            "size": {
+              "width": 400,
+              "height": 905,
+              "dpr": 1
+            }
+          },
+          "prompt": "直接点击多肉葡萄的规格按钮",
+          "response": {
+            "actions": [
+              {
+                "locate": {
+                  "id": "jhgnn",
+                  "prompt": "The '选规格' button for 多肉葡萄"
+                },
+                "param": null,
+                "thought": "Click the '选规格' button for the 多肉葡萄 item.",
+                "type": "Tap"
+              }
+            ],
+            "error": null,
+            "finish": true,
+            "log": "Clicked the '选规格' button for the 多肉葡萄 item.",
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"locate\": {\n        \"id\": \"jhgnn\",\n        \"prompt\": \"The '选规格' button for 多肉葡萄\"\n      },\n      \"param\": null,\n      \"thought\": \"Click the '选规格' button for the 多肉葡萄 item.\",\n      \"type\": \"Tap\"\n    }\n  ],\n  \"error\": null,\n  \"finish\": true,\n  \"log\": \"Clicked the '选规格' button for the 多肉葡萄 item.\"\n}",
+            "usage": {
+              "completion_tokens": 80,
+              "prompt_tokens": 4613,
+              "total_tokens": 4693,
+              "completion_tokens_details": {
+                "audio_tokens": 0,
+                "reasoning_tokens": 0
+              },
+              "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "点击不使用吸管、点击冰沙推荐、点击正常冰推荐",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "https://heyteavivocity.meuu.online/home",
+            "size": {
+              "width": 400,
+              "height": 905,
+              "dpr": 1
+            }
+          },
+          "prompt": "点击不使用吸管、点击冰沙推荐、点击正常冰推荐",
+          "response": {
+            "actions": [
+              {
+                "locate": {
+                  "id": "cfajb",
+                  "prompt": "Checkbox for '不使用吸管'"
+                },
+                "param": null,
+                "thought": "Click the checkbox for '不使用吸管' to select it.",
+                "type": "Tap"
+              },
+              {
+                "locate": {
+                  "id": "mbghj",
+                  "prompt": "Checkbox for '冰沙（推荐）'"
+                },
+                "param": null,
+                "thought": "Click the checkbox for '冰沙（推荐）' to select it.",
+                "type": "Tap"
+              },
+              {
+                "locate": {
+                  "id": "bihic",
+                  "prompt": "Checkbox for '正常冰（推荐）'"
+                },
+                "param": null,
+                "thought": "Click the checkbox for '正常冰（推荐）' to select it.",
+                "type": "Tap"
+              }
+            ],
+            "error": null,
+            "finish": true,
+            "log": "Selected the options: '不使用吸管', '冰沙（推荐）', and '正常冰（推荐）'.",
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"locate\": {\n        \"id\": \"cfajb\",\n        \"prompt\": \"Checkbox for '不使用吸管'\"\n      },\n      \"param\": null,\n      \"thought\": \"Click the checkbox for '不使用吸管' to select it.\",\n      \"type\": \"Tap\"\n    },\n    {\n      \"locate\": {\n        \"id\": \"mbghj\",\n        \"prompt\": \"Checkbox for '冰沙（推荐）'\"\n      },\n      \"param\": null,\n      \"thought\": \"Click the checkbox for '冰沙（推荐）' to select it.\",\n      \"type\": \"Tap\"\n    },\n    {\n      \"locate\": {\n        \"id\": \"bihic\",\n        \"prompt\": \"Checkbox for '正常冰（推荐）'\"\n      },\n      \"param\": null,\n      \"thought\": \"Click the checkbox for '正常冰（推荐）' to select it.\",\n      \"type\": \"Tap\"\n    }\n  ],\n  \"error\": null,\n  \"finish\": true,\n  \"log\": \"Selected the options: '不使用吸管', '冰沙（推荐）', and '正常冰（推荐）'.\"\n}",
+            "usage": {
+              "completion_tokens": 181,
+              "prompt_tokens": 3437,
+              "total_tokens": 3618,
+              "completion_tokens_details": {
+                "audio_tokens": 0,
+                "reasoning_tokens": 0
+              },
+              "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "向下滚动一屏",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "https://heyteavivocity.meuu.online/home",
+            "size": {
+              "width": 400,
+              "height": 905,
+              "dpr": 1
+            }
+          },
+          "prompt": "向下滚动一屏",
+          "response": {
+            "actions": [
+              {
+                "locate": null,
+                "param": {
+                  "direction": "down",
+                  "distance": null,
+                  "scrollType": "once"
+                },
+                "thought": "Scroll down one screen to view more content.",
+                "type": "Scroll"
+              }
+            ],
+            "error": null,
+            "finish": true,
+            "log": "Scroll down one screen to view more content.",
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"locate\": null,\n      \"param\": {\n        \"direction\": \"down\",\n        \"distance\": null,\n        \"scrollType\": \"once\"\n      },\n      \"thought\": \"Scroll down one screen to view more content.\",\n      \"type\": \"Scroll\"\n    }\n  ],\n  \"error\": null,\n  \"finish\": true,\n  \"log\": \"Scroll down one screen to view more content.\"\n}",
+            "usage": {
+              "completion_tokens": 61,
+              "prompt_tokens": 3429,
+              "total_tokens": 3490,
+              "completion_tokens_details": {
+                "audio_tokens": 0,
+                "reasoning_tokens": 0
+              },
+              "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "点击标准甜、点击绿妍（推荐）、点击标准口味",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "https://heyteavivocity.meuu.online/home",
+            "size": {
+              "width": 400,
+              "height": 905,
+              "dpr": 1
+            }
+          },
+          "prompt": "点击标准甜、点击绿妍（推荐）、点击标准口味",
+          "response": {
+            "actions": [
+              {
+                "locate": {
+                  "id": "klmjm",
+                  "prompt": "The checkbox for 标准甜 (recommended sweetness)"
+                },
+                "param": null,
+                "thought": "Click the checkbox for 标准甜 to select the recommended sweetness.",
+                "type": "Tap"
+              },
+              {
+                "locate": {
+                  "id": "pjkha",
+                  "prompt": "The checkbox for 绿妍 (recommended tea base)"
+                },
+                "param": null,
+                "thought": "Click the checkbox for 绿妍 to select the recommended tea base.",
+                "type": "Tap"
+              },
+              {
+                "locate": {
+                  "id": "bbbng",
+                  "prompt": "The checkbox for 标准口味 (recommended flavor)"
+                },
+                "param": null,
+                "thought": "Click the checkbox for 标准口味 to select the recommended flavor.",
+                "type": "Tap"
+              }
+            ],
+            "error": null,
+            "finish": true,
+            "log": "Selected 标准甜, 绿妍, and 标准口味 as instructed.",
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"locate\": {\n        \"id\": \"klmjm\",\n        \"prompt\": \"The checkbox for 标准甜 (recommended sweetness)\"\n      },\n      \"param\": null,\n      \"thought\": \"Click the checkbox for 标准甜 to select the recommended sweetness.\",\n      \"type\": \"Tap\"\n    },\n    {\n      \"locate\": {\n        \"id\": \"pjkha\",\n        \"prompt\": \"The checkbox for 绿妍 (recommended tea base)\"\n      },\n      \"param\": null,\n      \"thought\": \"Click the checkbox for 绿妍 to select the recommended tea base.\",\n      \"type\": \"Tap\"\n    },\n    {\n      \"locate\": {\n        \"id\": \"bbbng\",\n        \"prompt\": \"The checkbox for 标准口味 (recommended flavor)\"\n      },\n      \"param\": null,\n      \"thought\": \"Click the checkbox for 标准口味 to select the recommended flavor.\",\n      \"type\": \"Tap\"\n    }\n  ],\n  \"error\": null,\n  \"finish\": true,\n  \"log\": \"Selected 标准甜, 绿妍, and 标准口味 as instructed.\"\n}",
+            "usage": {
+              "completion_tokens": 177,
+              "prompt_tokens": 3729,
+              "total_tokens": 3906,
+              "completion_tokens_details": {
+                "audio_tokens": 0,
+                "reasoning_tokens": 0
+              },
+              "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "滚动到最下面",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "https://heyteavivocity.meuu.online/home",
+            "size": {
+              "width": 400,
+              "height": 905,
+              "dpr": 1
+            }
+          },
+          "prompt": "滚动到最下面",
+          "response": {
+            "actions": [
+              {
+                "locate": null,
+                "param": {
+                  "direction": "down",
+                  "distance": null,
+                  "scrollType": "untilBottom"
+                },
+                "thought": "Scroll to the bottom of the page to fulfill the user's request.",
+                "type": "Scroll"
+              }
+            ],
+            "error": null,
+            "finish": true,
+            "log": "Scroll to the bottom of the page.",
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"locate\": null,\n      \"param\": {\n        \"direction\": \"down\",\n        \"distance\": null,\n        \"scrollType\": \"untilBottom\"\n      },\n      \"thought\": \"Scroll to the bottom of the page to fulfill the user's request.\",\n      \"type\": \"Scroll\"\n    }\n  ],\n  \"error\": null,\n  \"finish\": true,\n  \"log\": \"Scroll to the bottom of the page.\"\n}",
+            "usage": {
+              "completion_tokens": 65,
+              "prompt_tokens": 3719,
+              "total_tokens": 3784,
+              "completion_tokens_details": {
+                "audio_tokens": 0,
+                "reasoning_tokens": 0
+              },
+              "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "点击选好了按钮",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "https://heyteavivocity.meuu.online/home",
+            "size": {
+              "width": 400,
+              "height": 905,
+              "dpr": 1
+            }
+          },
+          "prompt": "点击选好了按钮",
+          "response": {
+            "actions": [
+              {
+                "locate": {
+                  "id": "jiklk",
+                  "prompt": "The button labeled '选好了'"
+                },
+                "param": null,
+                "thought": "Click the '选好了' button to proceed.",
+                "type": "Tap"
+              }
+            ],
+            "error": null,
+            "finish": true,
+            "log": "Clicked the '选好了' button to proceed.",
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"locate\": {\n        \"id\": \"jiklk\",\n        \"prompt\": \"The button labeled '选好了'\"\n      },\n      \"param\": null,\n      \"thought\": \"Click the '选好了' button to proceed.\",\n      \"type\": \"Tap\"\n    }\n  ],\n  \"error\": null,\n  \"finish\": true,\n  \"log\": \"Clicked the '选好了' button to proceed.\"\n}",
+            "usage": {
+              "completion_tokens": 65,
+              "prompt_tokens": 4159,
+              "total_tokens": 4224,
+              "completion_tokens_details": {
+                "audio_tokens": 0,
+                "reasoning_tokens": 0
+              },
+              "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "点击右上角商品图标按钮",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "https://heyteavivocity.meuu.online/home",
+            "size": {
+              "width": 400,
+              "height": 905,
+              "dpr": 1
+            }
+          },
+          "prompt": "点击右上角商品图标按钮",
+          "response": {
+            "actions": [
+              {
+                "locate": {
+                  "id": "podpa",
+                  "prompt": "The top-right product icon button"
+                },
+                "param": null,
+                "thought": "Click the product icon button located at the top-right corner of the page.",
+                "type": "Tap"
+              }
+            ],
+            "error": null,
+            "finish": true,
+            "log": "Click the product icon button located at the top-right corner of the page.",
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"locate\": {\n        \"id\": \"podpa\",\n        \"prompt\": \"The top-right product icon button\"\n      },\n      \"param\": null,\n      \"thought\": \"Click the product icon button located at the top-right corner of the page.\",\n      \"type\": \"Tap\"\n    }\n  ],\n  \"error\": null,\n  \"finish\": true,\n  \"log\": \"Click the product icon button located at the top-right corner of the page.\"\n}",
+            "usage": {
+              "completion_tokens": 74,
+              "prompt_tokens": 4697,
+              "total_tokens": 4771,
+              "completion_tokens_details": {
+                "audio_tokens": 0,
+                "reasoning_tokens": 0
+              },
+              "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 1792
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "滚动到最下面",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "https://heyteavivocity.meuu.online/home",
+            "size": {
+              "width": 400,
+              "height": 905,
+              "dpr": 1
+            }
+          },
+          "prompt": "滚动到最下面",
+          "response": {
+            "actions": [
+              {
+                "locate": null,
+                "param": {
+                  "direction": "down",
+                  "distance": null,
+                  "scrollType": "untilBottom"
+                },
+                "thought": "Scroll down to the bottom of the page to fulfill the user's request.",
+                "type": "Scroll"
+              }
+            ],
+            "error": null,
+            "finish": true,
+            "log": "Scroll down to the bottom of the page.",
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"locate\": null,\n      \"param\": {\n        \"direction\": \"down\",\n        \"distance\": null,\n        \"scrollType\": \"untilBottom\"\n      },\n      \"thought\": \"Scroll down to the bottom of the page to fulfill the user's request.\",\n      \"type\": \"Scroll\"\n    }\n  ],\n  \"error\": null,\n  \"finish\": true,\n  \"log\": \"Scroll down to the bottom of the page.\"\n}",
+            "usage": {
+              "completion_tokens": 67,
+              "prompt_tokens": 3472,
+              "total_tokens": 3539,
+              "completion_tokens_details": {
+                "audio_tokens": 0,
+                "reasoning_tokens": 0
+              },
+              "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+              }
+            }
           }
         }
       ]

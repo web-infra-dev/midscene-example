@@ -12,7 +12,7 @@
             "url": "https://www.ebay.com/",
             "size": {
               "width": 1280,
-              "height": 800,
+              "height": 768,
               "dpr": 1
             }
           },
@@ -21,13 +21,13 @@
             "actions": [
               {
                 "locate": {
-                  "id": "c528580a",
-                  "prompt": "the search bar"
+                  "id": "opecb",
+                  "prompt": "The search input box"
                 },
                 "param": {
                   "value": "Headphones"
                 },
-                "thought": "Input 'Headphones' into the search bar to search for headphones.",
+                "thought": "Input the term 'Headphones' into the search box.",
                 "type": "Input"
               },
               {
@@ -35,13 +35,27 @@
                 "param": {
                   "value": "Enter"
                 },
-                "thought": "Press the Enter key to initiate the search.",
+                "thought": "Simulate pressing the Enter key to initiate the search.",
                 "type": "KeyboardPress"
               }
             ],
             "error": null,
-            "furtherPlan": null,
-            "taskWillBeAccomplished": true
+            "finish": true,
+            "log": "Typed 'Headphones' in the search box and pressed Enter to perform the search.",
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"locate\": {\n        \"id\": \"opecb\",\n        \"prompt\": \"The search input box\"\n      },\n      \"param\": {\n        \"value\": \"Headphones\"\n      },\n      \"thought\": \"Input the term 'Headphones' into the search box.\",\n      \"type\": \"Input\"\n    },\n    {\n      \"locate\": null,\n      \"param\": {\n        \"value\": \"Enter\"\n      },\n      \"thought\": \"Simulate pressing the Enter key to initiate the search.\",\n      \"type\": \"KeyboardPress\"\n    }\n  ],\n  \"error\": null,\n  \"finish\": true,\n  \"log\": \"Typed 'Headphones' in the search box and pressed Enter to perform the search.\"\n}",
+            "usage": {
+              "completion_tokens": 106,
+              "prompt_tokens": 5405,
+              "total_tokens": 5511,
+              "completion_tokens_details": {
+                "audio_tokens": 0,
+                "reasoning_tokens": 0
+              },
+              "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+              }
+            }
           }
         }
       ]

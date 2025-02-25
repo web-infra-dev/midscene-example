@@ -6,12 +6,14 @@
     "main": "index.js",
     "type": "module",
     "scripts": {
-        "demo": "npx tsx demo-new-tab.ts",
-        "demo-current-tab": "npx tsx demo-current-tab.ts"
+        "demo-new-tab": "npx tsx demo-new-tab.ts",
+        "demo-current-tab": "npx tsx demo-current-tab.ts",
+        "demo-yaml-new-tab": "npx midscene yaml-new-tab.yml"
     },
     "author": "",
     "license": "MIT",
     "devDependencies": {
+        "@midscene/cli": "^0.12.1-beta-20250225084005.0",
         "@midscene/web": "latest",
         "dotenv": "^16.4.5",
         "tsx": "^4.19.1"
