@@ -14,6 +14,8 @@ dist/
 test-results/
 .env
 
+output/
+
 .DS_Store
 
 pnpm-lock.yaml

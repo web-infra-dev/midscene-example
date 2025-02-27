@@ -4,7 +4,10 @@ import "dotenv/config"; // read environment variables from .env file
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 Promise.resolve(
   (async () => {
-    const agent = new AgentOverChromeBridge();
+    const agent = new AgentOverChromeBridge({
+      // uncomment this to close the new tab when destroying the agent
+      // closeNewTabsAfterDisconnect: true,
+    });
 
     // This will connect to a new tab on your desktop Chrome
     // remember to start your chrome extension, click 'allow connection' button.

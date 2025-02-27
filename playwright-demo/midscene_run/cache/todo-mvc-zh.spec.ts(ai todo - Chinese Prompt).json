@@ -21,13 +21,13 @@
             "actions": [
               {
                 "locate": {
-                  "id": "977fb34d",
-                  "prompt": "the input field with placeholder 'What needs to be done?'"
+                  "id": "okgbn",
+                  "prompt": "The input field with placeholder 'What needs to be done?'"
                 },
                 "param": {
                   "value": "今天学习 JS"
                 },
-                "thought": "Input the text '今天学习 JS' into the todo input field.",
+                "thought": "Input the text '今天学习 JS' into the task input field.",
                 "type": "Input"
               },
               {
@@ -35,13 +35,27 @@
                 "param": {
                   "value": "Enter"
                 },
-                "thought": "Press the Enter key to submit the new todo item.",
+                "thought": "Press the Enter key to submit the input.",
                 "type": "KeyboardPress"
               }
             ],
             "error": null,
-            "furtherPlan": null,
-            "taskWillBeAccomplished": true
+            "finish": true,
+            "log": "Input '今天学习 JS' into the task input field and press Enter to submit.",
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"locate\": {\n        \"id\": \"okgbn\",\n        \"prompt\": \"The input field with placeholder 'What needs to be done?'\"\n      },\n      \"param\": {\n        \"value\": \"今天学习 JS\"\n      },\n      \"thought\": \"Input the text '今天学习 JS' into the task input field.\",\n      \"type\": \"Input\"\n    },\n    {\n      \"locate\": null,\n      \"param\": {\n        \"value\": \"Enter\"\n      },\n      \"thought\": \"Press the Enter key to submit the input.\",\n      \"type\": \"KeyboardPress\"\n    }\n  ],\n  \"error\": null,\n  \"finish\": true,\n  \"log\": \"Input '今天学习 JS' into the task input field and press Enter to submit.\"\n}",
+            "usage": {
+              "completion_tokens": 115,
+              "prompt_tokens": 4061,
+              "total_tokens": 4176,
+              "completion_tokens_details": {
+                "audio_tokens": 0,
+                "reasoning_tokens": 0
+              },
+              "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+              }
+            }
           }
         }
       ]
@@ -64,13 +78,13 @@
             "actions": [
               {
                 "locate": {
-                  "id": "977fb34d",
-                  "prompt": "the input field with placeholder 'What needs to be done?'"
+                  "id": "okgbn",
+                  "prompt": "The input field for adding a new task"
                 },
                 "param": {
                   "value": "明天学习 Rust"
                 },
-                "thought": "Input the text '明天学习 Rust' into the task input field.",
+                "thought": "Input the task '明天学习 Rust' into the task input field.",
                 "type": "Input"
               },
               {
@@ -78,13 +92,273 @@
                 "param": {
                   "value": "Enter"
                 },
-                "thought": "Press the Enter key to add the new task to the list.",
+                "thought": "Press the Enter key to submit the new task.",
                 "type": "KeyboardPress"
               }
             ],
             "error": null,
-            "furtherPlan": null,
-            "taskWillBeAccomplished": true
+            "finish": true,
+            "log": "Input '明天学习 Rust' into the task input field and press Enter to add it as a new task.",
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"locate\": {\n        \"id\": \"okgbn\",\n        \"prompt\": \"The input field for adding a new task\"\n      },\n      \"param\": {\n        \"value\": \"明天学习 Rust\"\n      },\n      \"thought\": \"Input the task '明天学习 Rust' into the task input field.\",\n      \"type\": \"Input\"\n    },\n    {\n      \"locate\": null,\n      \"param\": {\n        \"value\": \"Enter\"\n      },\n      \"thought\": \"Press the Enter key to submit the new task.\",\n      \"type\": \"KeyboardPress\"\n    }\n  ],\n  \"error\": null,\n  \"finish\": true,\n  \"log\": \"Input '明天学习 Rust' into the task input field and press Enter to add it as a new task.\"\n}",
+            "usage": {
+              "completion_tokens": 120,
+              "prompt_tokens": 4390,
+              "total_tokens": 4510,
+              "completion_tokens_details": {
+                "audio_tokens": 0,
+                "reasoning_tokens": 0
+              },
+              "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "在任务框 input 输入后天学习 AI，按回车键",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "https://todomvc.com/examples/react/dist/",
+            "size": {
+              "width": 1280,
+              "height": 720,
+              "dpr": 1
+            }
+          },
+          "prompt": "在任务框 input 输入后天学习 AI，按回车键",
+          "response": {
+            "actions": [
+              {
+                "locate": {
+                  "id": "okgbn",
+                  "prompt": "The input field for adding a new todo item"
+                },
+                "param": {
+                  "value": "后天学习 AI"
+                },
+                "thought": "Input the text '后天学习 AI' into the todo input field.",
+                "type": "Input"
+              },
+              {
+                "locate": null,
+                "param": {
+                  "value": "Enter"
+                },
+                "thought": "Press the Enter key to submit the new todo item.",
+                "type": "KeyboardPress"
+              }
+            ],
+            "error": null,
+            "finish": true,
+            "log": "Input '后天学习 AI' into the todo input field and press Enter to add it as a new task.",
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"locate\": {\n        \"id\": \"okgbn\",\n        \"prompt\": \"The input field for adding a new todo item\"\n      },\n      \"param\": {\n        \"value\": \"后天学习 AI\"\n      },\n      \"thought\": \"Input the text '后天学习 AI' into the todo input field.\",\n      \"type\": \"Input\"\n    },\n    {\n      \"locate\": null,\n      \"param\": {\n        \"value\": \"Enter\"\n      },\n      \"thought\": \"Press the Enter key to submit the new todo item.\",\n      \"type\": \"KeyboardPress\"\n    }\n  ],\n  \"error\": null,\n  \"finish\": true,\n  \"log\": \"Input '后天学习 AI' into the todo input field and press Enter to add it as a new task.\"\n}",
+            "usage": {
+              "completion_tokens": 122,
+              "prompt_tokens": 4489,
+              "total_tokens": 4611,
+              "completion_tokens_details": {
+                "audio_tokens": 0,
+                "reasoning_tokens": 0
+              },
+              "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "将鼠标移动到任务列表中的第二项，点击第二项任务右边的删除按钮",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "https://todomvc.com/examples/react/dist/",
+            "size": {
+              "width": 1280,
+              "height": 720,
+              "dpr": 1
+            }
+          },
+          "prompt": "将鼠标移动到任务列表中的第二项，点击第二项任务右边的删除按钮",
+          "response": {
+            "actions": [
+              {
+                "locate": {
+                  "id": "iiknj",
+                  "prompt": "The label of the second task in the list"
+                },
+                "param": null,
+                "thought": "Hover over the second task in the list to reveal the delete button.",
+                "type": "Hover"
+              },
+              {
+                "locate": null,
+                "param": null,
+                "thought": "Click the delete button for the second task. However, the delete button is not visible in the current screenshot.",
+                "type": "Tap"
+              }
+            ],
+            "error": null,
+            "finish": false,
+            "log": "Hovered over the second task in the list to reveal the delete button. The delete button is not visible in the current screenshot.",
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"locate\": {\n        \"id\": \"iiknj\",\n        \"prompt\": \"The label of the second task in the list\"\n      },\n      \"param\": null,\n      \"thought\": \"Hover over the second task in the list to reveal the delete button.\",\n      \"type\": \"Hover\"\n    },\n    {\n      \"locate\": null,\n      \"param\": null,\n      \"thought\": \"Click the delete button for the second task. However, the delete button is not visible in the current screenshot.\",\n      \"type\": \"Tap\"\n    }\n  ],\n  \"error\": null,\n  \"finish\": false,\n  \"log\": \"Hovered over the second task in the list to reveal the delete button. The delete button is not visible in the current screenshot.\"\n}",
+            "usage": {
+              "completion_tokens": 124,
+              "prompt_tokens": 4596,
+              "total_tokens": 4720,
+              "completion_tokens_details": {
+                "audio_tokens": 0,
+                "reasoning_tokens": 0
+              },
+              "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+              }
+            }
+          }
+        },
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "https://todomvc.com/examples/react/dist/",
+            "size": {
+              "width": 1280,
+              "height": 720,
+              "dpr": 1
+            }
+          },
+          "prompt": "将鼠标移动到任务列表中的第二项，点击第二项任务右边的删除按钮",
+          "response": {
+            "actions": [
+              {
+                "locate": {
+                  "id": "jicbk",
+                  "prompt": "The delete button for the second task in the list"
+                },
+                "param": null,
+                "thought": "Click the delete button for the second task to remove it.",
+                "type": "Tap"
+              }
+            ],
+            "error": null,
+            "finish": true,
+            "log": "Clicked the delete button for the second task to remove it.",
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"locate\": {\n        \"id\": \"jicbk\",\n        \"prompt\": \"The delete button for the second task in the list\"\n      },\n      \"param\": null,\n      \"thought\": \"Click the delete button for the second task to remove it.\",\n      \"type\": \"Tap\"\n    }\n  ],\n  \"error\": null,\n  \"finish\": true,\n  \"log\": \"Clicked the delete button for the second task to remove it.\"\n}",
+            "usage": {
+              "completion_tokens": 73,
+              "prompt_tokens": 4697,
+              "total_tokens": 4770,
+              "completion_tokens_details": {
+                "audio_tokens": 0,
+                "reasoning_tokens": 0
+              },
+              "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "点击第二条任务左边的勾选按钮",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "https://todomvc.com/examples/react/dist/",
+            "size": {
+              "width": 1280,
+              "height": 720,
+              "dpr": 1
+            }
+          },
+          "prompt": "点击第二条任务左边的勾选按钮",
+          "response": {
+            "actions": [
+              {
+                "locate": {
+                  "id": "cdllc",
+                  "prompt": "The checkbox for the second task"
+                },
+                "param": null,
+                "thought": "Click the checkbox to mark the second task as completed.",
+                "type": "Tap"
+              }
+            ],
+            "error": null,
+            "finish": true,
+            "log": "Clicked the checkbox for the second task to mark it as completed.",
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"locate\": {\n        \"id\": \"cdllc\",\n        \"prompt\": \"The checkbox for the second task\"\n      },\n      \"param\": null,\n      \"thought\": \"Click the checkbox to mark the second task as completed.\",\n      \"type\": \"Tap\"\n    }\n  ],\n  \"error\": null,\n  \"finish\": true,\n  \"log\": \"Clicked the checkbox for the second task to mark it as completed.\"\n}",
+            "usage": {
+              "completion_tokens": 69,
+              "prompt_tokens": 4536,
+              "total_tokens": 4605,
+              "completion_tokens_details": {
+                "audio_tokens": 0,
+                "reasoning_tokens": 0
+              },
+              "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "点击任务列表下面的 completed 状态按钮",
+      "tasks": [
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "https://todomvc.com/examples/react/dist/",
+            "size": {
+              "width": 1280,
+              "height": 720,
+              "dpr": 1
+            }
+          },
+          "prompt": "点击任务列表下面的 completed 状态按钮",
+          "response": {
+            "actions": [
+              {
+                "locate": {
+                  "id": "lgdli",
+                  "prompt": "The 'Completed' status button below the task list"
+                },
+                "param": null,
+                "thought": "Click the 'Completed' button to filter the tasks by their completed status.",
+                "type": "Tap"
+              }
+            ],
+            "error": null,
+            "finish": true,
+            "log": "Clicked the 'Completed' button to filter the tasks by their completed status.",
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"locate\": {\n        \"id\": \"lgdli\",\n        \"prompt\": \"The 'Completed' status button below the task list\"\n      },\n      \"param\": null,\n      \"thought\": \"Click the 'Completed' button to filter the tasks by their completed status.\",\n      \"type\": \"Tap\"\n    }\n  ],\n  \"error\": null,\n  \"finish\": true,\n  \"log\": \"Clicked the 'Completed' button to filter the tasks by their completed status.\"\n}",
+            "usage": {
+              "completion_tokens": 79,
+              "prompt_tokens": 4533,
+              "total_tokens": 4612,
+              "completion_tokens_details": {
+                "audio_tokens": 0,
+                "reasoning_tokens": 0
+              },
+              "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 1792
+              }
+            }
           }
         }
       ]

@@ -4,7 +4,7 @@ import { PuppeteerAgent } from "@midscene/web/puppeteer";
 import "dotenv/config"; // read environment variables from .env file
 
 vi.setConfig({
-  testTimeout: 60000,
+  testTimeout: 120 * 1000,
 });
 
 const pageUrl = "https://todomvc.com/examples/react/dist/";
