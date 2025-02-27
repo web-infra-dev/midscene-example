@@ -23,7 +23,7 @@ Run demo to create new tabs.
 Remember to click the "Allow connection" button from Chrome extension while running.
 
 ```bash
-npm run demo
+npm run demo-new-tab
 ```
 
 Run demo to connect to the active tab.
