@@ -10,6 +10,7 @@ Here are some examples you can refer to:
 - [Integrate with Playwright](./playwright-demo/): Integrate Midscene with Playwright, including ai action, query ,cache, and report.
 - [Integrate with Puppeteer](./puppeteer-demo/): Integrate Midscene with Puppeteer, including ai action, query, cache, and report.
 - [Integrate with Puppeteer and Vitest](./puppeteer-with-vitest-demo/): Integrate Midscene with Puppeteer and Vitest. This is an alternative way to do test without Playwright.
+- [Bridge Mode](./bridge-mode-demo/): Bridge Mode allow you to use Midscene with your Desktop Chrome.
 
 ## Connectivity Test
 
