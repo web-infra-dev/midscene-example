@@ -39,7 +39,7 @@ describe("Use OpenAI SDK directly", () => {
       model: model,
       messages: [{ role: "user", content: "Hello, how are you?" }],
     });
-    // console.log(response);
+    console.log(response);
     expect(response.choices[0].message.content).toBeTruthy();
   });
 
@@ -66,12 +66,12 @@ describe("Use OpenAI SDK directly", () => {
         },
       ],
     });
-    // console.log(response.choices[0].message.content);
+    console.log(response.choices[0].message.content);
     expect(response.choices[0].message.content).toBeTruthy();
   });
 });
 
-describe("Use Midscene wrapped OpenAI SDK", () => {
+describe.only("Use Midscene wrapped OpenAI SDK", () => {
   it("call to get json object", async () => {
     const result = await callToGetJSONObject(
       [
@@ -94,7 +94,7 @@ describe("Use Midscene wrapped OpenAI SDK", () => {
       ],
       2 /* AIActionType.EXTRACT_DATA */
     );
-    // console.log(result.content.content);
+    console.log(result.content.content);
     expect(result.content.content.length).toBeGreaterThan(5);
   });
 });

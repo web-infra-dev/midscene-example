@@ -13,8 +13,8 @@
     "author": "",
     "license": "MIT",
     "devDependencies": {
-        "@midscene/cli": "^0.12.1-beta-20250225084005.0",
-        "@midscene/web": "latest",
+        "@midscene/cli": "latest",
+        "@midscene/web": "^0.12.6-beta-20250311120827.0",
         "dotenv": "^16.4.5",
         "tsx": "^4.19.1"
     }

@@ -32,7 +32,7 @@ jobs:
           OPENAI_BASE_URL: ${{ github.event.inputs.MIDSCENE_USE_QWEN_VL && secrets.QWEN_OPENAI_BASE_URL || secrets.OPENAI_BASE_URL }}
           OPENAI_API_KEY: ${{ github.event.inputs.MIDSCENE_USE_QWEN_VL && secrets.QWEN_OPENAI_API_KEY || secrets.OPENAI_API_KEY }}
           MIDSCENE_MODEL_NAME: ${{ github.event.inputs.MIDSCENE_USE_QWEN_VL && 'qwen-vl-max-latest' }}
-          MIDSCENE_USE_QWEN_VL: ${{ github.event.inputs.MIDSCENE_USE_QWEN_VL && '1' }}
+          MIDSCENE_USE_QWEN_VL: ${{ github.event.inputs.MIDSCENE_USE_QWEN_VL }}
           MIDSCENE_DEBUG_AI_PROFILE: 1
         run: |
           cd playwright-demo
