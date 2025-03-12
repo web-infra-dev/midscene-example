@@ -2,25 +2,20 @@
 
 ## Steps
 
+## Steps
+
+### Preparation
+
 create `.env` file
 
-### If you want to use OpenAI GPT-4o
-
 ```shell
+# replace by your gpt-4o api key
 OPENAI_API_KEY="YOUR_TOKEN"
 ```
 
-### If you want to use Qwen-2.5-VL
+Refer to this document if your want to use other models like Qwen: https://midscenejs.com/choose-a-model
 
-```shell
-OPENAI_BASE_URL="https://dashscope.aliyuncs.com/compatible-mode/v1" # or any endpoint from other providers.
-OPENAI_API_KEY="......"
-MIDSCENE_MODEL_NAME="qwen-vl-max-latest" # use this for Aliyun service
-MIDSCENE_USE_QWEN_VL=1 # remember to include this for Qwen 2.5 mode
-```
-
-For more information about Model configuration, please refer to [Choose a Model](https://midscenejs.com/choose-a-model.html).
-
+### Run demo
 
 run e2e test
 

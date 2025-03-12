@@ -14,7 +14,7 @@
     "license": "MIT",
     "devDependencies": {
         "@midscene/cli": "latest",
-        "@midscene/web": "^0.12.6-beta-20250311120827.0",
+        "@midscene/web": "latest",
         "dotenv": "^16.4.5",
         "tsx": "^4.19.1"
     }

@@ -2,21 +2,21 @@
 
 Use this folder to test the connectivity of the LLM Service.
 
-# Steps
 
-1. create `.env` file
+## Steps
+
+### Preparation
+
+create `.env` file
 
 ```shell
-# replace by your own
+# replace by your gpt-4o api key
 OPENAI_API_KEY="YOUR_TOKEN"
-OPENAI_BASE_URL="https://..."
-MIDSCENE_MODEL_NAME="..."
-
-# more config
-# ....
 ```
 
-2. run testing
+Refer to this document if your want to use other models like Qwen: https://midscenejs.com/choose-a-model
+
+### Run
 
 ```bash
 npm install 

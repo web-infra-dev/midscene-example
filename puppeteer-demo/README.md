@@ -6,14 +6,18 @@ If you want to use Puppeteer with Vitest, please refer to [puppeteer-with-vitest
 
 ## Steps
 
+### Preparation
+
 create `.env` file
 
 ```shell
-# replace by your own
+# replace by your gpt-4o api key
 OPENAI_API_KEY="YOUR_TOKEN"
 ```
 
-run demo
+Refer to this document if your want to use other models like Qwen: https://midscenejs.com/choose-a-model
+
+### Run demo
 
 ```bash
 npm install 

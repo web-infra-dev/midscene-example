@@ -1,18 +1,23 @@
 # Yaml Scripts
 
+
 ## Preparation
+
+create `.env` file
+
+```shell
+# replace by your gpt-4o own
+OPENAI_API_KEY="YOUR_TOKEN"
+```
+
+Refer to this document if your want to use other models like Qwen: https://midscenejs.com/choose-a-model
+
+## Install
 
 Ensure that Node.js is installed. Install the `@midscene/cli` globally
 
 ```shell
 npm i -g @midscene/cli
-```
-
-Config the API key
-
-```shell
-# replace by your own
-export OPENAI_API_KEY="sk-abcdefghijklmnopqrstuvwxyz"
 ```
 
 ## Run

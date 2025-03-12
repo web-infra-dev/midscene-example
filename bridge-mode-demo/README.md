@@ -4,14 +4,20 @@ This is a demo to show how to use bridge mode to control the page on your deskto
 
 ## Steps
 
-Install Midscene extension from chrome web store: [Midscene](https://chromewebstore.google.com/detail/midscene/gbldofcpkknbggpkmbdaefngejllnief)
+### Preparation
 
 create `.env` file
 
 ```shell
-# replace by your own
+# replace by your gpt-4o api key
 OPENAI_API_KEY="YOUR_TOKEN"
 ```
+
+Refer to this document if your want to use other models like Qwen: https://midscenejs.com/choose-a-model
+
+### Install
+
+Install Midscene extension from chrome web store: [Midscene](https://chromewebstore.google.com/detail/midscene/gbldofcpkknbggpkmbdaefngejllnief)
 
 install deps
 
@@ -19,7 +25,8 @@ install deps
 npm install 
 ```
 
-Run demo to create new tabs. 
+### Run
+
 Remember to click the "Allow connection" button from Chrome extension while running.
 
 ```bash
