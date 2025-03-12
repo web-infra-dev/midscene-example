@@ -2,6 +2,7 @@
   "name": "playwright-demo",
   "private": true,
   "version": "0.0.1",
+  "type": "module",
   "scripts": {
     "e2e": "playwright test --config=playwright.config.ts",
     "e2e:cache": "cross-env MIDSCENE_CACHE=true playwright test --config=playwright.config.ts",

@@ -40,13 +40,13 @@
               }
             ],
             "error": null,
-            "finish": true,
             "log": "Input 'Study JS today' into the task input box and press the Enter key to submit.",
-            "rawResponse": "{\n  \"actions\": [\n    {\n      \"locate\": {\n        \"id\": \"okgbn\",\n        \"prompt\": \"The input box with placeholder 'What needs to be done?'\"\n      },\n      \"param\": {\n        \"value\": \"Study JS today\"\n      },\n      \"thought\": \"Input the text 'Study JS today' into the task input box.\",\n      \"type\": \"Input\"\n    },\n    {\n      \"locate\": null,\n      \"param\": {\n        \"value\": \"Enter\"\n      },\n      \"thought\": \"Press the Enter key to submit the input.\",\n      \"type\": \"KeyboardPress\"\n    }\n  ],\n  \"error\": null,\n  \"finish\": true,\n  \"log\": \"Input 'Study JS today' into the task input box and press the Enter key to submit.\"\n}",
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"locate\": {\n        \"id\": \"okgbn\",\n        \"prompt\": \"The input box with placeholder 'What needs to be done?'\"\n      },\n      \"param\": {\n        \"value\": \"Study JS today\"\n      },\n      \"thought\": \"Input the text 'Study JS today' into the task input box.\",\n      \"type\": \"Input\"\n    },\n    {\n      \"locate\": null,\n      \"param\": {\n        \"value\": \"Enter\"\n      },\n      \"thought\": \"Press the Enter key to submit the input.\",\n      \"type\": \"KeyboardPress\"\n    }\n  ],\n  \"error\": null,\n  \"log\": \"Input 'Study JS today' into the task input box and press the Enter key to submit.\",\n  \"more_actions_needed_by_instruction\": false\n}",
             "usage": {
-              "completion_tokens": 117,
-              "prompt_tokens": 4064,
-              "total_tokens": 4181,
+              "completion_tokens": 120,
+              "prompt_tokens": 4168,
+              "total_tokens": 4288,
               "completion_tokens_details": {
                 "audio_tokens": 0,
                 "reasoning_tokens": 0
@@ -79,12 +79,12 @@
               {
                 "locate": {
                   "id": "okgbn",
-                  "prompt": "The input box for new tasks"
+                  "prompt": "The input box for entering new tasks"
                 },
                 "param": {
                   "value": "Study Rust tomorrow"
                 },
-                "thought": "Input the task 'Study Rust tomorrow' into the task input box.",
+                "thought": "Inputting the task 'Study Rust tomorrow' into the task input box.",
                 "type": "Input"
               },
               {
@@ -92,18 +92,18 @@
                 "param": {
                   "value": "Enter"
                 },
-                "thought": "Press the Enter key to submit the new task.",
+                "thought": "Pressing the Enter key to submit the new task.",
                 "type": "KeyboardPress"
               }
             ],
             "error": null,
-            "finish": true,
-            "log": "Input 'Study Rust tomorrow' in the task box input and press the Enter key.",
-            "rawResponse": "{\n  \"actions\": [\n    {\n      \"locate\": {\n        \"id\": \"okgbn\",\n        \"prompt\": \"The input box for new tasks\"\n      },\n      \"param\": {\n        \"value\": \"Study Rust tomorrow\"\n      },\n      \"thought\": \"Input the task 'Study Rust tomorrow' into the task input box.\",\n      \"type\": \"Input\"\n    },\n    {\n      \"locate\": null,\n      \"param\": {\n        \"value\": \"Enter\"\n      },\n      \"thought\": \"Press the Enter key to submit the new task.\",\n      \"type\": \"KeyboardPress\"\n    }\n  ],\n  \"error\": null,\n  \"finish\": true,\n  \"log\": \"Input 'Study Rust tomorrow' in the task box input and press the Enter key.\"\n}",
+            "log": "Input 'Study Rust tomorrow' into the task input box and press the Enter key to add the task.",
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"locate\": {\n        \"id\": \"okgbn\",\n        \"prompt\": \"The input box for entering new tasks\"\n      },\n      \"param\": {\n        \"value\": \"Study Rust tomorrow\"\n      },\n      \"thought\": \"Inputting the task 'Study Rust tomorrow' into the task input box.\",\n      \"type\": \"Input\"\n    },\n    {\n      \"locate\": null,\n      \"param\": {\n        \"value\": \"Enter\"\n      },\n      \"thought\": \"Pressing the Enter key to submit the new task.\",\n      \"type\": \"KeyboardPress\"\n    }\n  ],\n  \"error\": null,\n  \"log\": \"Input 'Study Rust tomorrow' into the task input box and press the Enter key to add the task.\",\n  \"more_actions_needed_by_instruction\": false\n}",
             "usage": {
-              "completion_tokens": 110,
-              "prompt_tokens": 4393,
-              "total_tokens": 4503,
+              "completion_tokens": 120,
+              "prompt_tokens": 4497,
+              "total_tokens": 4617,
               "completion_tokens_details": {
                 "audio_tokens": 0,
                 "reasoning_tokens": 0
@@ -136,12 +136,12 @@
               {
                 "locate": {
                   "id": "okgbn",
-                  "prompt": "The input box for new tasks"
+                  "prompt": "The input box for adding a new task"
                 },
                 "param": {
                   "value": "Study AI the day after tomorrow"
                 },
-                "thought": "Input the task text into the input box.",
+                "thought": "Inputting the task 'Study AI the day after tomorrow' into the task input box.",
                 "type": "Input"
               },
               {
@@ -149,18 +149,18 @@
                 "param": {
                   "value": "Enter"
                 },
-                "thought": "Press the Enter key to submit the new task.",
+                "thought": "Pressing the Enter key to add the task.",
                 "type": "KeyboardPress"
               }
             ],
             "error": null,
-            "finish": true,
-            "log": "Input 'Study AI the day after tomorrow' in the task box input and press the Enter key to add the task.",
-            "rawResponse": "{\n  \"actions\": [\n    {\n      \"locate\": {\n        \"id\": \"okgbn\",\n        \"prompt\": \"The input box for new tasks\"\n      },\n      \"param\": {\n        \"value\": \"Study AI the day after tomorrow\"\n      },\n      \"thought\": \"Input the task text into the input box.\",\n      \"type\": \"Input\"\n    },\n    {\n      \"locate\": null,\n      \"param\": {\n        \"value\": \"Enter\"\n      },\n      \"thought\": \"Press the Enter key to submit the new task.\",\n      \"type\": \"KeyboardPress\"\n    }\n  ],\n  \"error\": null,\n  \"finish\": true,\n  \"log\": \"Input 'Study AI the day after tomorrow' in the task box input and press the Enter key to add the task.\"\n}",
+            "log": "Input 'Study AI the day after tomorrow' into the task input box and press the Enter key to add it.",
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"locate\": {\n        \"id\": \"okgbn\",\n        \"prompt\": \"The input box for adding a new task\"\n      },\n      \"param\": {\n        \"value\": \"Study AI the day after tomorrow\"\n      },\n      \"thought\": \"Inputting the task 'Study AI the day after tomorrow' into the task input box.\",\n      \"type\": \"Input\"\n    },\n    {\n      \"locate\": null,\n      \"param\": {\n        \"value\": \"Enter\"\n      },\n      \"thought\": \"Pressing the Enter key to add the task.\",\n      \"type\": \"KeyboardPress\"\n    }\n  ],\n  \"error\": null,\n  \"log\": \"Input 'Study AI the day after tomorrow' into the task input box and press the Enter key to add it.\",\n  \"more_actions_needed_by_instruction\": false\n}",
             "usage": {
-              "completion_tokens": 115,
-              "prompt_tokens": 4494,
-              "total_tokens": 4609,
+              "completion_tokens": 128,
+              "prompt_tokens": 4598,
+              "total_tokens": 4726,
               "completion_tokens_details": {
                 "audio_tokens": 0,
                 "reasoning_tokens": 0
@@ -193,27 +193,21 @@
               {
                 "locate": {
                   "id": "nclfk",
-                  "prompt": "The label for the second task item, 'Study Rust tomorrow'"
+                  "prompt": "The label of the second task in the list, 'Study Rust tomorrow'"
                 },
                 "param": null,
-                "thought": "Hover over the second task item to reveal the delete button.",
+                "thought": "Hover over the second task to reveal the delete button.",
                 "type": "Hover"
-              },
-              {
-                "locate": null,
-                "param": null,
-                "thought": "Attempt to locate and click the delete button for the second task item.",
-                "type": "Tap"
               }
             ],
             "error": null,
-            "finish": false,
-            "log": "Hovered over the second task item to reveal the delete button.",
-            "rawResponse": "{\n  \"actions\": [\n    {\n      \"locate\": {\n        \"id\": \"nclfk\",\n        \"prompt\": \"The label for the second task item, 'Study Rust tomorrow'\"\n      },\n      \"param\": null,\n      \"thought\": \"Hover over the second task item to reveal the delete button.\",\n      \"type\": \"Hover\"\n    },\n    {\n      \"locate\": null,\n      \"param\": null,\n      \"thought\": \"Attempt to locate and click the delete button for the second task item.\",\n      \"type\": \"Tap\"\n    }\n  ],\n  \"error\": null,\n  \"finish\": false,\n  \"log\": \"Hovered over the second task item to reveal the delete button.\"\n}",
+            "log": "Hover over the second task to reveal the delete button.",
+            "more_actions_needed_by_instruction": true,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"locate\": {\n        \"id\": \"nclfk\",\n        \"prompt\": \"The label of the second task in the list, 'Study Rust tomorrow'\"\n      },\n      \"param\": null,\n      \"thought\": \"Hover over the second task to reveal the delete button.\",\n      \"type\": \"Hover\"\n    }\n  ],\n  \"error\": null,\n  \"log\": \"Hover over the second task to reveal the delete button.\",\n  \"more_actions_needed_by_instruction\": true\n}",
             "usage": {
-              "completion_tokens": 105,
-              "prompt_tokens": 4602,
-              "total_tokens": 4707,
+              "completion_tokens": 79,
+              "prompt_tokens": 4706,
+              "total_tokens": 4785,
               "completion_tokens_details": {
                 "audio_tokens": 0,
                 "reasoning_tokens": 0
@@ -249,13 +243,13 @@
               }
             ],
             "error": null,
-            "finish": true,
-            "log": "Clicked the delete button on the right of the second task to remove it.",
-            "rawResponse": "{\n  \"actions\": [\n    {\n      \"locate\": {\n        \"id\": \"jicbk\",\n        \"prompt\": \"The delete button on the right of the second task\"\n      },\n      \"param\": null,\n      \"thought\": \"Click the delete button to remove the second task.\",\n      \"type\": \"Tap\"\n    }\n  ],\n  \"error\": null,\n  \"finish\": true,\n  \"log\": \"Clicked the delete button on the right of the second task to remove it.\"\n}",
+            "log": "Click the delete button to remove the second task.",
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"locate\": {\n        \"id\": \"jicbk\",\n        \"prompt\": \"The delete button on the right of the second task\"\n      },\n      \"param\": null,\n      \"thought\": \"Click the delete button to remove the second task.\",\n      \"type\": \"Tap\"\n    }\n  ],\n  \"error\": null,\n  \"log\": \"Click the delete button to remove the second task.\",\n  \"more_actions_needed_by_instruction\": false\n}",
             "usage": {
-              "completion_tokens": 74,
-              "prompt_tokens": 4690,
-              "total_tokens": 4764,
+              "completion_tokens": 72,
+              "prompt_tokens": 4797,
+              "total_tokens": 4869,
               "completion_tokens_details": {
                 "audio_tokens": 0,
                 "reasoning_tokens": 0
@@ -288,21 +282,21 @@
               {
                 "locate": {
                   "id": "cdllc",
-                  "prompt": "The checkbox for the second task, 'Study AI the day after tomorrow'"
+                  "prompt": "The checkbox for the second task, labeled 'Study AI the day after tomorrow'"
                 },
                 "param": null,
-                "thought": "Click the checkbox to mark the second task as completed.",
+                "thought": "Clicking the checkbox to mark the second task as completed.",
                 "type": "Tap"
               }
             ],
             "error": null,
-            "finish": true,
-            "log": "Clicked the checkbox for the second task, 'Study AI the day after tomorrow'.",
-            "rawResponse": "{\n  \"actions\": [\n    {\n      \"locate\": {\n        \"id\": \"cdllc\",\n        \"prompt\": \"The checkbox for the second task, 'Study AI the day after tomorrow'\"\n      },\n      \"param\": null,\n      \"thought\": \"Click the checkbox to mark the second task as completed.\",\n      \"type\": \"Tap\"\n    }\n  ],\n  \"error\": null,\n  \"finish\": true,\n  \"log\": \"Clicked the checkbox for the second task, 'Study AI the day after tomorrow'.\"\n}",
+            "log": "Click the checkbox for the second task to mark it as completed.",
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"locate\": {\n        \"id\": \"cdllc\",\n        \"prompt\": \"The checkbox for the second task, labeled 'Study AI the day after tomorrow'\"\n      },\n      \"param\": null,\n      \"thought\": \"Clicking the checkbox to mark the second task as completed.\",\n      \"type\": \"Tap\"\n    }\n  ],\n  \"error\": null,\n  \"log\": \"Click the checkbox for the second task to mark it as completed.\",\n  \"more_actions_needed_by_instruction\": false\n}",
             "usage": {
-              "completion_tokens": 82,
-              "prompt_tokens": 4540,
-              "total_tokens": 4622,
+              "completion_tokens": 83,
+              "prompt_tokens": 4644,
+              "total_tokens": 4727,
               "completion_tokens_details": {
                 "audio_tokens": 0,
                 "reasoning_tokens": 0
@@ -338,18 +332,18 @@
                   "prompt": "The 'Completed' status button below the task list"
                 },
                 "param": null,
-                "thought": "Click the 'Completed' status button to filter the tasks by their completion status.",
+                "thought": "Clicking the 'Completed' button to filter the tasks by their completed status.",
                 "type": "Tap"
               }
             ],
             "error": null,
-            "finish": true,
-            "log": "Click the 'Completed' status button to filter the tasks by their completion status.",
-            "rawResponse": "{\n  \"actions\": [\n    {\n      \"locate\": {\n        \"id\": \"lgdli\",\n        \"prompt\": \"The 'Completed' status button below the task list\"\n      },\n      \"param\": null,\n      \"thought\": \"Click the 'Completed' status button to filter the tasks by their completion status.\",\n      \"type\": \"Tap\"\n    }\n  ],\n  \"error\": null,\n  \"finish\": true,\n  \"log\": \"Click the 'Completed' status button to filter the tasks by their completion status.\"\n}",
+            "log": "Click the 'Completed' button to filter the tasks by their completed status.",
+            "more_actions_needed_by_instruction": false,
+            "rawResponse": "{\n  \"actions\": [\n    {\n      \"locate\": {\n        \"id\": \"lgdli\",\n        \"prompt\": \"The 'Completed' status button below the task list\"\n      },\n      \"param\": null,\n      \"thought\": \"Clicking the 'Completed' button to filter the tasks by their completed status.\",\n      \"type\": \"Tap\"\n    }\n  ],\n  \"error\": null,\n  \"log\": \"Click the 'Completed' button to filter the tasks by their completed status.\",\n  \"more_actions_needed_by_instruction\": false\n}",
             "usage": {
-              "completion_tokens": 81,
-              "prompt_tokens": 4539,
-              "total_tokens": 4620,
+              "completion_tokens": 83,
+              "prompt_tokens": 4643,
+              "total_tokens": 4726,
               "completion_tokens_details": {
                 "audio_tokens": 0,
                 "reasoning_tokens": 0
