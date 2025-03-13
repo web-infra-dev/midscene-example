@@ -39,7 +39,7 @@ describe("Use OpenAI SDK directly", () => {
       model: model,
       messages: [{ role: "user", content: "Hello, how are you?" }],
     });
-    console.log(response);
+    // console.log(response.choices[0].message.content);
     expect(response.choices[0].message.content).toBeTruthy();
   });
 
@@ -71,7 +71,7 @@ describe("Use OpenAI SDK directly", () => {
   });
 });
 
-describe.only("Use Midscene wrapped OpenAI SDK", () => {
+describe("Use Midscene wrapped OpenAI SDK", () => {
   it("call to get json object", async () => {
     const result = await callToGetJSONObject(
       [
