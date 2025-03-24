@@ -1,5 +1,5 @@
-import { describe, it, expect, vi, beforeAll } from 'vitest';
 import { AndroidAgent } from '@midscene/android';
+import { beforeAll, describe, expect, it, vi } from 'vitest';
 import { launchPage } from './helper';
 import 'dotenv/config'; // read environment variables from .env file
 
@@ -8,11 +8,15 @@ vi.setConfig({
 });
 
 const pageUrl = 'https://todomvc.com/examples/react/dist/';
+const DEVICE_ID = process.env.ANDROID_DEVICE_ID;
+
 describe('Test todo list', () => {
   let agent: AndroidAgent;
 
   beforeAll(async () => {
-    agent = new AndroidAgent(await launchPage({ url: pageUrl }));
+    agent = new AndroidAgent(
+      await launchPage({ deviceId: DEVICE_ID, uri: pageUrl }),
+    );
   });
 
   it(

@@ -1,12 +1,13 @@
 import { exec } from 'node:child_process';
 import { promisify } from 'node:util';
+import type { StartAppOptions } from 'appium-adb';
 import { AndroidPage } from '@midscene/android';
-
 const execPromise = promisify(exec);
 
 interface LaunchOptions {
   deviceId?: string;
-  url?: string;
+  uri?: string;
+  app?: StartAppOptions;
 }
 
 /**
@@ -84,5 +85,28 @@ export async function launchPage(opt: LaunchOptions): Promise<AndroidPage> {
     );
   }
 
-  return new AndroidPage(deviceId, opt.url);
+  const androidPage = new AndroidPage({
+    deviceId,
+  });
+
+  const adb = await androidPage.getAdb();
+
+  // handle URI (if provided), support app page and web page
+  if (opt.uri) {
+    try {
+      await adb.startUri(opt.uri);
+    } catch (error) {
+      console.error(`Error starting URI: ${error}`);
+    }
+  }
+
+  if (opt.app) {
+    try {
+      await adb.startApp(opt.app);
+    } catch (error) {
+      console.error(`Error starting app: ${error}`);
+    }
+  }
+
+  return androidPage;
 }
