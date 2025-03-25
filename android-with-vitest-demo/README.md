@@ -1,3 +1,5 @@
+> Midscene x adb is still under development. You may use this demo if you want to have an early access.
+
 # Android demo
 
 This is a demo to show how to use bridge mode to control the page on your desktop Chrome.
