@@ -1,8 +1,70 @@
 import { exec } from 'node:child_process';
 import { promisify } from 'node:util';
-import type { StartAppOptions } from 'appium-adb';
 import { AndroidPage } from '@midscene/android';
 const execPromise = promisify(exec);
+
+interface StartAppOptions {
+  /**
+   * The name of the application package
+   */
+  pkg: string;
+  /**
+   * The name of the main application activity.
+   * This or action is required in order to be able to launch an app.
+   */
+  activity?: string;
+  /**
+   * The name of the intent action that will launch the required app.
+   * This or activity is required in order to be able to launch an app.
+   */
+  action?: string;
+  /**
+   * If this property is set to `true`
+   * and the activity name does not start with '.' then the method
+   * will try to add the missing dot and start the activity once more
+   * if the first startup try fails.
+   * `true` by default.
+   */
+  retry?: boolean;
+  /**
+   * Set it to `true` in order to forcefully
+   * stop the activity if it is already running.
+   * `true` by default.
+   */
+  stopApp?: boolean;
+  /**
+   * The name of the package to wait to on
+   * startup (this only makes sense if this name is
+   * different from the one, which is set as `pkg`)
+   */
+  waitPkg?: string;
+  /**
+   * The name of the activity to wait to on
+   * startup (this only makes sense if this name is different
+   * from the one, which is set as `activity`)
+   */
+  waitActivity?: string;
+  /**
+   * The number of milliseconds to wait until the
+   * `waitActivity` is focused
+   */
+  waitDuration?: number;
+  /**
+   * The number of the user profile to start
+   * the given activity with. The default OS user profile (usually zero) is used
+   * when this property is unset
+   */
+  user?: string | number;
+  /**
+   * If `false` then adb won't wait
+   * for the started activity to return the control.
+   * `true` by default.
+   */
+  waitForLaunch?: boolean;
+  category?: string;
+  flags?: string;
+  optionalIntentArguments?: string;
+}
 
 interface LaunchOptions {
   deviceId?: string;
