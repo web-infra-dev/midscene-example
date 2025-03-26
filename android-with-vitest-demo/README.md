@@ -2,7 +2,7 @@
 
 # Android demo
 
-This is a demo to show how to use bridge mode to control the page on your desktop Chrome.
+This is a demo to show how to use adb to control android to do some automation tasks.
 
 ## Steps
 
