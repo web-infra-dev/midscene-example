@@ -2,6 +2,8 @@ import { AndroidAgent, AndroidDevice, getConnectedDevices } from '@midscene/andr
 import { beforeAll, describe, expect, it, vi } from 'vitest';
 import 'dotenv/config'; // read environment variables from .env file
 
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
 vi.setConfig({
   testTimeout: 240 * 1000,
 });
@@ -17,6 +19,7 @@ describe('Test todo list', () => {
     agent = new AndroidAgent(page);
     await page.connect();
     await page.launch(pageUrl);
+    await sleep(3000);
   });
 
   it(
