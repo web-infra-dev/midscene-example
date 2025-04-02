@@ -1,4 +1,4 @@
-import { agentFromDeviceId, getConnectedDevices } from '@midscene/android';
+import { agentFromAdbDevice, getConnectedDevices } from '@midscene/android';
 import { describe, it, vi } from 'vitest';
 import 'dotenv/config'; // read environment variables from .env file
 
@@ -11,7 +11,7 @@ describe(
   async () => {
     await it('Android settings page demo for scroll', async () => {
       const devices = await getConnectedDevices();
-      const agent = await agentFromDeviceId(devices[0].udid);
+      const agent = await agentFromAdbDevice(devices[0].udid);
 
       await agent.launch('com.android.settings/.Settings');
 

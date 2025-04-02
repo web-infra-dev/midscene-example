@@ -7,7 +7,6 @@ vi.setConfig({
 });
 
 const pageUrl = 'https://todomvc.com/examples/react/dist/';
-const DEVICE_ID = process.env.ANDROID_DEVICE_ID;
 
 describe('Test todo list', () => {
   let agent: AndroidAgent;
