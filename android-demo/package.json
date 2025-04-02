@@ -1,0 +1,19 @@
+{
+    "name": "android-demo",
+    "private": true,
+    "version": "1.0.0",
+    "description": "> quick start",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "test": "tsx demo.ts",
+        "test-yaml": "tsx demo-run-yaml.ts"
+    },
+    "author": "",
+    "license": "MIT",
+    "devDependencies": {
+        "@midscene/android": "beta",
+        "dotenv": "^16.4.5",
+        "tsx": "^4.19.1"
+    }
+}

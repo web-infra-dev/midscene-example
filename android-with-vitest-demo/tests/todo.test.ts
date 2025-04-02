@@ -1,22 +1,25 @@
-import { AndroidAgent } from '@midscene/android';
+import { AndroidAgent, AndroidDevice, getConnectedDevices } from '@midscene/android';
 import { beforeAll, describe, expect, it, vi } from 'vitest';
-import { launchPage } from './helper';
 import 'dotenv/config'; // read environment variables from .env file
+
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 vi.setConfig({
   testTimeout: 240 * 1000,
 });
 
 const pageUrl = 'https://todomvc.com/examples/react/dist/';
-const DEVICE_ID = process.env.ANDROID_DEVICE_ID;
 
 describe('Test todo list', () => {
   let agent: AndroidAgent;
 
   beforeAll(async () => {
-    agent = new AndroidAgent(
-      await launchPage({ deviceId: DEVICE_ID, uri: pageUrl }),
-    );
+    const devices = await getConnectedDevices();
+    const page = new AndroidDevice(devices[0].udid);
+    agent = new AndroidAgent(page);
+    await page.connect();
+    await page.launch(pageUrl);
+    await sleep(3000);
   });
 
   it(
