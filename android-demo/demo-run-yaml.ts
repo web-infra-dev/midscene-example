@@ -20,6 +20,7 @@ Promise.resolve(
 tasks:
   - name: search
     flow:
+      - aiTap: 'search box'
       - ai: input 'Headphones' in search box, click search button
       - sleep: 3000
 

@@ -15,6 +15,7 @@ Promise.resolve(
     await sleep(5000);
 
     // 👀 type keywords, perform a search
+    await agent.aiTap('search box');
     await agent.aiAction('type "Headphones" in search box, hit Enter');
 
     // 👀 wait for the loading

@@ -22,6 +22,7 @@ describe('Test todo list', () => {
   it(
     'ai todo',
     async () => {
+      await agent.aiTap('task input box');
       await agent.aiAction(
         "type 'Study JS today' in the task box input and press the Enter key",
       );
