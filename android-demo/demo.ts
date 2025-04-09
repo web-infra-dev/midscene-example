@@ -8,7 +8,10 @@ Promise.resolve(
     const page = new AndroidDevice(devices[0].udid);
 
     // 👀 init Midscene agent
-    const agent = new AndroidAgent(page);
+    const agent = new AndroidAgent(page,{
+      aiActionContext:
+        'If any location, permission, user agreement, etc. popup, click agree. If login page pops up, close it.',
+    });
     await page.connect();
     await page.launch('https://www.ebay.com');
 
