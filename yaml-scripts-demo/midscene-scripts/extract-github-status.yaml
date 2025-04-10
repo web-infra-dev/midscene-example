@@ -1,4 +1,4 @@
-target:
+web:
   url: https://www.githubstatus.com/
   output: ./output/github-status.json
 
