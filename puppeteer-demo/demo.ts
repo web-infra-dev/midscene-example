@@ -41,6 +41,9 @@ Promise.resolve(
     // 👀 assert by AI
     await agent.aiAssert("There is a category filter on the left");
 
+    // 👀 click on the first item
+    await agent.aiTap("the first item in the list");
+
     await browser.close();
   })()
 );
