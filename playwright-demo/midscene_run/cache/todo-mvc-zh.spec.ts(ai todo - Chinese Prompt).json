@@ -18,42 +18,52 @@
           },
           "prompt": "在任务框 input 输入 今天学习 JS，按回车键 @ ",
           "response": {
+            "what_the_user_wants_to_do_next_by_instruction": "在任务框 input 输入 今天学习 JS，按回车键",
+            "log": "Now I want to use action 'Input' to enter '今天学习 JS' in the task input box first.",
+            "more_actions_needed_by_instruction": true,
+            "action": {
+              "type": "Input",
+              "locate": {
+                "bbox": [
+                  513,
+                  127,
+                  1068,
+                  199
+                ],
+                "prompt": "任务框 input"
+              },
+              "param": {
+                "value": "今天学习 JS"
+              }
+            },
             "actions": [
               {
+                "type": "Input",
                 "locate": {
-                  "id": "okgbn",
-                  "prompt": "The input field for entering new todos"
+                  "bbox": [
+                    513,
+                    127,
+                    1068,
+                    199
+                  ],
+                  "prompt": "任务框 input"
                 },
                 "param": {
                   "value": "今天学习 JS"
-                },
-                "thought": "Input the text '今天学习 JS' into the todo input field.",
-                "type": "Input"
-              },
-              {
-                "locate": null,
-                "param": {
-                  "value": "Enter"
-                },
-                "thought": "Press the Enter key to submit the todo item.",
-                "type": "KeyboardPress"
+                }
               }
             ],
-            "error": null,
-            "log": "Input '今天学习 JS' into the todo input field and press Enter to add it.",
-            "more_actions_needed_by_instruction": false,
-            "rawResponse": "{\n  \"actions\": [\n    {\n      \"locate\": {\n        \"id\": \"okgbn\",\n        \"prompt\": \"The input field for entering new todos\"\n      },\n      \"param\": {\n        \"value\": \"今天学习 JS\"\n      },\n      \"thought\": \"Input the text '今天学习 JS' into the todo input field.\",\n      \"type\": \"Input\"\n    },\n    {\n      \"locate\": null,\n      \"param\": {\n        \"value\": \"Enter\"\n      },\n      \"thought\": \"Press the Enter key to submit the todo item.\",\n      \"type\": \"KeyboardPress\"\n    }\n  ],\n  \"error\": null,\n  \"log\": \"Input '今天学习 JS' into the todo input field and press Enter to add it.\",\n  \"more_actions_needed_by_instruction\": false\n}",
+            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"在任务框 input 输入 今天学习 JS，按回车键\",\n  \"log\": \"Now I want to use action 'Input' to enter '今天学习 JS' in the task input box first.\",\n  \"more_actions_needed_by_instruction\": true,\n  \"action\": {\n    \"type\": \"Input\",\n    \"locate\": {\n      \"bbox\": [\n        513,\n        127,\n        1068,\n        199\n      ],\n      \"prompt\": \"任务框 input\"\n    },\n    \"param\": {\n      \"value\": \"今天学习 JS\"\n    }\n  }\n}",
             "usage": {
-              "completion_tokens": 115,
-              "prompt_tokens": 4165,
-              "total_tokens": 4280,
+              "prompt_tokens": 2185,
+              "completion_tokens": 145,
+              "total_tokens": 2330,
               "completion_tokens_details": {
-                "audio_tokens": 0,
-                "reasoning_tokens": 0
+                "text_tokens": 145
               },
               "prompt_tokens_details": {
-                "audio_tokens": 0,
-                "cached_tokens": 0
+                "text_tokens": 987,
+                "image_tokens": 1198
               }
             }
           }
@@ -68,13 +78,72 @@
               "dpr": 1
             }
           },
-          "prompt": "The input field for entering new todos @ ",
+          "prompt": "任务框 input",
           "response": {
             "elements": [
               {
                 "id": "okgbn"
               }
             ]
+          },
+          "element": {
+            "id": "okgbn",
+            "indexId": 18,
+            "center": [
+              790,
+              162
+            ],
+            "rect": {
+              "left": 515,
+              "top": 130,
+              "width": 550,
+              "height": 65,
+              "zoom": 1
+            }
+          }
+        },
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "https://todomvc.com/examples/react/dist/",
+            "size": {
+              "width": 1280,
+              "height": 720,
+              "dpr": 1
+            }
+          },
+          "prompt": "在任务框 input 输入 今天学习 JS，按回车键 @ - Now I want to use action 'Input' to enter '今天学习 JS' in the task input box first.",
+          "response": {
+            "what_the_user_wants_to_do_next_by_instruction": "在任务框 input 输入 '今天学习 JS' 后，按回车键",
+            "log": "Now I want to use action 'KeyboardPress' to press the Enter key to submit the input.",
+            "more_actions_needed_by_instruction": false,
+            "action": {
+              "type": "KeyboardPress",
+              "param": {
+                "value": "Enter"
+              }
+            },
+            "actions": [
+              {
+                "type": "KeyboardPress",
+                "param": {
+                  "value": "Enter"
+                }
+              }
+            ],
+            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"在任务框 input 输入 '今天学习 JS' 后，按回车键\",\n  \"log\": \"Now I want to use action 'KeyboardPress' to press the Enter key to submit the input.\",\n  \"more_actions_needed_by_instruction\": false,\n  \"action\": {\n    \"type\": \"KeyboardPress\",\n    \"param\": {\n      \"value\": \"Enter\"\n    }\n  }\n}",
+            "usage": {
+              "prompt_tokens": 2241,
+              "completion_tokens": 103,
+              "total_tokens": 2344,
+              "completion_tokens_details": {
+                "text_tokens": 103
+              },
+              "prompt_tokens_details": {
+                "text_tokens": 1043,
+                "image_tokens": 1198
+              }
+            }
           }
         }
       ]
@@ -94,42 +163,52 @@
           },
           "prompt": "在任务框 input 输入 明天学习 Rust，按回车键 @ ",
           "response": {
+            "what_the_user_wants_to_do_next_by_instruction": "在任务框 input 输入 明天学习 Rust，按回车键",
+            "log": "Now I want to use action 'Input' to enter '明天学习 Rust' in the task input box first.",
+            "more_actions_needed_by_instruction": true,
+            "action": {
+              "type": "Input",
+              "locate": {
+                "bbox": [
+                  572,
+                  149,
+                  1063,
+                  178
+                ],
+                "prompt": "任务输入框"
+              },
+              "param": {
+                "value": "明天学习 Rust"
+              }
+            },
             "actions": [
               {
+                "type": "Input",
                 "locate": {
-                  "id": "okgbn",
-                  "prompt": "The input field for adding a new todo"
+                  "bbox": [
+                    572,
+                    149,
+                    1063,
+                    178
+                  ],
+                  "prompt": "任务输入框"
                 },
                 "param": {
                   "value": "明天学习 Rust"
-                },
-                "thought": "Input the text '明天学习 Rust' into the todo input field.",
-                "type": "Input"
-              },
-              {
-                "locate": null,
-                "param": {
-                  "value": "Enter"
-                },
-                "thought": "Press the Enter key to submit the new todo.",
-                "type": "KeyboardPress"
+                }
               }
             ],
-            "error": null,
-            "log": "Input '明天学习 Rust' into the todo input field and press Enter to add it.",
-            "more_actions_needed_by_instruction": false,
-            "rawResponse": "{\n  \"actions\": [\n    {\n      \"locate\": {\n        \"id\": \"okgbn\",\n        \"prompt\": \"The input field for adding a new todo\"\n      },\n      \"param\": {\n        \"value\": \"明天学习 Rust\"\n      },\n      \"thought\": \"Input the text '明天学习 Rust' into the todo input field.\",\n      \"type\": \"Input\"\n    },\n    {\n      \"locate\": null,\n      \"param\": {\n        \"value\": \"Enter\"\n      },\n      \"thought\": \"Press the Enter key to submit the new todo.\",\n      \"type\": \"KeyboardPress\"\n    }\n  ],\n  \"error\": null,\n  \"log\": \"Input '明天学习 Rust' into the todo input field and press Enter to add it.\",\n  \"more_actions_needed_by_instruction\": false\n}",
+            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"在任务框 input 输入 明天学习 Rust，按回车键\",\n  \"log\": \"Now I want to use action 'Input' to enter '明天学习 Rust' in the task input box first.\",\n  \"more_actions_needed_by_instruction\": true,\n  \"action\": {\n    \"type\": \"Input\",\n    \"locate\": {\n      \"bbox\": [\n        572,\n        149,\n        1063,\n        178\n      ],\n      \"prompt\": \"任务输入框\"\n    },\n    \"param\": {\n      \"value\": \"明天学习 Rust\"\n    }\n  }\n}",
             "usage": {
-              "completion_tokens": 119,
-              "prompt_tokens": 4493,
-              "total_tokens": 4612,
+              "prompt_tokens": 2186,
+              "completion_tokens": 146,
+              "total_tokens": 2332,
               "completion_tokens_details": {
-                "audio_tokens": 0,
-                "reasoning_tokens": 0
+                "text_tokens": 146
               },
               "prompt_tokens_details": {
-                "audio_tokens": 0,
-                "cached_tokens": 0
+                "text_tokens": 988,
+                "image_tokens": 1198
               }
             }
           }
@@ -144,13 +223,70 @@
               "dpr": 1
             }
           },
-          "prompt": "The input field for adding a new todo @ ",
+          "prompt": "任务输入框",
           "response": {
             "elements": [
               {
-                "id": "okgbn"
+                "id": "ppmbm"
               }
             ]
+          },
+          "element": {
+            "id": "ppmbm",
+            "center": [
+              817,
+              163
+            ],
+            "rect": {
+              "left": 813,
+              "top": 159,
+              "width": 8,
+              "height": 8
+            }
+          }
+        },
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "https://todomvc.com/examples/react/dist/",
+            "size": {
+              "width": 1280,
+              "height": 720,
+              "dpr": 1
+            }
+          },
+          "prompt": "在任务框 input 输入 明天学习 Rust，按回车键 @ - Now I want to use action 'Input' to enter '明天学习 Rust' in the task input box first.",
+          "response": {
+            "what_the_user_wants_to_do_next_by_instruction": "在任务框 input 输入 明天学习 Rust 后，需要按回车键来确认输入。",
+            "log": "现在我将使用 action 'KeyboardPress' 来按回车键以确认输入。",
+            "more_actions_needed_by_instruction": false,
+            "action": {
+              "type": "KeyboardPress",
+              "param": {
+                "value": "Enter"
+              }
+            },
+            "actions": [
+              {
+                "type": "KeyboardPress",
+                "param": {
+                  "value": "Enter"
+                }
+              }
+            ],
+            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"在任务框 input 输入 明天学习 Rust 后，需要按回车键来确认输入。\",\n  \"log\": \"现在我将使用 action 'KeyboardPress' 来按回车键以确认输入。\",\n  \"more_actions_needed_by_instruction\": false,\n  \"action\": {\n    \"type\": \"KeyboardPress\",\n    \"param\": {\n      \"value\": \"Enter\"\n    }\n  }\n}",
+            "usage": {
+              "prompt_tokens": 2242,
+              "completion_tokens": 106,
+              "total_tokens": 2348,
+              "completion_tokens_details": {
+                "text_tokens": 106
+              },
+              "prompt_tokens_details": {
+                "text_tokens": 1044,
+                "image_tokens": 1198
+              }
+            }
           }
         }
       ]
@@ -170,42 +306,52 @@
           },
           "prompt": "在任务框 input 输入后天学习 AI，按回车键 @ ",
           "response": {
+            "what_the_user_wants_to_do_next_by_instruction": "在任务框 input 输入后天学习 AI，按回车键",
+            "log": "Now I want to use action 'Input' to enter '后天学习 AI' in the task input box first.",
+            "more_actions_needed_by_instruction": true,
+            "action": {
+              "type": "Input",
+              "locate": {
+                "bbox": [
+                  573,
+                  149,
+                  1062,
+                  180
+                ],
+                "prompt": "任务输入框"
+              },
+              "param": {
+                "value": "后天学习 AI"
+              }
+            },
             "actions": [
               {
+                "type": "Input",
                 "locate": {
-                  "id": "okgbn",
-                  "prompt": "The input field for adding a new todo item"
+                  "bbox": [
+                    573,
+                    149,
+                    1062,
+                    180
+                  ],
+                  "prompt": "任务输入框"
                 },
                 "param": {
                   "value": "后天学习 AI"
-                },
-                "thought": "Input the text '后天学习 AI' into the new todo input field.",
-                "type": "Input"
-              },
-              {
-                "locate": null,
-                "param": {
-                  "value": "Enter"
-                },
-                "thought": "Press the Enter key to add the new todo item.",
-                "type": "KeyboardPress"
+                }
               }
             ],
-            "error": null,
-            "log": "Input '后天学习 AI' into the new todo input field and press Enter to add it.",
-            "more_actions_needed_by_instruction": false,
-            "rawResponse": "{\n  \"actions\": [\n    {\n      \"locate\": {\n        \"id\": \"okgbn\",\n        \"prompt\": \"The input field for adding a new todo item\"\n      },\n      \"param\": {\n        \"value\": \"后天学习 AI\"\n      },\n      \"thought\": \"Input the text '后天学习 AI' into the new todo input field.\",\n      \"type\": \"Input\"\n    },\n    {\n      \"locate\": null,\n      \"param\": {\n        \"value\": \"Enter\"\n      },\n      \"thought\": \"Press the Enter key to add the new todo item.\",\n      \"type\": \"KeyboardPress\"\n    }\n  ],\n  \"error\": null,\n  \"log\": \"Input '后天学习 AI' into the new todo input field and press Enter to add it.\",\n  \"more_actions_needed_by_instruction\": false\n}",
+            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"在任务框 input 输入后天学习 AI，按回车键\",\n  \"log\": \"Now I want to use action 'Input' to enter '后天学习 AI' in the task input box first.\",\n  \"more_actions_needed_by_instruction\": true,\n  \"action\": {\n    \"type\": \"Input\",\n    \"locate\": {\n      \"bbox\": [\n        573,\n        149,\n        1062,\n        180\n      ],\n      \"prompt\": \"任务输入框\"\n    },\n    \"param\": {\n      \"value\": \"后天学习 AI\"\n    }\n  }\n}",
             "usage": {
-              "completion_tokens": 123,
-              "prompt_tokens": 4596,
-              "total_tokens": 4719,
+              "prompt_tokens": 2185,
+              "completion_tokens": 147,
+              "total_tokens": 2332,
               "completion_tokens_details": {
-                "audio_tokens": 0,
-                "reasoning_tokens": 0
+                "text_tokens": 147
               },
               "prompt_tokens_details": {
-                "audio_tokens": 0,
-                "cached_tokens": 0
+                "text_tokens": 987,
+                "image_tokens": 1198
               }
             }
           }
@@ -220,19 +366,76 @@
               "dpr": 1
             }
           },
-          "prompt": "The input field for adding a new todo item @ ",
+          "prompt": "任务输入框",
           "response": {
             "elements": [
               {
-                "id": "okgbn"
+                "id": "ghmhf"
               }
             ]
+          },
+          "element": {
+            "id": "ghmhf",
+            "center": [
+              817,
+              164
+            ],
+            "rect": {
+              "left": 813,
+              "top": 160,
+              "width": 8,
+              "height": 8
+            }
+          }
+        },
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "https://todomvc.com/examples/react/dist/",
+            "size": {
+              "width": 1280,
+              "height": 720,
+              "dpr": 1
+            }
+          },
+          "prompt": "在任务框 input 输入后天学习 AI，按回车键 @ - Now I want to use action 'Input' to enter '后天学习 AI' in the task input box first.",
+          "response": {
+            "what_the_user_wants_to_do_next_by_instruction": "在任务框 input 输入后天学习 AI 后，需要按回车键",
+            "log": "Now I want to use action 'KeyboardPress' to press the Enter key to submit the input.",
+            "more_actions_needed_by_instruction": false,
+            "action": {
+              "type": "KeyboardPress",
+              "param": {
+                "value": "Enter"
+              }
+            },
+            "actions": [
+              {
+                "type": "KeyboardPress",
+                "param": {
+                  "value": "Enter"
+                }
+              }
+            ],
+            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"在任务框 input 输入后天学习 AI 后，需要按回车键\",\n  \"log\": \"Now I want to use action 'KeyboardPress' to press the Enter key to submit the input.\",\n  \"more_actions_needed_by_instruction\": false,\n  \"action\": {\n    \"type\": \"KeyboardPress\",\n    \"param\": {\n      \"value\": \"Enter\"\n    }\n  }\n}",
+            "usage": {
+              "prompt_tokens": 2242,
+              "completion_tokens": 103,
+              "total_tokens": 2345,
+              "completion_tokens_details": {
+                "text_tokens": 103
+              },
+              "prompt_tokens_details": {
+                "text_tokens": 1044,
+                "image_tokens": 1198
+              }
+            }
           }
         }
       ]
     },
     {
-      "prompt": "将鼠标移动到任务列表中的第二项，点击第二项任务右边的删除按钮",
+      "prompt": "将鼠标移动到任务列表中的第二项",
       "tasks": [
         {
           "type": "plan",
@@ -244,34 +447,48 @@
               "dpr": 1
             }
           },
-          "prompt": "将鼠标移动到任务列表中的第二项，点击第二项任务右边的删除按钮 @ ",
+          "prompt": "将鼠标移动到任务列表中的第二项 @ ",
           "response": {
+            "what_the_user_wants_to_do_next_by_instruction": "将鼠标移动到任务列表中的第二项",
+            "log": "Now I want to use action 'Hover' to move the mouse to the second item in the task list first",
+            "more_actions_needed_by_instruction": false,
+            "action": {
+              "type": "Hover",
+              "locate": {
+                "bbox": [
+                  521,
+                  273,
+                  726,
+                  296
+                ],
+                "prompt": "The second item in the task list"
+              }
+            },
             "actions": [
               {
+                "type": "Hover",
                 "locate": {
-                  "id": "iiknj",
-                  "prompt": "The second task in the list, labeled '明天学习 Rust'"
-                },
-                "param": null,
-                "thought": "Hover over the second task in the list to reveal the delete button.",
-                "type": "Hover"
+                  "bbox": [
+                    521,
+                    273,
+                    726,
+                    296
+                  ],
+                  "prompt": "The second item in the task list"
+                }
               }
             ],
-            "error": null,
-            "log": "Hover over the second task in the list to reveal the delete button.",
-            "more_actions_needed_by_instruction": true,
-            "rawResponse": "{\n  \"actions\": [\n    {\n      \"locate\": {\n        \"id\": \"iiknj\",\n        \"prompt\": \"The second task in the list, labeled '明天学习 Rust'\"\n      },\n      \"param\": null,\n      \"thought\": \"Hover over the second task in the list to reveal the delete button.\",\n      \"type\": \"Hover\"\n    }\n  ],\n  \"error\": null,\n  \"log\": \"Hover over the second task in the list to reveal the delete button.\",\n  \"more_actions_needed_by_instruction\": true\n}",
+            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"将鼠标移动到任务列表中的第二项\",\n  \"log\": \"Now I want to use action 'Hover' to move the mouse to the second item in the task list first\",\n  \"more_actions_needed_by_instruction\": false,\n  \"action\": {\n    \"type\": \"Hover\",\n    \"locate\": {\n      \"bbox\": [\n        521,\n        273,\n        726,\n        296\n      ],\n      \"prompt\": \"The second item in the task list\"\n    }\n  }\n}",
             "usage": {
-              "completion_tokens": 84,
-              "prompt_tokens": 4699,
-              "total_tokens": 4783,
+              "prompt_tokens": 2181,
+              "completion_tokens": 127,
+              "total_tokens": 2308,
               "completion_tokens_details": {
-                "audio_tokens": 0,
-                "reasoning_tokens": 0
+                "text_tokens": 127
               },
               "prompt_tokens_details": {
-                "audio_tokens": 0,
-                "cached_tokens": 0
+                "text_tokens": 983,
+                "image_tokens": 1198
               }
             }
           }
@@ -286,57 +503,33 @@
               "dpr": 1
             }
           },
-          "prompt": "The second task in the list, labeled '明天学习 Rust' @ ",
+          "prompt": "The second item in the task list",
           "response": {
             "elements": [
               {
-                "id": "iiknj"
+                "id": "nnodg"
               }
             ]
-          }
-        },
-        {
-          "type": "plan",
-          "pageContext": {
-            "url": "https://todomvc.com/examples/react/dist/",
-            "size": {
-              "width": 1280,
-              "height": 720,
-              "dpr": 1
-            }
           },
-          "prompt": "将鼠标移动到任务列表中的第二项，点击第二项任务右边的删除按钮 @ Hover over the second task in the list to reveal the delete button.",
-          "response": {
-            "actions": [
-              {
-                "locate": {
-                  "id": "jicbk",
-                  "prompt": "The delete button for the second task in the list"
-                },
-                "param": null,
-                "thought": "Click the delete button for the second task to remove it.",
-                "type": "Tap"
-              }
+          "element": {
+            "id": "nnodg",
+            "center": [
+              623,
+              284
             ],
-            "error": null,
-            "log": "Click the delete button for the second task to remove it.",
-            "more_actions_needed_by_instruction": false,
-            "rawResponse": "{\n  \"actions\": [\n    {\n      \"locate\": {\n        \"id\": \"jicbk\",\n        \"prompt\": \"The delete button for the second task in the list\"\n      },\n      \"param\": null,\n      \"thought\": \"Click the delete button for the second task to remove it.\",\n      \"type\": \"Tap\"\n    }\n  ],\n  \"error\": null,\n  \"log\": \"Click the delete button for the second task to remove it.\",\n  \"more_actions_needed_by_instruction\": false\n}",
-            "usage": {
-              "completion_tokens": 76,
-              "prompt_tokens": 4794,
-              "total_tokens": 4870,
-              "completion_tokens_details": {
-                "audio_tokens": 0,
-                "reasoning_tokens": 0
-              },
-              "prompt_tokens_details": {
-                "audio_tokens": 0,
-                "cached_tokens": 0
-              }
+            "rect": {
+              "left": 619,
+              "top": 280,
+              "width": 8,
+              "height": 8
             }
           }
-        },
+        }
+      ]
+    },
+    {
+      "prompt": "Tap - 第二项任务右边的删除按钮",
+      "tasks": [
         {
           "type": "locate",
           "pageContext": {
@@ -347,13 +540,106 @@
               "dpr": 1
             }
           },
-          "prompt": "The delete button for the second task in the list @ ",
+          "prompt": "第二项任务右边的删除按钮",
           "response": {
             "elements": [
               {
                 "id": "jicbk"
               }
             ]
+          },
+          "element": {
+            "id": "jicbk",
+            "indexId": 25,
+            "center": [
+              1035,
+              285
+            ],
+            "rect": {
+              "left": 1015,
+              "top": 265,
+              "width": 40,
+              "height": 40,
+              "zoom": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "Tap - 第二条任务左边的勾选按钮",
+      "tasks": [
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "https://todomvc.com/examples/react/dist/",
+            "size": {
+              "width": 1280,
+              "height": 720,
+              "dpr": 1
+            }
+          },
+          "prompt": "第二条任务左边的勾选按钮",
+          "response": {
+            "elements": [
+              {
+                "id": "cdllc"
+              }
+            ]
+          },
+          "element": {
+            "id": "cdllc",
+            "indexId": 23,
+            "center": [
+              535,
+              285
+            ],
+            "rect": {
+              "left": 515,
+              "top": 265,
+              "width": 40,
+              "height": 40,
+              "zoom": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "Tap - 任务列表下面的 completed 状态按钮",
+      "tasks": [
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "https://todomvc.com/examples/react/dist/",
+            "size": {
+              "width": 1280,
+              "height": 720,
+              "dpr": 1
+            }
+          },
+          "prompt": "任务列表下面的 completed 状态按钮",
+          "response": {
+            "elements": [
+              {
+                "id": "lgdli"
+              }
+            ]
+          },
+          "element": {
+            "id": "lgdli",
+            "indexId": 28,
+            "center": [
+              837,
+              335
+            ],
+            "rect": {
+              "left": 803,
+              "top": 326,
+              "width": 69,
+              "height": 18,
+              "zoom": 1
+            }
           }
         }
       ]

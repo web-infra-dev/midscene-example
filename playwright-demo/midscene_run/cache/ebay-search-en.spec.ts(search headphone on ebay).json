@@ -16,44 +16,132 @@
               "dpr": 1
             }
           },
-          "prompt": "type \"Headphones\" in search box, hit Enter",
+          "prompt": "type \"Headphones\" in search box, hit Enter @ ",
           "response": {
+            "what_the_user_wants_to_do_next_by_instruction": "The user wants to type 'Headphones' in the search box and hit Enter.",
+            "log": "Now I want to use action 'Input' to type 'Headphones' in the search box first.",
+            "more_actions_needed_by_instruction": true,
+            "action": {
+              "type": "Input",
+              "locate": {
+                "bbox": [
+                  269,
+                  54,
+                  857,
+                  88
+                ],
+                "prompt": "The search input box"
+              },
+              "param": {
+                "value": "Headphones"
+              }
+            },
             "actions": [
               {
+                "type": "Input",
                 "locate": {
-                  "id": "jkegg",
+                  "bbox": [
+                    269,
+                    54,
+                    857,
+                    88
+                  ],
                   "prompt": "The search input box"
                 },
                 "param": {
                   "value": "Headphones"
-                },
-                "thought": "Inputting the search term 'Headphones' into the search box.",
-                "type": "Input"
-              },
-              {
-                "locate": null,
-                "param": {
-                  "value": "Enter"
-                },
-                "thought": "Simulating pressing the Enter key to initiate the search.",
-                "type": "KeyboardPress"
+                }
               }
             ],
-            "error": null,
-            "log": "Input 'Headphones' into the search box and press Enter to perform the search.",
-            "more_actions_needed_by_instruction": false,
-            "rawResponse": "{\n  \"actions\": [\n    {\n      \"locate\": {\n        \"id\": \"jkegg\",\n        \"prompt\": \"The search input box\"\n      },\n      \"param\": {\n        \"value\": \"Headphones\"\n      },\n      \"thought\": \"Inputting the search term 'Headphones' into the search box.\",\n      \"type\": \"Input\"\n    },\n    {\n      \"locate\": null,\n      \"param\": {\n        \"value\": \"Enter\"\n      },\n      \"thought\": \"Simulating pressing the Enter key to initiate the search.\",\n      \"type\": \"KeyboardPress\"\n    }\n  ],\n  \"error\": null,\n  \"log\": \"Input 'Headphones' into the search box and press Enter to perform the search.\",\n  \"more_actions_needed_by_instruction\": false\n}",
+            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"The user wants to type 'Headphones' in the search box and hit Enter.\",\n  \"log\": \"Now I want to use action 'Input' to type 'Headphones' in the search box first.\",\n  \"more_actions_needed_by_instruction\": true,\n  \"action\": {\n    \"type\": \"Input\",\n    \"locate\": {\n      \"bbox\": [\n        269,\n        54,\n        857,\n        88\n      ],\n      \"prompt\": \"The search input box\"\n    },\n    \"param\": {\n      \"value\": \"Headphones\"\n    }\n  }\n}",
             "usage": {
-              "completion_tokens": 110,
-              "prompt_tokens": 5572,
-              "total_tokens": 5682,
+              "prompt_tokens": 2274,
+              "completion_tokens": 142,
+              "total_tokens": 2416,
               "completion_tokens_details": {
-                "audio_tokens": 0,
-                "reasoning_tokens": 0
+                "text_tokens": 142
               },
               "prompt_tokens_details": {
-                "audio_tokens": 0,
-                "cached_tokens": 0
+                "text_tokens": 984,
+                "image_tokens": 1290
+              }
+            }
+          }
+        },
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "https://www.ebay.com/",
+            "size": {
+              "width": 1280,
+              "height": 768,
+              "dpr": 1
+            }
+          },
+          "prompt": "The search input box",
+          "response": {
+            "elements": [
+              {
+                "id": "opecb"
+              }
+            ]
+          },
+          "element": {
+            "id": "opecb",
+            "indexId": 17,
+            "center": [
+              564,
+              71
+            ],
+            "rect": {
+              "left": 271,
+              "top": 51,
+              "width": 586,
+              "height": 40,
+              "zoom": 1
+            }
+          }
+        },
+        {
+          "type": "plan",
+          "pageContext": {
+            "url": "https://www.ebay.com/",
+            "size": {
+              "width": 1280,
+              "height": 768,
+              "dpr": 1
+            }
+          },
+          "prompt": "type \"Headphones\" in search box, hit Enter @ - Now I want to use action 'Input' to type 'Headphones' in the search box first.",
+          "response": {
+            "what_the_user_wants_to_do_next_by_instruction": "The user wants to submit the search query by hitting Enter after typing 'Headphones'.",
+            "log": "Now I want to use action 'KeyboardPress' to hit Enter to submit the search query.",
+            "more_actions_needed_by_instruction": false,
+            "action": {
+              "type": "KeyboardPress",
+              "param": {
+                "value": "Enter"
+              }
+            },
+            "actions": [
+              {
+                "type": "KeyboardPress",
+                "param": {
+                  "value": "Enter"
+                }
+              }
+            ],
+            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"The user wants to submit the search query by hitting Enter after typing 'Headphones'.\",\n  \"log\": \"Now I want to use action 'KeyboardPress' to hit Enter to submit the search query.\",\n  \"more_actions_needed_by_instruction\": false,\n  \"action\": {\n    \"type\": \"KeyboardPress\",\n    \"param\": {\n      \"value\": \"Enter\"\n    }\n  }\n}",
+            "usage": {
+              "prompt_tokens": 2328,
+              "completion_tokens": 102,
+              "total_tokens": 2430,
+              "completion_tokens_details": {
+                "text_tokens": 102
+              },
+              "prompt_tokens_details": {
+                "text_tokens": 1038,
+                "image_tokens": 1290
               }
             }
           }

@@ -18,19 +18,19 @@
           },
           "prompt": "Input 'Learn JS today' in the task box input and press the Enter key @ ",
           "response": {
-            "what_the_user_wants_to_do_next_by_instruction": "Input 'Learn JS today' in the task box input and press the Enter key",
-            "log": "I will use action Input to fill the text 'Learn JS today' into the task box input.",
+            "what_the_user_wants_to_do_next_by_instruction": "The user wants to input 'Learn JS today' in the task box input and press the Enter key.",
+            "log": "Now I want to use action 'Input' to fill 'Learn JS today' in the task box input first.",
             "more_actions_needed_by_instruction": true,
             "action": {
               "type": "Input",
               "locate": {
-                "prompt": "task box input",
                 "bbox": [
                   513,
-                  128,
-                  1067,
-                  198
-                ]
+                  127,
+                  1068,
+                  199
+                ],
+                "prompt": "The task box input"
               },
               "param": {
                 "value": "Learn JS today"
@@ -40,29 +40,29 @@
               {
                 "type": "Input",
                 "locate": {
-                  "prompt": "task box input",
                   "bbox": [
                     513,
-                    128,
-                    1067,
-                    198
-                  ]
+                    127,
+                    1068,
+                    199
+                  ],
+                  "prompt": "The task box input"
                 },
                 "param": {
                   "value": "Learn JS today"
                 }
               }
             ],
-            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"Input 'Learn JS today' in the task box input and press the Enter key\",\n  \"log\": \"I will use action Input to fill the text 'Learn JS today' into the task box input.\",\n  \"more_actions_needed_by_instruction\": true,\n  \"action\": {\n    \"type\": \"Input\",\n    \"locate\": {\n      \"bbox_2d\": [\n        513,\n        128,\n        1067,\n        198\n      ],\n      \"prompt\": \"task box input\"\n    },\n    \"param\": {\n      \"value\": \"Learn JS today\"\n    }\n  }\n}",
+            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"The user wants to input 'Learn JS today' in the task box input and press the Enter key.\",\n  \"log\": \"Now I want to use action 'Input' to fill 'Learn JS today' in the task box input first.\",\n  \"more_actions_needed_by_instruction\": true,\n  \"action\": {\n    \"type\": \"Input\",\n    \"locate\": {\n      \"bbox\": [\n        513,\n        127,\n        1068,\n        199\n      ],\n      \"prompt\": \"The task box input\"\n    },\n    \"param\": {\n      \"value\": \"Learn JS today\"\n    }\n  }\n}",
             "usage": {
-              "prompt_tokens": 1960,
-              "completion_tokens": 147,
-              "total_tokens": 2107,
+              "prompt_tokens": 2187,
+              "completion_tokens": 152,
+              "total_tokens": 2339,
               "completion_tokens_details": {
-                "text_tokens": 147
+                "text_tokens": 152
               },
               "prompt_tokens_details": {
-                "text_tokens": 762,
+                "text_tokens": 989,
                 "image_tokens": 1198
               }
             }
@@ -78,13 +78,28 @@
               "dpr": 1
             }
           },
-          "prompt": "task box input @ ",
+          "prompt": "The task box input",
           "response": {
             "elements": [
               {
                 "id": "okgbn"
               }
             ]
+          },
+          "element": {
+            "id": "okgbn",
+            "indexId": 18,
+            "center": [
+              790,
+              162
+            ],
+            "rect": {
+              "left": 515,
+              "top": 130,
+              "width": 550,
+              "height": 65,
+              "zoom": 1
+            }
           }
         },
         {
@@ -97,10 +112,10 @@
               "dpr": 1
             }
           },
-          "prompt": "Input 'Learn JS today' in the task box input and press the Enter key @ I will use action Input to fill the text 'Learn JS today' into the task box input.",
+          "prompt": "Input 'Learn JS today' in the task box input and press the Enter key @ - Now I want to use action 'Input' to fill 'Learn JS today' in the task box input first.",
           "response": {
-            "what_the_user_wants_to_do_next_by_instruction": "Press the Enter key after inputting 'Learn JS today' in the task box input.",
-            "log": "I will use action KeyboardPress to press the Enter key.",
+            "what_the_user_wants_to_do_next_by_instruction": "The user wants to press the Enter key after inputting 'Learn JS today' in the task box input.",
+            "log": "Now I want to use action 'KeyboardPress' to press the Enter key.",
             "more_actions_needed_by_instruction": false,
             "action": {
               "type": "KeyboardPress",
@@ -116,16 +131,16 @@
                 }
               }
             ],
-            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"Press the Enter key after inputting 'Learn JS today' in the task box input.\",\n  \"log\": \"I will use action KeyboardPress to press the Enter key.\",\n  \"more_actions_needed_by_instruction\": false,\n  \"action\": {\n    \"type\": \"KeyboardPress\",\n    \"param\": {\n      \"value\": \"Enter\"\n    }\n  }\n}",
+            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"The user wants to press the Enter key after inputting 'Learn JS today' in the task box input.\",\n  \"log\": \"Now I want to use action 'KeyboardPress' to press the Enter key.\",\n  \"more_actions_needed_by_instruction\": false,\n  \"action\": {\n    \"type\": \"KeyboardPress\",\n    \"param\": {\n      \"value\": \"Enter\"\n    }\n  }\n}",
             "usage": {
-              "prompt_tokens": 2012,
-              "completion_tokens": 91,
-              "total_tokens": 2103,
+              "prompt_tokens": 2243,
+              "completion_tokens": 103,
+              "total_tokens": 2346,
               "completion_tokens_details": {
-                "text_tokens": 91
+                "text_tokens": 103
               },
               "prompt_tokens_details": {
-                "text_tokens": 814,
+                "text_tokens": 1045,
                 "image_tokens": 1198
               }
             }
@@ -148,19 +163,19 @@
           },
           "prompt": "Input 'Learn Rust tomorrow' in the task box input and press the Enter key @ ",
           "response": {
-            "what_the_user_wants_to_do_next_by_instruction": "Input 'Learn Rust tomorrow' in the task box input and press the Enter key",
-            "log": "I will use action Input to do input 'Learn Rust tomorrow' into the task box input.",
+            "what_the_user_wants_to_do_next_by_instruction": "The user wants to input 'Learn Rust tomorrow' in the task box input and press the Enter key.",
+            "log": "Now I want to use action 'Input' to fill 'Learn Rust tomorrow' in the task box input first.",
             "more_actions_needed_by_instruction": true,
             "action": {
               "type": "Input",
               "locate": {
-                "prompt": "input field for adding a new todo",
                 "bbox": [
-                  513,
-                  128,
-                  1067,
-                  194
-                ]
+                  514,
+                  127,
+                  1066,
+                  198
+                ],
+                "prompt": "The task box input"
               },
               "param": {
                 "value": "Learn Rust tomorrow"
@@ -170,29 +185,29 @@
               {
                 "type": "Input",
                 "locate": {
-                  "prompt": "input field for adding a new todo",
                   "bbox": [
-                    513,
-                    128,
-                    1067,
-                    194
-                  ]
+                    514,
+                    127,
+                    1066,
+                    198
+                  ],
+                  "prompt": "The task box input"
                 },
                 "param": {
                   "value": "Learn Rust tomorrow"
                 }
               }
             ],
-            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"Input 'Learn Rust tomorrow' in the task box input and press the Enter key\",\n  \"log\": \"I will use action Input to do input 'Learn Rust tomorrow' into the task box input.\",\n  \"more_actions_needed_by_instruction\": true,\n  \"action\": {\n    \"type\": \"Input\",\n    \"locate\": {\n      \"bbox_2d\": [\n        513,\n        128,\n        1067,\n        194\n      ],\n      \"prompt\": \"input field for adding a new todo\"\n    },\n    \"param\": {\n      \"value\": \"Learn Rust tomorrow\"\n    }\n  }\n}",
+            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"The user wants to input 'Learn Rust tomorrow' in the task box input and press the Enter key.\",\n  \"log\": \"Now I want to use action 'Input' to fill 'Learn Rust tomorrow' in the task box input first.\",\n  \"more_actions_needed_by_instruction\": true,\n  \"action\": {\n    \"type\": \"Input\",\n    \"locate\": {\n      \"bbox\": [\n        514,\n        127,\n        1066,\n        198\n      ],\n      \"prompt\": \"The task box input\"\n    },\n    \"param\": {\n      \"value\": \"Learn Rust tomorrow\"\n    }\n  }\n}",
             "usage": {
-              "prompt_tokens": 1960,
-              "completion_tokens": 150,
-              "total_tokens": 2110,
+              "prompt_tokens": 2187,
+              "completion_tokens": 152,
+              "total_tokens": 2339,
               "completion_tokens_details": {
-                "text_tokens": 150
+                "text_tokens": 152
               },
               "prompt_tokens_details": {
-                "text_tokens": 762,
+                "text_tokens": 989,
                 "image_tokens": 1198
               }
             }
@@ -208,13 +223,28 @@
               "dpr": 1
             }
           },
-          "prompt": "input field for adding a new todo @ ",
+          "prompt": "The task box input",
           "response": {
             "elements": [
               {
                 "id": "okgbn"
               }
             ]
+          },
+          "element": {
+            "id": "okgbn",
+            "indexId": 18,
+            "center": [
+              790,
+              162
+            ],
+            "rect": {
+              "left": 515,
+              "top": 130,
+              "width": 550,
+              "height": 65,
+              "zoom": 1
+            }
           }
         },
         {
@@ -227,10 +257,10 @@
               "dpr": 1
             }
           },
-          "prompt": "Input 'Learn Rust tomorrow' in the task box input and press the Enter key @ I will use action Input to do input 'Learn Rust tomorrow' into the task box input.",
+          "prompt": "Input 'Learn Rust tomorrow' in the task box input and press the Enter key @ - Now I want to use action 'Input' to fill 'Learn Rust tomorrow' in the task box input first.",
           "response": {
-            "what_the_user_wants_to_do_next_by_instruction": "Press the Enter key after inputting 'Learn Rust tomorrow'.",
-            "log": "I will use action KeyboardPress to do press the Enter key.",
+            "what_the_user_wants_to_do_next_by_instruction": "Press the Enter key after inputting 'Learn Rust tomorrow' in the task box input.",
+            "log": "Now I want to use action 'KeyboardPress' to press the Enter key.",
             "more_actions_needed_by_instruction": false,
             "action": {
               "type": "KeyboardPress",
@@ -246,16 +276,16 @@
                 }
               }
             ],
-            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"Press the Enter key after inputting 'Learn Rust tomorrow'.\",\n  \"log\": \"I will use action KeyboardPress to do press the Enter key.\",\n  \"more_actions_needed_by_instruction\": false,\n  \"action\": {\n    \"type\": \"KeyboardPress\",\n    \"param\": {\n      \"value\": \"Enter\"\n    }\n  }\n}",
+            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"Press the Enter key after inputting 'Learn Rust tomorrow' in the task box input.\",\n  \"log\": \"Now I want to use action 'KeyboardPress' to press the Enter key.\",\n  \"more_actions_needed_by_instruction\": false,\n  \"action\": {\n    \"type\": \"KeyboardPress\",\n    \"param\": {\n      \"value\": \"Enter\"\n    }\n  }\n}",
             "usage": {
-              "prompt_tokens": 2011,
-              "completion_tokens": 87,
-              "total_tokens": 2098,
+              "prompt_tokens": 2243,
+              "completion_tokens": 99,
+              "total_tokens": 2342,
               "completion_tokens_details": {
-                "text_tokens": 87
+                "text_tokens": 99
               },
               "prompt_tokens_details": {
-                "text_tokens": 813,
+                "text_tokens": 1045,
                 "image_tokens": 1198
               }
             }
@@ -278,19 +308,19 @@
           },
           "prompt": "Input 'Learn AI the day after tomorrow' in the task box input and press the Enter key @ ",
           "response": {
-            "what_the_user_wants_to_do_next_by_instruction": "Input 'Learn AI the day after tomorrow' in the task box input and press the Enter key",
-            "log": "I will use action Input to do input 'Learn AI the day after tomorrow' into the task box input.",
+            "what_the_user_wants_to_do_next_by_instruction": "The user wants to input 'Learn AI the day after tomorrow' in the task box input and press the Enter key.",
+            "log": "Now I want to use action 'Input' to fill 'Learn AI the day after tomorrow' in the task box input first.",
             "more_actions_needed_by_instruction": true,
             "action": {
               "type": "Input",
               "locate": {
-                "prompt": "input field for adding a new todo",
                 "bbox": [
-                  573,
-                  149,
-                  1065,
-                  182
-                ]
+                  513,
+                  128,
+                  1067,
+                  194
+                ],
+                "prompt": "The task box input"
               },
               "param": {
                 "value": "Learn AI the day after tomorrow"
@@ -300,29 +330,29 @@
               {
                 "type": "Input",
                 "locate": {
-                  "prompt": "input field for adding a new todo",
                   "bbox": [
-                    573,
-                    149,
-                    1065,
-                    182
-                  ]
+                    513,
+                    128,
+                    1067,
+                    194
+                  ],
+                  "prompt": "The task box input"
                 },
                 "param": {
                   "value": "Learn AI the day after tomorrow"
                 }
               }
             ],
-            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"Input 'Learn AI the day after tomorrow' in the task box input and press the Enter key\",\n  \"log\": \"I will use action Input to do input 'Learn AI the day after tomorrow' into the task box input.\",\n  \"more_actions_needed_by_instruction\": true,\n  \"action\": {\n    \"type\": \"Input\",\n    \"locate\": {\n      \"bbox_2d\": [\n        573,\n        149,\n        1065,\n        182\n      ],\n      \"prompt\": \"input field for adding a new todo\"\n    },\n    \"param\": {\n      \"value\": \"Learn AI the day after tomorrow\"\n    }\n  }\n}",
+            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"The user wants to input 'Learn AI the day after tomorrow' in the task box input and press the Enter key.\",\n  \"log\": \"Now I want to use action 'Input' to fill 'Learn AI the day after tomorrow' in the task box input first.\",\n  \"more_actions_needed_by_instruction\": true,\n  \"action\": {\n    \"type\": \"Input\",\n    \"locate\": {\n      \"bbox\": [\n        513,\n        128,\n        1067,\n        194\n      ],\n      \"prompt\": \"The task box input\"\n    },\n    \"param\": {\n      \"value\": \"Learn AI the day after tomorrow\"\n    }\n  }\n}",
             "usage": {
-              "prompt_tokens": 1963,
-              "completion_tokens": 159,
-              "total_tokens": 2122,
+              "prompt_tokens": 2190,
+              "completion_tokens": 161,
+              "total_tokens": 2351,
               "completion_tokens_details": {
-                "text_tokens": 159
+                "text_tokens": 161
               },
               "prompt_tokens_details": {
-                "text_tokens": 765,
+                "text_tokens": 992,
                 "image_tokens": 1198
               }
             }
@@ -338,13 +368,28 @@
               "dpr": 1
             }
           },
-          "prompt": "input field for adding a new todo @ ",
+          "prompt": "The task box input",
           "response": {
             "elements": [
               {
-                "id": "phooj"
+                "id": "okgbn"
               }
             ]
+          },
+          "element": {
+            "id": "okgbn",
+            "indexId": 18,
+            "center": [
+              790,
+              162
+            ],
+            "rect": {
+              "left": 515,
+              "top": 130,
+              "width": 550,
+              "height": 65,
+              "zoom": 1
+            }
           }
         },
         {
@@ -357,10 +402,10 @@
               "dpr": 1
             }
           },
-          "prompt": "Input 'Learn AI the day after tomorrow' in the task box input and press the Enter key @ I will use action Input to do input 'Learn AI the day after tomorrow' into the task box input.",
+          "prompt": "Input 'Learn AI the day after tomorrow' in the task box input and press the Enter key @ - Now I want to use action 'Input' to fill 'Learn AI the day after tomorrow' in the task box input first.",
           "response": {
-            "what_the_user_wants_to_do_next_by_instruction": "Press the Enter key after inputting 'Learn AI the day after tomorrow'.",
-            "log": "I will use action KeyboardPress to do press the Enter key.",
+            "what_the_user_wants_to_do_next_by_instruction": "Press the Enter key to submit the input 'Learn AI the day after tomorrow'.",
+            "log": "Now I want to use action 'KeyboardPress' to press the Enter key to submit the input.",
             "more_actions_needed_by_instruction": false,
             "action": {
               "type": "KeyboardPress",
@@ -376,16 +421,16 @@
                 }
               }
             ],
-            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"Press the Enter key after inputting 'Learn AI the day after tomorrow'.\",\n  \"log\": \"I will use action KeyboardPress to do press the Enter key.\",\n  \"more_actions_needed_by_instruction\": false,\n  \"action\": {\n    \"type\": \"KeyboardPress\",\n    \"param\": {\n      \"value\": \"Enter\"\n    }\n  }\n}",
+            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"Press the Enter key to submit the input 'Learn AI the day after tomorrow'.\",\n  \"log\": \"Now I want to use action 'KeyboardPress' to press the Enter key to submit the input.\",\n  \"more_actions_needed_by_instruction\": false,\n  \"action\": {\n    \"type\": \"KeyboardPress\",\n    \"param\": {\n      \"value\": \"Enter\"\n    }\n  }\n}",
             "usage": {
-              "prompt_tokens": 2017,
-              "completion_tokens": 90,
-              "total_tokens": 2107,
+              "prompt_tokens": 2249,
+              "completion_tokens": 102,
+              "total_tokens": 2351,
               "completion_tokens_details": {
-                "text_tokens": 90
+                "text_tokens": 102
               },
               "prompt_tokens_details": {
-                "text_tokens": 819,
+                "text_tokens": 1051,
                 "image_tokens": 1198
               }
             }
@@ -409,44 +454,44 @@
           "prompt": "Move the mouse to the second item in the task list and click the delete button on the right of the second task @ ",
           "response": {
             "what_the_user_wants_to_do_next_by_instruction": "Move the mouse to the second item in the task list and click the delete button on the right of the second task",
-            "log": "I will use action Hover to move the mouse to the second item in the task list.",
+            "log": "Now I want to use action 'Hover' to move the mouse to the second item in the task list first",
             "more_actions_needed_by_instruction": true,
             "action": {
               "type": "Hover",
               "locate": {
-                "prompt": "second item in the task list",
                 "bbox": [
-                  574,
-                  278,
-                  801,
-                  296
-                ]
+                  521,
+                  273,
+                  1066,
+                  304
+                ],
+                "prompt": "The second item in the task list"
               }
             },
             "actions": [
               {
                 "type": "Hover",
                 "locate": {
-                  "prompt": "second item in the task list",
                   "bbox": [
-                    574,
-                    278,
-                    801,
-                    296
-                  ]
+                    521,
+                    273,
+                    1066,
+                    304
+                  ],
+                  "prompt": "The second item in the task list"
                 }
               }
             ],
-            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"Move the mouse to the second item in the task list and click the delete button on the right of the second task\",\n  \"log\": \"I will use action Hover to move the mouse to the second item in the task list.\",\n  \"more_actions_needed_by_instruction\": true,\n  \"action\": {\n    \"type\": \"Hover\",\n    \"locate\": {\n      \"bbox_2d\": [\n        574,\n        278,\n        801,\n        296\n      ],\n      \"prompt\": \"second item in the task list\"\n    }\n  }\n}",
+            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"Move the mouse to the second item in the task list and click the delete button on the right of the second task\",\n  \"log\": \"Now I want to use action 'Hover' to move the mouse to the second item in the task list first\",\n  \"more_actions_needed_by_instruction\": true,\n  \"action\": {\n    \"type\": \"Hover\",\n    \"locate\": {\n      \"bbox\": [\n        521,\n        273,\n        1066,\n        304\n      ],\n      \"prompt\": \"The second item in the task list\"\n    }\n  }\n}",
             "usage": {
-              "prompt_tokens": 1967,
-              "completion_tokens": 138,
-              "total_tokens": 2105,
+              "prompt_tokens": 2194,
+              "completion_tokens": 142,
+              "total_tokens": 2336,
               "completion_tokens_details": {
-                "text_tokens": 138
+                "text_tokens": 142
               },
               "prompt_tokens_details": {
-                "text_tokens": 769,
+                "text_tokens": 996,
                 "image_tokens": 1198
               }
             }
@@ -462,13 +507,26 @@
               "dpr": 1
             }
           },
-          "prompt": "second item in the task list @ ",
+          "prompt": "The second item in the task list",
           "response": {
             "elements": [
               {
-                "id": "jpomo"
+                "id": "fieaa"
               }
             ]
+          },
+          "element": {
+            "id": "fieaa",
+            "center": [
+              793,
+              288
+            ],
+            "rect": {
+              "left": 789,
+              "top": 284,
+              "width": 8,
+              "height": 8
+            }
           }
         },
         {
@@ -481,47 +539,47 @@
               "dpr": 1
             }
           },
-          "prompt": "Move the mouse to the second item in the task list and click the delete button on the right of the second task @ I will use action Hover to move the mouse to the second item in the task list.",
+          "prompt": "Move the mouse to the second item in the task list and click the delete button on the right of the second task @ - Now I want to use action 'Hover' to move the mouse to the second item in the task list first",
           "response": {
-            "what_the_user_wants_to_do_next_by_instruction": "Click the delete button on the right of the second task",
-            "log": "I will use action Tap to click the delete button on the right of the second task.",
+            "what_the_user_wants_to_do_next_by_instruction": "The user wants to click the delete button on the right of the second task after moving the mouse to the second item in the task list.",
+            "log": "Now I want to use action 'Tap' to click the delete button on the right of the second task",
             "more_actions_needed_by_instruction": false,
             "action": {
               "type": "Tap",
               "locate": {
-                "prompt": "delete button on the right of the second task",
                 "bbox": [
                   1028,
-                  279,
+                  276,
                   1043,
-                  290
-                ]
+                  291
+                ],
+                "prompt": "The delete button on the right of the second task"
               }
             },
             "actions": [
               {
                 "type": "Tap",
                 "locate": {
-                  "prompt": "delete button on the right of the second task",
                   "bbox": [
                     1028,
-                    279,
+                    276,
                     1043,
-                    290
-                  ]
+                    291
+                  ],
+                  "prompt": "The delete button on the right of the second task"
                 }
               }
             ],
-            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"Click the delete button on the right of the second task\",\n  \"log\": \"I will use action Tap to click the delete button on the right of the second task.\",\n  \"more_actions_needed_by_instruction\": false,\n  \"action\": {\n    \"type\": \"Tap\",\n    \"locate\": {\n      \"bbox_2d\": [\n        1028,\n        279,\n        1043,\n        290\n      ],\n      \"prompt\": \"delete button on the right of the second task\"\n    }\n  }\n}",
+            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"The user wants to click the delete button on the right of the second task after moving the mouse to the second item in the task list.\",\n  \"log\": \"Now I want to use action 'Tap' to click the delete button on the right of the second task\",\n  \"more_actions_needed_by_instruction\": false,\n  \"action\": {\n    \"type\": \"Tap\",\n    \"locate\": {\n      \"bbox\": [\n        1028,\n        276,\n        1043,\n        291\n      ],\n      \"prompt\": \"The delete button on the right of the second task\"\n    }\n  }\n}",
             "usage": {
-              "prompt_tokens": 2017,
-              "completion_tokens": 131,
-              "total_tokens": 2148,
+              "prompt_tokens": 2250,
+              "completion_tokens": 149,
+              "total_tokens": 2399,
               "completion_tokens_details": {
-                "text_tokens": 131
+                "text_tokens": 149
               },
               "prompt_tokens_details": {
-                "text_tokens": 819,
+                "text_tokens": 1052,
                 "image_tokens": 1198
               }
             }
@@ -537,13 +595,106 @@
               "dpr": 1
             }
           },
-          "prompt": "delete button on the right of the second task @ ",
+          "prompt": "The delete button on the right of the second task",
           "response": {
             "elements": [
               {
                 "id": "jicbk"
               }
             ]
+          },
+          "element": {
+            "id": "jicbk",
+            "indexId": 25,
+            "center": [
+              1035,
+              285
+            ],
+            "rect": {
+              "left": 1015,
+              "top": 265,
+              "width": 40,
+              "height": 40,
+              "zoom": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "Tap - the check button on the left of the second task",
+      "tasks": [
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "https://todomvc.com/examples/react/dist/",
+            "size": {
+              "width": 1280,
+              "height": 720,
+              "dpr": 1
+            }
+          },
+          "prompt": "the check button on the left of the second task",
+          "response": {
+            "elements": [
+              {
+                "id": "cdllc"
+              }
+            ]
+          },
+          "element": {
+            "id": "cdllc",
+            "indexId": 23,
+            "center": [
+              535,
+              285
+            ],
+            "rect": {
+              "left": 515,
+              "top": 265,
+              "width": 40,
+              "height": 40,
+              "zoom": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "prompt": "Tap - the 'completed' status button below the task list",
+      "tasks": [
+        {
+          "type": "locate",
+          "pageContext": {
+            "url": "https://todomvc.com/examples/react/dist/",
+            "size": {
+              "width": 1280,
+              "height": 720,
+              "dpr": 1
+            }
+          },
+          "prompt": "the 'completed' status button below the task list",
+          "response": {
+            "elements": [
+              {
+                "id": "lgdli"
+              }
+            ]
+          },
+          "element": {
+            "id": "lgdli",
+            "indexId": 28,
+            "center": [
+              837,
+              335
+            ],
+            "rect": {
+              "left": 803,
+              "top": 326,
+              "width": 69,
+              "height": 18,
+              "zoom": 1
+            }
           }
         }
       ]
