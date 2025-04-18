@@ -1,6 +1,6 @@
 # login to sauce demo, extract the items info into a json file, and assert the price of 'Sauce Labs Fleece Jacket'
 
-target:
+web:
   url: https://www.saucedemo.com/
   output: ./output/sauce-demo-items.json
 
