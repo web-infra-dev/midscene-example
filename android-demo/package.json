@@ -12,7 +12,7 @@
     "author": "",
     "license": "MIT",
     "devDependencies": {
-        "@midscene/android": "beta",
+        "@midscene/android": "latest",
         "dotenv": "^16.4.5",
         "tsx": "^4.19.1"
     }
