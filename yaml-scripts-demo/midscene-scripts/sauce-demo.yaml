@@ -15,3 +15,9 @@ tasks:
           {name: string, price: number, actionBtnName: string}[], return item name, price and the action button name on the lower right corner of each item (like 'Remove')
         name: items
       - aiAssert: The price of 'Sauce Labs Fleece Jacket' is 49.99
+
+  - name: run javascript code
+    flow:
+      - javascript: >
+          document.title
+        name: page-title
