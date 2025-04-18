@@ -45,8 +45,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           if-no-files-found: error
-          name: Midscene Report 
-          path: ${{ github.workspace }}/yaml-scripts-demo/midscene_run/report/
+          name: Midscene Run Dump 
+          path: ${{ github.workspace }}/yaml-scripts-demo/midscene_run/
 
       - name: Check if script failed
         if: steps.run-script.outcome == 'failure'
