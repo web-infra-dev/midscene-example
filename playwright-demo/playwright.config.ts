@@ -31,13 +31,23 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: "on-first-retry",
+    
+    // add chinese support
+    locale: 'zh-CN',
+    timezoneId: 'Asia/Shanghai',
   },
 
   /* Configure projects for major browsers */
   projects: [
     {
       name: "chromium",
-      use: { ...devices["Desktop Chrome"] },
+      use: { 
+        ...devices["Desktop Chrome"],
+        // ensure browser use appropriate language settings
+        contextOptions: {
+          locale: 'zh-CN',
+        },
+      },
     },
   ],
 });
