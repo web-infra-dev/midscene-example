@@ -35,6 +35,15 @@ export default defineConfig({
     // add chinese support
     locale: 'zh-CN',
     timezoneId: 'Asia/Shanghai',
+    
+    // 设置默认字符编码
+    launchOptions: {
+      args: [
+        '--lang=zh-CN',
+        '--disable-gpu',
+        '--font-render-hinting=medium'
+      ]
+    }
   },
 
   /* Configure projects for major browsers */
@@ -46,6 +55,12 @@ export default defineConfig({
         // ensure browser use appropriate language settings
         contextOptions: {
           locale: 'zh-CN',
+          geolocation: { longitude: 116.3883, latitude: 39.9289 }, // 北京
+          permissions: ['geolocation'],
+          userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+          deviceScaleFactor: 1,
+          isMobile: false,
+          hasTouch: false,
         },
       },
     },
