@@ -53,6 +53,18 @@ describe('Test todo list', () => {
       await agent.aiAssert(
         'Near the bottom of the list, there is a tip shows "1 item left".',
       );
+
+      const name = await agent.aiString('What is the name of the first todo?');
+      console.log('name', name);
+
+      const todoCount = await agent.aiNumber('How many todos are there in the list?');
+      console.log('todoCount', todoCount);
+
+      const isAllCompleted = await agent.aiBoolean('Is all todos completed?');
+      console.log('isAllCompleted', isAllCompleted);
+
+      const location = await agent.aiLocate('What is the location of the first todo?');
+      console.log('location', location);
     },
     720 * 1000,
   );
