@@ -38,6 +38,18 @@ Promise.resolve(
     );
     console.log("headphones in stock", items);
 
+    const isMoreThan1000 = await agent.aiBoolean("Is the price of the headphones more than 1000?");
+    console.log("isMoreThan1000", isMoreThan1000);
+
+    const price = await agent.aiNumber("What is the price of the first headphone?");
+    console.log("price", price);
+
+    const name = await agent.aiString("What is the name of the first headphone?");
+    console.log("name", name);
+
+    const location = await agent.aiLocate("What is the location of the first headphone?");
+    console.log("location", location);
+
     // 👀 assert by AI
     await agent.aiAssert("There is a category filter on the left");
 
