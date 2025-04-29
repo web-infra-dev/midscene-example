@@ -21,6 +21,10 @@ tasks:
       - aiQuery: >
           {name: string, price: number, subTitle: string}[], return item name, price and the subTitle on the lower right corner of each item
         name: headphones
+      - aiNumber: "What is the price of the first headphone?"
+      - aiBoolean: "Is the price of the headphones more than 1000?"
+      - aiString: "What is the name of the first headphone?"
+      - aiLocate: "What is the location of the first headphone?"
 
   - name: assert Filter button
     flow:
