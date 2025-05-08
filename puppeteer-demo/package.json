@@ -12,7 +12,7 @@
     "author": "",
     "license": "MIT",
     "devDependencies": {
-        "@midscene/web": "latest",
+        "@midscene/web": "0.16.9-beta-20250508125518.0",
         "dotenv": "^16.4.5",
         "puppeteer": "^24.0.0",
         "tsx": "^4.19.1"
