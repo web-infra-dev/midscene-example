@@ -1,7 +1,7 @@
 {
   "pkgName": "playwright-demo",
   "pkgVersion": "0.0.1",
-  "cacheId": "todo-mvc-zh.spec.ts(ai todo - Chinese Prompt)",
+  "cacheId": "todo-mvc-zh.spec.ts(ai-todo---Chinese-Prompt)",
   "aiTasks": [
     {
       "prompt": "在任务框 input 输入 今天学习 JS，按回车键",
@@ -55,16 +55,9 @@
             ],
             "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"在任务框 input 输入 今天学习 JS，按回车键\",\n  \"log\": \"Now I want to use action 'Input' to enter '今天学习 JS' in the task input box first.\",\n  \"more_actions_needed_by_instruction\": true,\n  \"action\": {\n    \"type\": \"Input\",\n    \"locate\": {\n      \"bbox\": [\n        513,\n        127,\n        1068,\n        199\n      ],\n      \"prompt\": \"任务框 input\"\n    },\n    \"param\": {\n      \"value\": \"今天学习 JS\"\n    }\n  }\n}",
             "usage": {
-              "prompt_tokens": 2185,
               "completion_tokens": 145,
-              "total_tokens": 2330,
-              "completion_tokens_details": {
-                "text_tokens": 145
-              },
-              "prompt_tokens_details": {
-                "text_tokens": 987,
-                "image_tokens": 1198
-              }
+              "prompt_tokens": 2180,
+              "total_tokens": 2325
             }
           }
         },
@@ -82,7 +75,10 @@
           "response": {
             "elements": [
               {
-                "id": "okgbn"
+                "id": "okgbn",
+                "xpaths": [
+                  "//*[@id=\"todo-input\"]"
+                ]
               }
             ]
           },
@@ -99,7 +95,8 @@
               "width": 550,
               "height": 65,
               "zoom": 1
-            }
+            },
+            "xpaths": []
           }
         },
         {
@@ -114,8 +111,8 @@
           },
           "prompt": "在任务框 input 输入 今天学习 JS，按回车键 @ - Now I want to use action 'Input' to enter '今天学习 JS' in the task input box first.",
           "response": {
-            "what_the_user_wants_to_do_next_by_instruction": "在任务框 input 输入 '今天学习 JS' 后，按回车键",
-            "log": "Now I want to use action 'KeyboardPress' to press the Enter key to submit the input.",
+            "what_the_user_wants_to_do_next_by_instruction": "在任务框 input 输入 '今天学习 JS' 后，需要按回车键。",
+            "log": "现在我将使用 action 'KeyboardPress' 来按回车键。",
             "more_actions_needed_by_instruction": false,
             "action": {
               "type": "KeyboardPress",
@@ -131,18 +128,11 @@
                 }
               }
             ],
-            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"在任务框 input 输入 '今天学习 JS' 后，按回车键\",\n  \"log\": \"Now I want to use action 'KeyboardPress' to press the Enter key to submit the input.\",\n  \"more_actions_needed_by_instruction\": false,\n  \"action\": {\n    \"type\": \"KeyboardPress\",\n    \"param\": {\n      \"value\": \"Enter\"\n    }\n  }\n}",
+            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"在任务框 input 输入 '今天学习 JS' 后，需要按回车键。\",\n  \"log\": \"现在我将使用 action 'KeyboardPress' 来按回车键。\",\n  \"more_actions_needed_by_instruction\": false,\n  \"action\": {\n    \"type\": \"KeyboardPress\",\n    \"param\": {\n      \"value\": \"Enter\"\n    }\n  }\n}",
             "usage": {
-              "prompt_tokens": 2241,
-              "completion_tokens": 103,
-              "total_tokens": 2344,
-              "completion_tokens_details": {
-                "text_tokens": 103
-              },
-              "prompt_tokens_details": {
-                "text_tokens": 1043,
-                "image_tokens": 1198
-              }
+              "completion_tokens": 100,
+              "prompt_tokens": 2236,
+              "total_tokens": 2336
             }
           }
         }
@@ -200,16 +190,9 @@
             ],
             "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"在任务框 input 输入 明天学习 Rust，按回车键\",\n  \"log\": \"Now I want to use action 'Input' to enter '明天学习 Rust' in the task input box first.\",\n  \"more_actions_needed_by_instruction\": true,\n  \"action\": {\n    \"type\": \"Input\",\n    \"locate\": {\n      \"bbox\": [\n        572,\n        149,\n        1063,\n        178\n      ],\n      \"prompt\": \"任务输入框\"\n    },\n    \"param\": {\n      \"value\": \"明天学习 Rust\"\n    }\n  }\n}",
             "usage": {
-              "prompt_tokens": 2186,
               "completion_tokens": 146,
-              "total_tokens": 2332,
-              "completion_tokens_details": {
-                "text_tokens": 146
-              },
-              "prompt_tokens_details": {
-                "text_tokens": 988,
-                "image_tokens": 1198
-              }
+              "prompt_tokens": 2181,
+              "total_tokens": 2327
             }
           }
         },
@@ -227,7 +210,8 @@
           "response": {
             "elements": [
               {
-                "id": "ppmbm"
+                "id": "ppmbm",
+                "xpaths": null
               }
             ]
           },
@@ -242,7 +226,8 @@
               "top": 159,
               "width": 8,
               "height": 8
-            }
+            },
+            "xpaths": []
           }
         },
         {
@@ -276,16 +261,9 @@
             ],
             "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"在任务框 input 输入 明天学习 Rust 后，需要按回车键来确认输入。\",\n  \"log\": \"现在我将使用 action 'KeyboardPress' 来按回车键以确认输入。\",\n  \"more_actions_needed_by_instruction\": false,\n  \"action\": {\n    \"type\": \"KeyboardPress\",\n    \"param\": {\n      \"value\": \"Enter\"\n    }\n  }\n}",
             "usage": {
-              "prompt_tokens": 2242,
               "completion_tokens": 106,
-              "total_tokens": 2348,
-              "completion_tokens_details": {
-                "text_tokens": 106
-              },
-              "prompt_tokens_details": {
-                "text_tokens": 1044,
-                "image_tokens": 1198
-              }
+              "prompt_tokens": 2237,
+              "total_tokens": 2343
             }
           }
         }
@@ -313,9 +291,9 @@
               "type": "Input",
               "locate": {
                 "bbox": [
-                  573,
+                  572,
                   149,
-                  1062,
+                  1063,
                   180
                 ],
                 "prompt": "任务输入框"
@@ -329,9 +307,9 @@
                 "type": "Input",
                 "locate": {
                   "bbox": [
-                    573,
+                    572,
                     149,
-                    1062,
+                    1063,
                     180
                   ],
                   "prompt": "任务输入框"
@@ -341,18 +319,11 @@
                 }
               }
             ],
-            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"在任务框 input 输入后天学习 AI，按回车键\",\n  \"log\": \"Now I want to use action 'Input' to enter '后天学习 AI' in the task input box first.\",\n  \"more_actions_needed_by_instruction\": true,\n  \"action\": {\n    \"type\": \"Input\",\n    \"locate\": {\n      \"bbox\": [\n        573,\n        149,\n        1062,\n        180\n      ],\n      \"prompt\": \"任务输入框\"\n    },\n    \"param\": {\n      \"value\": \"后天学习 AI\"\n    }\n  }\n}",
+            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"在任务框 input 输入后天学习 AI，按回车键\",\n  \"log\": \"Now I want to use action 'Input' to enter '后天学习 AI' in the task input box first.\",\n  \"more_actions_needed_by_instruction\": true,\n  \"action\": {\n    \"type\": \"Input\",\n    \"locate\": {\n      \"bbox\": [\n        572,\n        149,\n        1063,\n        180\n      ],\n      \"prompt\": \"任务输入框\"\n    },\n    \"param\": {\n      \"value\": \"后天学习 AI\"\n    }\n  }\n}",
             "usage": {
-              "prompt_tokens": 2185,
               "completion_tokens": 147,
-              "total_tokens": 2332,
-              "completion_tokens_details": {
-                "text_tokens": 147
-              },
-              "prompt_tokens_details": {
-                "text_tokens": 987,
-                "image_tokens": 1198
-              }
+              "prompt_tokens": 2180,
+              "total_tokens": 2327
             }
           }
         },
@@ -370,7 +341,8 @@
           "response": {
             "elements": [
               {
-                "id": "ghmhf"
+                "id": "ghmhf",
+                "xpaths": null
               }
             ]
           },
@@ -385,7 +357,8 @@
               "top": 160,
               "width": 8,
               "height": 8
-            }
+            },
+            "xpaths": []
           }
         },
         {
@@ -419,16 +392,9 @@
             ],
             "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"在任务框 input 输入后天学习 AI 后，需要按回车键\",\n  \"log\": \"Now I want to use action 'KeyboardPress' to press the Enter key to submit the input.\",\n  \"more_actions_needed_by_instruction\": false,\n  \"action\": {\n    \"type\": \"KeyboardPress\",\n    \"param\": {\n      \"value\": \"Enter\"\n    }\n  }\n}",
             "usage": {
-              "prompt_tokens": 2242,
               "completion_tokens": 103,
-              "total_tokens": 2345,
-              "completion_tokens_details": {
-                "text_tokens": 103
-              },
-              "prompt_tokens_details": {
-                "text_tokens": 1044,
-                "image_tokens": 1198
-              }
+              "prompt_tokens": 2237,
+              "total_tokens": 2340
             }
           }
         }
@@ -458,8 +424,8 @@
                 "bbox": [
                   521,
                   273,
-                  726,
-                  296
+                  1066,
+                  308
                 ],
                 "prompt": "The second item in the task list"
               }
@@ -471,25 +437,18 @@
                   "bbox": [
                     521,
                     273,
-                    726,
-                    296
+                    1066,
+                    308
                   ],
                   "prompt": "The second item in the task list"
                 }
               }
             ],
-            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"将鼠标移动到任务列表中的第二项\",\n  \"log\": \"Now I want to use action 'Hover' to move the mouse to the second item in the task list first\",\n  \"more_actions_needed_by_instruction\": false,\n  \"action\": {\n    \"type\": \"Hover\",\n    \"locate\": {\n      \"bbox\": [\n        521,\n        273,\n        726,\n        296\n      ],\n      \"prompt\": \"The second item in the task list\"\n    }\n  }\n}",
+            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"将鼠标移动到任务列表中的第二项\",\n  \"log\": \"Now I want to use action 'Hover' to move the mouse to the second item in the task list first\",\n  \"more_actions_needed_by_instruction\": false,\n  \"action\": {\n    \"type\": \"Hover\",\n    \"locate\": {\n      \"bbox\": [\n        521,\n        273,\n        1066,\n        308\n      ],\n      \"prompt\": \"The second item in the task list\"\n    }\n  }\n}",
             "usage": {
-              "prompt_tokens": 2181,
-              "completion_tokens": 127,
-              "total_tokens": 2308,
-              "completion_tokens_details": {
-                "text_tokens": 127
-              },
-              "prompt_tokens_details": {
-                "text_tokens": 983,
-                "image_tokens": 1198
-              }
+              "completion_tokens": 128,
+              "prompt_tokens": 2176,
+              "total_tokens": 2304
             }
           }
         },
@@ -507,22 +466,24 @@
           "response": {
             "elements": [
               {
-                "id": "nnodg"
+                "id": "bhhkj",
+                "xpaths": null
               }
             ]
           },
           "element": {
-            "id": "nnodg",
+            "id": "bhhkj",
             "center": [
-              623,
-              284
+              793,
+              290
             ],
             "rect": {
-              "left": 619,
-              "top": 280,
+              "left": 789,
+              "top": 286,
               "width": 8,
               "height": 8
-            }
+            },
+            "xpaths": []
           }
         }
       ]
@@ -544,7 +505,10 @@
           "response": {
             "elements": [
               {
-                "id": "jicbk"
+                "id": "jicbk",
+                "xpaths": [
+                  "//*[@id=\"root\"]/main[1]/ul[1]/li[2]/div[1]/button[1]"
+                ]
               }
             ]
           },
@@ -561,7 +525,8 @@
               "width": 40,
               "height": 40,
               "zoom": 1
-            }
+            },
+            "xpaths": []
           }
         }
       ]
@@ -583,7 +548,10 @@
           "response": {
             "elements": [
               {
-                "id": "cdllc"
+                "id": "cdllc",
+                "xpaths": [
+                  "//*[@id=\"root\"]/main[1]/ul[1]/li[2]/div[1]/input[1]"
+                ]
               }
             ]
           },
@@ -600,7 +568,8 @@
               "width": 40,
               "height": 40,
               "zoom": 1
-            }
+            },
+            "xpaths": []
           }
         }
       ]
@@ -622,7 +591,10 @@
           "response": {
             "elements": [
               {
-                "id": "lgdli"
+                "id": "lgdli",
+                "xpaths": [
+                  "//*[@id=\"root\"]/footer[1]/ul[1]/li[3]/a[1]"
+                ]
               }
             ]
           },
@@ -639,7 +611,8 @@
               "width": 69,
               "height": 18,
               "zoom": 1
-            }
+            },
+            "xpaths": []
           }
         }
       ]

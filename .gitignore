@@ -7,7 +7,9 @@ node_modules/
 /command-line/*.json
 
 # Midscene.js dump files
-**/midscene_run/**
+**/midscene_run/report/**
+**/midscene_run/dump/
+**/midscene_run/log/
 playwright-report/
 dist/
 test-results/
