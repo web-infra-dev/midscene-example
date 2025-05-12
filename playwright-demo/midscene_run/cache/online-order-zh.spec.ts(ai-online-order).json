@@ -67,30 +67,9 @@
           },
           "prompt": "左上角的语言切换按钮（English、中文）",
           "response": {
-            "elements": [
-              {
-                "id": "jebfb",
-                "xpaths": [
-                  "//*[@id=\"app\"]/div[1]/div[1]/header[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/section[1]/span[1]/span[1]"
-                ]
-              }
+            "xpaths": [
+              "//*[@id=\"app\"]/div[1]/div[1]/header[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/section[1]/span[1]/span[1]/text()"
             ]
-          },
-          "element": {
-            "id": "jebfb",
-            "indexId": 1,
-            "center": [
-              91,
-              28
-            ],
-            "rect": {
-              "left": 65,
-              "top": 17,
-              "width": 53,
-              "height": 22,
-              "zoom": 1
-            },
-            "xpaths": []
           }
         },
         {
@@ -115,7 +94,7 @@
                   60,
                   95,
                   104,
-                  121
+                  120
                 ],
                 "prompt": "中文选项"
               }
@@ -128,13 +107,13 @@
                     60,
                     95,
                     104,
-                    121
+                    120
                   ],
                   "prompt": "中文选项"
                 }
               }
             ],
-            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"在弹出的下拉列表中点击中文\",\n  \"log\": \"现在我将使用 Tap 动作点击中文选项。\",\n  \"more_actions_needed_by_instruction\": false,\n  \"action\": {\n    \"type\": \"Tap\",\n    \"locate\": {\n      \"bbox\": [\n        60,\n        95,\n        104,\n        121\n      ],\n      \"prompt\": \"中文选项\"\n    }\n  }\n}",
+            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"在弹出的下拉列表中点击中文\",\n  \"log\": \"现在我将使用 Tap 动作点击中文选项。\",\n  \"more_actions_needed_by_instruction\": false,\n  \"action\": {\n    \"type\": \"Tap\",\n    \"locate\": {\n      \"bbox\": [\n        60,\n        95,\n        104,\n        120\n      ],\n      \"prompt\": \"中文选项\"\n    }\n  }\n}",
             "usage": {
               "completion_tokens": 110,
               "prompt_tokens": 1545,
@@ -154,30 +133,9 @@
           },
           "prompt": "中文选项",
           "response": {
-            "elements": [
-              {
-                "id": "mdbil",
-                "xpaths": [
-                  "/html/body/div[3]/div[1]/div[1]/ul[1]/li[2]/span[1]"
-                ]
-              }
+            "xpaths": [
+              "/html/body/div[3]/div[1]/div[1]/ul[1]/li[2]/span[1]/text()"
             ]
-          },
-          "element": {
-            "id": "mdbil",
-            "indexId": 29,
-            "center": [
-              81,
-              106
-            ],
-            "rect": {
-              "left": 65,
-              "top": 95,
-              "width": 32,
-              "height": 22,
-              "zoom": 1
-            },
-            "xpaths": []
           }
         }
       ]
@@ -255,7 +213,7 @@
                   325,
                   801,
                   386,
-                  817
+                  814
                 ],
                 "prompt": "多肉葡萄的规格按钮"
               }
@@ -268,13 +226,13 @@
                     325,
                     801,
                     386,
-                    817
+                    814
                   ],
                   "prompt": "多肉葡萄的规格按钮"
                 }
               }
             ],
-            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"用户希望直接点击多肉葡萄的规格按钮\",\n  \"log\": \"现在我将使用 Tap 动作来点击多肉葡萄的规格按钮\",\n  \"more_actions_needed_by_instruction\": false,\n  \"action\": {\n    \"type\": \"Tap\",\n    \"locate\": {\n      \"bbox\": [\n        325,\n        801,\n        386,\n        817\n      ],\n      \"prompt\": \"多肉葡萄的规格按钮\"\n    }\n  }\n}",
+            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"用户希望直接点击多肉葡萄的规格按钮\",\n  \"log\": \"现在我将使用 Tap 动作来点击多肉葡萄的规格按钮\",\n  \"more_actions_needed_by_instruction\": false,\n  \"action\": {\n    \"type\": \"Tap\",\n    \"locate\": {\n      \"bbox\": [\n        325,\n        801,\n        386,\n        814\n      ],\n      \"prompt\": \"多肉葡萄的规格按钮\"\n    }\n  }\n}",
             "usage": {
               "completion_tokens": 121,
               "prompt_tokens": 1475,
@@ -294,30 +252,9 @@
           },
           "prompt": "多肉葡萄的规格按钮",
           "response": {
-            "elements": [
-              {
-                "id": "jhgnn",
-                "xpaths": [
-                  "//*[@id=\"app\"]/div[1]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[3]/div[2]/div[2]/div[3]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]"
-                ]
-              }
+            "xpaths": [
+              "//*[@id=\"app\"]/div[1]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[3]/div[2]/div[2]/div[3]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/text()"
             ]
-          },
-          "element": {
-            "id": "jhgnn",
-            "indexId": 46,
-            "center": [
-              355,
-              806
-            ],
-            "rect": {
-              "left": 337,
-              "top": 798,
-              "width": 36,
-              "height": 17,
-              "zoom": 1
-            },
-            "xpaths": []
           }
         }
       ]
@@ -347,7 +284,7 @@
                   25,
                   526,
                   387,
-                  540
+                  541
                 ],
                 "prompt": "不使用吸管选项"
               }
@@ -360,13 +297,13 @@
                     25,
                     526,
                     387,
-                    540
+                    541
                   ],
                   "prompt": "不使用吸管选项"
                 }
               }
             ],
-            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"根据指令，下一步需要点击“不使用吸管”选项。\",\n  \"log\": \"现在我将使用 Tap 动作来点击“不使用吸管”选项。\",\n  \"more_actions_needed_by_instruction\": true,\n  \"action\": {\n    \"type\": \"Tap\",\n    \"locate\": {\n      \"bbox\": [\n        25,\n        526,\n        387,\n        540\n      ],\n      \"prompt\": \"不使用吸管选项\"\n    }\n  }\n}",
+            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"根据指令，下一步需要点击“不使用吸管”选项。\",\n  \"log\": \"现在我将使用 Tap 动作来点击“不使用吸管”选项。\",\n  \"more_actions_needed_by_instruction\": true,\n  \"action\": {\n    \"type\": \"Tap\",\n    \"locate\": {\n      \"bbox\": [\n        25,\n        526,\n        387,\n        541\n      ],\n      \"prompt\": \"不使用吸管选项\"\n    }\n  }\n}",
             "usage": {
               "completion_tokens": 123,
               "prompt_tokens": 1482,
@@ -386,26 +323,7 @@
           },
           "prompt": "不使用吸管选项",
           "response": {
-            "elements": [
-              {
-                "id": "jplap",
-                "xpaths": null
-              }
-            ]
-          },
-          "element": {
-            "id": "jplap",
-            "center": [
-              206,
-              533
-            ],
-            "rect": {
-              "left": 202,
-              "top": 529,
-              "width": 8,
-              "height": 8
-            },
-            "xpaths": []
+            "xpaths": null
           }
         },
         {
@@ -432,7 +350,7 @@
                   30,
                   629
                 ],
-                "prompt": "冰沙（推荐）选项的复选框"
+                "prompt": "冰沙（推荐）选项"
               }
             },
             "actions": [
@@ -445,15 +363,15 @@
                     30,
                     629
                   ],
-                  "prompt": "冰沙（推荐）选项的复选框"
+                  "prompt": "冰沙（推荐）选项"
                 }
               }
             ],
-            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"根据指令，下一步需要点击“冰沙（推荐）”选项。\",\n  \"log\": \"现在我将使用 Tap 动作来点击“冰沙（推荐）”选项。\",\n  \"more_actions_needed_by_instruction\": true,\n  \"action\": {\n    \"type\": \"Tap\",\n    \"locate\": {\n      \"bbox\": [\n        25,\n        617,\n        30,\n        629\n      ],\n      \"prompt\": \"冰沙（推荐）选项的复选框\"\n    }\n  }\n}",
+            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"根据指令，下一步需要点击“冰沙（推荐）”选项。\",\n  \"log\": \"现在我将使用 Tap 动作来点击“冰沙（推荐）”选项。\",\n  \"more_actions_needed_by_instruction\": true,\n  \"action\": {\n    \"type\": \"Tap\",\n    \"locate\": {\n      \"bbox\": [\n        25,\n        617,\n        30,\n        629\n      ],\n      \"prompt\": \"冰沙（推荐）选项\"\n    }\n  }\n}",
             "usage": {
-              "completion_tokens": 129,
+              "completion_tokens": 125,
               "prompt_tokens": 1535,
-              "total_tokens": 1664
+              "total_tokens": 1660
             }
           }
         },
@@ -467,32 +385,11 @@
               "dpr": 1
             }
           },
-          "prompt": "冰沙（推荐）选项的复选框",
+          "prompt": "冰沙（推荐）选项",
           "response": {
-            "elements": [
-              {
-                "id": "mbghj",
-                "xpaths": [
-                  "/html/body/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/section[1]/section[2]/div[2]/div[2]/div[2]/div[1]/div[1]/label[1]/span[1]/input[1]"
-                ]
-              }
+            "xpaths": [
+              "/html/body/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/section[1]/section[2]/div[2]/div[2]/div[2]/div[1]/div[1]/label[1]/span[1]/input[1]"
             ]
-          },
-          "element": {
-            "id": "mbghj",
-            "indexId": 12,
-            "center": [
-              31,
-              622
-            ],
-            "rect": {
-              "left": 23,
-              "top": 614,
-              "width": 16,
-              "height": 16,
-              "zoom": 1
-            },
-            "xpaths": []
           }
         },
         {
@@ -556,26 +453,7 @@
           },
           "prompt": "正常冰（推荐）选项",
           "response": {
-            "elements": [
-              {
-                "id": "gffhk",
-                "xpaths": null
-              }
-            ]
-          },
-          "element": {
-            "id": "gffhk",
-            "center": [
-              205,
-              782
-            ],
-            "rect": {
-              "left": 201,
-              "top": 778,
-              "width": 8,
-              "height": 8
-            },
-            "xpaths": []
+            "xpaths": null
           }
         }
       ]
@@ -692,26 +570,9 @@
           },
           "prompt": "标准甜（推荐）选项",
           "response": {
-            "elements": [
-              {
-                "id": "mneda",
-                "xpaths": null
-              }
+            "xpaths": [
+              "/html/body/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/section[1]/section[2]/div[2]/div[4]/div[2]/div[1]/div[1]/label[1]/span[2]/span[1]/text()"
             ]
-          },
-          "element": {
-            "id": "mneda",
-            "center": [
-              81,
-              365
-            ],
-            "rect": {
-              "left": 77,
-              "top": 361,
-              "width": 8,
-              "height": 8
-            },
-            "xpaths": []
           }
         },
         {
@@ -735,8 +596,8 @@
                 "bbox": [
                   25,
                   714,
-                  120,
-                  726
+                  386,
+                  750
                 ],
                 "prompt": "绿妍（推荐）选项"
               }
@@ -748,14 +609,14 @@
                   "bbox": [
                     25,
                     714,
-                    120,
-                    726
+                    386,
+                    750
                   ],
                   "prompt": "绿妍（推荐）选项"
                 }
               }
             ],
-            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"根据指令，下一步需要点击“绿妍（推荐）”选项。\",\n  \"log\": \"现在我将使用 Tap 动作来点击“绿妍（推荐）”选项。\",\n  \"more_actions_needed_by_instruction\": true,\n  \"action\": {\n    \"type\": \"Tap\",\n    \"locate\": {\n      \"bbox\": [\n        25,\n        714,\n        120,\n        726\n      ],\n      \"prompt\": \"绿妍（推荐）选项\"\n    }\n  }\n}",
+            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"根据指令，下一步需要点击“绿妍（推荐）”选项。\",\n  \"log\": \"现在我将使用 Tap 动作来点击“绿妍（推荐）”选项。\",\n  \"more_actions_needed_by_instruction\": true,\n  \"action\": {\n    \"type\": \"Tap\",\n    \"locate\": {\n      \"bbox\": [\n        25,\n        714,\n        386,\n        750\n      ],\n      \"prompt\": \"绿妍（推荐）选项\"\n    }\n  }\n}",
             "usage": {
               "completion_tokens": 126,
               "prompt_tokens": 1534,
@@ -775,26 +636,7 @@
           },
           "prompt": "绿妍（推荐）选项",
           "response": {
-            "elements": [
-              {
-                "id": "jeljn",
-                "xpaths": null
-              }
-            ]
-          },
-          "element": {
-            "id": "jeljn",
-            "center": [
-              72,
-              720
-            ],
-            "rect": {
-              "left": 68,
-              "top": 716,
-              "width": 8,
-              "height": 8
-            },
-            "xpaths": []
+            "xpaths": null
           }
         },
         {
@@ -818,10 +660,10 @@
                 "bbox": [
                   25,
                   869,
-                  137,
-                  884
+                  140,
+                  883
                 ],
-                "prompt": "标准口味（推荐）选项"
+                "prompt": "标准口味（推荐）"
               }
             },
             "actions": [
@@ -831,18 +673,18 @@
                   "bbox": [
                     25,
                     869,
-                    137,
-                    884
+                    140,
+                    883
                   ],
-                  "prompt": "标准口味（推荐）选项"
+                  "prompt": "标准口味（推荐）"
                 }
               }
             ],
-            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"根据指令，下一步需要点击“标准口味（推荐）”选项。\",\n  \"log\": \"现在我将使用 Tap 动作来点击“标准口味（推荐）”选项。\",\n  \"more_actions_needed_by_instruction\": false,\n  \"action\": {\n    \"type\": \"Tap\",\n    \"locate\": {\n      \"bbox\": [\n        25,\n        869,\n        137,\n        884\n      ],\n      \"prompt\": \"标准口味（推荐）选项\"\n    }\n  }\n}",
+            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"根据指令，下一步需要点击“标准口味（推荐）”选项。\",\n  \"log\": \"现在我将使用 Tap 动作来点击“标准口味（推荐）”选项。\",\n  \"more_actions_needed_by_instruction\": false,\n  \"action\": {\n    \"type\": \"Tap\",\n    \"locate\": {\n      \"bbox\": [\n        25,\n        869,\n        140,\n        883\n      ],\n      \"prompt\": \"标准口味（推荐）\"\n    }\n  }\n}",
             "usage": {
-              "completion_tokens": 126,
+              "completion_tokens": 125,
               "prompt_tokens": 1556,
-              "total_tokens": 1682
+              "total_tokens": 1681
             }
           }
         },
@@ -856,28 +698,11 @@
               "dpr": 1
             }
           },
-          "prompt": "标准口味（推荐）选项",
+          "prompt": "标准口味（推荐）",
           "response": {
-            "elements": [
-              {
-                "id": "gbmjk",
-                "xpaths": null
-              }
+            "xpaths": [
+              "/html/body/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/section[1]/section[2]/div[2]/div[6]/div[2]/div[1]/div[1]/label[1]/span[2]/span[1]/text()"
             ]
-          },
-          "element": {
-            "id": "gbmjk",
-            "center": [
-              81,
-              876
-            ],
-            "rect": {
-              "left": 77,
-              "top": 872,
-              "width": 8,
-              "height": 8
-            },
-            "xpaths": []
           }
         }
       ]
@@ -897,8 +722,8 @@
           },
           "prompt": "滚动到最下面 @ ",
           "response": {
-            "what_the_user_wants_to_do_next_by_instruction": "用户希望滚动到页面最下面。",
-            "log": "现在我将使用 Scroll 动作来滚动页面到底部。",
+            "what_the_user_wants_to_do_next_by_instruction": "用户希望滚动到页面最下面",
+            "log": "现在我将使用 Scroll 动作来滚动页面到底部",
             "more_actions_needed_by_instruction": false,
             "action": {
               "type": "Scroll",
@@ -920,7 +745,7 @@
                 }
               }
             ],
-            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"用户希望滚动到页面最下面。\",\n  \"log\": \"现在我将使用 Scroll 动作来滚动页面到底部。\",\n  \"more_actions_needed_by_instruction\": false,\n  \"action\": {\n    \"type\": \"Scroll\",\n    \"locate\": null,\n    \"param\": {\n      \"direction\": \"down\",\n      \"scrollType\": \"untilBottom\",\n      \"distance\": null\n    }\n  }\n}",
+            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"用户希望滚动到页面最下面\",\n  \"log\": \"现在我将使用 Scroll 动作来滚动页面到底部\",\n  \"more_actions_needed_by_instruction\": false,\n  \"action\": {\n    \"type\": \"Scroll\",\n    \"locate\": null,\n    \"param\": {\n      \"direction\": \"down\",\n      \"scrollType\": \"untilBottom\",\n      \"distance\": null\n    }\n  }\n}",
             "usage": {
               "completion_tokens": 107,
               "prompt_tokens": 1472,
@@ -994,30 +819,9 @@
           },
           "prompt": "选好了按钮",
           "response": {
-            "elements": [
-              {
-                "id": "jiklk",
-                "xpaths": [
-                  "/html/body/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/section[2]/div[1]/div[3]/button[1]"
-                ]
-              }
+            "xpaths": [
+              "/html/body/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/section[2]/div[1]/div[3]/button[1]"
             ]
-          },
-          "element": {
-            "id": "jiklk",
-            "indexId": 38,
-            "center": [
-              261,
-              868
-            ],
-            "rect": {
-              "left": 138,
-              "top": 849,
-              "width": 247,
-              "height": 38,
-              "zoom": 1
-            },
-            "xpaths": []
           }
         }
       ]
@@ -1044,10 +848,10 @@
               "type": "Tap",
               "locate": {
                 "bbox": [
-                  351,
-                  18,
-                  374,
-                  36
+                  365,
+                  12,
+                  387,
+                  34
                 ],
                 "prompt": "右上角的商品图标按钮"
               }
@@ -1057,16 +861,16 @@
                 "type": "Tap",
                 "locate": {
                   "bbox": [
-                    351,
-                    18,
-                    374,
-                    36
+                    365,
+                    12,
+                    387,
+                    34
                   ],
                   "prompt": "右上角的商品图标按钮"
                 }
               }
             ],
-            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"用户希望点击右上角的商品图标按钮\",\n  \"log\": \"现在我将使用 Tap 动作来点击右上角的商品图标按钮\",\n  \"more_actions_needed_by_instruction\": false,\n  \"action\": {\n    \"type\": \"Tap\",\n    \"locate\": {\n      \"bbox\": [\n        351,\n        18,\n        374,\n        36\n      ],\n      \"prompt\": \"右上角的商品图标按钮\"\n    }\n  }\n}",
+            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"用户希望点击右上角的商品图标按钮\",\n  \"log\": \"现在我将使用 Tap 动作来点击右上角的商品图标按钮\",\n  \"more_actions_needed_by_instruction\": false,\n  \"action\": {\n    \"type\": \"Tap\",\n    \"locate\": {\n      \"bbox\": [\n        365,\n        12,\n        387,\n        34\n      ],\n      \"prompt\": \"右上角的商品图标按钮\"\n    }\n  }\n}",
             "usage": {
               "completion_tokens": 118,
               "prompt_tokens": 1474,
@@ -1086,30 +890,9 @@
           },
           "prompt": "右上角的商品图标按钮",
           "response": {
-            "elements": [
-              {
-                "id": "podpa",
-                "xpaths": [
-                  "//*[@id=\"app\"]/div[1]/div[1]/header[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/ul[1]/li[1]/span[1]/div[1]/img[1]"
-                ]
-              }
+            "xpaths": [
+              "/html/body/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/section[1]/section[2]/div[2]/div[10]/div[2]/div[4]/div[2]/div[1]/div[2]/i[1]/svg[1]"
             ]
-          },
-          "element": {
-            "id": "podpa",
-            "indexId": 3,
-            "center": [
-              362,
-              28
-            ],
-            "rect": {
-              "left": 350,
-              "top": 16,
-              "width": 25,
-              "height": 25,
-              "zoom": 1
-            },
-            "xpaths": []
           }
         }
       ]
@@ -1137,7 +920,8 @@
               "locate": null,
               "param": {
                 "direction": "down",
-                "scrollType": "untilBottom"
+                "scrollType": "untilBottom",
+                "distance": null
               }
             },
             "actions": [
@@ -1146,15 +930,16 @@
                 "locate": null,
                 "param": {
                   "direction": "down",
-                  "scrollType": "untilBottom"
+                  "scrollType": "untilBottom",
+                  "distance": null
                 }
               }
             ],
-            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"用户希望滚动到页面最下面。\",\n  \"log\": \"现在我将使用 Scroll 动作来滚动页面到底部。\",\n  \"more_actions_needed_by_instruction\": false,\n  \"action\": {\n    \"type\": \"Scroll\",\n    \"locate\": null,\n    \"param\": {\n      \"direction\": \"down\",\n      \"scrollType\": \"untilBottom\"\n    }\n  }\n}",
+            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"用户希望滚动到页面最下面。\",\n  \"log\": \"现在我将使用 Scroll 动作来滚动页面到底部。\",\n  \"more_actions_needed_by_instruction\": false,\n  \"action\": {\n    \"type\": \"Scroll\",\n    \"locate\": null,\n    \"param\": {\n      \"direction\": \"down\",\n      \"scrollType\": \"untilBottom\",\n      \"distance\": null\n    }\n  }\n}",
             "usage": {
-              "completion_tokens": 101,
+              "completion_tokens": 107,
               "prompt_tokens": 1472,
-              "total_tokens": 1573
+              "total_tokens": 1579
             }
           }
         }

@@ -73,30 +73,9 @@
           },
           "prompt": "The task box input",
           "response": {
-            "elements": [
-              {
-                "id": "okgbn",
-                "xpaths": [
-                  "//*[@id=\"todo-input\"]"
-                ]
-              }
+            "xpaths": [
+              "//*[@id=\"todo-input\"]"
             ]
-          },
-          "element": {
-            "id": "okgbn",
-            "indexId": 18,
-            "center": [
-              790,
-              162
-            ],
-            "rect": {
-              "left": 515,
-              "top": 130,
-              "width": 550,
-              "height": 65,
-              "zoom": 1
-            },
-            "xpaths": []
           }
         },
         {
@@ -160,10 +139,10 @@
               "type": "Input",
               "locate": {
                 "bbox": [
-                  514,
-                  127,
-                  1066,
-                  198
+                  572,
+                  149,
+                  1063,
+                  180
                 ],
                 "prompt": "The task box input"
               },
@@ -176,10 +155,10 @@
                 "type": "Input",
                 "locate": {
                   "bbox": [
-                    514,
-                    127,
-                    1066,
-                    198
+                    572,
+                    149,
+                    1063,
+                    180
                   ],
                   "prompt": "The task box input"
                 },
@@ -188,7 +167,7 @@
                 }
               }
             ],
-            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"The user wants to input 'Learn Rust tomorrow' in the task box input and press the Enter key.\",\n  \"log\": \"Now I want to use action 'Input' to fill 'Learn Rust tomorrow' in the task box input first.\",\n  \"more_actions_needed_by_instruction\": true,\n  \"action\": {\n    \"type\": \"Input\",\n    \"locate\": {\n      \"bbox\": [\n        514,\n        127,\n        1066,\n        198\n      ],\n      \"prompt\": \"The task box input\"\n    },\n    \"param\": {\n      \"value\": \"Learn Rust tomorrow\"\n    }\n  }\n}",
+            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"The user wants to input 'Learn Rust tomorrow' in the task box input and press the Enter key.\",\n  \"log\": \"Now I want to use action 'Input' to fill 'Learn Rust tomorrow' in the task box input first.\",\n  \"more_actions_needed_by_instruction\": true,\n  \"action\": {\n    \"type\": \"Input\",\n    \"locate\": {\n      \"bbox\": [\n        572,\n        149,\n        1063,\n        180\n      ],\n      \"prompt\": \"The task box input\"\n    },\n    \"param\": {\n      \"value\": \"Learn Rust tomorrow\"\n    }\n  }\n}",
             "usage": {
               "completion_tokens": 152,
               "prompt_tokens": 2182,
@@ -208,30 +187,9 @@
           },
           "prompt": "The task box input",
           "response": {
-            "elements": [
-              {
-                "id": "okgbn",
-                "xpaths": [
-                  "//*[@id=\"todo-input\"]"
-                ]
-              }
+            "xpaths": [
+              "//*[@id=\"todo-input\"]"
             ]
-          },
-          "element": {
-            "id": "okgbn",
-            "indexId": 18,
-            "center": [
-              790,
-              162
-            ],
-            "rect": {
-              "left": 515,
-              "top": 130,
-              "width": 550,
-              "height": 65,
-              "zoom": 1
-            },
-            "xpaths": []
           }
         },
         {
@@ -246,7 +204,7 @@
           },
           "prompt": "Input 'Learn Rust tomorrow' in the task box input and press the Enter key @ - Now I want to use action 'Input' to fill 'Learn Rust tomorrow' in the task box input first.",
           "response": {
-            "what_the_user_wants_to_do_next_by_instruction": "Press the Enter key after inputting 'Learn Rust tomorrow' in the task box input.",
+            "what_the_user_wants_to_do_next_by_instruction": "The user wants to press the Enter key after inputting 'Learn Rust tomorrow' in the task box input.",
             "log": "Now I want to use action 'KeyboardPress' to press the Enter key.",
             "more_actions_needed_by_instruction": false,
             "action": {
@@ -263,11 +221,11 @@
                 }
               }
             ],
-            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"Press the Enter key after inputting 'Learn Rust tomorrow' in the task box input.\",\n  \"log\": \"Now I want to use action 'KeyboardPress' to press the Enter key.\",\n  \"more_actions_needed_by_instruction\": false,\n  \"action\": {\n    \"type\": \"KeyboardPress\",\n    \"param\": {\n      \"value\": \"Enter\"\n    }\n  }\n}",
+            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"The user wants to press the Enter key after inputting 'Learn Rust tomorrow' in the task box input.\",\n  \"log\": \"Now I want to use action 'KeyboardPress' to press the Enter key.\",\n  \"more_actions_needed_by_instruction\": false,\n  \"action\": {\n    \"type\": \"KeyboardPress\",\n    \"param\": {\n      \"value\": \"Enter\"\n    }\n  }\n}",
             "usage": {
-              "completion_tokens": 99,
+              "completion_tokens": 103,
               "prompt_tokens": 2238,
-              "total_tokens": 2337
+              "total_tokens": 2341
             }
           }
         }
@@ -296,8 +254,8 @@
               "locate": {
                 "bbox": [
                   516,
-                  147,
-                  1068,
+                  148,
+                  1067,
                   193
                 ],
                 "prompt": "The task box input"
@@ -312,8 +270,8 @@
                 "locate": {
                   "bbox": [
                     516,
-                    147,
-                    1068,
+                    148,
+                    1067,
                     193
                   ],
                   "prompt": "The task box input"
@@ -323,7 +281,7 @@
                 }
               }
             ],
-            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"The user wants to input 'Learn AI the day after tomorrow' in the task box input and press the Enter key.\",\n  \"log\": \"Now I want to use action 'Input' to fill 'Learn AI the day after tomorrow' in the task box input first.\",\n  \"more_actions_needed_by_instruction\": true,\n  \"action\": {\n    \"type\": \"Input\",\n    \"locate\": {\n      \"bbox\": [\n        516,\n        147,\n        1068,\n        193\n      ],\n      \"prompt\": \"The task box input\"\n    },\n    \"param\": {\n      \"value\": \"Learn AI the day after tomorrow\"\n    }\n  }\n}",
+            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"The user wants to input 'Learn AI the day after tomorrow' in the task box input and press the Enter key.\",\n  \"log\": \"Now I want to use action 'Input' to fill 'Learn AI the day after tomorrow' in the task box input first.\",\n  \"more_actions_needed_by_instruction\": true,\n  \"action\": {\n    \"type\": \"Input\",\n    \"locate\": {\n      \"bbox\": [\n        516,\n        148,\n        1067,\n        193\n      ],\n      \"prompt\": \"The task box input\"\n    },\n    \"param\": {\n      \"value\": \"Learn AI the day after tomorrow\"\n    }\n  }\n}",
             "usage": {
               "completion_tokens": 161,
               "prompt_tokens": 2185,
@@ -343,30 +301,9 @@
           },
           "prompt": "The task box input",
           "response": {
-            "elements": [
-              {
-                "id": "okgbn",
-                "xpaths": [
-                  "//*[@id=\"todo-input\"]"
-                ]
-              }
+            "xpaths": [
+              "//*[@id=\"todo-input\"]"
             ]
-          },
-          "element": {
-            "id": "okgbn",
-            "indexId": 18,
-            "center": [
-              790,
-              162
-            ],
-            "rect": {
-              "left": 515,
-              "top": 130,
-              "width": 550,
-              "height": 65,
-              "zoom": 1
-            },
-            "xpaths": []
           }
         },
         {
@@ -381,8 +318,8 @@
           },
           "prompt": "Input 'Learn AI the day after tomorrow' in the task box input and press the Enter key @ - Now I want to use action 'Input' to fill 'Learn AI the day after tomorrow' in the task box input first.",
           "response": {
-            "what_the_user_wants_to_do_next_by_instruction": "The user wants to press the Enter key after inputting 'Learn AI the day after tomorrow'.",
-            "log": "Now I want to use action 'KeyboardPress' to press the Enter key.",
+            "what_the_user_wants_to_do_next_by_instruction": "Press the Enter key to submit the input 'Learn AI the day after tomorrow'.",
+            "log": "Now I want to use action 'KeyboardPress' to press the Enter key to submit the input.",
             "more_actions_needed_by_instruction": false,
             "action": {
               "type": "KeyboardPress",
@@ -398,11 +335,11 @@
                 }
               }
             ],
-            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"The user wants to press the Enter key after inputting 'Learn AI the day after tomorrow'.\",\n  \"log\": \"Now I want to use action 'KeyboardPress' to press the Enter key.\",\n  \"more_actions_needed_by_instruction\": false,\n  \"action\": {\n    \"type\": \"KeyboardPress\",\n    \"param\": {\n      \"value\": \"Enter\"\n    }\n  }\n}",
+            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"Press the Enter key to submit the input 'Learn AI the day after tomorrow'.\",\n  \"log\": \"Now I want to use action 'KeyboardPress' to press the Enter key to submit the input.\",\n  \"more_actions_needed_by_instruction\": false,\n  \"action\": {\n    \"type\": \"KeyboardPress\",\n    \"param\": {\n      \"value\": \"Enter\"\n    }\n  }\n}",
             "usage": {
-              "completion_tokens": 101,
+              "completion_tokens": 102,
               "prompt_tokens": 2244,
-              "total_tokens": 2345
+              "total_tokens": 2346
             }
           }
         }
@@ -472,26 +409,9 @@
           },
           "prompt": "The second item in the task list",
           "response": {
-            "elements": [
-              {
-                "id": "fieaa",
-                "xpaths": null
-              }
+            "xpaths": [
+              "//*[@id=\"root\"]/main[1]/ul[1]/li[2]/div[1]/label[1]/text()"
             ]
-          },
-          "element": {
-            "id": "fieaa",
-            "center": [
-              793,
-              288
-            ],
-            "rect": {
-              "left": 789,
-              "top": 284,
-              "width": 8,
-              "height": 8
-            },
-            "xpaths": []
           }
         },
         {
@@ -555,30 +475,9 @@
           },
           "prompt": "The delete button on the right of the second task",
           "response": {
-            "elements": [
-              {
-                "id": "jicbk",
-                "xpaths": [
-                  "//*[@id=\"root\"]/main[1]/ul[1]/li[2]/div[1]/button[1]"
-                ]
-              }
+            "xpaths": [
+              "//*[@id=\"root\"]/main[1]/ul[1]/li[2]/div[1]/button[1]"
             ]
-          },
-          "element": {
-            "id": "jicbk",
-            "indexId": 25,
-            "center": [
-              1035,
-              285
-            ],
-            "rect": {
-              "left": 1015,
-              "top": 265,
-              "width": 40,
-              "height": 40,
-              "zoom": 1
-            },
-            "xpaths": []
           }
         }
       ]
@@ -598,30 +497,9 @@
           },
           "prompt": "the check button on the left of the second task",
           "response": {
-            "elements": [
-              {
-                "id": "cdllc",
-                "xpaths": [
-                  "//*[@id=\"root\"]/main[1]/ul[1]/li[2]/div[1]/input[1]"
-                ]
-              }
+            "xpaths": [
+              "//*[@id=\"root\"]/main[1]/ul[1]/li[2]/div[1]/input[1]"
             ]
-          },
-          "element": {
-            "id": "cdllc",
-            "indexId": 23,
-            "center": [
-              535,
-              285
-            ],
-            "rect": {
-              "left": 515,
-              "top": 265,
-              "width": 40,
-              "height": 40,
-              "zoom": 1
-            },
-            "xpaths": []
           }
         }
       ]
@@ -641,30 +519,9 @@
           },
           "prompt": "the 'completed' status button below the task list",
           "response": {
-            "elements": [
-              {
-                "id": "lgdli",
-                "xpaths": [
-                  "//*[@id=\"root\"]/footer[1]/ul[1]/li[3]/a[1]"
-                ]
-              }
+            "xpaths": [
+              "//*[@id=\"root\"]/footer[1]/ul[1]/li[3]/a[1]/text()"
             ]
-          },
-          "element": {
-            "id": "lgdli",
-            "indexId": 28,
-            "center": [
-              837,
-              335
-            ],
-            "rect": {
-              "left": 803,
-              "top": 326,
-              "width": 69,
-              "height": 18,
-              "zoom": 1
-            },
-            "xpaths": []
           }
         }
       ]

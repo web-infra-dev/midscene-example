@@ -73,30 +73,9 @@
           },
           "prompt": "任务框 input",
           "response": {
-            "elements": [
-              {
-                "id": "okgbn",
-                "xpaths": [
-                  "//*[@id=\"todo-input\"]"
-                ]
-              }
+            "xpaths": [
+              "//*[@id=\"todo-input\"]"
             ]
-          },
-          "element": {
-            "id": "okgbn",
-            "indexId": 18,
-            "center": [
-              790,
-              162
-            ],
-            "rect": {
-              "left": 515,
-              "top": 130,
-              "width": 550,
-              "height": 65,
-              "zoom": 1
-            },
-            "xpaths": []
           }
         },
         {
@@ -208,26 +187,9 @@
           },
           "prompt": "任务输入框",
           "response": {
-            "elements": [
-              {
-                "id": "ppmbm",
-                "xpaths": null
-              }
+            "xpaths": [
+              "//*[@id=\"todo-input\"]"
             ]
-          },
-          "element": {
-            "id": "ppmbm",
-            "center": [
-              817,
-              163
-            ],
-            "rect": {
-              "left": 813,
-              "top": 159,
-              "width": 8,
-              "height": 8
-            },
-            "xpaths": []
           }
         },
         {
@@ -339,26 +301,9 @@
           },
           "prompt": "任务输入框",
           "response": {
-            "elements": [
-              {
-                "id": "ghmhf",
-                "xpaths": null
-              }
+            "xpaths": [
+              "//*[@id=\"todo-input\"]"
             ]
-          },
-          "element": {
-            "id": "ghmhf",
-            "center": [
-              817,
-              164
-            ],
-            "rect": {
-              "left": 813,
-              "top": 160,
-              "width": 8,
-              "height": 8
-            },
-            "xpaths": []
           }
         },
         {
@@ -424,10 +369,10 @@
                 "bbox": [
                   521,
                   273,
-                  1066,
-                  308
+                  726,
+                  298
                 ],
-                "prompt": "The second item in the task list"
+                "prompt": "任务列表中的第二项"
               }
             },
             "actions": [
@@ -437,18 +382,18 @@
                   "bbox": [
                     521,
                     273,
-                    1066,
-                    308
+                    726,
+                    298
                   ],
-                  "prompt": "The second item in the task list"
+                  "prompt": "任务列表中的第二项"
                 }
               }
             ],
-            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"将鼠标移动到任务列表中的第二项\",\n  \"log\": \"Now I want to use action 'Hover' to move the mouse to the second item in the task list first\",\n  \"more_actions_needed_by_instruction\": false,\n  \"action\": {\n    \"type\": \"Hover\",\n    \"locate\": {\n      \"bbox\": [\n        521,\n        273,\n        1066,\n        308\n      ],\n      \"prompt\": \"The second item in the task list\"\n    }\n  }\n}",
+            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"将鼠标移动到任务列表中的第二项\",\n  \"log\": \"Now I want to use action 'Hover' to move the mouse to the second item in the task list first\",\n  \"more_actions_needed_by_instruction\": false,\n  \"action\": {\n    \"type\": \"Hover\",\n    \"locate\": {\n      \"bbox\": [\n        521,\n        273,\n        726,\n        298\n      ],\n      \"prompt\": \"任务列表中的第二项\"\n    }\n  }\n}",
             "usage": {
-              "completion_tokens": 128,
+              "completion_tokens": 125,
               "prompt_tokens": 2176,
-              "total_tokens": 2304
+              "total_tokens": 2301
             }
           }
         },
@@ -462,28 +407,11 @@
               "dpr": 1
             }
           },
-          "prompt": "The second item in the task list",
+          "prompt": "任务列表中的第二项",
           "response": {
-            "elements": [
-              {
-                "id": "bhhkj",
-                "xpaths": null
-              }
+            "xpaths": [
+              "//*[@id=\"root\"]/main[1]/ul[1]/li[2]/div[1]/label[1]/text()"
             ]
-          },
-          "element": {
-            "id": "bhhkj",
-            "center": [
-              793,
-              290
-            ],
-            "rect": {
-              "left": 789,
-              "top": 286,
-              "width": 8,
-              "height": 8
-            },
-            "xpaths": []
           }
         }
       ]
@@ -503,30 +431,9 @@
           },
           "prompt": "第二项任务右边的删除按钮",
           "response": {
-            "elements": [
-              {
-                "id": "jicbk",
-                "xpaths": [
-                  "//*[@id=\"root\"]/main[1]/ul[1]/li[2]/div[1]/button[1]"
-                ]
-              }
+            "xpaths": [
+              "//*[@id=\"root\"]/main[1]/ul[1]/li[2]/div[1]/button[1]"
             ]
-          },
-          "element": {
-            "id": "jicbk",
-            "indexId": 25,
-            "center": [
-              1035,
-              285
-            ],
-            "rect": {
-              "left": 1015,
-              "top": 265,
-              "width": 40,
-              "height": 40,
-              "zoom": 1
-            },
-            "xpaths": []
           }
         }
       ]
@@ -546,30 +453,9 @@
           },
           "prompt": "第二条任务左边的勾选按钮",
           "response": {
-            "elements": [
-              {
-                "id": "cdllc",
-                "xpaths": [
-                  "//*[@id=\"root\"]/main[1]/ul[1]/li[2]/div[1]/input[1]"
-                ]
-              }
+            "xpaths": [
+              "//*[@id=\"root\"]/main[1]/ul[1]/li[2]/div[1]/input[1]"
             ]
-          },
-          "element": {
-            "id": "cdllc",
-            "indexId": 23,
-            "center": [
-              535,
-              285
-            ],
-            "rect": {
-              "left": 515,
-              "top": 265,
-              "width": 40,
-              "height": 40,
-              "zoom": 1
-            },
-            "xpaths": []
           }
         }
       ]
@@ -589,30 +475,9 @@
           },
           "prompt": "任务列表下面的 completed 状态按钮",
           "response": {
-            "elements": [
-              {
-                "id": "lgdli",
-                "xpaths": [
-                  "//*[@id=\"root\"]/footer[1]/ul[1]/li[3]/a[1]"
-                ]
-              }
+            "xpaths": [
+              "//*[@id=\"root\"]/footer[1]/ul[1]/li[3]/a[1]/text()"
             ]
-          },
-          "element": {
-            "id": "lgdli",
-            "indexId": 28,
-            "center": [
-              837,
-              335
-            ],
-            "rect": {
-              "left": 803,
-              "top": 326,
-              "width": 69,
-              "height": 18,
-              "zoom": 1
-            },
-            "xpaths": []
           }
         }
       ]

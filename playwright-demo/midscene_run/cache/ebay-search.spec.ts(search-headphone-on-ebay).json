@@ -26,9 +26,9 @@
               "locate": {
                 "bbox": [
                   269,
-                  57,
-                  828,
-                  87
+                  54,
+                  857,
+                  88
                 ],
                 "prompt": "The search input box"
               },
@@ -42,9 +42,9 @@
                 "locate": {
                   "bbox": [
                     269,
-                    57,
-                    828,
-                    87
+                    54,
+                    857,
+                    88
                   ],
                   "prompt": "The search input box"
                 },
@@ -53,7 +53,7 @@
                 }
               }
             ],
-            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"The user wants to type 'Headphones' in the search box and hit Enter.\",\n  \"log\": \"Now I want to use action 'Input' to type 'Headphones' in the search box first.\",\n  \"more_actions_needed_by_instruction\": true,\n  \"action\": {\n    \"type\": \"Input\",\n    \"locate\": {\n      \"bbox\": [\n        269,\n        57,\n        828,\n        87\n      ],\n      \"prompt\": \"The search input box\"\n    },\n    \"param\": {\n      \"value\": \"Headphones\"\n    }\n  }\n}",
+            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"The user wants to type 'Headphones' in the search box and hit Enter.\",\n  \"log\": \"Now I want to use action 'Input' to type 'Headphones' in the search box first.\",\n  \"more_actions_needed_by_instruction\": true,\n  \"action\": {\n    \"type\": \"Input\",\n    \"locate\": {\n      \"bbox\": [\n        269,\n        54,\n        857,\n        88\n      ],\n      \"prompt\": \"The search input box\"\n    },\n    \"param\": {\n      \"value\": \"Headphones\"\n    }\n  }\n}",
             "usage": {
               "completion_tokens": 142,
               "prompt_tokens": 2269,
@@ -73,30 +73,9 @@
           },
           "prompt": "The search input box",
           "response": {
-            "elements": [
-              {
-                "id": "ifjhp",
-                "xpaths": [
-                  "//*[@id=\"gh-ac\"]"
-                ]
-              }
+            "xpaths": [
+              "//*[@id=\"gh-ac\"]"
             ]
-          },
-          "element": {
-            "id": "ifjhp",
-            "indexId": 18,
-            "center": [
-              548,
-              71
-            ],
-            "rect": {
-              "left": 271,
-              "top": 51,
-              "width": 554,
-              "height": 40,
-              "zoom": 1
-            },
-            "xpaths": []
           }
         },
         {
@@ -144,7 +123,7 @@
         {
           "type": "locate",
           "pageContext": {
-            "url": "https://www.ebay.com/sch/i.html?_nkw=Headphones&_sacat=0&_from=R40&_trksid=p4432023.m570.l1313",
+            "url": "https://www.ebay.com/sch/i.html?_nkw=Headphones&_sacat=0&_from=R40&_trksid=m570.l1313",
             "size": {
               "width": 1280,
               "height": 768,
@@ -153,30 +132,9 @@
           },
           "prompt": "What is the location of the first headphone?",
           "response": {
-            "elements": [
-              {
-                "id": "pcfnp",
-                "xpaths": [
-                  "//*[@id=\"item4534623b61\"]/div[1]/div[1]/div[1]/a[1]/div[1]/img[1]"
-                ]
-              }
+            "xpaths": [
+              "//*[@id=\"item4534623b61\"]/div[1]/div[1]/div[1]/a[1]/div[1]/img[1]"
             ]
-          },
-          "element": {
-            "id": "pcfnp",
-            "indexId": 103,
-            "center": [
-              365,
-              634
-            ],
-            "rect": {
-              "left": 237,
-              "top": 506,
-              "width": 256,
-              "height": 256,
-              "zoom": 1
-            },
-            "xpaths": []
           }
         }
       ]
