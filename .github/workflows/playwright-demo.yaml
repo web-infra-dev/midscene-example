@@ -45,7 +45,7 @@ jobs:
           npm i pnpm -g
           pnpm install --no-frozen-lockfile
           pnpm i @midscene/web@${{ env.TAG }} --save-dev
-          pnpm run e2e
+          pnpm run e2e:cache
         continue-on-error: true
 
       - name: Upload output folder

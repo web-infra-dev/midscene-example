@@ -1,4 +1,5 @@
 {
+  "midsceneVersion": "0.16.11-beta-20250513030612.0",
   "pkgName": "playwright-demo",
   "pkgVersion": "0.0.1",
   "cacheId": "online-order-zh.spec.ts(ai-online-order)",
@@ -18,8 +19,8 @@
           },
           "prompt": "点击左上角语言切换按钮(English、中文)，在弹出的下拉列表中点击中文 @ ",
           "response": {
-            "what_the_user_wants_to_do_next_by_instruction": "用户希望点击左上角的语言切换按钮（English、中文），并在弹出的下拉列表中选择中文。",
-            "log": "现在我将使用 Tap 动作点击左上角的语言切换按钮（English、中文）。",
+            "what_the_user_wants_to_do_next_by_instruction": "用户希望点击左上角的语言切换按钮，并在弹出的下拉列表中选择中文。",
+            "log": "现在我将使用 Tap 动作点击左上角的语言切换按钮（当前显示为 'English'）。",
             "more_actions_needed_by_instruction": true,
             "action": {
               "type": "Tap",
@@ -30,28 +31,22 @@
                   124,
                   40
                 ],
-                "prompt": "左上角的语言切换按钮（English、中文）"
+                "prompt": "左上角的语言切换按钮（当前显示为 'English'）"
               }
             },
             "actions": [
               {
                 "type": "Tap",
                 "locate": {
-                  "bbox": [
-                    58,
-                    17,
-                    124,
-                    40
-                  ],
-                  "prompt": "左上角的语言切换按钮（English、中文）"
+                  "prompt": "左上角的语言切换按钮（当前显示为 'English'）"
                 }
               }
             ],
-            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"用户希望点击左上角的语言切换按钮（English、中文），并在弹出的下拉列表中选择中文。\",\n  \"log\": \"现在我将使用 Tap 动作点击左上角的语言切换按钮（English、中文）。\",\n  \"more_actions_needed_by_instruction\": true,\n  \"action\": {\n    \"type\": \"Tap\",\n    \"locate\": {\n      \"bbox\": [\n        58,\n        17,\n        124,\n        40\n      ],\n      \"prompt\": \"左上角的语言切换按钮（English、中文）\"\n    }\n  }\n}",
+            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"用户希望点击左上角的语言切换按钮，并在弹出的下拉列表中选择中文。\",\n  \"log\": \"现在我将使用 Tap 动作点击左上角的语言切换按钮（当前显示为 'English'）。\",\n  \"more_actions_needed_by_instruction\": true,\n  \"action\": {\n    \"type\": \"Tap\",\n    \"locate\": {\n      \"bbox\": [\n        58,\n        17,\n        124,\n        40\n      ],\n      \"prompt\": \"左上角的语言切换按钮（当前显示为 'English'）\"\n    }\n  }\n}",
             "usage": {
-              "completion_tokens": 141,
+              "completion_tokens": 143,
               "prompt_tokens": 1489,
-              "total_tokens": 1630
+              "total_tokens": 1632
             }
           }
         },
@@ -65,7 +60,7 @@
               "dpr": 1
             }
           },
-          "prompt": "左上角的语言切换按钮（English、中文）",
+          "prompt": "左上角的语言切换按钮（当前显示为 'English'）",
           "response": {
             "xpaths": [
               "//*[@id=\"app\"]/div[1]/div[1]/header[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/section[1]/span[1]/span[1]/text()"
@@ -82,10 +77,10 @@
               "dpr": 1
             }
           },
-          "prompt": "点击左上角语言切换按钮(English、中文)，在弹出的下拉列表中点击中文 @ - 现在我将使用 Tap 动作点击左上角的语言切换按钮（English、中文）。",
+          "prompt": "点击左上角语言切换按钮(English、中文)，在弹出的下拉列表中点击中文 @ - 现在我将使用 Tap 动作点击左上角的语言切换按钮（当前显示为 'English'）。",
           "response": {
             "what_the_user_wants_to_do_next_by_instruction": "在弹出的下拉列表中点击中文",
-            "log": "现在我将使用 Tap 动作点击中文选项。",
+            "log": "现在我将使用 Tap 动作点击下拉列表中的 '中文' 选项。",
             "more_actions_needed_by_instruction": false,
             "action": {
               "type": "Tap",
@@ -96,28 +91,22 @@
                   104,
                   120
                 ],
-                "prompt": "中文选项"
+                "prompt": "下拉列表中的 '中文' 选项"
               }
             },
             "actions": [
               {
                 "type": "Tap",
                 "locate": {
-                  "bbox": [
-                    60,
-                    95,
-                    104,
-                    120
-                  ],
-                  "prompt": "中文选项"
+                  "prompt": "下拉列表中的 '中文' 选项"
                 }
               }
             ],
-            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"在弹出的下拉列表中点击中文\",\n  \"log\": \"现在我将使用 Tap 动作点击中文选项。\",\n  \"more_actions_needed_by_instruction\": false,\n  \"action\": {\n    \"type\": \"Tap\",\n    \"locate\": {\n      \"bbox\": [\n        60,\n        95,\n        104,\n        120\n      ],\n      \"prompt\": \"中文选项\"\n    }\n  }\n}",
+            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"在弹出的下拉列表中点击中文\",\n  \"log\": \"现在我将使用 Tap 动作点击下拉列表中的 '中文' 选项。\",\n  \"more_actions_needed_by_instruction\": false,\n  \"action\": {\n    \"type\": \"Tap\",\n    \"locate\": {\n      \"bbox\": [\n        60,\n        95,\n        104,\n        120\n      ],\n      \"prompt\": \"下拉列表中的 '中文' 选项\"\n    }\n  }\n}",
             "usage": {
-              "completion_tokens": 110,
-              "prompt_tokens": 1545,
-              "total_tokens": 1655
+              "completion_tokens": 124,
+              "prompt_tokens": 1548,
+              "total_tokens": 1672
             }
           }
         },
@@ -131,7 +120,7 @@
               "dpr": 1
             }
           },
-          "prompt": "中文选项",
+          "prompt": "下拉列表中的 '中文' 选项",
           "response": {
             "xpaths": [
               "/html/body/div[3]/div[1]/div[1]/ul[1]/li[2]/span[1]/text()"
@@ -213,7 +202,7 @@
                   325,
                   801,
                   386,
-                  814
+                  817
                 ],
                 "prompt": "多肉葡萄的规格按钮"
               }
@@ -222,17 +211,11 @@
               {
                 "type": "Tap",
                 "locate": {
-                  "bbox": [
-                    325,
-                    801,
-                    386,
-                    814
-                  ],
                   "prompt": "多肉葡萄的规格按钮"
                 }
               }
             ],
-            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"用户希望直接点击多肉葡萄的规格按钮\",\n  \"log\": \"现在我将使用 Tap 动作来点击多肉葡萄的规格按钮\",\n  \"more_actions_needed_by_instruction\": false,\n  \"action\": {\n    \"type\": \"Tap\",\n    \"locate\": {\n      \"bbox\": [\n        325,\n        801,\n        386,\n        814\n      ],\n      \"prompt\": \"多肉葡萄的规格按钮\"\n    }\n  }\n}",
+            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"用户希望直接点击多肉葡萄的规格按钮\",\n  \"log\": \"现在我将使用 Tap 动作来点击多肉葡萄的规格按钮\",\n  \"more_actions_needed_by_instruction\": false,\n  \"action\": {\n    \"type\": \"Tap\",\n    \"locate\": {\n      \"bbox\": [\n        325,\n        801,\n        386,\n        817\n      ],\n      \"prompt\": \"多肉葡萄的规格按钮\"\n    }\n  }\n}",
             "usage": {
               "completion_tokens": 121,
               "prompt_tokens": 1475,
@@ -284,7 +267,7 @@
                   25,
                   526,
                   387,
-                  541
+                  540
                 ],
                 "prompt": "不使用吸管选项"
               }
@@ -293,17 +276,11 @@
               {
                 "type": "Tap",
                 "locate": {
-                  "bbox": [
-                    25,
-                    526,
-                    387,
-                    541
-                  ],
                   "prompt": "不使用吸管选项"
                 }
               }
             ],
-            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"根据指令，下一步需要点击“不使用吸管”选项。\",\n  \"log\": \"现在我将使用 Tap 动作来点击“不使用吸管”选项。\",\n  \"more_actions_needed_by_instruction\": true,\n  \"action\": {\n    \"type\": \"Tap\",\n    \"locate\": {\n      \"bbox\": [\n        25,\n        526,\n        387,\n        541\n      ],\n      \"prompt\": \"不使用吸管选项\"\n    }\n  }\n}",
+            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"根据指令，下一步需要点击“不使用吸管”选项。\",\n  \"log\": \"现在我将使用 Tap 动作来点击“不使用吸管”选项。\",\n  \"more_actions_needed_by_instruction\": true,\n  \"action\": {\n    \"type\": \"Tap\",\n    \"locate\": {\n      \"bbox\": [\n        25,\n        526,\n        387,\n        540\n      ],\n      \"prompt\": \"不使用吸管选项\"\n    }\n  }\n}",
             "usage": {
               "completion_tokens": 123,
               "prompt_tokens": 1482,
@@ -323,7 +300,9 @@
           },
           "prompt": "不使用吸管选项",
           "response": {
-            "xpaths": null
+            "xpaths": [
+              "/html/body/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/section[1]/section[2]/div[2]/div[1]/div[2]/div[1]/div[2]/label[1]/span[2]/span[1]/text()"
+            ]
           }
         },
         {
@@ -357,12 +336,6 @@
               {
                 "type": "Tap",
                 "locate": {
-                  "bbox": [
-                    25,
-                    617,
-                    30,
-                    629
-                  ],
                   "prompt": "冰沙（推荐）选项"
                 }
               }
@@ -423,12 +396,6 @@
               {
                 "type": "Tap",
                 "locate": {
-                  "bbox": [
-                    25,
-                    774,
-                    386,
-                    790
-                  ],
                   "prompt": "正常冰（推荐）选项"
                 }
               }
@@ -453,7 +420,9 @@
           },
           "prompt": "正常冰（推荐）选项",
           "response": {
-            "xpaths": null
+            "xpaths": [
+              "/html/body/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/section[1]/section[2]/div[2]/div[3]/div[2]/div[1]/div[1]/label[1]/span[2]/span[1]/text()"
+            ]
           }
         }
       ]
@@ -473,8 +442,8 @@
           },
           "prompt": "向下滚动一屏 @ ",
           "response": {
-            "what_the_user_wants_to_do_next_by_instruction": "用户希望向下滚动一屏。",
-            "log": "现在我将使用 Scroll 动作来向下滚动一屏。",
+            "what_the_user_wants_to_do_next_by_instruction": "用户希望向下滚动一屏",
+            "log": "现在我将使用 Scroll 动作来向下滚动一屏",
             "more_actions_needed_by_instruction": false,
             "action": {
               "type": "Scroll",
@@ -496,7 +465,7 @@
                 }
               }
             ],
-            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"用户希望向下滚动一屏。\",\n  \"log\": \"现在我将使用 Scroll 动作来向下滚动一屏。\",\n  \"more_actions_needed_by_instruction\": false,\n  \"action\": {\n    \"type\": \"Scroll\",\n    \"locate\": null,\n    \"param\": {\n      \"direction\": \"down\",\n      \"scrollType\": \"once\",\n      \"distance\": null\n    }\n  }\n}",
+            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"用户希望向下滚动一屏\",\n  \"log\": \"现在我将使用 Scroll 动作来向下滚动一屏\",\n  \"more_actions_needed_by_instruction\": false,\n  \"action\": {\n    \"type\": \"Scroll\",\n    \"locate\": null,\n    \"param\": {\n      \"direction\": \"down\",\n      \"scrollType\": \"once\",\n      \"distance\": null\n    }\n  }\n}",
             "usage": {
               "completion_tokens": 105,
               "prompt_tokens": 1471,
@@ -540,12 +509,6 @@
               {
                 "type": "Tap",
                 "locate": {
-                  "bbox": [
-                    25,
-                    360,
-                    137,
-                    370
-                  ],
                   "prompt": "标准甜（推荐）选项"
                 }
               }
@@ -595,9 +558,9 @@
               "locate": {
                 "bbox": [
                   25,
-                  714,
-                  386,
-                  750
+                  716,
+                  120,
+                  726
                 ],
                 "prompt": "绿妍（推荐）选项"
               }
@@ -606,17 +569,11 @@
               {
                 "type": "Tap",
                 "locate": {
-                  "bbox": [
-                    25,
-                    714,
-                    386,
-                    750
-                  ],
                   "prompt": "绿妍（推荐）选项"
                 }
               }
             ],
-            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"根据指令，下一步需要点击“绿妍（推荐）”选项。\",\n  \"log\": \"现在我将使用 Tap 动作来点击“绿妍（推荐）”选项。\",\n  \"more_actions_needed_by_instruction\": true,\n  \"action\": {\n    \"type\": \"Tap\",\n    \"locate\": {\n      \"bbox\": [\n        25,\n        714,\n        386,\n        750\n      ],\n      \"prompt\": \"绿妍（推荐）选项\"\n    }\n  }\n}",
+            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"根据指令，下一步需要点击“绿妍（推荐）”选项。\",\n  \"log\": \"现在我将使用 Tap 动作来点击“绿妍（推荐）”选项。\",\n  \"more_actions_needed_by_instruction\": true,\n  \"action\": {\n    \"type\": \"Tap\",\n    \"locate\": {\n      \"bbox\": [\n        25,\n        716,\n        120,\n        726\n      ],\n      \"prompt\": \"绿妍（推荐）选项\"\n    }\n  }\n}",
             "usage": {
               "completion_tokens": 126,
               "prompt_tokens": 1534,
@@ -636,7 +593,9 @@
           },
           "prompt": "绿妍（推荐）选项",
           "response": {
-            "xpaths": null
+            "xpaths": [
+              "/html/body/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/section[1]/section[2]/div[2]/div[5]/div[2]/div[1]/div[1]/label[1]/span[2]/span[1]/text()"
+            ]
           }
         },
         {
@@ -660,31 +619,25 @@
                 "bbox": [
                   25,
                   869,
-                  140,
-                  883
+                  137,
+                  884
                 ],
-                "prompt": "标准口味（推荐）"
+                "prompt": "标准口味（推荐）选项"
               }
             },
             "actions": [
               {
                 "type": "Tap",
                 "locate": {
-                  "bbox": [
-                    25,
-                    869,
-                    140,
-                    883
-                  ],
-                  "prompt": "标准口味（推荐）"
+                  "prompt": "标准口味（推荐）选项"
                 }
               }
             ],
-            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"根据指令，下一步需要点击“标准口味（推荐）”选项。\",\n  \"log\": \"现在我将使用 Tap 动作来点击“标准口味（推荐）”选项。\",\n  \"more_actions_needed_by_instruction\": false,\n  \"action\": {\n    \"type\": \"Tap\",\n    \"locate\": {\n      \"bbox\": [\n        25,\n        869,\n        140,\n        883\n      ],\n      \"prompt\": \"标准口味（推荐）\"\n    }\n  }\n}",
+            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"根据指令，下一步需要点击“标准口味（推荐）”选项。\",\n  \"log\": \"现在我将使用 Tap 动作来点击“标准口味（推荐）”选项。\",\n  \"more_actions_needed_by_instruction\": false,\n  \"action\": {\n    \"type\": \"Tap\",\n    \"locate\": {\n      \"bbox\": [\n        25,\n        869,\n        137,\n        884\n      ],\n      \"prompt\": \"标准口味（推荐）选项\"\n    }\n  }\n}",
             "usage": {
-              "completion_tokens": 125,
+              "completion_tokens": 126,
               "prompt_tokens": 1556,
-              "total_tokens": 1681
+              "total_tokens": 1682
             }
           }
         },
@@ -698,7 +651,7 @@
               "dpr": 1
             }
           },
-          "prompt": "标准口味（推荐）",
+          "prompt": "标准口味（推荐）选项",
           "response": {
             "xpaths": [
               "/html/body/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/section[1]/section[2]/div[2]/div[6]/div[2]/div[1]/div[1]/label[1]/span[2]/span[1]/text()"
@@ -722,8 +675,8 @@
           },
           "prompt": "滚动到最下面 @ ",
           "response": {
-            "what_the_user_wants_to_do_next_by_instruction": "用户希望滚动到页面最下面",
-            "log": "现在我将使用 Scroll 动作来滚动页面到底部",
+            "what_the_user_wants_to_do_next_by_instruction": "用户希望滚动到页面最下面。",
+            "log": "现在我将使用 Scroll 动作来滚动页面到底部。",
             "more_actions_needed_by_instruction": false,
             "action": {
               "type": "Scroll",
@@ -745,7 +698,7 @@
                 }
               }
             ],
-            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"用户希望滚动到页面最下面\",\n  \"log\": \"现在我将使用 Scroll 动作来滚动页面到底部\",\n  \"more_actions_needed_by_instruction\": false,\n  \"action\": {\n    \"type\": \"Scroll\",\n    \"locate\": null,\n    \"param\": {\n      \"direction\": \"down\",\n      \"scrollType\": \"untilBottom\",\n      \"distance\": null\n    }\n  }\n}",
+            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"用户希望滚动到页面最下面。\",\n  \"log\": \"现在我将使用 Scroll 动作来滚动页面到底部。\",\n  \"more_actions_needed_by_instruction\": false,\n  \"action\": {\n    \"type\": \"Scroll\",\n    \"locate\": null,\n    \"param\": {\n      \"direction\": \"down\",\n      \"scrollType\": \"untilBottom\",\n      \"distance\": null\n    }\n  }\n}",
             "usage": {
               "completion_tokens": 107,
               "prompt_tokens": 1472,
@@ -789,12 +742,6 @@
               {
                 "type": "Tap",
                 "locate": {
-                  "bbox": [
-                    138,
-                    852,
-                    386,
-                    884
-                  ],
                   "prompt": "选好了按钮"
                 }
               }
@@ -841,17 +788,17 @@
           },
           "prompt": "点击右上角商品图标按钮 @ ",
           "response": {
-            "what_the_user_wants_to_do_next_by_instruction": "用户希望点击右上角的商品图标按钮",
-            "log": "现在我将使用 Tap 动作来点击右上角的商品图标按钮",
+            "what_the_user_wants_to_do_next_by_instruction": "用户希望点击右上角的商品图标按钮。",
+            "log": "现在我将使用 Tap 动作来点击右上角的商品图标按钮。",
             "more_actions_needed_by_instruction": false,
             "action": {
               "type": "Tap",
               "locate": {
                 "bbox": [
-                  365,
-                  12,
-                  387,
-                  34
+                  351,
+                  18,
+                  374,
+                  36
                 ],
                 "prompt": "右上角的商品图标按钮"
               }
@@ -860,17 +807,11 @@
               {
                 "type": "Tap",
                 "locate": {
-                  "bbox": [
-                    365,
-                    12,
-                    387,
-                    34
-                  ],
                   "prompt": "右上角的商品图标按钮"
                 }
               }
             ],
-            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"用户希望点击右上角的商品图标按钮\",\n  \"log\": \"现在我将使用 Tap 动作来点击右上角的商品图标按钮\",\n  \"more_actions_needed_by_instruction\": false,\n  \"action\": {\n    \"type\": \"Tap\",\n    \"locate\": {\n      \"bbox\": [\n        365,\n        12,\n        387,\n        34\n      ],\n      \"prompt\": \"右上角的商品图标按钮\"\n    }\n  }\n}",
+            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"用户希望点击右上角的商品图标按钮。\",\n  \"log\": \"现在我将使用 Tap 动作来点击右上角的商品图标按钮。\",\n  \"more_actions_needed_by_instruction\": false,\n  \"action\": {\n    \"type\": \"Tap\",\n    \"locate\": {\n      \"bbox\": [\n        351,\n        18,\n        374,\n        36\n      ],\n      \"prompt\": \"右上角的商品图标按钮\"\n    }\n  }\n}",
             "usage": {
               "completion_tokens": 118,
               "prompt_tokens": 1474,
@@ -891,7 +832,7 @@
           "prompt": "右上角的商品图标按钮",
           "response": {
             "xpaths": [
-              "/html/body/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/section[1]/section[2]/div[2]/div[10]/div[2]/div[4]/div[2]/div[1]/div[2]/i[1]/svg[1]"
+              "//*[@id=\"app\"]/div[1]/div[1]/header[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/ul[1]/li[1]/span[1]/div[1]/img[1]"
             ]
           }
         }

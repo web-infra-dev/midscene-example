@@ -1,4 +1,5 @@
 {
+  "midsceneVersion": "0.16.11-beta-20250513030612.0",
   "pkgName": "playwright-demo",
   "pkgVersion": "0.0.1",
   "cacheId": "todo-mvc-zh.spec.ts(ai-todo---Chinese-Prompt)",
@@ -40,12 +41,6 @@
               {
                 "type": "Input",
                 "locate": {
-                  "bbox": [
-                    513,
-                    127,
-                    1068,
-                    199
-                  ],
                   "prompt": "任务框 input"
                 },
                 "param": {
@@ -90,8 +85,8 @@
           },
           "prompt": "在任务框 input 输入 今天学习 JS，按回车键 @ - Now I want to use action 'Input' to enter '今天学习 JS' in the task input box first.",
           "response": {
-            "what_the_user_wants_to_do_next_by_instruction": "在任务框 input 输入 '今天学习 JS' 后，需要按回车键。",
-            "log": "现在我将使用 action 'KeyboardPress' 来按回车键。",
+            "what_the_user_wants_to_do_next_by_instruction": "在任务框 input 输入 今天学习 JS 后，需要按回车键",
+            "log": "Now I want to use action 'KeyboardPress' to press the Enter key to submit the input.",
             "more_actions_needed_by_instruction": false,
             "action": {
               "type": "KeyboardPress",
@@ -107,11 +102,11 @@
                 }
               }
             ],
-            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"在任务框 input 输入 '今天学习 JS' 后，需要按回车键。\",\n  \"log\": \"现在我将使用 action 'KeyboardPress' 来按回车键。\",\n  \"more_actions_needed_by_instruction\": false,\n  \"action\": {\n    \"type\": \"KeyboardPress\",\n    \"param\": {\n      \"value\": \"Enter\"\n    }\n  }\n}",
+            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"在任务框 input 输入 今天学习 JS 后，需要按回车键\",\n  \"log\": \"Now I want to use action 'KeyboardPress' to press the Enter key to submit the input.\",\n  \"more_actions_needed_by_instruction\": false,\n  \"action\": {\n    \"type\": \"KeyboardPress\",\n    \"param\": {\n      \"value\": \"Enter\"\n    }\n  }\n}",
             "usage": {
-              "completion_tokens": 100,
+              "completion_tokens": 103,
               "prompt_tokens": 2236,
-              "total_tokens": 2336
+              "total_tokens": 2339
             }
           }
         }
@@ -154,12 +149,6 @@
               {
                 "type": "Input",
                 "locate": {
-                  "bbox": [
-                    572,
-                    149,
-                    1063,
-                    178
-                  ],
                   "prompt": "任务输入框"
                 },
                 "param": {
@@ -204,8 +193,8 @@
           },
           "prompt": "在任务框 input 输入 明天学习 Rust，按回车键 @ - Now I want to use action 'Input' to enter '明天学习 Rust' in the task input box first.",
           "response": {
-            "what_the_user_wants_to_do_next_by_instruction": "在任务框 input 输入 明天学习 Rust 后，需要按回车键来确认输入。",
-            "log": "现在我将使用 action 'KeyboardPress' 来按回车键以确认输入。",
+            "what_the_user_wants_to_do_next_by_instruction": "用户希望在任务框 input 输入 '明天学习 Rust' 并按回车键。根据之前的日志，输入 '明天学习 Rust' 已经完成，接下来需要按回车键。",
+            "log": "现在我将使用 KeyboardPress 动作来按回车键。",
             "more_actions_needed_by_instruction": false,
             "action": {
               "type": "KeyboardPress",
@@ -221,11 +210,11 @@
                 }
               }
             ],
-            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"在任务框 input 输入 明天学习 Rust 后，需要按回车键来确认输入。\",\n  \"log\": \"现在我将使用 action 'KeyboardPress' 来按回车键以确认输入。\",\n  \"more_actions_needed_by_instruction\": false,\n  \"action\": {\n    \"type\": \"KeyboardPress\",\n    \"param\": {\n      \"value\": \"Enter\"\n    }\n  }\n}",
+            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"用户希望在任务框 input 输入 '明天学习 Rust' 并按回车键。根据之前的日志，输入 '明天学习 Rust' 已经完成，接下来需要按回车键。\",\n  \"log\": \"现在我将使用 KeyboardPress 动作来按回车键。\",\n  \"more_actions_needed_by_instruction\": false,\n  \"action\": {\n    \"type\": \"KeyboardPress\",\n    \"param\": {\n      \"value\": \"Enter\"\n    }\n  }\n}",
             "usage": {
-              "completion_tokens": 106,
+              "completion_tokens": 122,
               "prompt_tokens": 2237,
-              "total_tokens": 2343
+              "total_tokens": 2359
             }
           }
         }
@@ -268,12 +257,6 @@
               {
                 "type": "Input",
                 "locate": {
-                  "bbox": [
-                    572,
-                    149,
-                    1063,
-                    180
-                  ],
                   "prompt": "任务输入框"
                 },
                 "param": {
@@ -370,7 +353,7 @@
                   521,
                   273,
                   726,
-                  298
+                  296
                 ],
                 "prompt": "任务列表中的第二项"
               }
@@ -379,17 +362,11 @@
               {
                 "type": "Hover",
                 "locate": {
-                  "bbox": [
-                    521,
-                    273,
-                    726,
-                    298
-                  ],
                   "prompt": "任务列表中的第二项"
                 }
               }
             ],
-            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"将鼠标移动到任务列表中的第二项\",\n  \"log\": \"Now I want to use action 'Hover' to move the mouse to the second item in the task list first\",\n  \"more_actions_needed_by_instruction\": false,\n  \"action\": {\n    \"type\": \"Hover\",\n    \"locate\": {\n      \"bbox\": [\n        521,\n        273,\n        726,\n        298\n      ],\n      \"prompt\": \"任务列表中的第二项\"\n    }\n  }\n}",
+            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"将鼠标移动到任务列表中的第二项\",\n  \"log\": \"Now I want to use action 'Hover' to move the mouse to the second item in the task list first\",\n  \"more_actions_needed_by_instruction\": false,\n  \"action\": {\n    \"type\": \"Hover\",\n    \"locate\": {\n      \"bbox\": [\n        521,\n        273,\n        726,\n        296\n      ],\n      \"prompt\": \"任务列表中的第二项\"\n    }\n  }\n}",
             "usage": {
               "completion_tokens": 125,
               "prompt_tokens": 2176,

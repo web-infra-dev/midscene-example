@@ -1,4 +1,5 @@
 {
+  "midsceneVersion": "0.16.11-beta-20250513030612.0",
   "pkgName": "playwright-demo",
   "pkgVersion": "0.0.1",
   "cacheId": "ebay-search.spec.ts(search-headphone-on-ebay)",
@@ -26,9 +27,9 @@
               "locate": {
                 "bbox": [
                   269,
-                  54,
-                  857,
-                  88
+                  58,
+                  827,
+                  84
                 ],
                 "prompt": "The search input box"
               },
@@ -40,12 +41,6 @@
               {
                 "type": "Input",
                 "locate": {
-                  "bbox": [
-                    269,
-                    54,
-                    857,
-                    88
-                  ],
                   "prompt": "The search input box"
                 },
                 "param": {
@@ -53,7 +48,7 @@
                 }
               }
             ],
-            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"The user wants to type 'Headphones' in the search box and hit Enter.\",\n  \"log\": \"Now I want to use action 'Input' to type 'Headphones' in the search box first.\",\n  \"more_actions_needed_by_instruction\": true,\n  \"action\": {\n    \"type\": \"Input\",\n    \"locate\": {\n      \"bbox\": [\n        269,\n        54,\n        857,\n        88\n      ],\n      \"prompt\": \"The search input box\"\n    },\n    \"param\": {\n      \"value\": \"Headphones\"\n    }\n  }\n}",
+            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"The user wants to type 'Headphones' in the search box and hit Enter.\",\n  \"log\": \"Now I want to use action 'Input' to type 'Headphones' in the search box first.\",\n  \"more_actions_needed_by_instruction\": true,\n  \"action\": {\n    \"type\": \"Input\",\n    \"locate\": {\n      \"bbox\": [\n        269,\n        58,\n        827,\n        84\n      ],\n      \"prompt\": \"The search input box\"\n    },\n    \"param\": {\n      \"value\": \"Headphones\"\n    }\n  }\n}",
             "usage": {
               "completion_tokens": 142,
               "prompt_tokens": 2269,
