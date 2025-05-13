@@ -1,5 +1,5 @@
 {
-  "midsceneVersion": "0.16.11-beta-20250513030612.0",
+  "midsceneVersion": "0.16.11-beta-20250513053735.0",
   "pkgName": "playwright-demo",
   "pkgVersion": "0.0.1",
   "cacheId": "online-order-zh.spec.ts(ai-online-order)",
@@ -442,8 +442,8 @@
           },
           "prompt": "向下滚动一屏 @ ",
           "response": {
-            "what_the_user_wants_to_do_next_by_instruction": "用户希望向下滚动一屏",
-            "log": "现在我将使用 Scroll 动作来向下滚动一屏",
+            "what_the_user_wants_to_do_next_by_instruction": "用户希望向下滚动一屏。",
+            "log": "现在我将使用 Scroll 动作来向下滚动一屏。",
             "more_actions_needed_by_instruction": false,
             "action": {
               "type": "Scroll",
@@ -465,7 +465,7 @@
                 }
               }
             ],
-            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"用户希望向下滚动一屏\",\n  \"log\": \"现在我将使用 Scroll 动作来向下滚动一屏\",\n  \"more_actions_needed_by_instruction\": false,\n  \"action\": {\n    \"type\": \"Scroll\",\n    \"locate\": null,\n    \"param\": {\n      \"direction\": \"down\",\n      \"scrollType\": \"once\",\n      \"distance\": null\n    }\n  }\n}",
+            "rawResponse": "{\n  \"what_the_user_wants_to_do_next_by_instruction\": \"用户希望向下滚动一屏。\",\n  \"log\": \"现在我将使用 Scroll 动作来向下滚动一屏。\",\n  \"more_actions_needed_by_instruction\": false,\n  \"action\": {\n    \"type\": \"Scroll\",\n    \"locate\": null,\n    \"param\": {\n      \"direction\": \"down\",\n      \"scrollType\": \"once\",\n      \"distance\": null\n    }\n  }\n}",
             "usage": {
               "completion_tokens": 105,
               "prompt_tokens": 1471,
