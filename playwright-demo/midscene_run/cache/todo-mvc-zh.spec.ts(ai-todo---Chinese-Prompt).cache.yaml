@@ -1,0 +1,61 @@
+midsceneVersion: 0.16.11-beta-20250515120437.0
+cacheId: todo-mvc-zh.spec.ts(ai-todo---Chinese-Prompt)
+caches:
+  - type: locate
+    prompt: 任务框 input
+    xpaths:
+      - //*[@id="todo-input"]
+  - type: plan
+    prompt: 在任务框 input 输入 今天学习 JS，按回车键
+    yamlWorkflow: |
+      tasks:
+        - name: 在任务框 input 输入 今天学习 JS，按回车键
+          flow:
+            - aiInput: 今天学习 JS
+              locate: 任务框 input
+            - aiKeyboardPress: Enter
+  - type: locate
+    prompt: 任务输入框
+    xpaths:
+      - //*[@id="todo-input"]
+  - type: plan
+    prompt: 在任务框 input 输入 明天学习 Rust，按回车键
+    yamlWorkflow: |
+      tasks:
+        - name: 在任务框 input 输入 明天学习 Rust，按回车键
+          flow:
+            - aiInput: 明天学习 Rust
+              locate: 任务输入框
+            - aiKeyboardPress: Enter
+  - type: plan
+    prompt: 在任务框 input 输入后天学习 AI，按回车键
+    yamlWorkflow: |
+      tasks:
+        - name: 在任务框 input 输入后天学习 AI，按回车键
+          flow:
+            - aiInput: 后天学习 AI
+              locate: 任务输入框
+            - aiKeyboardPress: Enter
+  - type: locate
+    prompt: 任务列表中的第二项
+    xpaths:
+      - //*[@id="root"]/main[1]/ul[1]/li[2]/div[1]/label[1]/text()
+  - type: plan
+    prompt: 将鼠标移动到任务列表中的第二项
+    yamlWorkflow: |
+      tasks:
+        - name: 将鼠标移动到任务列表中的第二项
+          flow:
+            - aiHover: 任务列表中的第二项
+  - type: locate
+    prompt: 第二项任务右边的删除按钮
+    xpaths:
+      - //*[@id="root"]/main[1]/ul[1]/li[2]/div[1]/button[1]
+  - type: locate
+    prompt: 第二条任务左边的勾选按钮
+    xpaths:
+      - //*[@id="root"]/main[1]/ul[1]/li[2]/div[1]/input[1]
+  - type: locate
+    prompt: 任务列表下面的 completed 状态按钮
+    xpaths:
+      - //*[@id="root"]/footer[1]/ul[1]/li[3]/a[1]/text()
