@@ -132,3 +132,13 @@ caches:
               direction: down
               scrollType: untilBottom
               distance: null
+  - type: locate
+    prompt: 不使用吸管选项
+    xpaths:
+      - >-
+        /html/body/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/section[1]/section[2]/div[2]/div[1]/div[2]/div[1]/div[2]/label[1]/span[2]/span[1]/text()
+  - type: locate
+    prompt: 正常冰（推荐）选项
+    xpaths:
+      - >-
+        /html/body/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/section[1]/section[2]/div[2]/div[3]/div[2]/div[1]/div[1]/label[1]/span[2]/span[1]/text()

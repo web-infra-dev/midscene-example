@@ -59,3 +59,7 @@ caches:
     prompt: 任务列表下面的 completed 状态按钮
     xpaths:
       - //*[@id="root"]/footer[1]/ul[1]/li[3]/a[1]/text()
+  - type: locate
+    prompt: The second item in the task list
+    xpaths:
+      - //*[@id="root"]/main[1]/ul[1]/li[2]/div[1]/label[1]/text()
