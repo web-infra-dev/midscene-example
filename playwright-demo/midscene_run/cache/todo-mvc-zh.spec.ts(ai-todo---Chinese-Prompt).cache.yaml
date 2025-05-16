@@ -1,8 +1,8 @@
-midsceneVersion: 0.16.11-beta-20250516080239.0
-cacheId: todo-mvc-zh.spec.ts-ai-todo---Chinese-Prompt
+midsceneVersion: 0.16.11-beta-20250516141724.0
+cacheId: todo-mvc-zh.spec.ts(ai-todo---Chinese-Prompt)
 caches:
   - type: locate
-    prompt: 任务框 input
+    prompt: 任务输入框
     xpaths:
       - //*[@id="todo-input"]
   - type: plan
@@ -12,10 +12,10 @@ caches:
         - name: 在任务框 input 输入 今天学习 JS，按回车键
           flow:
             - aiInput: 今天学习 JS
-              locate: 任务框 input
+              locate: 任务输入框
             - aiKeyboardPress: Enter
   - type: locate
-    prompt: 任务框 input
+    prompt: 任务输入框
     xpaths:
       - //*[@id="todo-input"]
   - type: plan
@@ -25,10 +25,10 @@ caches:
         - name: 在任务框 input 输入 明天学习 Rust，按回车键
           flow:
             - aiInput: 明天学习 Rust
-              locate: 任务框 input
+              locate: 任务输入框
             - aiKeyboardPress: Enter
   - type: locate
-    prompt: 任务输入框
+    prompt: 任务框 input
     xpaths:
       - //*[@id="todo-input"]
   - type: plan
@@ -38,12 +38,8 @@ caches:
         - name: 在任务框 input 输入后天学习 AI，按回车键
           flow:
             - aiInput: 后天学习 AI
-              locate: 任务输入框
+              locate: 任务框 input
             - aiKeyboardPress: Enter
-  - type: locate
-    prompt: The second item in the task list
-    xpaths:
-      - //*[@id="root"]/main[1]/ul[1]/li[2]/div[1]/label[1]/text()
   - type: plan
     prompt: 将鼠标移动到任务列表中的第二项
     yamlWorkflow: |
