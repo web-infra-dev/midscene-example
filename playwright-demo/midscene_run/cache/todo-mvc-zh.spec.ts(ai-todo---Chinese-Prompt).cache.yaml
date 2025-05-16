@@ -1,4 +1,4 @@
-midsceneVersion: 0.16.11-beta-20250515120437.0
+midsceneVersion: 0.16.11-beta-20250516035357.0
 cacheId: todo-mvc-zh.spec.ts(ai-todo---Chinese-Prompt)
 caches:
   - type: locate
@@ -27,6 +27,10 @@ caches:
             - aiInput: 明天学习 Rust
               locate: 任务输入框
             - aiKeyboardPress: Enter
+  - type: locate
+    prompt: 任务框 input
+    xpaths:
+      - //*[@id="todo-input"]
   - type: plan
     prompt: 在任务框 input 输入后天学习 AI，按回车键
     yamlWorkflow: |
@@ -34,10 +38,10 @@ caches:
         - name: 在任务框 input 输入后天学习 AI，按回车键
           flow:
             - aiInput: 后天学习 AI
-              locate: 任务输入框
+              locate: 任务框 input
             - aiKeyboardPress: Enter
   - type: locate
-    prompt: 任务列表中的第二项
+    prompt: The second item in the task list
     xpaths:
       - //*[@id="root"]/main[1]/ul[1]/li[2]/div[1]/label[1]/text()
   - type: plan
@@ -46,7 +50,7 @@ caches:
       tasks:
         - name: 将鼠标移动到任务列表中的第二项
           flow:
-            - aiHover: 任务列表中的第二项
+            - aiHover: The second item in the task list
   - type: locate
     prompt: 第二项任务右边的删除按钮
     xpaths:

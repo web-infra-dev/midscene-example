@@ -1,4 +1,4 @@
-midsceneVersion: 0.16.11-beta-20250515120437.0
+midsceneVersion: 0.16.11-beta-20250516035357.0
 cacheId: ebay-search.spec.ts(search-headphone-on-ebay)
 caches:
   - type: locate
@@ -17,4 +17,4 @@ caches:
   - type: locate
     prompt: What is the location of the first headphone?
     xpaths:
-      - //*[@id="item53174d9160"]/div[1]/div[1]/div[1]/a[1]/div[1]/img[1]
+      - //*[@id="item4534623b61"]/div[1]/div[1]/div[1]/a[1]/div[1]/img[1]

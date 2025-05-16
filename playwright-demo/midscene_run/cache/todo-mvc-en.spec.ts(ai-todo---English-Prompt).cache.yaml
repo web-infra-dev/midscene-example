@@ -1,4 +1,4 @@
-midsceneVersion: 0.16.11-beta-20250515120437.0
+midsceneVersion: 0.16.11-beta-20250516035357.0
 cacheId: todo-mvc-en.spec.ts(ai-todo---English-Prompt)
 caches:
   - type: locate
@@ -14,6 +14,10 @@ caches:
             - aiInput: Learn JS today
               locate: The task box input
             - aiKeyboardPress: Enter
+  - type: locate
+    prompt: The task box input
+    xpaths:
+      - //*[@id="todo-input"]
   - type: plan
     prompt: Input 'Learn Rust tomorrow' in the task box input and press the Enter key
     yamlWorkflow: |
