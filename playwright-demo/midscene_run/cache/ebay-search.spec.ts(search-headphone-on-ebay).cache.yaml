@@ -1,0 +1,20 @@
+midsceneVersion: 0.16.11-beta-20250516141724.0
+cacheId: ebay-search.spec.ts(search-headphone-on-ebay)
+caches:
+  - type: locate
+    prompt: The search input box
+    xpaths:
+      - //*[@id="gh-ac"]
+  - type: plan
+    prompt: type "Headphones" in search box, hit Enter
+    yamlWorkflow: |
+      tasks:
+        - name: type "Headphones" in search box, hit Enter
+          flow:
+            - aiInput: Headphones
+              locate: The search input box
+            - aiKeyboardPress: Enter
+  - type: locate
+    prompt: What is the location of the first headphone?
+    xpaths:
+      - //*[@id="item4534623b61"]/div[1]/div[1]/div[1]/a[1]/div[1]/img[1]

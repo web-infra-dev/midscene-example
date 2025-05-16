@@ -1,0 +1,144 @@
+midsceneVersion: 0.16.11-beta-20250516141724.0
+cacheId: online-order-zh.spec.ts(ai-online-order)
+caches:
+  - type: locate
+    prompt: 左上角的语言切换按钮（English、中文）
+    xpaths:
+      - >-
+        //*[@id="app"]/div[1]/div[1]/header[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/section[1]/span[1]/span[1]/text()
+  - type: locate
+    prompt: 中文选项
+    xpaths:
+      - /html/body/div[3]/div[1]/div[1]/ul[1]/li[2]/span[1]/text()
+  - type: plan
+    prompt: 点击左上角语言切换按钮(English、中文)，在弹出的下拉列表中点击中文
+    yamlWorkflow: |
+      tasks:
+        - name: 点击左上角语言切换按钮(English、中文)，在弹出的下拉列表中点击中文
+          flow:
+            - aiTap: 左上角的语言切换按钮（English、中文）
+            - aiTap: 中文选项
+  - type: plan
+    prompt: 向下滚动一屏
+    yamlWorkflow: |
+      tasks:
+        - name: 向下滚动一屏
+          flow:
+            - aiScroll: null
+              direction: down
+              scrollType: once
+              distance: null
+  - type: locate
+    prompt: 多肉葡萄的规格按钮
+    xpaths:
+      - >-
+        //*[@id="app"]/div[1]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[3]/div[2]/div[2]/div[3]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/text()
+  - type: plan
+    prompt: 直接点击多肉葡萄的规格按钮
+    yamlWorkflow: |
+      tasks:
+        - name: 直接点击多肉葡萄的规格按钮
+          flow:
+            - aiTap: 多肉葡萄的规格按钮
+  - type: locate
+    prompt: 冰沙（推荐）选项
+    xpaths:
+      - >-
+        /html/body/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/section[1]/section[2]/div[2]/div[2]/div[2]/div[1]/div[1]/label[1]/span[1]/input[1]
+  - type: plan
+    prompt: 点击不使用吸管、点击冰沙推荐、点击正常冰推荐
+    yamlWorkflow: |
+      tasks:
+        - name: 点击不使用吸管、点击冰沙推荐、点击正常冰推荐
+          flow:
+            - aiTap: 不使用吸管选项
+            - aiTap: 冰沙（推荐）选项
+            - aiTap: 正常冰（推荐）选项
+  - type: plan
+    prompt: 向下滚动一屏
+    yamlWorkflow: |
+      tasks:
+        - name: 向下滚动一屏
+          flow:
+            - aiScroll: null
+              direction: down
+              scrollType: once
+              distance: null
+  - type: locate
+    prompt: 标准甜（推荐）选项
+    xpaths:
+      - >-
+        /html/body/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/section[1]/section[2]/div[2]/div[4]/div[2]/div[1]/div[1]/label[1]/span[2]/span[1]/text()
+  - type: locate
+    prompt: 绿妍（推荐）选项
+    xpaths:
+      - >-
+        /html/body/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/section[1]/section[2]/div[2]/div[5]/div[2]/div[1]/div[1]/label[1]/span[2]/span[1]/text()
+  - type: locate
+    prompt: 标准口味（推荐）选项
+    xpaths:
+      - >-
+        /html/body/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/section[1]/section[2]/div[2]/div[6]/div[2]/div[1]/div[1]/label[1]/span[2]/span[1]/text()
+  - type: plan
+    prompt: 点击标准甜、点击绿妍（推荐）、点击标准口味
+    yamlWorkflow: |
+      tasks:
+        - name: 点击标准甜、点击绿妍（推荐）、点击标准口味
+          flow:
+            - aiTap: 标准甜（推荐）选项
+            - aiTap: 绿妍（推荐）选项
+            - aiTap: 标准口味（推荐）选项
+  - type: plan
+    prompt: 滚动到最下面
+    yamlWorkflow: |
+      tasks:
+        - name: 滚动到最下面
+          flow:
+            - aiScroll: null
+              direction: down
+              scrollType: untilBottom
+              distance: null
+  - type: locate
+    prompt: 选好了按钮
+    xpaths:
+      - >-
+        /html/body/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/section[2]/div[1]/div[3]/button[1]
+  - type: plan
+    prompt: 点击选好了按钮
+    yamlWorkflow: |
+      tasks:
+        - name: 点击选好了按钮
+          flow:
+            - aiTap: 选好了按钮
+  - type: locate
+    prompt: 右上角的商品图标按钮
+    xpaths:
+      - >-
+        //*[@id="app"]/div[1]/div[1]/header[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/ul[1]/li[1]/span[1]/div[1]/img[1]
+  - type: plan
+    prompt: 点击右上角商品图标按钮
+    yamlWorkflow: |
+      tasks:
+        - name: 点击右上角商品图标按钮
+          flow:
+            - aiTap: 右上角的商品图标按钮
+  - type: plan
+    prompt: 滚动到最下面
+    yamlWorkflow: |
+      tasks:
+        - name: 滚动到最下面
+          flow:
+            - aiScroll: null
+              direction: down
+              scrollType: untilBottom
+              distance: null
+  - type: locate
+    prompt: 不使用吸管选项
+    xpaths:
+      - >-
+        /html/body/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/section[1]/section[2]/div[2]/div[1]/div[2]/div[1]/div[2]/label[1]/span[2]/span[1]/text()
+  - type: locate
+    prompt: 正常冰（推荐）选项
+    xpaths:
+      - >-
+        /html/body/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/section[1]/section[2]/div[2]/div[3]/div[2]/div[1]/div[1]/label[1]/span[2]/span[1]/text()
