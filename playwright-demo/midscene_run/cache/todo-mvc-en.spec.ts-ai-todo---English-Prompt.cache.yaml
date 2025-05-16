@@ -1,5 +1,5 @@
-midsceneVersion: 0.16.11-beta-20250516035357.0
-cacheId: todo-mvc-en.spec.ts(ai-todo---English-Prompt)
+midsceneVersion: 0.16.11-beta-20250516080239.0
+cacheId: todo-mvc-en.spec.ts-ai-todo---English-Prompt
 caches:
   - type: locate
     prompt: The task box input

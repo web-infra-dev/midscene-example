@@ -1,5 +1,5 @@
-midsceneVersion: 0.16.11-beta-20250516035357.0
-cacheId: ebay-search.spec.ts(search-headphone-on-ebay)
+midsceneVersion: 0.16.11-beta-20250516080239.0
+cacheId: ebay-search.spec.ts-search-headphone-on-ebay
 caches:
   - type: locate
     prompt: The search input box
