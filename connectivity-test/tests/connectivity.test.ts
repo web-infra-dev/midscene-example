@@ -73,7 +73,7 @@ describe("Use OpenAI SDK directly", () => {
 
 describe("Use Midscene wrapped OpenAI SDK", () => {
   it("call to get json object", async () => {
-    const result = await callToGetJSONObject(
+    const result = await callToGetJSONObject<{ content: string }>(
       [
         {
           role: "user",
