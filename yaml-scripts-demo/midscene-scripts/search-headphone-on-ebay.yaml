@@ -26,6 +26,6 @@ tasks:
       - aiString: "What is the name of the first headphone?"
       - aiLocate: "What is the location of the first headphone?"
 
-  - name: assert Filter button
+  - name: assert items on the page
     flow:
-      - aiAssert: There is a Filter button on the page
+      - aiAssert: There are some headphone items on the page
