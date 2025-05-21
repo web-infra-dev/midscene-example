@@ -2,8 +2,6 @@
 
 ## Steps
 
-## Steps
-
 ### Preparation
 
 create `.env` file
