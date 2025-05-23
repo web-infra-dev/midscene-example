@@ -7,11 +7,6 @@ on:
         description: 'The tag name of @midscene/'
         required: true
         default: 'beta'
-      MIDSCENE_USE_GPT_MODEL:
-        description: 'GPT model'
-        type: boolean
-        required: false
-        default: false
       branch:
         description: 'The branch to checkout'
         required: false
