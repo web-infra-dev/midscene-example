@@ -25,6 +25,9 @@ npm install
 # run demo.ts
 npx tsx demo.ts
 
+# run extract-data.ts
+npx tsx extract-data.ts
+
 # run demo with a `.runYaml` call
 npx tsx demo-run-yaml.ts
 ```
