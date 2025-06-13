@@ -16,6 +16,6 @@
         "@midscene/cli": "latest",
         "@midscene/web": "latest",
         "dotenv": "^16.4.5",
-        "tsx": "^4.19.1"
+        "tsx": "4.20.1"
     }
 }
