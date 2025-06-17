@@ -1,10 +1,10 @@
-midsceneVersion: 0.16.11-beta-20250516141724.0
+midsceneVersion: 0.19.1-beta-20250617031850.0
 cacheId: todo-mvc-en.spec.ts(ai-todo---English-Prompt)
 caches:
   - type: locate
     prompt: The task box input
     xpaths:
-      - //*[@id="todo-input"]
+      - /html/body/section[1]/header[1]/div[1]/input[1]
   - type: plan
     prompt: Input 'Learn JS today' in the task box input and press the Enter key
     yamlWorkflow: |
@@ -15,9 +15,9 @@ caches:
               locate: The task box input
             - aiKeyboardPress: Enter
   - type: locate
-    prompt: The task box input
+    prompt: Task box input field
     xpaths:
-      - //*[@id="todo-input"]
+      - /html/body/section[1]/header[1]/div[1]/input[1]
   - type: plan
     prompt: Input 'Learn Rust tomorrow' in the task box input and press the Enter key
     yamlWorkflow: |
@@ -25,12 +25,12 @@ caches:
         - name: Input 'Learn Rust tomorrow' in the task box input and press the Enter key
           flow:
             - aiInput: Learn Rust tomorrow
-              locate: The task box input
+              locate: Task box input field
             - aiKeyboardPress: Enter
   - type: locate
-    prompt: The task box input
+    prompt: The task box input field
     xpaths:
-      - //*[@id="todo-input"]
+      - /html/body/section[1]/header[1]/div[1]/input[1]
   - type: plan
     prompt: >-
       Input 'Learn AI the day after tomorrow' in the task box input and press
@@ -42,16 +42,18 @@ caches:
             the Enter key
           flow:
             - aiInput: Learn AI the day after tomorrow
-              locate: The task box input
+              locate: The task box input field
             - aiKeyboardPress: Enter
   - type: locate
     prompt: The second item in the task list
     xpaths:
-      - //*[@id="root"]/main[1]/ul[1]/li[2]/div[1]/label[1]/text()
+      - >-
+        /html/body/section[1]/main[1]/ul[1]/li[2]/div[1]/label[1]/text()[1][normalize-space()="Learn
+        Rust tomorrow"]
   - type: locate
     prompt: The delete button on the right of the second task
     xpaths:
-      - //*[@id="root"]/main[1]/ul[1]/li[2]/div[1]/button[1]
+      - /html/body/section[1]/main[1]/ul[1]/li[2]/div[1]/button[1]
   - type: plan
     prompt: >-
       Move the mouse to the second item in the task list and click the delete
@@ -67,8 +69,9 @@ caches:
   - type: locate
     prompt: the check button on the left of the second task
     xpaths:
-      - //*[@id="root"]/main[1]/ul[1]/li[2]/div[1]/input[1]
+      - /html/body/section[1]/main[1]/ul[1]/li[2]/div[1]/input[1]
   - type: locate
     prompt: the 'completed' status button below the task list
     xpaths:
-      - //*[@id="root"]/footer[1]/ul[1]/li[3]/a[1]/text()
+      - >-
+        /html/body/section[1]/footer[1]/ul[1]/li[3]/a[1]/text()[1][normalize-space()="Completed"]
