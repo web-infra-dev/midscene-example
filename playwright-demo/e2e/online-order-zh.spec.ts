@@ -8,7 +8,7 @@ test.beforeEach(async ({ page }) => {
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-test("ai online order", async ({ page, ai }) => {
+test("ai online order", async ({ page, ai, aiAssert }) => {
   await ai("点击左上角语言切换按钮(English、中文)，在弹出的下拉列表中点击中文");
   await ai("向下滚动一屏");
   await sleep(2000);
@@ -17,10 +17,8 @@ test("ai online order", async ({ page, ai }) => {
   await ai("向下滚动一屏");
   await sleep(2000);
   await ai("点击标准甜、点击绿妍（推荐）、点击标准口味");
+  await aiAssert("页面上没有『选好了』的按钮"); 
   await ai("滚动到最下面");
+  await aiAssert("页面上有『选好了』的按钮"); 
   await ai("点击选好了按钮");
-  await ai("点击右上角商品图标按钮");
-
-  // 随便滚动一下
-  await ai("滚动到最下面");
 });
