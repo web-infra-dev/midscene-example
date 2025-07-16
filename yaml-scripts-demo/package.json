@@ -6,11 +6,12 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "midscene ./midscene-scripts"
+    "test": "midscene ./midscene-scripts",
+    "test:batch": "midscene ./midscene-scripts/index.yml"
   },
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@midscene/cli": "latest"
+    "@midscene/cli": "beta"
   }
 }
