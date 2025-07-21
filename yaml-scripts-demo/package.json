@@ -6,7 +6,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "midscene ./midscene-scripts"
+    "test": "midscene ./midscene-scripts",
+    "test:config": "midscene --config config.yml"
   },
   "author": "",
   "license": "MIT",
