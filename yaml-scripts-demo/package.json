@@ -7,7 +7,7 @@
   "type": "module",
   "scripts": {
     "test": "midscene ./midscene-scripts",
-    "test:batch": "midscene ./midscene-scripts/index.yml"
+    "test:config": "midscene --config config.yml"
   },
   "author": "",
   "license": "MIT",
