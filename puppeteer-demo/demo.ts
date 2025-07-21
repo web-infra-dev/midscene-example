@@ -19,7 +19,7 @@ Promise.resolve(
     });
 
     await page.goto("https://www.ebay.com");
-    await sleep(5000);
+    await sleep(30000);
 
     // 👀 init Midscene agent
     const agent = new PuppeteerAgent(page);
