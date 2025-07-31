@@ -36,7 +36,7 @@ jobs:
           MIDSCENE_USE_QWEN_VL: 1
           DEBUG: 'midscene:ai:*'
         run: |
-          cd playwright-demo
+          cd playwright-testing-demo
           npm i pnpm -g
           pnpm install --no-frozen-lockfile
           pnpm i @midscene/web@${{ env.TAG }} --save-dev
@@ -48,7 +48,7 @@ jobs:
         with:
           if-no-files-found: error
           name: Midscene Report 
-          path: ${{ github.workspace }}/playwright-demo/midscene_run/report
+          path: ${{ github.workspace }}/playwright-testing-demo/midscene_run/report
 
       - name: Check if script failed
         if: steps.run-script.outcome == 'failure'
