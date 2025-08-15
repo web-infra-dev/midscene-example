@@ -2,7 +2,7 @@ import { describe, it, expect, vi } from "vitest";
 import dotenv from "dotenv";
 import OpenAI, { AzureOpenAI } from "openai";
 import { join } from "node:path";
-import { base64Encoded } from "@midscene/shared/img";
+import { localImg2Base64 } from "@midscene/shared/img";
 import { callToGetJSONObject } from "@midscene/core/ai-model";
 import {
   DefaultAzureCredential,
@@ -26,7 +26,7 @@ vi.setConfig({
 });
 
 const imagePath = join(__dirname, "some_logo.png");
-const imageBase64 = base64Encoded(imagePath);
+const imageBase64 = localImg2Base64(imagePath);
 
 const model = process.env.MIDSCENE_MODEL_NAME || "gpt-4o";
 describe("Use OpenAI SDK directly", () => {
