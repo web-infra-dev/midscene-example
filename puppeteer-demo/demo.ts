@@ -18,7 +18,7 @@ Promise.resolve(
       deviceScaleFactor: os.platform() === "darwin" ? 2 : 1, // this is used to avoid flashing on UI Mode when doing screenshot on Mac
     });
 
-    await page.goto("https://www.ebay.com");
+    await page.goto("https://www.bing.com/shop");
     await sleep(5000);
 
     // 👀 init Midscene agent
@@ -38,7 +38,7 @@ Promise.resolve(
     );
     console.log("headphones in stock", items);
 
-    const isMoreThan1000 = await agent.aiBoolean("Is the price of the headphones more than 1000?");
+    const isMoreThan1000 = await agent.aiBoolean("Is the price of the first headphones more than 1000?");
     console.log("isMoreThan1000", isMoreThan1000);
 
     const price = await agent.aiNumber("What is the price of the first headphone?");
