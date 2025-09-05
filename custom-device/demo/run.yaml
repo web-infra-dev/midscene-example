@@ -1,0 +1,19 @@
+
+interface:
+  module: './dist/sample-device.js'
+  # use `export` if this is a named export
+  # export: 'MyDeviceClass'
+
+tasks:
+  - name: assertion
+    flow:
+      - aiAssert: This is an app panel
+
+  - name: query
+    flow:
+      - aiQuery: the name of the apps on the first row, string[]
+        name: items
+      
+  - name: action
+    flow:
+      - aiAction: click the "1 password", and close the app panel

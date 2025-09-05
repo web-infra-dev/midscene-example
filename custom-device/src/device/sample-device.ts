@@ -18,19 +18,21 @@ import Jimp from "jimp";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// mock the interface with a static screenshot
-const screenshotPath = path.join(__dirname, "fixture", "screenshot-2x.png");
+// Here we mock a device by a static screenshot, and define two actions without true device implementation: tap and close app panel. Once these actions are called, we will print some logs to show the action is performed.
 
-export class MockDevice implements AbstractInterface {
+const screenshotPath = path.join(__dirname, "../fixture", "screenshot-2x.png");
+
+export default class SampleDevice implements AbstractInterface {
 	private cachedScreenshot: string | null = null;
 	private cachedSize: Size | null = null;
-	interfaceType: InterfaceType = "android";
+	interfaceType: InterfaceType = "my-device";
 	uri: string | undefined;
 	description: string;
 
 	constructor() {
-		this.description = "Mock Android Device";
+		this.description = "Sample Device";
 	}
+
 
 	actionSpace(): DeviceAction<any>[] {
 		return [

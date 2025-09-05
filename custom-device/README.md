@@ -22,8 +22,15 @@ Refer to `mock-device.ts` for the implementation.
 ### Run demo
 
 ```bash
+# install dependencies
 npm install 
 
-# run demo.ts
+# build the device module
+npm run build
+
+# run demo.ts (javascript demo)
 npx tsx demo.ts
+
+# run cli with yaml scripts
+npx midscene ./demo/run.yaml
 ```

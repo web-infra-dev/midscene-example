@@ -1,10 +1,10 @@
 import "dotenv/config"; // read environment variables from .env file
 import { Agent } from "@midscene/core";
-import { MockDevice } from "./mock-device";
+import SampleDevice from "../src/device/sample-device";
 
 Promise.resolve(
 	(async () => {
-		const device = new MockDevice();
+		const device = new SampleDevice();
 		const agent = new Agent(device);
 
 		// 👀 assert by AI

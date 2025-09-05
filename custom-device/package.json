@@ -3,21 +3,25 @@
     "private": true,
     "version": "1.0.0",
     "description": "> quick start",
-    "main": "index.js",
+    "main": "dist/sample-device.js",
     "type": "module",
     "scripts": {
-        "test": "tsx demo.ts",
-        "test-yaml": "tsx demo-run-yaml.ts"
+        "build": "esbuild src/device/sample-device.ts --bundle --platform=node --format=esm --outfile=dist/sample-device.js --external:@midscene/core --external:@midscene/core/device --external:jimp",
+        "demo": "tsx demo/run.ts",
+        "dev": "pnpm build && pnpm demo",
+        "clean": "rm -rf dist"
     },
     "author": "",
     "license": "MIT",
     "devDependencies": {
         "@types/node": "^24.3.0",
         "dotenv": "^16.4.5",
+        "esbuild": "^0.25.9",
         "tsx": "4.20.1"
     },
     "dependencies": {
-        "@midscene/core": "^0.27.5",
+        "@midscene/cli": "0.27.7-beta-20250904153459.0",
+        "@midscene/core": "0.27.7-beta-20250904153459.0",
         "jimp": "^0.22.12"
     }
 }
