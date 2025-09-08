@@ -33,7 +33,6 @@ export default class SampleDevice implements AbstractInterface {
 		this.description = "Sample Device";
 	}
 
-
 	actionSpace(): DeviceAction<any>[] {
 		return [
 			defineActionTap(async (param: ActionTapParam) => {
