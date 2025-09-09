@@ -20,7 +20,7 @@ const __dirname = path.dirname(__filename);
 
 // Here we mock a device by a static screenshot, and define two actions without true device implementation: tap and close app panel. Once these actions are called, we will print some logs to show the action is performed.
 
-const screenshotPath = path.join(__dirname, "../fixture", "screenshot-2x.png");
+const screenshotPath = path.join(__dirname, "../../fixture", "screenshot-2x.png");
 
 export default class SampleDevice implements AbstractInterface {
 	private cachedScreenshot: string | null = null;

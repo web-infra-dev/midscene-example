@@ -1,9 +1,9 @@
 
 interface:
-  module: './dist/sample-device.js'
+  module: './dist/device/sample-device.js'
 
 config: 
-  outout: './output/data.json'
+  output: './output/data.json'
   # use `export` if this is a named export
   # export: 'MyDeviceClass'
 

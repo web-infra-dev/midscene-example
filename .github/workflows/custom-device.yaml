@@ -1,0 +1,57 @@
+name: Custom Device Demo
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'The tag name of @midscene/'
+        required: true
+        default: 'beta'
+      branch:
+        description: 'The branch to checkout'
+        required: false
+        default: 'main'
+  push:
+    branches:
+      - main
+
+env:
+  TAG: ${{ github.event.inputs.tag || 'beta' }}
+
+jobs:
+  run_script:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.branch || 'main' }}
+
+      - name: Run script
+        id: run-script
+        env:
+          OPENAI_BASE_URL: ${{ secrets.QWEN_OPENAI_BASE_URL }}
+          OPENAI_API_KEY: ${{ secrets.QWEN_OPENAI_API_KEY }}
+          MIDSCENE_MODEL_NAME: 'qwen-vl-max-latest'
+          MIDSCENE_USE_QWEN_VL: 1
+          DEBUG: 'midscene:ai:profile:*'
+        run: |
+          cd custom-device
+          npm i pnpm -g
+          pnpm i @midscene/cli@${{ env.TAG }} @midscene/core@${{ env.TAG }} --save-dev
+          pnpm install
+          pnpm run demo
+          pnpm run demo-yaml
+          pnpm run check-output
+        continue-on-error: true
+
+      - name: Upload output folder
+        uses: actions/upload-artifact@v4
+        with:
+          if-no-files-found: error
+          name: Midscene Report 
+          path: ${{ github.workspace }}/puppeteer-demo/midscene_run/report
+
+      - name: Check if script failed
+        if: steps.run-script.outcome == 'failure'
+        run: exit 1
