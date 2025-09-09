@@ -1,4 +1,4 @@
-name: Custom Device Demo
+name: Custom Interface Demo
 
 permissions:
   contents: read
@@ -39,7 +39,7 @@ jobs:
           MIDSCENE_USE_QWEN_VL: 1
           DEBUG: 'midscene:ai:profile:*'
         run: |
-          cd custom-device
+          cd custom-interface
           npm i pnpm -g
           pnpm i @midscene/cli@${{ env.TAG }} @midscene/core@${{ env.TAG }} --save-dev
           pnpm install
@@ -54,7 +54,7 @@ jobs:
         with:
           if-no-files-found: error
           name: Midscene Report 
-          path: ${{ github.workspace }}/puppeteer-demo/midscene_run/report
+          path: ${{ github.workspace }}/custom-interface/midscene_run/report
 
       - name: Check if script failed
         if: steps.run-script.outcome == 'failure'
