@@ -1,5 +1,8 @@
 name: Puppeteer with Vitest Demo
 
+permissions:
+  contents: read
+
 on:
   workflow_dispatch:
     inputs:

@@ -1,5 +1,8 @@
 name: Custom Device Demo
 
+permissions:
+  contents: read
+
 on:
   workflow_dispatch:
     inputs:
