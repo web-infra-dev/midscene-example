@@ -22,4 +22,4 @@ tasks:
       
   - name: action
     flow:
-      - aiAction: check the identity, and click the "1 password", and close the app panel
+      - aiAction: check the identity, and launch the "1 password" app

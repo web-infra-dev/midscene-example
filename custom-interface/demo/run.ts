@@ -12,7 +12,7 @@ Promise.resolve(
 		await agent.aiQuery("the name of the apps on the first row, string[]");
 
 		// 👀 perform action based on the action space
-		await agent.aiAction('click the "1 password", and close the app panel');
+		await agent.aiAction('launch the "1 password" app');
 
 		// 👀 launch playground for the agent
 		// const server = await playgroundForAgent(agent).launch();

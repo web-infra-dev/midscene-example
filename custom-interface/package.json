@@ -5,7 +5,7 @@
     "main": "dist/sample-device.js",
     "type": "module",
     "scripts": {
-        "build": "esbuild src/device/sample-device.ts --bundle --platform=node --format=esm --outfile=dist/device/sample-device.js --external:@midscene/core --external:@midscene/core/device --external:jimp",
+        "build": "esbuild src/ --platform=node --format=esm --outdir=dist",
         "demo": "tsx demo/run.ts",
         "demo-yaml": "npx midscene ./demo/run.yaml",
         "dev": "pnpm build && pnpm demo",
@@ -21,8 +21,8 @@
         "tsx": "4.20.1"
     },
     "dependencies": {
-        "@midscene/cli": "beta",
-        "@midscene/core": "beta",
+        "@midscene/cli": "^0.28.1",
+        "@midscene/core": "^0.28.1",
         "jimp": "^0.22.12"
     }
 }

@@ -3,6 +3,7 @@ import * as path from "node:path";
 import { fileURLToPath } from "node:url";
 import {
 	type DeviceAction,
+	getMidsceneLocationSchema,
 	type InterfaceType,
 	type Size,
 	z,
@@ -48,17 +49,19 @@ export default class SampleDevice implements AbstractInterface {
 				console.log(`Mock tap at: ${element?.center || "unknown"}`);
 			}),
 			defineAction({
-				name: "CloseAppPanel",
+				name: "LaunchApp",
 				description: "Close the app panel on screen",
 				paramSchema: z.object({
-					withAnimation: z.boolean().optional(),
+					appIcon: getMidsceneLocationSchema().describe("the icon of the app"), // use getMidsceneLocationSchema to define the location of the app icon
+					appName: z.string().describe("the name of the app"),
+					withAnimation: z.boolean().optional().describe("whether to launch the app with animation"),
 				}),
 				call: async (param) => {
 					const withAnimation = param.withAnimation;
 					console.log(
-						`We should close the app panel ${
+						`We should launch the app ${param.appName} ${
 							withAnimation ? "with" : "without"
-						} animation now`,
+						} animation now at ${param.appIcon?.center || "unknown"}`,
 					);
 				},
 			}),
