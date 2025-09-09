@@ -1,5 +1,8 @@
 name: Puppeteer Demo
 
+permissions:
+  contents: read
+  
 on:
   workflow_dispatch:
     inputs:

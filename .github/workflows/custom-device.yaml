@@ -1,4 +1,4 @@
-name: Puppeteer with Vitest Demo
+name: Custom Device Demo
 
 permissions:
   contents: read
@@ -39,12 +39,13 @@ jobs:
           MIDSCENE_USE_QWEN_VL: 1
           DEBUG: 'midscene:ai:profile:*'
         run: |
-          cd puppeteer-with-vitest-demo
+          cd custom-device
           npm i pnpm -g
-          pnpm i @midscene/web@${{ env.TAG }} --save-dev
+          pnpm i @midscene/cli@${{ env.TAG }} @midscene/core@${{ env.TAG }} --save-dev
           pnpm install
-          pnpx puppeteer browsers install chrome
-          pnpm run test
+          pnpm run demo
+          pnpm run demo-yaml
+          pnpm run check-output
         continue-on-error: true
 
       - name: Upload output folder
@@ -52,7 +53,7 @@ jobs:
         with:
           if-no-files-found: error
           name: Midscene Report 
-          path: ${{ github.workspace }}/puppeteer-with-vitest-demo/midscene_run/report
+          path: ${{ github.workspace }}/puppeteer-demo/midscene_run/report
 
       - name: Check if script failed
         if: steps.run-script.outcome == 'failure'

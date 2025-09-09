@@ -1,0 +1,25 @@
+
+interface:
+  module: './dist/device/sample-device.js'
+
+config: 
+  output: './output/data.json'
+  # use `export` if this is a named export
+  # export: 'MyDeviceClass'
+
+agent:
+  aiActionContext: 'if the user ask you to check the identity, he means tap the "facetime" app icon.'
+
+tasks:
+  - name: assertion
+    flow:
+      - aiAssert: This is an app panel
+
+  - name: query
+    flow:
+      - aiQuery: the name of the apps on the first row, string[]
+        name: items
+      
+  - name: action
+    flow:
+      - aiAction: check the identity, and click the "1 password", and close the app panel

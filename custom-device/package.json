@@ -1,0 +1,29 @@
+{
+    "name": "custom-device",
+    "private": true,
+    "version": "1.0.0",
+    "description": "> quick start",
+    "main": "dist/sample-device.js",
+    "type": "module",
+    "scripts": {
+        "build": "esbuild src/device/sample-device.ts --bundle --platform=node --format=esm --outfile=dist/device/sample-device.js --external:@midscene/core --external:@midscene/core/device --external:jimp",
+        "demo": "tsx demo/run.ts",
+        "demo-yaml": "npx midscene ./demo/run.yaml",
+        "dev": "pnpm build && pnpm demo",
+        "clean": "rm -rf dist",
+        "check-output": "test -f ./output/data.json"
+    },
+    "author": "",
+    "license": "MIT",
+    "devDependencies": {
+        "@types/node": "^24.3.1",
+        "dotenv": "^16.6.1",
+        "esbuild": "^0.25.9",
+        "tsx": "4.20.1"
+    },
+    "dependencies": {
+        "@midscene/cli": "0.27.7-beta-20250908121606.0",
+        "@midscene/core": "0.27.7-beta-20250908121606.0",
+        "jimp": "^0.22.12"
+    }
+}
