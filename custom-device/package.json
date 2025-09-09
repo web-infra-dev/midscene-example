@@ -22,8 +22,8 @@
         "tsx": "4.20.1"
     },
     "dependencies": {
-        "@midscene/cli": "0.27.7-beta-20250908121606.0",
-        "@midscene/core": "0.27.7-beta-20250908121606.0",
+        "@midscene/cli": "beta",
+        "@midscene/core": "beta",
         "jimp": "^0.22.12"
     }
 }

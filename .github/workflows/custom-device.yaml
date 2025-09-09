@@ -43,6 +43,7 @@ jobs:
           npm i pnpm -g
           pnpm i @midscene/cli@${{ env.TAG }} @midscene/core@${{ env.TAG }} --save-dev
           pnpm install
+          pnpm run build
           pnpm run demo
           pnpm run demo-yaml
           pnpm run check-output
