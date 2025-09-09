@@ -1,11 +1,9 @@
 import "dotenv/config"; // read environment variables from .env file
-import { Agent } from "@midscene/core";
-import SampleDevice from "../src/device/sample-device";
+import { midsceneAgentForSampleDevice } from "../src";
 
 Promise.resolve(
 	(async () => {
-		const device = new SampleDevice();
-		const agent = new Agent(device);
+		const agent = await midsceneAgentForSampleDevice({ foo: "bar" });
 
 		// 👀 assert by AI
 		await agent.aiAssert("This is an app panel");

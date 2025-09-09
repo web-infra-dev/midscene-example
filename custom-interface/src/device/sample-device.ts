@@ -22,15 +22,23 @@ const __dirname = path.dirname(__filename);
 
 const screenshotPath = path.join(__dirname, "../../fixture", "screenshot-2x.png");
 
+export interface SampleDeviceOptions {
+	foo: string;
+}
+
 export default class SampleDevice implements AbstractInterface {
 	private cachedScreenshot: string | null = null;
 	private cachedSize: Size | null = null;
 	interfaceType: InterfaceType = "my-device";
-	uri: string | undefined;
-	description: string;
+	private options: SampleDeviceOptions;
 
-	constructor() {
-		this.description = "Sample Device";
+	constructor(options: SampleDeviceOptions) {
+		this.options = options;
+	}
+
+	// this is not required by AbstractInterface
+	async launch(): Promise<void> {
+		console.log(`Mock device launched, foo: ${this.options.foo}`);
 	}
 
 	actionSpace(): DeviceAction<any>[] {
@@ -58,7 +66,7 @@ export default class SampleDevice implements AbstractInterface {
 	}
 
 	describe(): string {
-		return "this is a demo device for Midscene";
+		return `this is a demo device for Midscene, foo: ${this.options.foo}`;
 	}
 
 	async size(): Promise<Size> {
