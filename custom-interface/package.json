@@ -5,7 +5,7 @@
     "main": "dist/sample-device.js",
     "type": "module",
     "scripts": {
-        "build": "esbuild src/ --platform=node --format=esm --outdir=dist",
+        "build": "esbuild ./src/**/*.ts --platform=node --format=esm --outdir=./dist",
         "demo": "tsx demo/run.ts",
         "demo-yaml": "npx midscene ./demo/run.yaml",
         "dev": "pnpm build && pnpm demo",

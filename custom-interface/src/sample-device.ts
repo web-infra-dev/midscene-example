@@ -10,8 +10,10 @@ import {
 } from "@midscene/core";
 import {
 	type AbstractInterface,
+	type ActionKeyboardPressParam,
 	type ActionTapParam,
 	defineAction,
+	defineActionKeyboardPress,
 	defineActionTap,
 } from "@midscene/core/device";
 import Jimp from "jimp";
@@ -21,7 +23,7 @@ const __dirname = path.dirname(__filename);
 
 // Here we mock a device by a static screenshot, and define two actions without true device implementation: tap and close app panel. Once these actions are called, we will print some logs to show the action is performed.
 
-const screenshotPath = path.join(__dirname, "../../fixture", "screenshot-2x.png");
+const screenshotPath = path.join(__dirname, "../fixture", "screenshot-2x.png");
 
 export interface SampleDeviceOptions {
 	foo: string;
@@ -47,6 +49,10 @@ export default class SampleDevice implements AbstractInterface {
 			defineActionTap(async (param: ActionTapParam) => {
 				const element = param.locate;
 				console.log(`Mock tap at: ${element?.center || "unknown"}`);
+			}),
+			defineActionKeyboardPress(async (param: ActionKeyboardPressParam) => {
+				const key = param.keyName;
+				console.log(`Mock keyboard press: ${key}`);
 			}),
 			defineAction({
 				name: "LaunchApp",
