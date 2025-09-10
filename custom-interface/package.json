@@ -1,28 +1,29 @@
 {
-    "private": true,
-    "version": "1.0.0",
-    "description": "> quick start",
-    "main": "dist/sample-device.js",
-    "type": "module",
-    "scripts": {
-        "build": "esbuild ./src/**/*.ts --platform=node --format=esm --outdir=./dist",
-        "demo": "tsx demo/run.ts",
-        "demo-yaml": "npx midscene ./demo/run.yaml",
-        "dev": "pnpm build && pnpm demo",
-        "clean": "rm -rf dist",
-        "check-output": "test -f ./output/data.json"
-    },
-    "author": "",
-    "license": "MIT",
-    "devDependencies": {
-        "@types/node": "^24.3.1",
-        "dotenv": "^16.6.1",
-        "esbuild": "^0.25.9",
-        "tsx": "4.20.1"
-    },
-    "dependencies": {
-        "@midscene/cli": "^0.28.1",
-        "@midscene/core": "^0.28.1",
-        "jimp": "^0.22.12"
-    }
+  "private": true,
+  "version": "1.0.0",
+  "description": "> quick start",
+  "main": "dist/sample-device.js",
+  "type": "module",
+  "scripts": {
+    "build": "esbuild ./src/**/*.ts --platform=node --format=esm --outdir=./dist",
+    "demo": "tsx demo/run.ts",
+    "demo-yaml": "npx midscene ./demo/run.yaml",
+    "dev": "pnpm build && pnpm demo",
+    "clean": "rm -rf dist",
+    "check-output": "test -f ./output/data.json"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^24.3.1",
+    "dotenv": "^16.6.1",
+    "esbuild": "^0.25.9",
+    "tsx": "4.20.1"
+  },
+  "dependencies": {
+    "@midscene/cli": "latest",
+    "@midscene/core": "latest",
+    "@midscene/playground": "latest",
+    "jimp": "^0.22.12"
+  }
 }
