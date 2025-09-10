@@ -3,14 +3,17 @@ import * as path from "node:path";
 import { fileURLToPath } from "node:url";
 import {
 	type DeviceAction,
+	getMidsceneLocationSchema,
 	type InterfaceType,
 	type Size,
 	z,
 } from "@midscene/core";
 import {
 	type AbstractInterface,
+	type ActionKeyboardPressParam,
 	type ActionTapParam,
 	defineAction,
+	defineActionKeyboardPress,
 	defineActionTap,
 } from "@midscene/core/device";
 import Jimp from "jimp";
@@ -20,17 +23,25 @@ const __dirname = path.dirname(__filename);
 
 // Here we mock a device by a static screenshot, and define two actions without true device implementation: tap and close app panel. Once these actions are called, we will print some logs to show the action is performed.
 
-const screenshotPath = path.join(__dirname, "../../fixture", "screenshot-2x.png");
+const screenshotPath = path.join(__dirname, "../fixture", "screenshot-2x.png");
+
+export interface SampleDeviceOptions {
+	foo: string;
+}
 
 export default class SampleDevice implements AbstractInterface {
 	private cachedScreenshot: string | null = null;
 	private cachedSize: Size | null = null;
 	interfaceType: InterfaceType = "my-device";
-	uri: string | undefined;
-	description: string;
+	private options: SampleDeviceOptions;
 
-	constructor() {
-		this.description = "Sample Device";
+	constructor(options: SampleDeviceOptions) {
+		this.options = options;
+	}
+
+	// this is not required by AbstractInterface
+	async launch(): Promise<void> {
+		console.log(`Mock device launched, foo: ${this.options.foo}`);
 	}
 
 	actionSpace(): DeviceAction<any>[] {
@@ -39,18 +50,24 @@ export default class SampleDevice implements AbstractInterface {
 				const element = param.locate;
 				console.log(`Mock tap at: ${element?.center || "unknown"}`);
 			}),
+			defineActionKeyboardPress(async (param: ActionKeyboardPressParam) => {
+				const key = param.keyName;
+				console.log(`Mock keyboard press: ${key}`);
+			}),
 			defineAction({
-				name: "CloseAppPanel",
+				name: "LaunchApp",
 				description: "Close the app panel on screen",
 				paramSchema: z.object({
-					withAnimation: z.boolean().optional(),
+					appIcon: getMidsceneLocationSchema().describe("the icon of the app"), // use getMidsceneLocationSchema to define the location of the app icon
+					appName: z.string().describe("the name of the app"),
+					withAnimation: z.boolean().optional().describe("whether to launch the app with animation"),
 				}),
 				call: async (param) => {
 					const withAnimation = param.withAnimation;
 					console.log(
-						`We should close the app panel ${
+						`We should launch the app ${param.appName} ${
 							withAnimation ? "with" : "without"
-						} animation now`,
+						} animation now at ${param.appIcon?.center || "unknown"}`,
 					);
 				},
 			}),
@@ -58,7 +75,7 @@ export default class SampleDevice implements AbstractInterface {
 	}
 
 	describe(): string {
-		return "this is a demo device for Midscene";
+		return `this is a demo device for Midscene, foo: ${this.options.foo}`;
 	}
 
 	async size(): Promise<Size> {

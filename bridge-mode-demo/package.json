@@ -15,7 +15,7 @@
     "devDependencies": {
         "@midscene/cli": "latest",
         "@midscene/web": "latest",
-        "dotenv": "^16.4.5",
+        "dotenv": "^16.6.1",
         "tsx": "4.20.1"
     }
 }
