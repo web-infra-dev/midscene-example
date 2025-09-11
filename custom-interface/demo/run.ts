@@ -21,9 +21,9 @@ Promise.resolve(
 // launch playground to interact with the agent
 Promise.resolve(
   (async () => {
-    const agent = await midsceneAgentForSampleDevice({ foo: 'bar' });
-    // 👀 launch playground for the agent
-    const server = await playgroundForAgent(agent).launch();
+    const anotherAgent = await midsceneAgentForSampleDevice({ foo: 'bar' });
+    // // 👀 launch playground for the agent
+    const server = await playgroundForAgent(anotherAgent).launch();
     setTimeout(() => {
       console.log('closing playground');
       server.close();
