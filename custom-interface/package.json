@@ -21,9 +21,9 @@
     "tsx": "4.20.1"
   },
   "dependencies": {
-    "@midscene/cli": "latest",
-    "@midscene/core": "latest",
-    "@midscene/playground": "latest",
+    "@midscene/cli": "^0.28.7",
+    "@midscene/core": "^0.28.7",
+    "@midscene/playground": "^0.28.7",
     "jimp": "^0.22.12"
   }
 }
