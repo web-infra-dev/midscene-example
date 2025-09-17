@@ -3,8 +3,13 @@ import { test } from "./fixture";
 
 test.beforeEach(async ({ page }) => {
   page.setViewportSize({ width: 1280, height: 768 });
+  await page.setExtraHTTPHeaders({
+    'User-Agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Mobile Safari/537.36'
+  });
+  
   await page.goto("https://www.ebay.com");
-  // await page.waitForLoadState("networkidle");
+  
+  await page.waitForTimeout(5000);
 });
 
 test("search headphone on ebay", async ({
