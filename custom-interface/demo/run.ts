@@ -10,7 +10,9 @@ async function runAgentDemo() {
   await agent.aiAssert('This is an app panel');
 
   // 👀 query data
-  await agent.aiQuery('the name of the apps on the first row, string[]');
+  await agent.aiQuery<Array<string>>(
+    'the name of the apps on the first row, string[]'
+  );
 
   // 👀 perform action based on the action space
   await agent.aiAction('launch the "1 password" app');

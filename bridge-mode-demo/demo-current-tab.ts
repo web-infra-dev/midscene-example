@@ -1,5 +1,5 @@
-import "dotenv/config"; // read environment variables from .env file
-import { AgentOverChromeBridge } from "@midscene/web/bridge-mode";
+import 'dotenv/config'; // read environment variables from .env file
+import { AgentOverChromeBridge } from '@midscene/web/bridge-mode';
 
 Promise.resolve(
   (async () => {
@@ -9,11 +9,13 @@ Promise.resolve(
     // remember to start your chrome extension, click 'allow connection' button.
     await agent.connectCurrentTab();
     // After connected, you can see this log. Otherwise you will get an timeout error.
-    console.log("connected to the active tab !");
+    console.log('connected to the active tab !');
 
-    await agent.aiAction('点击 type 下拉框，点击 type 下拉框下面的输入框，点击 Individual');
+    await agent.aiAction(
+      '点击 type 下拉框，点击 type 下拉框下面的输入框，点击 Individual'
+    );
 
-    // const content = await agent.aiQuery(
+    // const content = await agent.aiQuery<(string)>(
     //   "what is the title of the page? answer in {title: string}"
     // );
     // console.log(content);

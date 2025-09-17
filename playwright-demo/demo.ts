@@ -30,7 +30,7 @@ Promise.resolve(
     // await sleep(5000);
 
     // 👀 understand the page content, find the items
-    const items = await agent.aiQuery(
+    const items = await agent.aiQuery<Array<{ itemTitle: string; price: number }>>(
       "{itemTitle: string, price: Number}[], find item in list and corresponding price"
     );
     console.log("headphones in stock", items);

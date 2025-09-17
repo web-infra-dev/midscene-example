@@ -24,9 +24,9 @@ test("search headphone on ebay", async ({
   await aiWaitFor("there is at least one headphone item on page");
 
   // 👀 find the items
-  const items = await aiQuery(
-    "{itemTitle: string, price: Number}[], find item in list and corresponding price"
-  ) as Array<{itemTitle: string, price: number}>;
+  const items = await aiQuery<
+    Array<{ itemTitle: string; price: number }>
+  >("{itemTitle: string, price: Number}[], find item in list and corresponding price");
 
   const isMoreThan1000 = await aiBoolean("Is the price of the headphones more than 1000?");
   console.log("isMoreThan1000", isMoreThan1000);
