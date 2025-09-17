@@ -4,7 +4,7 @@ import { test } from "./fixture";
 test.beforeEach(async ({ page }) => {
   page.setViewportSize({ width: 1280, height: 768 });
   await page.goto("https://www.ebay.com");
-  await page.waitForLoadState("networkidle");
+  // await page.waitForLoadState("networkidle");
 });
 
 test("search headphone on ebay", async ({
@@ -26,13 +26,13 @@ test("search headphone on ebay", async ({
   // 👀 find the items
   const items = await aiQuery(
     "{itemTitle: string, price: Number}[], find item in list and corresponding price"
-  );
+  ) as Array<{itemTitle: string, price: number}>;
 
   const isMoreThan1000 = await aiBoolean("Is the price of the headphones more than 1000?");
   console.log("isMoreThan1000", isMoreThan1000);
   
   console.log("headphones in stock", items);
-  expect(items?.length).toBeGreaterThan(0);
+  expect(items.length).toBeGreaterThan(0);
 
   const price = await aiNumber("What is the price of the first headphone?");
   console.log("price", price);
