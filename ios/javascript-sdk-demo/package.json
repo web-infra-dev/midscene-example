@@ -1,0 +1,19 @@
+{
+  "name": "ios-demo",
+  "private": true,
+  "version": "1.0.0",
+  "description": "> quick start",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "tsx demo.ts",
+    "test-yaml": "tsx demo-run-yaml.ts"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@midscene/ios": "latest",
+    "dotenv": "^16.4.5",
+    "tsx": "4.20.1"
+  }
+}
