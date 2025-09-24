@@ -1,6 +1,8 @@
-import { agentFromIOSDevice, getConnectedDevices } from '@midscene/ios';
+import { agentFromWebDriverAgent } from '@midscene/ios';
 import { describe, it, vi } from 'vitest';
 import 'dotenv/config'; // read environment variables from .env file
+
+
 
 vi.setConfig({
   testTimeout: 90 * 1000,
@@ -10,8 +12,7 @@ describe(
   'ios integration',
   async () => {
     await it('iOS settings page demo for scroll', async () => {
-      const devices = await getConnectedDevices();
-      const agent = await agentFromIOSDevice(devices[0].udid,{
+      const agent = await agentFromWebDriverAgent({
         aiActionContext:
           'If any location, permission, user agreement, etc. popup, click agree. If login page pops up, close it.',
       });

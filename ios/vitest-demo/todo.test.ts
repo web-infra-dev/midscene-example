@@ -1,4 +1,4 @@
-import { IOSAgent, IOSDevice, getConnectedDevices } from '@midscene/ios';
+import { agentFromWebDriverAgent } from '@midscene/ios';
 import { beforeAll, describe, expect, it, vi } from 'vitest';
 import 'dotenv/config'; // read environment variables from .env file
 
@@ -14,14 +14,11 @@ describe('Test todo list', () => {
   let agent: IOSAgent;
 
   beforeAll(async () => {
-    const devices = await getConnectedDevices();
-    const page = new IOSDevice(devices[0].udid);
-    agent = new IOSAgent(page,{
+    agent = await agentFromWebDriverAgent({
       aiActionContext:
         'If any location, permission, user agreement, etc. popup, click agree. If login page pops up, close it.',
     });
-    await page.connect();
-    await page.launch(pageUrl);
+    await agent.launch(pageUrl);
     await sleep(3000);
   });
 

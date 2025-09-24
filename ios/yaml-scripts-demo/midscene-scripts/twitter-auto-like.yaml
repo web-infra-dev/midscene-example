@@ -1,7 +1,6 @@
 # search headphone on ebay, extract the items info into a json file, and assert the shopping cart icon
 
 ios:
-  deviceId: 00008120-0012144121E0201E
 
 tasks:
   - name: like tweets
