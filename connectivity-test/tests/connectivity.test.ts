@@ -3,8 +3,8 @@ import dotenv from "dotenv";
 import OpenAI, { AzureOpenAI } from "openai";
 import { join } from "node:path";
 import { localImg2Base64 } from "@midscene/shared/img";
-import { globalConfigManager } from "@midscene/shared/env";
-import { AIActionType, callToGetJSONObject } from "@midscene/core/ai-model";
+import {  globalModelConfigManager } from "@midscene/shared/env";
+import { AIActionType, callAIWithObjectResponse } from "@midscene/core/ai-model";
 import {
   DefaultAzureCredential,
   getBearerTokenProvider,
@@ -73,11 +73,8 @@ describe("Use OpenAI SDK directly", () => {
 });
 
 describe("Use Midscene wrapped OpenAI SDK", () => {
-  beforeAll(() => {
-    globalConfigManager.init()
-  })
   it("call to get json object", async () => {
-    const result = await callToGetJSONObject<{ content: string }>(
+    const result = await callAIWithObjectResponse<{ content: string }>(
       [
         {
           role: "user",
@@ -97,9 +94,7 @@ describe("Use Midscene wrapped OpenAI SDK", () => {
         },
       ],
       AIActionType.EXTRACT_DATA,
-      {
-        'intent': 'default'
-      }
+      globalModelConfigManager.getModelConfig('default')
     );
     console.log(result.content.content);
     expect(result.content.content.length).toBeGreaterThan(5);
