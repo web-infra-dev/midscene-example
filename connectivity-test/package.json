@@ -5,7 +5,7 @@
     "main": "index.js",
     "type": "module",
     "scripts": {
-        "test": "vitest ./tests/connectivity.test.ts"
+        "test": "vitest run ./tests/connectivity.test.ts"
     },
     "author": "",
     "license": "MIT",
