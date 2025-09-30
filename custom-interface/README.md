@@ -29,7 +29,7 @@ npm install
 npm run build
 
 # run demo.ts (javascript demo)
-npx tsx demo.ts
+npx tsx demo/run.ts
 
 # run cli with yaml scripts
 npx midscene ./demo/run.yaml
