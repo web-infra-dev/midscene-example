@@ -61,6 +61,7 @@ describe("Use OpenAI SDK directly", () => {
               type: "image_url",
               image_url: {
                 url: imageBase64,
+                detail: 'high'
               },
             },
           ],
@@ -88,6 +89,7 @@ describe("Use Midscene wrapped OpenAI SDK", () => {
               type: "image_url",
               image_url: {
                 url: imageBase64,
+                detail: 'high'
               },
             },
           ],
