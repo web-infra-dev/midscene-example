@@ -4,14 +4,14 @@ This demo shows how to connect Midscene Agent to a remote browser using Puppetee
 
 ## Use Cases
 
-- Connect to browsers running in cloud services (BrowserBase, Browserless, etc.)
+- Connect to browsers running in cloud services ([BrowserBase](https://browserbase.com), [Browserless](https://browserless.io), etc.)
 - Integrate with custom browser infrastructure
 - Run tests on remote browser instances
 - Use browsers in containerized environments
 
 ## Prerequisites
 
-- Node.js (v16 or higher)
+- Node.js (v18 or higher)
 - A remote browser service that provides CDP WebSocket URL
 - Your AI provider API key (if required)
 
