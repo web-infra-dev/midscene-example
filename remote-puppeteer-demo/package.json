@@ -1,0 +1,19 @@
+{
+    "name": "remote-puppeteer-demo",
+    "private": true,
+    "version": "1.0.0",
+    "description": "Remote Puppeteer integration with Midscene Agent via CDP WebSocket",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "test": "tsx demo.ts"
+    },
+    "author": "",
+    "license": "MIT",
+    "devDependencies": {
+        "@midscene/web": "latest",
+        "dotenv": "^16.4.5",
+        "puppeteer": "^24.0.0",
+        "tsx": "4.20.1"
+    }
+}

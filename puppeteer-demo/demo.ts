@@ -3,7 +3,7 @@ import os from "node:os";
 import { PuppeteerAgent } from "@midscene/web/puppeteer";
 import "dotenv/config"; // read environment variables from .env file
 
-const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+const sleep = (ms: number | undefined) => new Promise((r) => setTimeout(r, ms));
 Promise.resolve(
   (async () => {
     const browser = await puppeteer.launch({
