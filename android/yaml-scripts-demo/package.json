@@ -11,6 +11,6 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@midscene/cli": "latest"
+    "@midscene/cli": "beta"
   }
 }

@@ -11,7 +11,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@midscene/web": "latest",
+    "@midscene/web": "beta",
     "@playwright/test": "^1.54.1",
     "dotenv": "^16.4.5",
     "playwright": "1.54.1",

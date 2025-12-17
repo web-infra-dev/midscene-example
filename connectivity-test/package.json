@@ -11,8 +11,8 @@
     "license": "MIT",
     "devDependencies": {
         "@azure/identity": "4.5.0",
-        "@midscene/core": "latest",
-        "@midscene/shared": "latest",
+        "@midscene/core": "beta",
+        "@midscene/shared": "beta",
         "dotenv": "^16.4.5",
         "openai": "4.57.1",
         "puppeteer": "^23.4.0",

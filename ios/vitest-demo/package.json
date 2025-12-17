@@ -10,7 +10,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@midscene/ios": "latest",
+    "@midscene/ios": "beta",
     "@types/node": "^18.0.0",
     "dotenv": "^16.4.5",
     "vitest": "^2.1.8"

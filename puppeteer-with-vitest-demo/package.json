@@ -10,7 +10,7 @@
     "author": "",
     "license": "MIT",
     "devDependencies": {
-        "@midscene/web": "latest",
+        "@midscene/web": "beta",
         "dotenv": "^16.4.5",
         "puppeteer": "^24.0.0",
         "vitest": "^2.1.8"
