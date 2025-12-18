@@ -7,8 +7,8 @@ android:
 tasks:
   - name: travel
     flow:
-      - aiAction: open Maps app
-      - aiAction: input 'attractions' in the search bar, and click the search button
-      - aiAction: click the first search result, enter the attraction details page
-      - aiAction: click "Directions" button, enter the route planning page
-      - aiAction: click "Start" button to start navigation
+      - aiAct: open Maps app
+      - aiAct: input 'attractions' in the search bar, and click the search button
+      - aiAct: click the first search result, enter the attraction details page
+      - aiAct: click "Directions" button, enter the route planning page
+      - aiAct: click "Start" button to start navigation

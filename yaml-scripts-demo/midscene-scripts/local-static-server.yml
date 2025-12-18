@@ -7,7 +7,7 @@ target:
 tasks:
   - name: page redirect
     flow:
-      - aiAction: click the link 'Go to planet list'
+      - aiAct: click the link 'Go to planet list'
       - sleep: 1000
       - aiAssert: The page contains 'Earth'
 

@@ -43,7 +43,7 @@ Promise.resolve(
 
     // 👀 type keywords, perform a search
     console.log('🔍 Searching for Headphones...');
-    await agent.aiAction('type "Headphones" in search box, hit Enter');
+    await agent.aiAct('type "Headphones" in search box, hit Enter');
 
     // 👀 wait for the loading
     await agent.aiWaitFor("there is at least one headphone item on page");

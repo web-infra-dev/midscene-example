@@ -12,9 +12,9 @@ web:
 tasks:
   - name: search headphones
     flow:
-      - aiAction: type 'Headphones' in search box, hit Enter
+      - aiAct: type 'Headphones' in search box, hit Enter
       - sleep: 5000
-      - aiAction: scroll down the page for 800px
+      - aiAct: scroll down the page for 800px
 
   - name: extract headphones info
     flow:

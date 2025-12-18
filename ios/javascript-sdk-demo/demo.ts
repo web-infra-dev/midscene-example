@@ -6,7 +6,7 @@ Promise.resolve(
   (async () => {
     // 👀 init Midscene agent
     const agent = await agentFromWebDriverAgent({
-      aiActionContext:
+      aiActContext:
         'If any location, permission, user agreement, etc. popup, click agree. If login page pops up, close it.',
     });
     await agent.launch('https://www.ebay.com');
@@ -14,7 +14,7 @@ Promise.resolve(
     await sleep(5000);
 
     // 👀 type keywords, perform a search
-    await agent.aiAction('type "Headphones" in ebay search box, click the search button');
+    await agent.aiAct('type "Headphones" in ebay search box, click the search button');
 
     // 👀 wait for the loading
     await agent.aiWaitFor("there is at least one headphone item on page");

@@ -15,7 +15,7 @@ async function runAgentDemo() {
   );
 
   // 👀 perform action based on the action space
-  await agent.aiAction('launch the "1 password" app');
+  await agent.aiAct('launch the "1 password" app');
 }
 
 // Demo 2: launch playground to interact with the agent

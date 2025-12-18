@@ -22,7 +22,7 @@ Promise.resolve(
     const agent = new PlaywrightAgent(page);
 
     // 👀 type keywords, perform a search
-    await agent.aiAction('type "Headphones" in search box, hit Enter');
+    await agent.aiAct('type "Headphones" in search box, hit Enter');
 
     // 👀 wait for the loading
     await agent.aiWaitFor("there is at least one headphone item on page");

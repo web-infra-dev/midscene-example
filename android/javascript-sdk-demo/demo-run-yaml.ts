@@ -9,7 +9,7 @@ Promise.resolve(
 
     // 👀 init Midscene agent
     const agent = new AndroidAgent(page,{
-      aiActionContext:
+      aiActContext:
         'If any location, permission, user agreement, etc. popup, click agree. If login page pops up, close it.',
     });
     await page.connect();

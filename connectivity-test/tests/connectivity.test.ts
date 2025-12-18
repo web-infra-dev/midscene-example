@@ -4,7 +4,7 @@ import OpenAI, { AzureOpenAI } from "openai";
 import { join } from "node:path";
 import { localImg2Base64 } from "@midscene/shared/img";
 import {  globalModelConfigManager } from "@midscene/shared/env";
-import { AIActionType, callAIWithObjectResponse } from "@midscene/core/ai-model";
+import { aiActType, callAIWithObjectResponse } from "@midscene/core/ai-model";
 import {
   DefaultAzureCredential,
   getBearerTokenProvider,
@@ -95,7 +95,7 @@ describe("Use Midscene wrapped OpenAI SDK", () => {
           ],
         },
       ],
-      AIActionType.EXTRACT_DATA,
+      aiActType.EXTRACT_DATA,
       globalModelConfigManager.getModelConfig('default')
     );
     console.log(result.content.content);

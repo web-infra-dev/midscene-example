@@ -12,19 +12,19 @@ describe(
     await it('Android settings page demo for scroll', async () => {
       const devices = await getConnectedDevices();
       const agent = await agentFromAdbDevice(devices[0].udid,{
-        aiActionContext:
+        aiActContext:
           'If any location, permission, user agreement, etc. popup, click agree. If login page pops up, close it.',
       });
 
       await agent.launch('com.android.settings/.Settings');
 
 
-      await agent.aiAction('scroll list to bottom');
-      await agent.aiAction('open "More settings"');
-      await agent.aiAction('scroll list to bottom');
-      await agent.aiAction('scroll list to top');
-      await agent.aiAction('swipe down one screen');
-      await agent.aiAction('swipe up one screen');
+      await agent.aiAct('scroll list to bottom');
+      await agent.aiAct('open "More settings"');
+      await agent.aiAct('scroll list to bottom');
+      await agent.aiAct('scroll list to top');
+      await agent.aiAct('swipe down one screen');
+      await agent.aiAct('swipe up one screen');
     });
   },
   360 * 1000,

@@ -15,7 +15,7 @@ describe('Test todo list', () => {
 
   beforeAll(async () => {
     agent = await agentFromWebDriverAgent({
-      aiActionContext:
+      aiActContext:
         'If any location, permission, user agreement, etc. popup, click agree. If login page pops up, close it.',
     });
     await agent.launch(pageUrl);
@@ -25,22 +25,22 @@ describe('Test todo list', () => {
   it(
     'ai todo',
     async () => {
-      await agent.aiAction(
+      await agent.aiAct(
         "type 'Study JS today' in the task box input and press the Enter key",
       );
-      await agent.aiAction(
+      await agent.aiAct(
         "type 'Study Rust tomorrow' in the task box input and press the Enter key",
       );
-      await agent.aiAction(
+      await agent.aiAct(
         "type 'Study AI the day after tomorrow' in the task box input and press the Enter key",
       );
-      await agent.aiAction(
+      await agent.aiAct(
         'move the mouse to the second item in the task list and click the delete button on the right of the second task',
       );
-      await agent.aiAction(
+      await agent.aiAct(
         'click the check button on the left of the second task',
       );
-      await agent.aiAction(
+      await agent.aiAct(
         "click the 'completed' status button below the task list",
       );
 
