@@ -1,13 +1,13 @@
-import { chromium } from "playwright";
-import { PlaywrightAgent } from "@midscene/web/playwright";
-import "dotenv/config";
+import { chromium } from 'playwright';
+import { PlaywrightAgent } from '@midscene/web/playwright';
+import 'dotenv/config';
 
-const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+const sleep = (ms: number | undefined) => new Promise((r) => setTimeout(r, ms));
 Promise.resolve(
   (async () => {
     const browser = await chromium.launch({
       headless: true, // 'true' means we can't see the browser window
-      args: ["--no-sandbox", "--disable-setuid-sandbox"],
+      args: ['--no-sandbox', '--disable-setuid-sandbox'],
     });
 
     const page = await browser.newPage();
@@ -16,7 +16,7 @@ Promise.resolve(
       height: 800,
     });
 
-    await page.goto("https://www.ebay.com");
+    await page.goto('https://www.ebay.com');
     await sleep(5000);
 
     const agent = new PlaywrightAgent(page);

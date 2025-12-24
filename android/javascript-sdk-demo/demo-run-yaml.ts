@@ -1,14 +1,18 @@
-import { AndroidAgent, AndroidDevice, getConnectedDevices } from '@midscene/android';
-import "dotenv/config";
+import {
+  AndroidAgent,
+  AndroidDevice,
+  getConnectedDevices,
+} from '@midscene/android';
+import 'dotenv/config';
 
-const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+const sleep = (ms: number | undefined) => new Promise((r) => setTimeout(r, ms));
 Promise.resolve(
   (async () => {
     const devices = await getConnectedDevices();
     const page = new AndroidDevice(devices[0].udid);
 
     // 👀 init Midscene agent
-    const agent = new AndroidAgent(page,{
+    const agent = new AndroidAgent(page, {
       aiActContext:
         'If any location, permission, user agreement, etc. popup, click agree. If login page pops up, close it.',
     });
@@ -16,7 +20,6 @@ Promise.resolve(
     await page.launch('https://www.ebay.com');
 
     await sleep(5000);
-
 
     // 👀 run YAML with agent
     const { result } = await agent.runYaml(`

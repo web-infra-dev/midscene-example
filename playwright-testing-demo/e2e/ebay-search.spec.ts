@@ -1,7 +1,7 @@
 import { expect } from '@playwright/test';
 import { test } from './fixture';
 
-const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+const sleep = (ms: number | undefined) => new Promise((r) => setTimeout(r, ms));
 
 test.beforeEach(async ({ page }) => {
   page.setViewportSize({ width: 1280, height: 768 });

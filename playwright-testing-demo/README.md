@@ -7,11 +7,14 @@
 create `.env` file
 
 ```shell
-# replace by your gpt-4o api key
-OPENAI_API_KEY="YOUR_TOKEN"
+# Replace with your own API key
+MIDSCENE_MODEL_BASE_URL="https://.../compatible-mode/v1"
+MIDSCENE_MODEL_API_KEY="sk-abcdefghijklmnopqrstuvwxyz"
+MIDSCENE_MODEL_NAME="qwen3-vl-plus"
+MIDSCENE_MODEL_FAMILY="qwen3-vl"
 ```
 
-Refer to this document if your want to use other models like Qwen: https://midscenejs.com/choose-a-model
+Refer to this document if your want to use other models like Qwen: https://midscenejs.com/model-strategy.html
 
 ### Run demo
 
