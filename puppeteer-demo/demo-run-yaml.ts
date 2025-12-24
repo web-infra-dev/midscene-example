@@ -1,24 +1,24 @@
-import puppeteer from "puppeteer";
-import os from "node:os";
-import { PuppeteerAgent } from "@midscene/web/puppeteer";
-import "dotenv/config";
+import puppeteer from 'puppeteer';
+import os from 'node:os';
+import { PuppeteerAgent } from '@midscene/web/puppeteer';
+import 'dotenv/config';
 
-const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+const sleep = (ms: number | undefined) => new Promise((r) => setTimeout(r, ms));
 Promise.resolve(
   (async () => {
     const browser = await puppeteer.launch({
       headless: true, // 'true' means we can't see the browser window
-      args: ["--no-sandbox", "--disable-setuid-sandbox"],
+      args: ['--no-sandbox', '--disable-setuid-sandbox'],
     });
 
     const page = await browser.newPage();
     await page.setViewport({
       width: 1280,
       height: 800,
-      deviceScaleFactor: os.platform() === "darwin" ? 2 : 1, // this is used to avoid flashing on UI Mode when doing screenshot on Mac
+      deviceScaleFactor: os.platform() === 'darwin' ? 2 : 1, // this is used to avoid flashing on UI Mode when doing screenshot on Mac
     });
 
-    await page.goto("https://www.bing.com/shop/");
+    await page.goto('https://www.bing.com/shop/');
     await sleep(5000);
 
     const agent = new PuppeteerAgent(page);

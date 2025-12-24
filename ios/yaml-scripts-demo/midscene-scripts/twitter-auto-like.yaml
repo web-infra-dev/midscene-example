@@ -1,5 +1,3 @@
-# search headphone on ebay, extract the items info into a json file, and assert the shopping cart icon
-
 ios:
 
 tasks:

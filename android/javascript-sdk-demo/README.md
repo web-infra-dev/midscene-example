@@ -12,10 +12,10 @@ create `.env` file
 
 ```shell
 # replace by your gpt-4o api key
-OPENAI_API_KEY="YOUR_TOKEN"
+MIDSCENE_MODEL_API_KEY="YOUR_TOKEN"
 ```
 
-Refer to this document if your want to use other models like Qwen: https://midscenejs.com/choose-a-model
+Refer to this document if your want to use other models like Qwen: https://midscenejs.com/model-strategy.html
 
 ### Run demo
 
