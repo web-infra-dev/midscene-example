@@ -10,6 +10,7 @@ Use this folder to test the connectivity of the LLM Service.
 create `.env` file
 
 ```shell
+# Replace with your own API key
 MIDSCENE_MODEL_BASE_URL="https://.../compatible-mode/v1"
 MIDSCENE_MODEL_API_KEY="sk-abcdefghijklmnopqrstuvwxyz"
 MIDSCENE_MODEL_NAME="qwen3-vl-plus"

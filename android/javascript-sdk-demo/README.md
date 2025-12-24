@@ -11,6 +11,7 @@ If you want to use Android with Vitest, please refer to [android-with-vitest-dem
 create `.env` file
 
 ```shell
+# Replace with your own API key
 MIDSCENE_MODEL_BASE_URL="https://.../compatible-mode/v1"
 MIDSCENE_MODEL_API_KEY="sk-abcdefghijklmnopqrstuvwxyz"
 MIDSCENE_MODEL_NAME="qwen3-vl-plus"

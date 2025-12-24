@@ -10,6 +10,7 @@ This is a demo to show how to use Puppeteer with Vitest to test AI actions and a
 create `.env` file
 
 ```shell
+# Replace with your own API key
 MIDSCENE_MODEL_BASE_URL="https://.../compatible-mode/v1"
 MIDSCENE_MODEL_API_KEY="sk-abcdefghijklmnopqrstuvwxyz"
 MIDSCENE_MODEL_NAME="qwen3-vl-plus"
