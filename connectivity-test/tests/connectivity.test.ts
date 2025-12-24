@@ -29,12 +29,19 @@ vi.setConfig({
 const imagePath = join(__dirname, "some_logo.png");
 const imageBase64 = localImg2Base64(imagePath);
 
-const model = process.env.MIDSCENE_MODEL_NAME || "gpt-4o";
+const model = process.env.MIDSCENE_MODEL_NAME || '';
+const apiKey = process.env.MIDSCENE_MODEL_API_KEY /* recommended */ || process.env.OPENAI_API_KEY;
+const baseURL = process.env.MIDSCENE_MODEL_BASE_URL /* recommended */ || process.env.OPENAI_BASE_URL;
 describe("Use OpenAI SDK directly", () => {
+  beforeAll(() => {
+    expect(model).toBeDefined();
+    expect(apiKey).toBeDefined();
+    expect(baseURL).toBeDefined();
+  });
   it(`basic call with ${model}`, async () => {
     const openai = new OpenAI({
-      apiKey: process.env.OPENAI_API_KEY,
-      baseURL: process.env.OPENAI_BASE_URL,
+      apiKey,
+      baseURL,
     });
     const response = await openai.chat.completions.create({
       model: model,
@@ -46,8 +53,8 @@ describe("Use OpenAI SDK directly", () => {
 
   it(`image input with ${model}`, async () => {
     const openai = new OpenAI({
-      apiKey: process.env.OPENAI_API_KEY,
-      baseURL: process.env.OPENAI_BASE_URL,
+      apiKey,
+      baseURL,
     });
 
     const response = await openai.chat.completions.create({
@@ -103,7 +110,8 @@ describe("Use Midscene wrapped OpenAI SDK", () => {
   });
 });
 
-// remove the ".skip" if you want to test Azure OpenAI Service
+// It's no longer supported in Midscene 1.x
+// remove the ".skip" if you want to test Azure OpenAI Service in Midscene 0.x
 describe.skip("Azure OpenAI Service by ADT Credential", () => {
   it("basic call", async () => {
     // sample code: https://github.com/Azure/azure-sdk-for-js/blob/main/sdk/openai/openai/samples/cookbook/simpleCompletionsPage/app.js
