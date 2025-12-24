@@ -6,10 +6,10 @@ ios:
 tasks:
   - name: search headphones
     flow:
-      - aiAction: open browser and navigate to ebay.com
-      - aiAction: type 'Headphones' in ebay search box, click search button
+      - aiAct: open browser and navigate to ebay.com
+      - aiAct: type 'Headphones' in ebay search box, click search button
       - sleep: 5000
-      - aiAction: scroll down the page for 800px
+      - aiAct: scroll down the page for 800px
 
   - name: extract headphones info
     flow:

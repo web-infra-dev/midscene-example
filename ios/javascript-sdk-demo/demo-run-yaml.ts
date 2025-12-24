@@ -6,7 +6,7 @@ Promise.resolve(
   (async () => {
     // 👀 init Midscene agent
     const agent = await agentFromWebDriverAgent({
-      aiActionContext:
+      aiActContext:
         'If any location, permission, user agreement, etc. popup, click agree. If login page pops up, close it.',
     });
     await agent.launch('https://www.ebay.com');

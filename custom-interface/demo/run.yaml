@@ -8,7 +8,7 @@ config:
   # export: 'MyDeviceClass'
 
 agent:
-  aiActionContext: 'if the user ask you to check the identity, he means tap the "facetime" app icon.'
+  aiActContext: 'if the user ask you to check the identity, he means tap the "facetime" app icon.'
 
 tasks:
   - name: assertion
@@ -22,5 +22,5 @@ tasks:
       
   - name: action
     flow:
-      - aiAction: check the identity, and launch the "1 password" app
+      - aiAct: check the identity, and launch the "1 password" app
       - aiKeyboardPress: Enter
