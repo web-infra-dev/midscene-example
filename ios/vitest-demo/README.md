@@ -11,8 +11,10 @@ This is a demo to show how to use iOS device to do some automation tasks.
 create `.env` file
 
 ```shell
-# replace by your gpt-4o api key
-MIDSCENE_MODEL_API_KEY="YOUR_TOKEN"
+MIDSCENE_MODEL_BASE_URL="https://.../compatible-mode/v1"
+MIDSCENE_MODEL_API_KEY="sk-abcdefghijklmnopqrstuvwxyz"
+MIDSCENE_MODEL_NAME="qwen3-vl-plus"
+MIDSCENE_MODEL_FAMILY="qwen3-vl"
 ```
 
 connect an iOS device
