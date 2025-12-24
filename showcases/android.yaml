@@ -1,0 +1,10 @@
+android:
+
+tasks:
+  - name: search hotel on booking app
+    flow:
+      - aiAct: Open the Booking App, search for a hotel in Tokyo for four adults on Christmas, with a score of 8 or above.
+
+  - name: assert hotel search results
+    flow:
+      - aiAssert: There are hotel search results with a score of 8 or above on the page

@@ -1,0 +1,10 @@
+ios:
+
+tasks:
+  - name: like tweets
+    flow:
+      - aiAct: Open Twitter and auto-like the first tweet by @midscene_ai
+
+  - name: assert @midscene_ai account
+    flow:
+      - aiAssert: There is a @midscene_ai account on the page

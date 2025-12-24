@@ -1,7 +1,7 @@
 import { agentFromWebDriverAgent } from '@midscene/ios';
-import "dotenv/config";
+import 'dotenv/config';
 
-const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+const sleep = (ms: number | undefined) => new Promise((r) => setTimeout(r, ms));
 Promise.resolve(
   (async () => {
     // 👀 init Midscene agent
@@ -12,7 +12,6 @@ Promise.resolve(
     await agent.launch('https://www.ebay.com');
 
     await sleep(5000);
-
 
     // 👀 run YAML with agent
     const { result } = await agent.runYaml(`

@@ -1,0 +1,11 @@
+web:
+  url: https://github.com
+
+tasks:
+  - name: sign up for Github
+    flow:
+      - aiAct: Sign up for Github, you need to pass the form validation, but don't actually click. 
+
+  - name: assert Github sign up page
+    flow:
+      - aiAssert: There is a Github sign up page on the page with all required fields.

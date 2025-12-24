@@ -1,0 +1,16 @@
+{
+  "name": "showcases",
+  "private": true,
+  "version": "1.0.0",
+  "description": "> quick start",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "midscene"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@midscene/cli": "latest"
+  }
+}
