@@ -33,13 +33,9 @@ const imagePath = join(__dirname, 'some_logo.png');
 const imageBase64 = localImg2Base64(imagePath);
 
 const model = process.env.MIDSCENE_MODEL_NAME || '';
-const apiKey =
-  process.env.MIDSCENE_MODEL_API_KEY /* recommended */ ||
-  process.env.OPENAI_API_KEY;
-const baseURL =
-  process.env.MIDSCENE_MODEL_BASE_URL /* recommended */ ||
-  process.env.OPENAI_BASE_URL;
-describe('Use OpenAI SDK directly', () => {
+const apiKey = process.env.MIDSCENE_MODEL_API_KEY /* recommended */ || process.env.OPENAI_API_KEY;
+const baseURL = process.env.MIDSCENE_MODEL_BASE_URL /* recommended */ || process.env.OPENAI_BASE_URL;
+describe("Use OpenAI SDK directly", () => {
   beforeAll(() => {
     expect(model).toBeDefined();
     expect(apiKey).toBeDefined();
@@ -119,8 +115,8 @@ describe('Use Midscene wrapped OpenAI SDK', () => {
 
 // It's no longer supported in Midscene 1.x
 // remove the ".skip" if you want to test Azure OpenAI Service in Midscene 0.x
-describe.skip('Azure OpenAI Service by ADT Credential', () => {
-  it('basic call', async () => {
+describe.skip("Azure OpenAI Service by ADT Credential", () => {
+  it("basic call", async () => {
     // sample code: https://github.com/Azure/azure-sdk-for-js/blob/main/sdk/openai/openai/samples/cookbook/simpleCompletionsPage/app.js
     const scope = process.env.MIDSCENE_AZURE_OPENAI_SCOPE;
     if (typeof scope !== 'string') {
