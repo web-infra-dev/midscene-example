@@ -12,7 +12,7 @@
   },
   "devDependencies": {
     "@midscene/web": "latest",
-    "@playwright/test": "1.52.0",
+    "@playwright/test": "^1.54.1",
     "@types/jest": "~29.5.14",
     "@types/node": "~22.7.9",
     "cross-env": "7.0.3",
