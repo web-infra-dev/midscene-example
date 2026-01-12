@@ -1,0 +1,23 @@
+# Basic screen information query using PC desktop automation
+# This demonstrates querying screen information without opening a browser
+
+computer: {}
+
+tasks:
+  - name: query screen information
+    flow:
+      - aiQuery: >
+          {width: number, height: number}, get screen resolution
+        name: screenResolution
+      - aiQuery: >
+          {hasDesktop: boolean, description: string}, describe what is visible on screen
+        name: screenContent
+      - aiAssert: The screen has visible content
+
+  - name: basic mouse operations
+    flow:
+      - aiAct: move mouse to center of screen
+      - sleep: 500
+      - aiAct: move mouse to top-left corner
+      - sleep: 500
+      - aiAct: move mouse to bottom-right corner

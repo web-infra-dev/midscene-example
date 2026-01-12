@@ -1,0 +1,40 @@
+# Todo app automation using PC desktop control
+# This demonstrates controlling a todo web application through desktop automation
+
+computer: {}
+
+tasks:
+  - name: open browser and navigate to todo app
+    flow:
+      - aiAct: press Cmd+Space
+      - sleep: 500
+      - aiAct: type "Safari" and press Enter
+      - sleep: 2000
+      - aiAct: press Cmd+L to focus address bar
+      - sleep: 300
+      - aiAct: type "https://todomvc.com/examples/react/dist/"
+      - aiAct: press Enter
+      - sleep: 3000
+
+  - name: add tasks
+    flow:
+      - aiAssert: The todo input box is visible
+      - aiAct: Enter "Learn JS today" in the task box, then press Enter to create
+      - aiAct: Enter "Learn Rust tomorrow" in the task box, then press Enter to create
+      - aiAct: Enter "Learning AI the day after tomorrow" in the task box, then press Enter to create
+
+  - name: verify and interact with tasks
+    flow:
+      - aiQuery: >
+          string[], tasks in the list
+        name: taskList
+      - aiAct: Move your mouse over the second item in the task list
+      - aiAct: Click the delete button to the right of the second task
+      - aiAct: Click the checkbox next to the second task
+
+  - name: filter completed tasks
+    flow:
+      - aiAct: Click the "completed" Status button below the task list
+      - aiQuery: >
+          string[], Extract all task names from the list
+        name: completedTasks

@@ -1,0 +1,17 @@
+{
+    "name": "computer-vitest-demo",
+    "private": true,
+    "version": "1.0.0",
+    "description": "Demo for testing PC desktop automation with Vitest",
+    "type": "module",
+    "scripts": {
+        "test": "vitest ./tests/"
+    },
+    "author": "",
+    "license": "MIT",
+    "devDependencies": {
+        "@midscene/computer": "beta",
+        "dotenv": "^16.4.5",
+        "vitest": "^2.1.8"
+    }
+}
