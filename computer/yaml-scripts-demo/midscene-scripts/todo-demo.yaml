@@ -3,6 +3,9 @@
 
 computer: {}
 
+agent:
+  aiActContext: If any popup appears, click agree. If login page appears, skip it.
+
 tasks:
   - name: open browser and navigate to todo app
     flow:
