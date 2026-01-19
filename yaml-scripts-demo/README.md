@@ -11,6 +11,7 @@ MIDSCENE_MODEL_BASE_URL="https://.../compatible-mode/v1"
 MIDSCENE_MODEL_API_KEY="sk-abcdefghijklmnopqrstuvwxyz"
 MIDSCENE_MODEL_NAME="qwen3-vl-plus"
 MIDSCENE_MODEL_FAMILY="qwen3-vl"
+```
 
 Refer to this document if your want to use other models like Qwen: https://midscenejs.com/model-strategy.html
 
