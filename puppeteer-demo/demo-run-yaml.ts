@@ -15,10 +15,10 @@ Promise.resolve(
     await page.setViewport({
       width: 1280,
       height: 800,
-      deviceScaleFactor: os.platform() === 'darwin' ? 2 : 1, // this is used to avoid flashing on UI Mode when doing screenshot on Mac
+      deviceScaleFactor: 0
     });
 
-    await page.goto('https://www.bing.com/shop/');
+    await page.goto('https://www.bing.com/');
     await sleep(5000);
 
     const agent = new PuppeteerAgent(page);
@@ -28,7 +28,7 @@ Promise.resolve(
 tasks:
   - name: search
     flow:
-      - ai: input 'Headphones' in search box, click search button
+      - ai: input 'Headphones Price' in search box, click search button
       - sleep: 3000
 
   - name: query
@@ -38,7 +38,6 @@ tasks:
       - aiNumber: "What is the price of the first headphone?"
       - aiBoolean: "Is the price of the first headphone more than 1000?"
       - aiString: "What is the name of the first headphone?"
-      - aiLocate: "What is the location of the first headphone?"
 `);
 
     console.log(result);

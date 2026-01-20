@@ -23,8 +23,9 @@ Refer to this document if your want to use other models like Qwen: https://midsc
 ### Run demo
 
 ```bash
-npm install 
-
+npm install
+# Puppeteer needs download a compatible Chrome
+npx puppeteer browsers install chrome
 # run demo.ts
 npx tsx demo.ts
 

@@ -1,5 +1,4 @@
 import puppeteer from 'puppeteer';
-import os from 'node:os';
 import { PuppeteerAgent } from '@midscene/web/puppeteer';
 import 'dotenv/config'; // read environment variables from .env file
 
@@ -38,7 +37,7 @@ Promise.resolve(
     await page.setViewport({
       width: 1280,
       height: 768,
-      deviceScaleFactor: os.platform() === 'darwin' ? 2 : 1,
+      deviceScaleFactor: 0,
     });
 
     console.log('🌐 Navigating to Bing Shopping...');
