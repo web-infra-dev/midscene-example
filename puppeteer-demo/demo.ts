@@ -6,7 +6,7 @@ const sleep = (ms: number | undefined) => new Promise((r) => setTimeout(r, ms));
 Promise.resolve(
   (async () => {
     const browser = await puppeteer.launch({
-      headless: false, // 'false' means we can see the browser window
+      headless: !!process.env.CI, // 'false' means we can see the browser window, the CI environment only supports headless mode.
       args: ['--no-sandbox', '--disable-setuid-sandbox'],
     });
 
