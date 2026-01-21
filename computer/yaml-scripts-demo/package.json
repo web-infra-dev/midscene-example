@@ -10,6 +10,6 @@
     "author": "",
     "license": "MIT",
     "devDependencies": {
-        "@midscene/cli": "beta"
+        "@midscene/cli": "latest"
     }
 }
