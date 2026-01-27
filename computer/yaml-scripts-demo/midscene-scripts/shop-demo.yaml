@@ -1,0 +1,37 @@
+# Login to sauce demo website using PC desktop automation
+# This demonstrates controlling a web browser through desktop automation
+
+computer: {}
+
+agent:
+  aiActContext: If any popup appears, click agree. If login page appears, skip it.
+
+tasks:
+  - name: open browser and navigate
+    flow:
+      - aiAct: press Cmd+Space
+      - sleep: 500
+      - aiAct: type "Safari" and press Enter
+      - sleep: 2000
+      - aiAct: press Cmd+L to focus address bar
+      - sleep: 300
+      - aiAct: type "https://www.saucedemo.com/"
+      - aiAct: press Enter
+      - sleep: 3000
+
+  - name: login to sauce demo
+    flow:
+      - aiAssert: The login form is visible
+      - aiAct: type "standard_user" in user name input
+      - aiAct: type "secret_sauce" in password input
+      - aiAct: click Login Button
+      - sleep: 2000
+
+  - name: verify login and add to cart
+    flow:
+      - aiAssert: the page title is "Swag Labs"
+      - aiAct: click "add to cart" for black t-shirt products
+      - sleep: 500
+      - aiAct: click right top cart icon
+      - sleep: 1000
+      - aiAssert: The cart page is displayed

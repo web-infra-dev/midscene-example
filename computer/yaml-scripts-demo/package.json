@@ -1,0 +1,15 @@
+{
+    "name": "computer-yaml-scripts-demo",
+    "private": true,
+    "version": "1.0.0",
+    "description": "Demo for PC desktop automation using YAML scripts",
+    "type": "module",
+    "scripts": {
+        "test": "midscene ./midscene-scripts"
+    },
+    "author": "",
+    "license": "MIT",
+    "devDependencies": {
+        "@midscene/cli": "latest"
+    }
+}
