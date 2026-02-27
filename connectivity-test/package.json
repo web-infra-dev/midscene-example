@@ -5,7 +5,10 @@
     "main": "index.js",
     "type": "module",
     "scripts": {
-        "test": "vitest run ./tests/connectivity.test.ts"
+        "test": "node -e \"const major = Number(process.versions.node.split('.')[0]); if (major < 18) { console.error('\\x1b[31m❌ Node.js version 18 or higher is required to run tests. Current: ' + process.version + '\\x1b[0m'); process.exit(1); }\" && vitest run ./tests/connectivity.test.ts"
+    },
+    "engines": {
+        "node": ">=18"
     },
     "author": "",
     "license": "MIT",
