@@ -14,10 +14,15 @@ on:
         description: 'The branch to checkout'
         required: false
         default: 'main'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'computer/electron-demo/**'
+      - '.github/workflows/computer-electron-demo.yaml'
   push:
     branches:
       - main
-      - feat/improve-linux-display-quality
     paths:
       - 'computer/electron-demo/**'
       - '.github/workflows/computer-electron-demo.yaml'
