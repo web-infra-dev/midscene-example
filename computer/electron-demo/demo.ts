@@ -81,7 +81,6 @@ function launchApp(
     '--no-sandbox',
     '--disable-gpu',
     '--disable-dev-shm-usage',
-    '--start-maximized',
   ];
   console.log(`Launching: ${binaryPath} ${args.join(' ')}`);
 
@@ -124,6 +123,19 @@ function launchApp(
 
   // Give Obsidian time to start up
   await sleep(10000);
+
+  // Maximize the Obsidian window using xdotool (--start-maximized doesn't work with fluxbox)
+  if (process.platform === 'linux') {
+    try {
+      execSync(
+        'xdotool search --name Obsidian windowactivate --sync windowsize 100% 100% windowmove 0 0',
+      );
+      console.log('Window maximized via xdotool');
+      await sleep(1000);
+    } catch (e) {
+      console.warn('xdotool maximize failed, continuing anyway:', e);
+    }
+  }
 
   try {
     // Wait for the main UI to appear
