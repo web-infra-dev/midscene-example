@@ -124,19 +124,6 @@ function launchApp(
   // Give Obsidian time to start up
   await sleep(10000);
 
-  // Maximize the Obsidian window using xdotool (--start-maximized doesn't work with fluxbox)
-  if (process.platform === 'linux') {
-    try {
-      execSync(
-        'xdotool search --name Obsidian windowactivate --sync windowsize 100% 100% windowmove 0 0',
-      );
-      console.log('Window maximized via xdotool');
-      await sleep(1000);
-    } catch (e) {
-      console.warn('xdotool maximize failed, continuing anyway:', e);
-    }
-  }
-
   try {
     // Wait for the main UI to appear
     await agent.aiWaitFor(
@@ -144,6 +131,12 @@ function launchApp(
       { timeoutMs: 30000 },
     );
     console.log('Obsidian UI is ready');
+
+    // Maximize the window by double-clicking the title bar
+    await agent.aiAct(
+      'double-click on the title bar of the Obsidian window to maximize it',
+    );
+    await sleep(1000);
 
     // Dismiss any welcome dialogs / popups
     await agent.aiAct(

@@ -71,7 +71,6 @@ jobs:
             libxss1 \
             xdg-utils \
             fluxbox \
-            xdotool \
             adwaita-icon-theme \
             gnome-themes-extra \
             fonts-noto-cjk \
