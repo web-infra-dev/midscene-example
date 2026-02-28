@@ -132,9 +132,9 @@ function launchApp(
     );
     console.log('Obsidian UI is ready');
 
-    // Maximize the window by double-clicking the title bar
+    // Maximize the window by clicking the maximize button (square icon) in the top-right corner of the window title bar
     await agent.aiAct(
-      'double-click on the title bar of the Obsidian window to maximize it',
+      'click the maximize button (the square-shaped icon) in the top-right corner of the window, next to the close (X) button',
     );
     await sleep(1000);
 
