@@ -14,6 +14,12 @@ on:
         description: 'The branch to checkout'
         required: false
         default: 'main'
+  push:
+    branches:
+      - main
+    paths:
+      - 'computer/electron-demo/**'
+      - '.github/workflows/computer-electron-demo.yaml'
 
 env:
   TAG: ${{ github.event.inputs.tag || 'beta' }}
