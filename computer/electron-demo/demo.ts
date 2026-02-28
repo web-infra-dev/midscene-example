@@ -108,12 +108,19 @@ function launchApp(
 
   // --- Start window manager for proper window decorations on headless Linux ---
   if (process.platform === 'linux' && process.env.DISPLAY) {
+    // Configure fluxbox to auto-maximize all windows
+    const fluxboxDir = join(homedir(), '.fluxbox');
+    mkdirSync(fluxboxDir, { recursive: true });
+    writeFileSync(
+      join(fluxboxDir, 'apps'),
+      '[app] (name=.*)\n  [Maximized] {yes}\n[end]\n',
+    );
     const fluxbox = spawn('fluxbox', [], {
       detached: true,
       stdio: 'ignore',
     });
     fluxbox.unref();
-    console.log('Fluxbox window manager started');
+    console.log('Fluxbox window manager started (auto-maximize enabled)');
     await sleep(1000);
   }
 
@@ -131,12 +138,6 @@ function launchApp(
       { timeoutMs: 30000 },
     );
     console.log('Obsidian UI is ready');
-
-    // Maximize the window by clicking the maximize button (square icon) in the top-right corner of the window title bar
-    await agent.aiAct(
-      'click the maximize button (the square-shaped icon) in the top-right corner of the window, next to the close (X) button',
-    );
-    await sleep(1000);
 
     // Dismiss any welcome dialogs / popups
     await agent.aiAct(
