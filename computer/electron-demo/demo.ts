@@ -149,6 +149,55 @@ function launchApp(
       console.warn('Content verification: text may not match expected value');
     }
 
+    // --- Install community plugin: LifeOS ---
+    console.log('Opening Obsidian settings...');
+    await agent.aiAct('press Ctrl+Comma to open Settings');
+    await sleep(2000);
+
+    await agent.aiWaitFor('Settings dialog is visible', { timeoutMs: 15000 });
+
+    // Navigate to Community plugins
+    await agent.aiAct(
+      'click "Community plugins" in the left sidebar of the settings dialog',
+    );
+    await sleep(1500);
+
+    // Turn on community plugins if not enabled
+    await agent.aiAct(
+      'If there is a "Turn on community plugins" button, click it. ' +
+        'If a confirmation dialog appears, click "Turn on" to confirm.',
+    );
+    await sleep(1500);
+
+    // Open the plugin browser
+    await agent.aiAct('click "Browse" button to open the community plugin browser');
+    await sleep(3000);
+
+    await agent.aiWaitFor(
+      'Community plugin browser / marketplace is visible with a search box',
+      { timeoutMs: 20000 },
+    );
+    console.log('Community plugin browser is open');
+
+    // Search for LifeOS
+    await agent.aiAct('type "lifeos" in the search box');
+    await sleep(3000);
+
+    // Click the LifeOS plugin from results
+    await agent.aiAct('click on the "LifeOS" plugin in the search results');
+    await sleep(2000);
+
+    // Install the plugin
+    await agent.aiAct('click the "Install" button');
+    await sleep(5000);
+
+    // Verify installation
+    await agent.aiWaitFor(
+      'The "Install" button has changed to "Enable" or "Installed", indicating the plugin was installed',
+      { timeoutMs: 30000 },
+    );
+    console.log('LifeOS plugin installed successfully!');
+
     console.log('Electron demo completed successfully!');
   } finally {
     if (child.pid) {
