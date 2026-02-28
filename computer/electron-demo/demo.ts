@@ -81,6 +81,7 @@ function launchApp(
     '--no-sandbox',
     '--disable-gpu',
     '--disable-dev-shm-usage',
+    '--start-maximized',
   ];
   console.log(`Launching: ${binaryPath} ${args.join(' ')}`);
 
