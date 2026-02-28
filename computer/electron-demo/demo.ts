@@ -94,22 +94,23 @@ function launchApp(
 }
 
 (async () => {
-  // --- Prepare & launch Obsidian ---
+  // --- Prepare app binary & vault config ---
   const binaryPath = findOrPrepareApp();
   preseedVault(VAULT_DIR);
 
-  const child = launchApp(binaryPath, VAULT_DIR);
-  console.log(`Obsidian launched (pid: ${child.pid})`);
-
-  // Give Obsidian time to start up
-  await sleep(8000);
-
-  // --- Connect Midscene agent ---
+  // --- Connect Midscene agent FIRST (this starts Xvfb on headless Linux) ---
   const agent = await agentFromComputer({
     aiActionContext:
       'You are interacting with Obsidian, a note-taking desktop application. ' +
       'If any dialog or popup appears, dismiss it by clicking the close button or pressing Escape.',
   });
+
+  // --- Launch Obsidian AFTER Xvfb is ready (DISPLAY is now set) ---
+  const child = launchApp(binaryPath, VAULT_DIR);
+  console.log(`Obsidian launched (pid: ${child.pid})`);
+
+  // Give Obsidian time to start up
+  await sleep(10000);
 
   try {
     // Wait for the main UI to appear
