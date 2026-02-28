@@ -81,8 +81,7 @@ jobs:
           npm i pnpm -g
           pnpm i @midscene/computer@${{ env.TAG }} --save-dev
           pnpm install
-          pnpm run test
-        continue-on-error: true
+          pnpm run test 2>&1 | tee /tmp/demo-output.log || true
 
       - name: Upload report
         if: always()
@@ -92,6 +91,5 @@ jobs:
           name: Electron Demo Report
           path: computer/electron-demo/midscene_run/report
 
-      - name: Check if demo failed
-        if: steps.run-demo.outcome == 'failure'
-        run: exit 1
+      - name: Check if demo succeeded
+        run: grep -q "Electron demo completed successfully" /tmp/demo-output.log

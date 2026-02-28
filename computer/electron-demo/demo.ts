@@ -151,7 +151,6 @@ function launchApp(
 
     console.log('Electron demo completed successfully!');
   } finally {
-    // Cleanup: kill the Obsidian process tree and force exit
     if (child.pid) {
       try {
         process.kill(-child.pid, 'SIGKILL');
@@ -159,6 +158,7 @@ function launchApp(
         // Process may have already exited
       }
     }
-    process.exit(0);
+    // Force immediate exit without triggering Xlib cleanup (which causes XIO fatal error)
+    setTimeout(() => process.kill(process.pid, 'SIGKILL'), 500);
   }
 })();
