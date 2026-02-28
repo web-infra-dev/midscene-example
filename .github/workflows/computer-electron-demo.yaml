@@ -1,0 +1,95 @@
+name: Computer Electron Demo
+
+permissions:
+  contents: read
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'The tag name of @midscene/computer'
+        required: true
+        default: 'beta'
+      branch:
+        description: 'The branch to checkout'
+        required: false
+        default: 'main'
+  push:
+    branches:
+      - main
+      - feat/computer-electron-demo
+    paths:
+      - 'computer/electron-demo/**'
+      - '.github/workflows/computer-electron-demo.yaml'
+
+env:
+  TAG: ${{ github.event.inputs.tag || 'beta' }}
+
+jobs:
+  electron-demo:
+    runs-on: ubuntu-22.04
+    env:
+      OPENAI_BASE_URL: ${{ secrets.QWEN_OPENAI_BASE_URL }}
+      OPENAI_API_KEY: ${{ secrets.QWEN_OPENAI_API_KEY }}
+      MIDSCENE_MODEL_NAME: 'qwen-vl-max-latest'
+      MIDSCENE_USE_QWEN_VL: 1
+      MIDSCENE_COMPUTER_HEADLESS_LINUX: 'true'
+      DEBUG: 'midscene:ai:profile:*'
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.branch || github.ref }}
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            xvfb \
+            x11-xserver-utils \
+            imagemagick \
+            libxtst6 \
+            libxinerama1 \
+            libx11-6 \
+            libxkbcommon-x11-0 \
+            libpng16-16 \
+            libnss3 \
+            libatk-bridge2.0-0 \
+            libdrm2 \
+            libgbm1 \
+            libasound2 \
+            libgtk-3-0 \
+            libnotify4 \
+            libsecret-1-0 \
+            libxss1 \
+            xdg-utils
+
+      - name: Download Obsidian AppImage
+        working-directory: computer/electron-demo
+        run: |
+          OBSIDIAN_VERSION="1.8.9"
+          OBSIDIAN_URL="https://github.com/obsidianmd/obsidian-releases/releases/download/v${OBSIDIAN_VERSION}/Obsidian-${OBSIDIAN_VERSION}.AppImage"
+          echo "Downloading Obsidian ${OBSIDIAN_VERSION}..."
+          wget -q "${OBSIDIAN_URL}" -O "Obsidian-${OBSIDIAN_VERSION}.AppImage"
+          chmod +x "Obsidian-${OBSIDIAN_VERSION}.AppImage"
+
+      - name: Install dependencies and run demo
+        id: run-demo
+        working-directory: computer/electron-demo
+        run: |
+          npm i pnpm -g
+          pnpm i @midscene/computer@${{ env.TAG }} --save-dev
+          pnpm install
+          pnpm run test 2>&1 | tee /tmp/demo-output.log || true
+
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          if-no-files-found: ignore
+          name: Electron Demo Report
+          path: computer/electron-demo/midscene_run/report
+
+      - name: Check if demo succeeded
+        run: grep -q "Electron demo completed successfully" /tmp/demo-output.log
