@@ -1,0 +1,6 @@
+node_modules
+.env
+midscene_run
+obsidian-vault/
+*.AppImage
+squashfs-root/
