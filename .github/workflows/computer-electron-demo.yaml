@@ -17,6 +17,7 @@ on:
   push:
     branches:
       - main
+      - feat/computer-electron-demo
     paths:
       - 'computer/electron-demo/**'
       - '.github/workflows/computer-electron-demo.yaml'
@@ -39,7 +40,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.inputs.branch || 'main' }}
+          ref: ${{ github.event.inputs.branch || github.ref }}
 
       - name: Install system dependencies
         run: |
