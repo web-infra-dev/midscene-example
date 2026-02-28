@@ -17,7 +17,6 @@ on:
   push:
     branches:
       - main
-      - feat/computer-electron-demo
     paths:
       - 'computer/electron-demo/**'
       - '.github/workflows/computer-electron-demo.yaml'
@@ -63,7 +62,12 @@ jobs:
             libnotify4 \
             libsecret-1-0 \
             libxss1 \
-            xdg-utils
+            xdg-utils \
+            fluxbox \
+            adwaita-icon-theme \
+            gnome-themes-extra \
+            fonts-noto-cjk \
+            dbus-x11
 
       - name: Download Obsidian AppImage
         working-directory: computer/electron-demo

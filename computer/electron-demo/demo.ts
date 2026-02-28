@@ -103,7 +103,19 @@ function launchApp(
     aiActionContext:
       'You are interacting with Obsidian, a note-taking desktop application. ' +
       'If any dialog or popup appears, dismiss it by clicking the close button or pressing Escape.',
+    xvfbResolution: '2560x1440x24',
   });
+
+  // --- Start window manager for proper window decorations on headless Linux ---
+  if (process.platform === 'linux' && process.env.DISPLAY) {
+    const fluxbox = spawn('fluxbox', [], {
+      detached: true,
+      stdio: 'ignore',
+    });
+    fluxbox.unref();
+    console.log('Fluxbox window manager started');
+    await sleep(1000);
+  }
 
   // --- Launch Obsidian AFTER Xvfb is ready (DISPLAY is now set) ---
   const child = launchApp(binaryPath, VAULT_DIR);
