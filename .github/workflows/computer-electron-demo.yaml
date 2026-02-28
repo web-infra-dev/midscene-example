@@ -39,6 +39,7 @@ jobs:
       MIDSCENE_MODEL_NAME: 'qwen-vl-max-latest'
       MIDSCENE_USE_QWEN_VL: 1
       MIDSCENE_COMPUTER_HEADLESS_LINUX: 'true'
+      MIDSCENE_REPLANNING_CYCLE_LIMIT: '40'
       DEBUG: 'midscene:ai:profile:*'
 
     steps:
