@@ -17,6 +17,7 @@ on:
   push:
     branches:
       - main
+      - feat/improve-linux-display-quality
     paths:
       - 'computer/electron-demo/**'
       - '.github/workflows/computer-electron-demo.yaml'
