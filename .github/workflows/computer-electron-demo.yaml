@@ -14,10 +14,15 @@ on:
         description: 'The branch to checkout'
         required: false
         default: 'main'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'computer/electron-demo/**'
+      - '.github/workflows/computer-electron-demo.yaml'
   push:
     branches:
       - main
-      - feat/computer-electron-demo
     paths:
       - 'computer/electron-demo/**'
       - '.github/workflows/computer-electron-demo.yaml'
@@ -34,6 +39,7 @@ jobs:
       MIDSCENE_MODEL_NAME: 'qwen-vl-max-latest'
       MIDSCENE_USE_QWEN_VL: 1
       MIDSCENE_COMPUTER_HEADLESS_LINUX: 'true'
+      MIDSCENE_REPLANNING_CYCLE_LIMIT: '40'
       DEBUG: 'midscene:ai:profile:*'
 
     steps:
@@ -63,7 +69,12 @@ jobs:
             libnotify4 \
             libsecret-1-0 \
             libxss1 \
-            xdg-utils
+            xdg-utils \
+            fluxbox \
+            adwaita-icon-theme \
+            gnome-themes-extra \
+            fonts-noto-cjk \
+            dbus-x11
 
       - name: Download Obsidian AppImage
         working-directory: computer/electron-demo

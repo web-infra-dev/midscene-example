@@ -103,7 +103,26 @@ function launchApp(
     aiActionContext:
       'You are interacting with Obsidian, a note-taking desktop application. ' +
       'If any dialog or popup appears, dismiss it by clicking the close button or pressing Escape.',
+    xvfbResolution: '2560x1440x24',
   });
+
+  // --- Start window manager for proper window decorations on headless Linux ---
+  if (process.platform === 'linux' && process.env.DISPLAY) {
+    // Configure fluxbox to auto-maximize all windows
+    const fluxboxDir = join(homedir(), '.fluxbox');
+    mkdirSync(fluxboxDir, { recursive: true });
+    writeFileSync(
+      join(fluxboxDir, 'apps'),
+      '[app] (name=.*)\n  [Maximized] {yes}\n[end]\n',
+    );
+    const fluxbox = spawn('fluxbox', [], {
+      detached: true,
+      stdio: 'ignore',
+    });
+    fluxbox.unref();
+    console.log('Fluxbox window manager started (auto-maximize enabled)');
+    await sleep(1000);
+  }
 
   // --- Launch Obsidian AFTER Xvfb is ready (DISPLAY is now set) ---
   const child = launchApp(binaryPath, VAULT_DIR);
@@ -152,35 +171,54 @@ function launchApp(
     // --- Install community plugin: LifeOS ---
     console.log('Opening Obsidian settings...');
     await agent.aiAct('press Ctrl+Comma to open Settings');
-    await sleep(2000);
-
-    await agent.aiWaitFor('Settings dialog is visible', { timeoutMs: 15000 });
-
-    // Navigate to Community plugins
-    await agent.aiAct(
-      'click "Community plugins" in the left sidebar of the settings dialog',
-    );
-    await sleep(1500);
-
-    // Turn on community plugins if not enabled
-    await agent.aiAct(
-      'If there is a "Turn on community plugins" button, click it. ' +
-        'If a confirmation dialog appears, click "Turn on" to confirm.',
-    );
-    await sleep(1500);
-
-    // Open the plugin browser
-    await agent.aiAct('click "Browse" button to open the community plugin browser');
     await sleep(3000);
 
     await agent.aiWaitFor(
-      'Community plugin browser / marketplace is visible with a search box',
+      'A Settings dialog/panel is visible with a left sidebar containing menu items',
+      { timeoutMs: 15000 },
+    );
+    console.log('Settings dialog is open');
+
+    // Navigate to Community plugins
+    await agent.aiAct(
+      'In the Settings dialog, click "Community plugins" in the left sidebar',
+    );
+    await sleep(2000);
+
+    await agent.aiWaitFor(
+      'The Community plugins settings page is visible',
+      { timeoutMs: 10000 },
+    );
+    console.log('Community plugins page is visible');
+
+    // Turn on community plugins if not enabled
+    await agent.aiAct(
+      'If there is a "Turn on community plugins" button, click it',
+    );
+    await sleep(2000);
+
+    // Handle confirmation dialog separately
+    await agent.aiAct(
+      'If a confirmation dialog is visible asking to turn on community plugins, click the "Turn on" button to confirm. Otherwise do nothing.',
+    );
+    await sleep(2000);
+
+    // Open the plugin browser
+    await agent.aiWaitFor(
+      'A "Browse" button is visible on the Community plugins page',
+      { timeoutMs: 10000 },
+    );
+    await agent.aiAct('click the "Browse" button');
+    await sleep(3000);
+
+    await agent.aiWaitFor(
+      'Community plugin browser is visible with a search box',
       { timeoutMs: 20000 },
     );
     console.log('Community plugin browser is open');
 
     // Search for LifeOS
-    await agent.aiAct('type "lifeos" in the search box');
+    await agent.aiAct('click the search box and type "lifeos"');
     await sleep(3000);
 
     // Click the LifeOS plugin from results
