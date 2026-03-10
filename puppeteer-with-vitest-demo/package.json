@@ -5,14 +5,20 @@
     "main": "index.js",
     "type": "module",
     "scripts": {
-        "test": "vitest ./tests/"
+        "test": "vitest run",
+        "test:web": "vitest run e2e/web/"
     },
     "author": "",
     "license": "MIT",
-    "devDependencies": {
+    "dependencies": {
+        "@midscene/core": "latest",
         "@midscene/web": "latest",
+        "playwright": "^1.56.1",
+        "@playwright/test": "^1.56.1"
+    },
+    "devDependencies": {
         "dotenv": "^16.4.5",
-        "puppeteer": "^24.0.0",
-        "vitest": "^2.1.8"
+        "typescript": "^5.7.0",
+        "vitest": "3.0.5"
     }
 }
