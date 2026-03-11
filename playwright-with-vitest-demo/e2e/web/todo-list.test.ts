@@ -1,32 +1,14 @@
-import { describe, it, expect, vi, beforeAll } from 'vitest';
-import puppeteer from 'puppeteer';
-import { PuppeteerAgent } from '@midscene/web/puppeteer';
-import 'dotenv/config'; // read environment variables from .env file
-
-vi.setConfig({
-  testTimeout: 240 * 1000,
-});
+import { describe, it, expect } from 'vitest';
+import { WebTest } from '../../src/context';
 
 const pageUrl = 'https://todomvc.com/examples/react/dist/';
+
 describe('Test todo list', () => {
-  let agent: PuppeteerAgent;
-
-  beforeAll(async () => {
-    const browser = await puppeteer.launch({
-      headless: true,
-      args: ['--no-sandbox', '--disable-setuid-sandbox'],
-    });
-    const page = await browser.newPage();
-    await page.goto(pageUrl);
-    await page.waitForNetworkIdle();
-    agent = new PuppeteerAgent(page);
-
-    return () => {
-      browser.close();
-    };
-  });
+  const ctx = WebTest.setup(pageUrl);
 
   it('ai todo', async () => {
+    const { agent } = ctx;
+
     await agent.aiAct(
       "type 'Study JS today' in the task box input and press the Enter key"
     );
