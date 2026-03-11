@@ -1,5 +1,5 @@
 {
-    "name": "puppeteer-with-vitest-demo",
+    "name": "playwright-with-vitest-demo",
     "private": true,
     "version": "1.0.0",
     "main": "index.js",
