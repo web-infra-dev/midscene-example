@@ -1,6 +1,8 @@
 android:
   # launch: https://www.ebay.com
   deviceId: s4ey59ytbitot4yp
+  # Use 'back-first' to avoid ESCAPE key side-effects in WebView/H5 pages
+  keyboardDismissStrategy: back-first
 
 tasks:
   - name: travel

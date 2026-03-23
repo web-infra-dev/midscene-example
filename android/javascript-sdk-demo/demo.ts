@@ -9,7 +9,11 @@ const sleep = (ms: number | undefined) => new Promise((r) => setTimeout(r, ms));
 Promise.resolve(
   (async () => {
     const devices = await getConnectedDevices();
-    const page = new AndroidDevice(devices[0].udid);
+    const page = new AndroidDevice(devices[0].udid, {
+      // 👀 Use 'back-first' to avoid ESCAPE key side-effects in WebView/H5 pages
+      // The default 'esc-first' may close popups or clear input fields in WebView
+      keyboardDismissStrategy: 'back-first',
+    });
 
     // 👀 init Midscene agent
     const agent = new AndroidAgent(page, {
