@@ -20,7 +20,7 @@ describe('Test todo list', () => {
   beforeAll(async () => {
     const devices = await getConnectedDevices();
     const page = new AndroidDevice(devices[0].udid, {
-      // Use 'back-first' to avoid ESCAPE key side-effects in WebView/H5 pages
+      // Use 'back-first' to avoid ESCAPE key side-effects in WebView / Mobile web pages
       keyboardDismissStrategy: 'back-first',
     });
     agent = new AndroidAgent(page, {
