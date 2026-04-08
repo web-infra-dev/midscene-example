@@ -10,9 +10,9 @@ Promise.resolve(
   (async () => {
     const devices = await getConnectedDevices();
     const page = new AndroidDevice(devices[0].udid, {
-      // 👀 Use 'back-first' to avoid ESCAPE key side-effects in WebView / Mobile web pages
-      // The default 'esc-first' may close popups or clear input fields in WebView
-      keyboardDismissStrategy: 'back-first',
+      // 👀 Disable auto keyboard dismiss to avoid ESCAPE/BACK key side-effects in WebView / Mobile web pages
+      // Some input fields listen for ESCAPE or BACK key events and may clear the input
+      autoDismissKeyboard: false,
     });
 
     // 👀 init Midscene agent

@@ -3,8 +3,8 @@
 android:
   launch: https://www.ebay.com
   deviceId: s4ey59ytbitot4yp
-  # Use 'back-first' to avoid ESCAPE key side-effects in WebView / Mobile web pages
-  keyboardDismissStrategy: back-first
+  # Disable auto keyboard dismiss to avoid ESCAPE/BACK key side-effects in WebView / Mobile web pages
+  autoDismissKeyboard: false
 
 tasks:
   - name: search headphones
