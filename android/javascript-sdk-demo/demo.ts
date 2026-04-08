@@ -12,6 +12,7 @@ Promise.resolve(
     const page = new AndroidDevice(devices[0].udid, {
       // 👀 Disable auto keyboard dismiss to avoid ESCAPE/BACK key side-effects in WebView / Mobile web pages
       // Some input fields listen for ESCAPE or BACK key events and may clear the input
+      // See: https://midscenejs.com/android-getting-started.html#text-input-is-cleared-or-lost-after-typing
       autoDismissKeyboard: false,
     });
 
