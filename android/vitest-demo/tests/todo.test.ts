@@ -20,8 +20,9 @@ describe('Test todo list', () => {
   beforeAll(async () => {
     const devices = await getConnectedDevices();
     const page = new AndroidDevice(devices[0].udid, {
-      // Use 'back-first' to avoid ESCAPE key side-effects in WebView / Mobile web pages
-      keyboardDismissStrategy: 'back-first',
+      // Disable auto keyboard dismiss to avoid ESCAPE/BACK key side-effects in WebView / Mobile web pages
+      // See: https://midscenejs.com/android-getting-started.html#text-input-is-cleared-or-lost-after-typing
+      autoDismissKeyboard: false,
     });
     agent = new AndroidAgent(page, {
       aiActContext:
