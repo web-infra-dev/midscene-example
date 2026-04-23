@@ -1,0 +1,17 @@
+{
+  "name": "computer-rdp-demo",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Demo for controlling a remote Windows desktop over RDP with Midscene",
+  "type": "module",
+  "scripts": {
+    "test": "tsx demo.ts"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@midscene/computer": "1.7.5-beta-20260422015927.0",
+    "dotenv": "^16.4.5",
+    "tsx": "4.20.1"
+  }
+}
