@@ -15,36 +15,18 @@ const rdpTarget = {
   securityProtocol: 'auto',
 } satisfies RDPComputerAgentOpt;
 
-function sleep(ms: number) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
-function makeReportFileName() {
-  const timestamp = new Date()
-    .toISOString()
-    .replace(/[:.]/g, '-')
-    .replace('T', '-')
-    .replace('Z', '');
-
-  return `rdp-settings-demo-${timestamp}`;
-}
-
-function assertConfiguredValue(
-  section: string,
-  key: string,
-  value: string | undefined,
-) {
-  const trimmed = value?.trim();
-  if (!trimmed || trimmed.startsWith('REPLACE_WITH_')) {
-    throw new Error(
-      `Please update ${section}.${key} in computer/rdp-demo/demo.ts before running the demo.`,
-    );
-  }
-}
-
 function validateDemoConfig() {
-  assertConfiguredValue('rdpTarget', 'host', rdpTarget.host);
-  assertConfiguredValue('rdpTarget', 'password', rdpTarget.password);
+  for (const [key, value] of Object.entries({
+    host: rdpTarget.host,
+    password: rdpTarget.password,
+  })) {
+    const trimmed = value?.trim();
+    if (!trimmed || trimmed.startsWith('REPLACE_WITH_')) {
+      throw new Error(
+        `Please update rdpTarget.${key} in computer/rdp-demo/demo.ts before running the demo.`,
+      );
+    }
+  }
 }
 
 async function waitForRemoteDesktopReady(
@@ -65,7 +47,7 @@ async function waitForRemoteDesktopReady(
       if (attempt === maxAttempts) {
         break;
       }
-      await sleep(delayMs);
+      await new Promise((resolve) => setTimeout(resolve, delayMs));
     }
   }
 
@@ -83,7 +65,6 @@ async function main() {
     aiActionContext:
       'You are controlling a remote Windows desktop directly through the RDP protocol. Every screenshot and action comes from the remote machine itself.',
     generateReport: true,
-    reportFileName: makeReportFileName(),
   });
 
   try {

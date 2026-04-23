@@ -43,7 +43,7 @@ npm install
 npm run test
 ```
 
-The demo will connect to the remote Windows desktop, wait for the remote framebuffer to become visible if the first frame is blank, open the Settings app, continue into the Windows Update page, read the visible page title and status summary back into structured JSON, and print the generated report path. Each run creates a unique timestamped report file so old failures do not get mixed into the latest result.
+The demo will connect to the remote Windows desktop, wait for the remote framebuffer to become visible if the first frame is blank, open the Settings app, continue into the Windows Update page, read the visible page title and status summary back into structured JSON, and print the generated report path.
 
 ## Notes
 

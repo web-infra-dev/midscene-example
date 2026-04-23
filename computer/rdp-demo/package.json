@@ -10,7 +10,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@midscene/computer": "1.7.5-beta-20260422015927.0",
+    "@midscene/computer": "latest",
     "dotenv": "^16.4.5",
     "tsx": "4.20.1"
   }
