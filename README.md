@@ -18,6 +18,13 @@ Here are some examples you can refer to:
 - [Vitest Demo](./android/vitest-demo/): Integrate Midscene with Android and Vitest.
 - [YAML Scripts Demo](./android/yaml-scripts-demo/): Automate Android with scripts in YAML. This is the easiest way to integrate Midscene with your existing Android project.
 
+### Computer
+- [JavaScript SDK Demo](./computer/javascript-sdk-demo/): Integrate Midscene with your local desktop through `@midscene/computer`.
+- [Vitest Demo](./computer/vitest-demo/): Integrate Midscene with `@midscene/computer` and Vitest.
+- [Electron Demo](./computer/electron-demo/): Use Midscene with an Electron app.
+- [YAML Scripts Demo](./computer/yaml-scripts-demo/): Automate desktop tasks with scripts in YAML.
+- [RDP Demo](./computer/rdp-demo/): Control a remote Windows desktop directly over the RDP protocol.
+
 ## Connectivity Test
 
 - [Connectivity Test](./connectivity-test/): Use this folder to test the connectivity of the LLM Service.

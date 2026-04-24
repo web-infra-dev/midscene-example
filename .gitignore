@@ -16,6 +16,7 @@ test-results/
 .env
 
 output/
+docs/
 
 .DS_Store
 
