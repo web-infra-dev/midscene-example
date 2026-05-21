@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catalog</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Regression case</p>
+        <h1>Product Catalog</h1>
+      </div>
+      <nav>
+        <a href="./index.html">Home</a>
+        <a href="./support.html">Support</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="toolbar">
+        <label for="search">Search products</label>
+        <input id="search" type="search" placeholder="Try hoodie" />
+      </section>
+
+      <section id="products" class="products" aria-label="Products">
+        <article class="product" data-name="alpine hoodie">
+          <h2>Alpine Hoodie</h2>
+          <p>Warm fleece layer for cold morning deliveries.</p>
+          <strong>$64</strong>
+          <button type="button" data-product="Alpine Hoodie" data-price="$64">View details</button>
+        </article>
+        <article class="product" data-name="trail mug">
+          <h2>Trail Mug</h2>
+          <p>Insulated steel mug with a leak-safe lid.</p>
+          <strong>$22</strong>
+          <button type="button" data-product="Trail Mug" data-price="$22">View details</button>
+        </article>
+        <article class="product" data-name="canvas tote">
+          <h2>Canvas Tote</h2>
+          <p>Reusable carry bag for weekly market runs.</p>
+          <strong>$18</strong>
+          <button type="button" data-product="Canvas Tote" data-price="$18">View details</button>
+        </article>
+      </section>
+
+      <section id="details" class="details" aria-live="polite">
+        <h2>Product details</h2>
+        <p>Select a product to see details.</p>
+      </section>
+    </main>
+
+    <script src="./catalog.js"></script>
+  </body>
+</html>
+

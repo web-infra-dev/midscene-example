@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Support</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Form case</p>
+        <h1>Support Request</h1>
+      </div>
+      <nav>
+        <a href="./index.html">Home</a>
+        <a href="./catalog.html">Catalog</a>
+      </nav>
+    </header>
+
+    <main>
+      <form id="support-form" class="support-form">
+        <label>
+          Full name
+          <input name="name" autocomplete="name" required />
+        </label>
+        <label>
+          Email
+          <input name="email" type="email" autocomplete="email" required />
+        </label>
+        <label>
+          Order number
+          <input name="order" placeholder="NW-0000" required />
+        </label>
+        <label>
+          Message
+          <textarea name="message" rows="5" required></textarea>
+        </label>
+        <button type="submit">Send request</button>
+      </form>
+
+      <section id="confirmation" class="confirmation" aria-live="polite" hidden></section>
+    </main>
+
+    <script src="./support.js"></script>
+  </body>
+</html>
+

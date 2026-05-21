@@ -1,0 +1,15 @@
+{
+  "name": "multi-case-suite",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "test": "midscene --config config.yml",
+    "test:headed": "midscene --config config.yml --headed",
+    "test:home": "midscene ./e2e/01-home-smoke.yaml"
+  },
+  "devDependencies": {
+    "@midscene/cli": "latest"
+  }
+}
+

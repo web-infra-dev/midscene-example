@@ -1,0 +1,21 @@
+web:
+  serve: ../public
+  url: index.html
+  output: ./midscene_run/output/home-smoke.json
+
+agent:
+  testId: multi-case-home-smoke
+  groupName: Multi Case Suite
+  groupDescription: Pure YAML cases that run together through config.yml
+  reportFileName: home-smoke
+  cache: true
+
+tasks:
+  - name: Verify the home page shell
+    flow:
+      - aiAssert: The page shows "Northwind QA Shop", a visible "Open catalog" button, and three KPI cards.
+        name: home_shell_visible
+      - aiQuery: Return the three KPI cards as JSON array. Each item should include title and value.
+        name: home_kpis
+      - recordToReport: Home smoke checkpoint
+        content: Captured the landing page state before navigating into deeper cases.

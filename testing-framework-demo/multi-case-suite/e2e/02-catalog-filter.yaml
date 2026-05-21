@@ -1,0 +1,30 @@
+web:
+  serve: ../public
+  url: catalog.html
+  output: ./midscene_run/output/catalog-filter.json
+
+agent:
+  testId: multi-case-catalog-filter
+  groupName: Multi Case Suite
+  reportFileName: catalog-filter
+  cache: true
+
+tasks:
+  - name: Filter catalog by search term
+    flow:
+      - aiInput: Search products input
+        value: hoodie
+      - aiKeyboardPress: Search products input
+        keyName: Enter
+      - aiAssert: The filtered catalog shows the Alpine Hoodie product and does not show the Trail Mug product.
+        name: hoodie_filter_result
+      - aiQuery: Return the visible product names and prices as JSON array.
+        name: visible_products
+
+  - name: Open the filtered product details
+    flow:
+      - aiTap: View details button for Alpine Hoodie
+      - aiAssert: A product details area is visible and it shows "Alpine Hoodie", "$64", and "Add to cart".
+        name: product_detail_visible
+      - recordToReport: Catalog filter checkpoint
+        content: The suite filtered the catalog and opened the matching product details.

@@ -1,0 +1,29 @@
+web:
+  serve: ../public
+  url: support.html
+  output: ./midscene_run/output/support-form.json
+
+agent:
+  testId: multi-case-support-form
+  groupName: Multi Case Suite
+  reportFileName: support-form
+  cache: true
+
+tasks:
+  - name: Submit a support request
+    flow:
+      - aiInput: Full name input
+        value: Casey Morgan
+      - aiInput: Email input
+        value: casey@example.com
+      - aiInput: Order number input
+        value: NW-1042
+      - aiInput: Message textarea
+        value: Please confirm whether expedited shipping is available for this order.
+      - aiTap: Send request button
+      - aiWaitFor: A confirmation message appears after submitting the support form.
+        timeout: 5000
+      - aiAssert: The page shows a confirmation message that includes "Request received".
+        name: support_confirmation_visible
+      - aiQuery: Return the confirmation message text.
+        name: confirmation_text

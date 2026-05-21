@@ -1,0 +1,16 @@
+# Run the YAML files as one suite.
+# Command-line flags override values in this file.
+
+files:
+  - "./e2e/01-home-smoke.yaml"
+  - "./e2e/02-catalog-filter.yaml"
+  - "./e2e/03-support-form.yaml"
+
+concurrent: 1
+continueOnError: true
+summary: "./midscene_run/output/summary.json"
+
+web:
+  viewportWidth: 1280
+  viewportHeight: 800
+
