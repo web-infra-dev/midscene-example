@@ -1,0 +1,13 @@
+flow:
+  - aiAssert: The catalog page is open and the returning user session is ready.
+    name: catalog_ready
+  - aiInput: Search products input
+    value: hoodie
+  - aiKeyboardPress: Search products input
+    keyName: Enter
+  - aiTap: View details button for Alpine Hoodie
+  - aiAssert: The product details area shows Alpine Hoodie, $64, and an Add to cart button.
+    name: hoodie_details_visible
+  - aiQuery: Return the visible product detail as JSON with name, price, and primaryAction.
+    name: selected_product
+

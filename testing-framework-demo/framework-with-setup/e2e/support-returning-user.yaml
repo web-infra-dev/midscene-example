@@ -1,0 +1,16 @@
+flow:
+  - aiAct: Open the Support page from the top navigation.
+  - aiInput: Full name input
+    value: Casey Morgan
+  - aiInput: Email input
+    value: casey@example.com
+  - aiInput: Order number input
+    value: NW-1042
+  - aiInput: Message textarea
+    value: Please confirm whether expedited shipping is available for this order.
+  - aiTap: Send request button
+  - aiWaitFor: A confirmation message appears after submitting the support form.
+    timeout: 5000
+  - aiAssert: The page shows a confirmation message that includes Request received.
+    name: support_request_received
+

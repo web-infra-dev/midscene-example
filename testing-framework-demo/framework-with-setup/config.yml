@@ -1,0 +1,13 @@
+# This suite demonstrates the testing-framework project shape:
+# setup.ts owns browser/session/agent setup, while YAML files own user paths.
+
+setup: ./setup.ts
+
+files:
+  - "./e2e/checkout-returning-user.yaml"
+  - "./e2e/support-returning-user.yaml"
+
+concurrent: 1
+continueOnError: true
+summary: "./midscene_run/output/summary.json"
+
