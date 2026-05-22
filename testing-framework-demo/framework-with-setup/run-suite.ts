@@ -1,40 +1,85 @@
-import { readFile } from 'node:fs/promises';
-import { basename, extname, resolve } from 'node:path';
+import { mkdir, readFile, readdir, writeFile } from 'node:fs/promises';
+import { basename, dirname, extname, join, relative, resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { parse, stringify } from 'yaml';
 
-interface SuiteConfig {
-  setup: string;
-  files: string[];
+interface MidsceneConfig {
+  testDir: string;
+  include: string[];
+  maxConcurrency: number;
+  bail: number;
+  testTimeout?: number;
+  output?: {
+    summary?: string;
+  };
+  use?: Record<string, unknown>;
+  setup: (context: { use: Record<string, unknown> }) => Promise<SetupResult>;
 }
 
 interface SetupResult {
   agent: {
     runYaml: (yamlScriptContent: string) => Promise<unknown>;
   };
-  freeFn?: Array<() => Promise<void>>;
+  teardown?: () => Promise<void>;
 }
 
 async function loadYamlFile<T>(filePath: string): Promise<T> {
   return parse(await readFile(filePath, 'utf-8')) as T;
 }
 
-async function main() {
-  const cwd = process.cwd();
-  const configPath = resolve(cwd, 'config.yml');
-  const config = await loadYamlFile<SuiteConfig>(configPath);
+async function collectYamlFiles(testDir: string, include: string[]): Promise<string[]> {
+  const files: string[] = [];
+  const shouldIncludeYaml = include.some((pattern) => pattern.endsWith('.yaml'));
 
-  if (!config.setup || !Array.isArray(config.files)) {
-    throw new Error('config.yml must include setup and files');
+  async function walk(dir: string) {
+    for (const entry of await readdir(dir, { withFileTypes: true })) {
+      const entryPath = join(dir, entry.name);
+      if (entry.isDirectory()) {
+        await walk(entryPath);
+        continue;
+      }
+
+      if (shouldIncludeYaml && entry.name.endsWith('.yaml')) {
+        files.push(entryPath);
+      }
+    }
   }
 
-  const setupModule = await import(pathToFileURL(resolve(cwd, config.setup)).href);
-  const setup = setupModule.default as () => Promise<SetupResult>;
-  const setupResult = await setup();
+  await walk(testDir);
+  return files.sort();
+}
+
+async function runWithConcurrency<T>(
+  items: T[],
+  concurrency: number,
+  run: (item: T) => Promise<void>,
+) {
+  const workers = Array.from({ length: Math.max(1, concurrency) }, async (_, workerIndex) => {
+    for (let index = workerIndex; index < items.length; index += Math.max(1, concurrency)) {
+      await run(items[index]);
+    }
+  });
+
+  await Promise.all(workers);
+}
+
+async function main() {
+  const cwd = process.cwd();
+  const configPath = resolve(cwd, 'midscene.config.ts');
+  const configModule = await import(pathToFileURL(configPath).href);
+  const config = configModule.default as MidsceneConfig;
+
+  if (!config.testDir || !Array.isArray(config.include) || typeof config.setup !== 'function') {
+    throw new Error('midscene.config.ts must include testDir, include, and setup');
+  }
+
+  const setupResult = await config.setup({ use: config.use ?? {} });
+  const files = await collectYamlFiles(resolve(cwd, config.testDir), config.include);
+  const results: Array<{ file: string; status: 'passed' | 'failed'; error?: string }> = [];
 
   try {
-    for (const file of config.files) {
-      const filePath = resolve(cwd, file);
+    await runWithConcurrency(files, config.maxConcurrency, async (filePath) => {
+      const file = relative(cwd, filePath);
       const caseYaml = await loadYamlFile<{ flow: unknown[] }>(filePath);
       if (!Array.isArray(caseYaml.flow)) {
         throw new Error(`${file} must include a top-level flow array`);
@@ -51,12 +96,41 @@ async function main() {
       });
 
       console.log(`\nRunning ${file}`);
-      await setupResult.agent.runYaml(runnableYaml);
+      try {
+        await setupResult.agent.runYaml(runnableYaml);
+        results.push({ file, status: 'passed' });
+      } catch (error) {
+        results.push({
+          file,
+          status: 'failed',
+          error: error instanceof Error ? error.message : String(error),
+        });
+
+        const failedCount = results.filter((result) => result.status === 'failed').length;
+        if (config.bail > 0 && failedCount >= config.bail) {
+          throw error;
+        }
+      }
+    });
+
+    if (config.output?.summary) {
+      const summaryPath = resolve(cwd, config.output.summary);
+      await mkdir(dirname(summaryPath), { recursive: true });
+      await writeFile(
+        summaryPath,
+        JSON.stringify(
+          {
+            passed: results.filter((result) => result.status === 'passed').length,
+            failed: results.filter((result) => result.status === 'failed').length,
+            results,
+          },
+          null,
+          2,
+        ),
+      );
     }
   } finally {
-    for (const free of setupResult.freeFn ?? []) {
-      await free();
-    }
+    await setupResult.teardown?.();
   }
 }
 
@@ -64,4 +138,3 @@ main().catch((error) => {
   console.error(error);
   process.exitCode = 1;
 });
-

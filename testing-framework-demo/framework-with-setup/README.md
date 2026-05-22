@@ -1,18 +1,16 @@
 # Framework With Setup
 
-This demo shows the next step after a pure YAML suite: `setup.ts` owns the environment, while YAML files stay focused on user paths.
+This demo shows the next step after a pure YAML suite: `midscene.config.ts` owns the project configuration and runtime setup, while YAML files stay focused on user paths.
 
-`setup.ts` does three Midscene-facing things:
+`midscene.config.ts` does two kinds of Midscene-facing work:
 
-- launches a Playwright Chromium browser
-- injects session cookies before the page opens
-- creates and returns a `PlaywrightAgent`
+- declares the suite shape: case directory, file matching, `maxConcurrency`, `bail`, timeout, and summary output
+- prepares the runtime: launches a Playwright Chromium browser, injects session cookies, opens the page, creates a `PlaywrightAgent`, and registers teardown
 
 ## Files
 
-- `setup.ts` prepares the browser, context, page, cookies, Midscene agent, and cleanup callbacks.
-- `config.yml` points the suite at `setup.ts` and lists the YAML cases.
-- `run-suite.ts` is a tiny local runner that calls `setup.ts` and runs each top-level `flow` through `agent.runYaml()`.
+- `midscene.config.ts` is the single config-as-code entry for case discovery, Rstest-aligned execution fields, output, browser, cookies, Midscene agent, and teardown.
+- `run-suite.ts` is a tiny local runner that reads `midscene.config.ts` and runs each top-level `flow` through `agent.runYaml()`.
 - `e2e/checkout-returning-user.yaml` starts from the prepared catalog page.
 - `e2e/support-returning-user.yaml` reuses the prepared browser session and navigates through the UI.
 - `../public/` is a standalone demo website project shared by the testing framework demos.
@@ -52,7 +50,7 @@ For a visible browser:
 npm run test:headed
 ```
 
-By default `setup.ts` opens `http://127.0.0.1:3000/catalog.html`. To use another site URL:
+By default `midscene.config.ts` opens `http://127.0.0.1:3000/catalog.html`. To use another site URL:
 
 ```bash
 DEMO_SITE_URL=http://127.0.0.1:4000 npm test
