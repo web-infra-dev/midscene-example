@@ -4,7 +4,7 @@ import { pathToFileURL } from 'node:url';
 import { parse, stringify } from 'yaml';
 
 interface MidsceneConfig {
-  platform?: string;
+  platform: 'android';
   testDir: string;
   include: string[];
   testRunner?: {
@@ -72,12 +72,11 @@ async function runWithConcurrency<T>(
 
 async function main() {
   const cwd = process.cwd();
-  const configPath = resolve(cwd, 'midscene.config.ts');
-  const configModule = await import(pathToFileURL(configPath).href);
+  const configModule = await import(pathToFileURL(resolve(cwd, 'midscene.config.ts')).href);
   const config = configModule.default as MidsceneConfig;
 
-  if (!config.testDir || !Array.isArray(config.include) || typeof config.setup !== 'function') {
-    throw new Error('midscene.config.ts must include testDir, include, and setup');
+  if (config.platform !== 'android') {
+    throw new Error('android-config-demo expects platform to be android');
   }
 
   const setupResult = await config.setup({
@@ -116,8 +115,8 @@ async function main() {
           error: error instanceof Error ? error.message : String(error),
         });
 
-        const failedCount = results.filter((result) => result.status === 'failed').length;
         const bail = config.testRunner?.bail ?? 0;
+        const failedCount = results.filter((result) => result.status === 'failed').length;
         if (bail > 0 && failedCount >= bail) {
           throw error;
         }

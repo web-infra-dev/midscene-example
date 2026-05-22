@@ -1,0 +1,6 @@
+flow:
+  - aiAssert: The browser is open on the configured launch target.
+    name: launch_target_ready
+  - aiAct: Search for "Headphones".
+  - aiAssert: The page shows search results related to headphones.
+    name: headphone_results_visible

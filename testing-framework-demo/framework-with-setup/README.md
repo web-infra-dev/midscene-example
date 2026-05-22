@@ -4,12 +4,12 @@ This demo shows the next step after a pure YAML suite: `midscene.config.ts` owns
 
 `midscene.config.ts` does two kinds of Midscene-facing work:
 
-- declares the suite shape: case directory, file matching, `maxConcurrency`, `bail`, timeout, and summary output
+- declares the suite shape: platform, case directory, file matching, `testRunner`, runtime options, shared agent options, and summary output
 - prepares the runtime: launches a Playwright Chromium browser, injects session cookies, opens the page, creates a `PlaywrightAgent`, and registers teardown
 
 ## Files
 
-- `midscene.config.ts` is the single config-as-code entry for case discovery, Rstest-aligned execution fields, output, browser, cookies, Midscene agent, and teardown.
+- `midscene.config.ts` is the single config-as-code entry for case discovery, Rstest-aligned execution fields, Web runtime options, shared Midscene agent options, browser setup, cookies, and teardown.
 - `run-suite.ts` is a tiny local runner that reads `midscene.config.ts` and runs each top-level `flow` through `agent.runYaml()`.
 - `e2e/checkout-returning-user.yaml` starts from the prepared catalog page.
 - `e2e/support-returning-user.yaml` reuses the prepared browser session and navigates through the UI.

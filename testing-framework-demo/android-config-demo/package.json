@@ -1,0 +1,19 @@
+{
+  "name": "android-config-demo",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "test": "tsx run-suite.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@midscene/android": "latest",
+    "@types/node": "latest",
+    "tsx": "latest",
+    "typescript": "latest"
+  },
+  "dependencies": {
+    "yaml": "latest"
+  }
+}
