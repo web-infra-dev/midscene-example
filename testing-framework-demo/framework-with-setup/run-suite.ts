@@ -4,7 +4,6 @@ import { pathToFileURL } from 'node:url';
 import { parse, stringify } from 'yaml';
 
 interface MidsceneConfig {
-  platform?: string;
   testDir: string;
   include: string[];
   testRunner?: {
@@ -15,11 +14,9 @@ interface MidsceneConfig {
   output?: {
     summary?: string;
   };
-  runtimeOptions?: Record<string, unknown>;
   agentOptions?: Record<string, unknown>;
   setup: (context: {
     agentOptions: Record<string, unknown>;
-    runtimeOptions: Record<string, unknown>;
   }) => Promise<SetupResult>;
 }
 
@@ -82,7 +79,6 @@ async function main() {
 
   const setupResult = await config.setup({
     agentOptions: config.agentOptions ?? {},
-    runtimeOptions: config.runtimeOptions ?? {},
   });
   const files = await collectYamlFiles(resolve(cwd, config.testDir), config.include);
   const results: Array<{ file: string; status: 'passed' | 'failed'; error?: string }> = [];

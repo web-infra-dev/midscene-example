@@ -4,15 +4,15 @@ This demo shows the proposed `midscene.config.ts` shape for Android testing fram
 
 The important parts are:
 
-- `platform: 'android'` explicitly selects the Android runtime.
+- `target.type: 'android'` explicitly selects the Android runtime.
+- `target.options` contains Android device and ADB options that used to live under `android:` in YAML files.
 - `testRunner` keeps Rstest-aligned execution fields together.
 - `agentOptions` contains shared Midscene Agent constructor options.
-- `runtimeOptions` contains Android device and ADB options that used to live under `android:` in YAML files.
-- `setup()` is the platform boundary: it creates the Android Agent and returns the executable `agent` instance.
+- No `setup()` is needed for the normal path; the framework can create the Android Agent from `target.type` and `target.options`.
 
 ## Files
 
-- `midscene.config.ts` declares the suite and creates an Android Agent with `agentFromAdbDevice()`.
+- `midscene.config.ts` declares the suite and the Android target.
 - `e2e/search-ebay.yaml` keeps only the user path.
 - `run-suite.ts` is a tiny local runner for this design-stage demo.
 
@@ -49,4 +49,4 @@ ANDROID_LAUNCH_TARGET=https://www.ebay.com \
 npm test
 ```
 
-The YAML case does not include `android.deviceId`, ADB, IME, or keyboard options. Those initialization-level settings now belong in `runtimeOptions`.
+The YAML case does not include `android.deviceId`, ADB, IME, or keyboard options. Those initialization-level settings now belong in `target.options`.

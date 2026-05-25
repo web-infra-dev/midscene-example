@@ -4,7 +4,10 @@ import { pathToFileURL } from 'node:url';
 import { parse, stringify } from 'yaml';
 
 interface MidsceneConfig {
-  platform: 'android';
+  target?: {
+    type: 'android';
+    options: Record<string, unknown>;
+  };
   testDir: string;
   include: string[];
   testRunner?: {
@@ -15,11 +18,9 @@ interface MidsceneConfig {
   output?: {
     summary?: string;
   };
-  runtimeOptions?: Record<string, unknown>;
   agentOptions?: Record<string, unknown>;
-  setup: (context: {
+  setup?: (context: {
     agentOptions: Record<string, unknown>;
-    runtimeOptions: Record<string, unknown>;
   }) => Promise<SetupResult>;
 }
 
@@ -28,6 +29,35 @@ interface SetupResult {
     runYaml: (yamlScriptContent: string) => Promise<unknown>;
   };
   teardown?: () => Promise<void>;
+}
+
+async function createDefaultAndroidSetup(config: MidsceneConfig): Promise<SetupResult> {
+  if (config.target?.type !== 'android') {
+    throw new Error('android-config-demo expects target.type to be android');
+  }
+
+  const { agentFromAdbDevice } = await import('@midscene/android');
+  const { deviceId, launch, ...deviceOptions } = config.target.options;
+  const agent = await agentFromAdbDevice(
+    typeof deviceId === 'string' ? deviceId : undefined,
+    {
+      ...config.agentOptions,
+      ...deviceOptions,
+    },
+  );
+
+  if (typeof launch === 'string' && launch) {
+    await agent.launch(launch);
+  }
+
+  return {
+    agent,
+    async teardown() {
+      if (typeof launch === 'string' && launch && !launch.startsWith('http')) {
+        await agent.terminate(launch);
+      }
+    },
+  };
 }
 
 async function loadYamlFile<T>(filePath: string): Promise<T> {
@@ -75,14 +105,11 @@ async function main() {
   const configModule = await import(pathToFileURL(resolve(cwd, 'midscene.config.ts')).href);
   const config = configModule.default as MidsceneConfig;
 
-  if (config.platform !== 'android') {
-    throw new Error('android-config-demo expects platform to be android');
-  }
-
-  const setupResult = await config.setup({
-    agentOptions: config.agentOptions ?? {},
-    runtimeOptions: config.runtimeOptions ?? {},
-  });
+  const setupResult = config.setup
+    ? await config.setup({
+        agentOptions: config.agentOptions ?? {},
+      })
+    : await createDefaultAndroidSetup(config);
   const files = await collectYamlFiles(resolve(cwd, config.testDir), config.include);
   const results: Array<{ file: string; status: 'passed' | 'failed'; error?: string }> = [];
 

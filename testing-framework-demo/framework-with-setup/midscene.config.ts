@@ -2,7 +2,6 @@ import { PlaywrightAgent } from '@midscene/web/playwright';
 import { chromium, type Browser, type BrowserContext, type Page } from 'playwright';
 
 export interface MidsceneConfig {
-  platform: 'web';
   testDir: string;
   include: string[];
   testRunner: {
@@ -13,14 +12,6 @@ export interface MidsceneConfig {
   output: {
     summary: string;
   };
-  runtimeOptions: {
-    baseUrl: string;
-    viewport: {
-      width: number;
-      height: number;
-    };
-    headless: boolean;
-  };
   agentOptions: {
     groupName: string;
     groupDescription: string;
@@ -29,7 +20,6 @@ export interface MidsceneConfig {
   };
   setup: (context: {
     agentOptions: MidsceneConfig['agentOptions'];
-    runtimeOptions: MidsceneConfig['runtimeOptions'];
   }) => Promise<SetupResult>;
 }
 
@@ -46,7 +36,6 @@ function defineMidsceneConfig(config: MidsceneConfig): MidsceneConfig {
 }
 
 export default defineMidsceneConfig({
-  platform: 'web',
   testDir: './e2e',
   include: ['**/*.yaml'],
 
@@ -60,12 +49,6 @@ export default defineMidsceneConfig({
     summary: './midscene_run/output/summary.json',
   },
 
-  runtimeOptions: {
-    baseUrl: process.env.DEMO_SITE_URL ?? 'http://127.0.0.1:3000',
-    viewport: { width: 1280, height: 800 },
-    headless: process.env.MIDSCENE_DEMO_HEADLESS !== 'false',
-  },
-
   agentOptions: {
     groupName: 'Framework With Config',
     groupDescription:
@@ -74,14 +57,18 @@ export default defineMidsceneConfig({
     cache: true,
   },
 
-  async setup({ agentOptions, runtimeOptions }) {
+  async setup({ agentOptions }) {
+    const baseUrl = process.env.DEMO_SITE_URL ?? 'http://127.0.0.1:3000';
+    const viewport = { width: 1280, height: 800 };
+    const headless = process.env.MIDSCENE_DEMO_HEADLESS !== 'false';
+
     const browser = await chromium.launch({
-      headless: runtimeOptions.headless,
+      headless,
       args: ['--no-sandbox', '--disable-setuid-sandbox'],
     });
 
     const context = await browser.newContext({
-      viewport: runtimeOptions.viewport,
+      viewport,
     });
 
     await context.addCookies([
@@ -106,7 +93,7 @@ export default defineMidsceneConfig({
     ]);
 
     const page = await context.newPage();
-    await page.goto(`${runtimeOptions.baseUrl}/catalog.html`);
+    await page.goto(`${baseUrl}/catalog.html`);
 
     const agent = new PlaywrightAgent(page, agentOptions);
 

@@ -1,7 +1,18 @@
-import { type AndroidAgent, agentFromAdbDevice } from '@midscene/android';
+import type { AndroidAgent } from '@midscene/android';
 
 export interface MidsceneConfig {
-  platform: 'android';
+  target: {
+    type: 'android';
+    options: {
+      deviceId?: string;
+      launch?: string;
+      androidAdbPath?: string;
+      remoteAdbHost?: string;
+      remoteAdbPort?: number;
+      autoDismissKeyboard: boolean;
+      imeStrategy: 'yadb-for-non-ascii' | 'always-yadb';
+    };
+  };
   testDir: string;
   include: string[];
   testRunner: {
@@ -17,18 +28,8 @@ export interface MidsceneConfig {
     cache: boolean;
     reportFileName: string;
   };
-  runtimeOptions: {
-    deviceId?: string;
-    launch?: string;
-    androidAdbPath?: string;
-    remoteAdbHost?: string;
-    remoteAdbPort?: number;
-    autoDismissKeyboard: boolean;
-    imeStrategy: 'yadb-for-non-ascii' | 'always-yadb';
-  };
-  setup: (context: {
+  setup?: (context: {
     agentOptions: MidsceneConfig['agentOptions'];
-    runtimeOptions: MidsceneConfig['runtimeOptions'];
   }) => Promise<SetupResult>;
 }
 
@@ -42,7 +43,21 @@ function defineMidsceneConfig(config: MidsceneConfig): MidsceneConfig {
 }
 
 export default defineMidsceneConfig({
-  platform: 'android',
+  target: {
+    type: 'android',
+    options: {
+      deviceId: process.env.ANDROID_DEVICE_ID,
+      launch: process.env.ANDROID_LAUNCH_TARGET ?? 'https://www.ebay.com',
+      androidAdbPath: process.env.ANDROID_ADB_PATH,
+      remoteAdbHost: process.env.ANDROID_REMOTE_ADB_HOST,
+      remoteAdbPort: process.env.ANDROID_REMOTE_ADB_PORT
+        ? Number(process.env.ANDROID_REMOTE_ADB_PORT)
+        : undefined,
+      autoDismissKeyboard: false,
+      imeStrategy: 'yadb-for-non-ascii',
+    },
+  },
+
   testDir: './e2e',
   include: ['**/*.yaml'],
 
@@ -61,38 +76,5 @@ export default defineMidsceneConfig({
       'This is an Android smoke test. If a permission dialog appears, accept it.',
     cache: true,
     reportFileName: 'android-config-demo',
-  },
-
-  runtimeOptions: {
-    deviceId: process.env.ANDROID_DEVICE_ID,
-    launch: process.env.ANDROID_LAUNCH_TARGET ?? 'https://www.ebay.com',
-    androidAdbPath: process.env.ANDROID_ADB_PATH,
-    remoteAdbHost: process.env.ANDROID_REMOTE_ADB_HOST,
-    remoteAdbPort: process.env.ANDROID_REMOTE_ADB_PORT
-      ? Number(process.env.ANDROID_REMOTE_ADB_PORT)
-      : undefined,
-    autoDismissKeyboard: false,
-    imeStrategy: 'yadb-for-non-ascii',
-  },
-
-  async setup({ agentOptions, runtimeOptions }) {
-    const { deviceId, launch, ...deviceOptions } = runtimeOptions;
-    const agent = await agentFromAdbDevice(deviceId, {
-      ...agentOptions,
-      ...deviceOptions,
-    });
-
-    if (launch) {
-      await agent.launch(launch);
-    }
-
-    return {
-      agent,
-      async teardown() {
-        if (launch && !launch.startsWith('http')) {
-          await agent.terminate(launch);
-        }
-      },
-    };
   },
 });
