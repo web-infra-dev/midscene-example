@@ -1,0 +1,11 @@
+flow:
+  - seedOrder:
+      orderId: E2E-10001
+      product: Alpine Hoodie
+      status: paid
+  - aiAct: Search for "hoodie"
+  - aiAct: Open the details for Alpine Hoodie
+  - assertOrderStatus:
+      orderId: E2E-10001
+      status: paid
+  - aiAssert: The product details area shows Alpine Hoodie, $64, and an Add to cart button.

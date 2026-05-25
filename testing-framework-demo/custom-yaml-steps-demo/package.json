@@ -1,0 +1,22 @@
+{
+  "name": "custom-yaml-steps-demo",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "site": "npm --prefix ../public start",
+    "test": "tsx run-suite.ts",
+    "test:headed": "MIDSCENE_DEMO_HEADLESS=false tsx run-suite.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@midscene/web": "latest",
+    "@types/node": "latest",
+    "playwright": "latest",
+    "tsx": "latest",
+    "typescript": "latest"
+  },
+  "dependencies": {
+    "yaml": "latest"
+  }
+}
