@@ -25,7 +25,7 @@ export interface MidsceneConfig {
   };
   agentOptions: {
     aiActionContext: string;
-    cache: boolean;
+    cache: boolean | { id: string };
     reportFileName: string;
   };
   setup?: (context: {
@@ -64,7 +64,9 @@ export default defineMidsceneConfig({
   testRunner: {
     maxConcurrency: 1,
     bail: 0,
-    testTimeout: 120_000,
+    // Real-device interactions over adb (screencap + pull per step) are slower
+    // than the web demos, so give the case a larger budget.
+    testTimeout: 300_000,
   },
 
   output: {
@@ -74,7 +76,7 @@ export default defineMidsceneConfig({
   agentOptions: {
     aiActionContext:
       'This is an Android smoke test. If a permission dialog appears, accept it.',
-    cache: true,
+    cache: { id: 'android-config-demo' },
     reportFileName: 'android-config-demo',
   },
 });

@@ -5,18 +5,17 @@
   "type": "module",
   "scripts": {
     "site": "npm --prefix ../public start",
-    "test": "tsx run-suite.ts",
-    "test:headed": "MIDSCENE_DEMO_HEADLESS=false tsx run-suite.ts",
+    "test": "midscene-testing-framework test",
+    "test:headed": "MIDSCENE_DEMO_HEADLESS=false midscene-testing-framework test",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@midscene/web": "latest",
+    "@midscene/testing-framework": "1.8.8-beta-20260602094353.0",
+    "@midscene/web": "1.8.8-beta-20260602094353.0",
+    "@playwright/test": "^1.60.0",
+    "@rstest/core": "0.10.3",
     "@types/node": "latest",
     "playwright": "latest",
-    "tsx": "latest",
     "typescript": "latest"
-  },
-  "dependencies": {
-    "yaml": "latest"
   }
 }

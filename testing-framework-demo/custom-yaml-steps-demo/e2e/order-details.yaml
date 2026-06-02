@@ -3,8 +3,11 @@ flow:
       orderId: E2E-10001
       product: Alpine Hoodie
       status: paid
-  - aiAct: Search for "hoodie"
-  - aiAct: Open the details for Alpine Hoodie
+  - aiInput: Search products input
+    value: hoodie
+  - aiKeyboardPress: Search products input
+    keyName: Enter
+  - aiTap: View details button for Alpine Hoodie
   - assertOrderStatus:
       orderId: E2E-10001
       status: paid

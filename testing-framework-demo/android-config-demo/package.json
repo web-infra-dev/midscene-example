@@ -4,16 +4,14 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "test": "tsx run-suite.ts",
+    "test": "MIDSCENE_REPLANNING_CYCLE_LIMIT=40 midscene-testing-framework test",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@midscene/android": "latest",
+    "@midscene/testing-framework": "1.8.8-beta-20260602094353.0",
+    "@midscene/android": "1.8.8-beta-20260602094353.0",
+    "@rstest/core": "0.10.3",
     "@types/node": "latest",
-    "tsx": "latest",
     "typescript": "latest"
-  },
-  "dependencies": {
-    "yaml": "latest"
   }
 }

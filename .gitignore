@@ -25,3 +25,10 @@ pnpm-lock.yaml
 # Midscene.js dump files
 **/midscene_run/midscene-report
 **/midscene_run/dump-logger
+
+# Midscene run artifacts (reports, logs, cache, summaries, tmp) — fully generated
+**/midscene_run/
+
+# npm lockfiles (this repo standardizes on pnpm; lockfiles are not committed)
+package-lock.json
+**/package-lock.json
