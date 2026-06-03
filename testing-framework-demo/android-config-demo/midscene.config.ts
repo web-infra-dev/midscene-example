@@ -25,7 +25,7 @@ export interface MidsceneConfig {
   };
   agentOptions: {
     aiActionContext: string;
-    cache: boolean | { id: string };
+    cache: boolean;
     reportFileName: string;
   };
   setup?: (context: {
@@ -76,7 +76,7 @@ export default defineMidsceneConfig({
   agentOptions: {
     aiActionContext:
       'This is an Android smoke test. If a permission dialog appears, accept it.',
-    cache: { id: 'android-config-demo' },
+    cache: true,
     reportFileName: 'android-config-demo',
   },
 });

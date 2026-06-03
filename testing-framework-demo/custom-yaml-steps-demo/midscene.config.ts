@@ -45,7 +45,7 @@ export interface MidsceneConfig {
     groupName: string;
     groupDescription: string;
     reportFileName: string;
-    cache: boolean | { id: string };
+    cache: boolean;
   };
   yamlSteps: Record<string, CustomYamlStepHandler>;
 }
@@ -105,7 +105,7 @@ export default defineMidsceneConfig({
     groupDescription:
       'Demo suite that mixes Midscene built-in YAML steps with project-defined YAML steps.',
     reportFileName: 'custom-yaml-steps-demo',
-    cache: { id: 'custom-yaml-steps-demo' },
+    cache: true,
   },
 
   yamlSteps: {

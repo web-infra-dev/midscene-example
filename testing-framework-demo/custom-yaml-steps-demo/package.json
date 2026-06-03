@@ -5,17 +5,18 @@
   "type": "module",
   "scripts": {
     "site": "npm --prefix ../public start",
-    "test": "midscene-testing-framework test",
-    "test:headed": "MIDSCENE_DEMO_HEADLESS=false midscene-testing-framework test",
+    "test": "midscene emit ./.rstest --config ./midscene.config.ts && cd .rstest && rstest run",
+    "test:headed": "MIDSCENE_DEMO_HEADLESS=false npm test",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@midscene/testing-framework": "1.8.8-beta-20260602094353.0",
-    "@midscene/web": "1.8.8-beta-20260602094353.0",
+    "@midscene/cli": "1.8.8-beta-20260603024013.0",
+    "@midscene/testing-framework": "1.8.8-beta-20260603024013.0",
+    "@midscene/web": "1.8.8-beta-20260603024013.0",
+    "@playwright/test": "latest",
     "@rstest/core": "0.10.3",
     "@types/node": "latest",
     "playwright": "latest",
-    "typescript": "latest",
-    "@playwright/test": "latest"
+    "typescript": "latest"
   }
 }

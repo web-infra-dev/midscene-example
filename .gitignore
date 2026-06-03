@@ -29,6 +29,9 @@ pnpm-lock.yaml
 # Midscene run artifacts (reports, logs, cache, summaries, tmp) — fully generated
 **/midscene_run/
 
+# Native Rstest projects emitted by `midscene emit` in the testing-framework demos
+**/.rstest/
+
 # npm lockfiles (this repo standardizes on pnpm; lockfiles are not committed)
 package-lock.json
 **/package-lock.json

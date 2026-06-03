@@ -16,7 +16,7 @@ export interface MidsceneConfig {
     groupName: string;
     groupDescription: string;
     reportFileName: string;
-    cache: boolean | { id: string };
+    cache: boolean;
   };
   setup: (context: {
     agentOptions: MidsceneConfig['agentOptions'];
@@ -54,7 +54,7 @@ export default defineMidsceneConfig({
     groupDescription:
       'midscene.config.ts owns case discovery, execution policy, browser session setup, and shared Midscene agent options.',
     reportFileName: 'framework-with-setup',
-    cache: { id: 'framework-with-setup' },
+    cache: true,
   },
 
   async setup({ agentOptions }) {
