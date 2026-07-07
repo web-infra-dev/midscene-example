@@ -6,6 +6,7 @@ import { localImg2Base64 } from '@midscene/shared/img';
 import { globalModelConfigManager } from '@midscene/shared/env';
 import {
   callAIWithObjectResponse,
+  getModelRuntime
 } from '@midscene/core/ai-model';
 import {
   DefaultAzureCredential,
@@ -104,7 +105,7 @@ describe('Use Midscene wrapped OpenAI SDK', () => {
           ],
         },
       ],
-      globalModelConfigManager.getModelConfig('default')
+      getModelRuntime(globalModelConfigManager.getModelConfig('default'))
     );
     console.log(result.content.content);
     expect(result.content.content.length).toBeGreaterThan(5);
