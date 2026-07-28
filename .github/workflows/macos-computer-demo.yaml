@@ -1,0 +1,71 @@
+name: macOS Computer Demo
+
+permissions:
+  contents: read
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'The tag name of @midscene/computer'
+        required: true
+        default: 'beta'
+      branch:
+        description: 'The branch to checkout'
+        required: false
+        default: 'main'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'computer/vitest-demo/**'
+      - '.github/workflows/macos-computer-demo.yaml'
+  push:
+    branches:
+      - main
+    paths:
+      - 'computer/vitest-demo/**'
+      - '.github/workflows/macos-computer-demo.yaml'
+
+env:
+  TAG: ${{ github.event.inputs.tag || 'beta' }}
+
+jobs:
+  macos-computer-demo:
+    runs-on: macos-15-intel
+    timeout-minutes: 35
+    env:
+      CI: '1'
+      MIDSCENE_MODEL_API_KEY: ${{ secrets.MIDSCENE_MODEL_API_KEY }}
+      MIDSCENE_MODEL_BASE_URL: ${{ vars.MIDSCENE_MODEL_BASE_URL }}
+      MIDSCENE_MODEL_NAME: ${{ vars.MIDSCENE_MODEL_NAME }}
+      MIDSCENE_MODEL_FAMILY: ${{ vars.MIDSCENE_MODEL_FAMILY }}
+      MIDSCENE_REPORT_QUIET: 'true'
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.branch || github.ref }}
+
+      - name: Inspect desktop permissions
+        shell: bash
+        run: |
+          sw_vers
+          osascript -e 'tell application "System Events" to return UI elements enabled'
+
+      - name: Run TodoMVC desktop demo
+        working-directory: computer/vitest-demo
+        run: |
+          npm i pnpm -g
+          pnpm i @midscene/computer@${{ env.TAG }} --save-dev
+          pnpm install --no-frozen-lockfile
+          pnpm run test
+
+      - name: Upload Midscene report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          if-no-files-found: warn
+          name: macos-computer-demo-report
+          path: computer/vitest-demo/midscene_run/report

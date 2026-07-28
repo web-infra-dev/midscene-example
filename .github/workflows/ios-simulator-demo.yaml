@@ -1,0 +1,117 @@
+name: iOS Simulator Demo
+
+permissions:
+  contents: read
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'The tag name of @midscene/ios'
+        required: true
+        default: 'beta'
+      branch:
+        description: 'The branch to checkout'
+        required: false
+        default: 'main'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'ios/vitest-demo/**'
+      - '.github/workflows/ios-simulator-demo.yaml'
+  push:
+    branches:
+      - main
+    paths:
+      - 'ios/vitest-demo/**'
+      - '.github/workflows/ios-simulator-demo.yaml'
+
+env:
+  TAG: ${{ github.event.inputs.tag || 'beta' }}
+  WDA_PORT: '8100'
+
+jobs:
+  ios-simulator-demo:
+    runs-on: macos-15
+    timeout-minutes: 50
+    env:
+      CI: '1'
+      MIDSCENE_MODEL_API_KEY: ${{ secrets.MIDSCENE_MODEL_API_KEY }}
+      MIDSCENE_MODEL_BASE_URL: ${{ vars.MIDSCENE_MODEL_BASE_URL }}
+      MIDSCENE_MODEL_NAME: ${{ vars.MIDSCENE_MODEL_NAME }}
+      MIDSCENE_MODEL_FAMILY: ${{ vars.MIDSCENE_MODEL_FAMILY }}
+      MIDSCENE_REPORT_QUIET: 'true'
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.branch || github.ref }}
+
+      - name: Checkout WebDriverAgent
+        uses: actions/checkout@v4
+        with:
+          repository: appium/WebDriverAgent
+          ref: 5f8280e761dc0b5b9b28368e63a8f0cc8d868346
+          path: .ci/WebDriverAgent
+          persist-credentials: false
+
+      - name: Start iPhone simulator and WebDriverAgent
+        shell: bash
+        run: |
+          set -euo pipefail
+          udid=$(xcrun simctl list devices available |
+            awk -F'[()]' '/iPhone/ { print $2; exit }')
+
+          if [[ -z "$udid" ]]; then
+            echo "Unable to find an available iPhone simulator." >&2
+            xcrun simctl list runtimes
+            xcrun simctl list devices available
+            exit 1
+          fi
+
+          xcrun simctl boot "$udid" || true
+          xcrun simctl bootstatus "$udid" -b
+          xcrun simctl openurl "$udid" https://todomvc.com/examples/react/dist/
+
+          xcodebuild \
+            -project .ci/WebDriverAgent/WebDriverAgent.xcodeproj \
+            -scheme WebDriverAgentRunner \
+            -destination "id=$udid" \
+            USE_PORT="$WDA_PORT" \
+            test > "$RUNNER_TEMP/webdriveragent.log" 2>&1 &
+
+          for _ in {1..90}; do
+            if curl -fsS "http://127.0.0.1:$WDA_PORT/status" >/dev/null; then
+              exit 0
+            fi
+            sleep 2
+          done
+
+          cat "$RUNNER_TEMP/webdriveragent.log"
+          exit 1
+
+      - name: Run iOS TodoMVC demo
+        working-directory: ios/vitest-demo
+        run: |
+          npm i pnpm -g
+          pnpm i @midscene/ios@${{ env.TAG }} --save-dev
+          pnpm install --no-frozen-lockfile
+          pnpm run test -- todo.test.ts
+
+      - name: Upload Midscene report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          if-no-files-found: warn
+          name: ios-simulator-demo-report
+          path: ios/vitest-demo/midscene_run/report
+
+      - name: Upload WebDriverAgent log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          if-no-files-found: warn
+          name: ios-simulator-demo-webdriveragent-log
+          path: ${{ runner.temp }}/webdriveragent.log

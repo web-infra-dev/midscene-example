@@ -1,0 +1,83 @@
+name: Android Emulator Demo
+
+permissions:
+  contents: read
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'The tag name of @midscene/android'
+        required: true
+        default: 'beta'
+      branch:
+        description: 'The branch to checkout'
+        required: false
+        default: 'main'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'android/vitest-demo/**'
+      - '.github/workflows/android-emulator-demo.yaml'
+  push:
+    branches:
+      - main
+    paths:
+      - 'android/vitest-demo/**'
+      - '.github/workflows/android-emulator-demo.yaml'
+
+env:
+  TAG: ${{ github.event.inputs.tag || 'beta' }}
+
+jobs:
+  android-emulator-demo:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 45
+    env:
+      CI: '1'
+      MIDSCENE_MODEL_API_KEY: ${{ secrets.MIDSCENE_MODEL_API_KEY }}
+      MIDSCENE_MODEL_BASE_URL: ${{ vars.MIDSCENE_MODEL_BASE_URL }}
+      MIDSCENE_MODEL_NAME: ${{ vars.MIDSCENE_MODEL_NAME }}
+      MIDSCENE_MODEL_FAMILY: ${{ vars.MIDSCENE_MODEL_FAMILY }}
+      MIDSCENE_REPORT_QUIET: 'true'
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.branch || github.ref }}
+
+      - name: Enable KVM access
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' |
+            sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+
+      - name: Run Android TodoMVC demo
+        uses: ReactiveCircus/android-emulator-runner@v2
+        with:
+          api-level: 35
+          target: google_apis
+          arch: x86_64
+          profile: pixel_6
+          cores: 2
+          ram-size: 4096M
+          emulator-boot-timeout: 600
+          disable-animations: true
+          emulator-options: -no-window -gpu swiftshader_indirect -no-snapshot-save -noaudio -no-boot-anim -camera-back none
+          script: |
+            cd android/vitest-demo
+            npm i pnpm -g
+            pnpm i @midscene/android@${{ env.TAG }} --save-dev
+            pnpm install --no-frozen-lockfile
+            pnpm run test -- tests/todo.test.ts
+
+      - name: Upload Midscene report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          if-no-files-found: warn
+          name: android-emulator-demo-report
+          path: android/vitest-demo/midscene_run/report

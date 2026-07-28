@@ -1,0 +1,66 @@
+name: Windows Computer Demo
+
+permissions:
+  contents: read
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'The tag name of @midscene/computer'
+        required: true
+        default: 'beta'
+      branch:
+        description: 'The branch to checkout'
+        required: false
+        default: 'main'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'computer/vitest-demo/**'
+      - '.github/workflows/windows-computer-demo.yaml'
+  push:
+    branches:
+      - main
+    paths:
+      - 'computer/vitest-demo/**'
+      - '.github/workflows/windows-computer-demo.yaml'
+
+env:
+  TAG: ${{ github.event.inputs.tag || 'beta' }}
+
+jobs:
+  windows-computer-demo:
+    runs-on: windows-2022
+    timeout-minutes: 35
+    env:
+      CI: '1'
+      MIDSCENE_MODEL_API_KEY: ${{ secrets.MIDSCENE_MODEL_API_KEY }}
+      MIDSCENE_MODEL_BASE_URL: ${{ vars.MIDSCENE_MODEL_BASE_URL }}
+      MIDSCENE_MODEL_NAME: ${{ vars.MIDSCENE_MODEL_NAME }}
+      MIDSCENE_MODEL_FAMILY: ${{ vars.MIDSCENE_MODEL_FAMILY }}
+      MIDSCENE_REPORT_QUIET: 'true'
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.branch || github.ref }}
+
+      - name: Run TodoMVC desktop demo
+        shell: pwsh
+        working-directory: computer/vitest-demo
+        run: |
+          npm i pnpm -g
+          pnpm i @midscene/computer@${{ env.TAG }} --save-dev
+          pnpm install --no-frozen-lockfile
+          pnpm run test
+
+      - name: Upload Midscene report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          if-no-files-found: warn
+          name: windows-computer-demo-report
+          path: computer/vitest-demo/midscene_run/report
