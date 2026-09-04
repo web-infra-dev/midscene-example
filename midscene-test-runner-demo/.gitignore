@@ -1,0 +1,5 @@
+.env
+.midscene/
+log/
+midscene_run/
+node_modules/
