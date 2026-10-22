@@ -10,4 +10,6 @@ Three independent examples. Start with readable YAML, then the short platform/co
 
 The first two use public TodoMVC; only the third starts a shared local service. Each `midscene.config.ts` directly lists Projects, YAML paths and concurrency limits. Results use native Midscene reports. Each example installs/runs independently, with no project `.test.ts` files.
 
+Mobile validation used the author's own local Android emulator and iOS simulator on macOS. These examples connect to devices and WebDriverAgent (WDA) that you prepare; they do not create or boot simulators or start WDA. The sample device ID and localhost endpoints are example defaults from that environment, not settings guaranteed to work on another computer. Follow the local device instructions in each example and the official [Android](https://midscenejs.com/platforms/android) / [iOS and WDA](https://midscenejs.com/platforms/ios) setup guides.
+
 Official docs: [Concurrency limits](https://midscenejs.com/midscene-test/configuration#concurrency-and-isolation), [Multiple Projects](https://midscenejs.com/midscene-test/configuration#configure-multiple-execution-projects), [File isolation](https://midscenejs.com/midscene-test/configuration#isolate-resources-with-filesetup), and [Execution order](https://midscenejs.com/midscene-test/use#execution-order-and-retries).

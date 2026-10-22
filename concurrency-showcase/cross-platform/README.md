@@ -14,7 +14,16 @@ pnpm exec playwright install chromium
 cp .env.example .env
 ```
 
-Fill in model settings, `ANDROID_DEVICE_ID`, and `WDA_BASE_URL`. Start WebDriverAgent for iOS; use `adb devices -l` for Android. An existing repository-root `.env` is an optional fallback. `HEADLESS=false` shows Web windows.
+Fill in model settings in `.env`. An existing repository-root `.env` is an optional fallback. `HEADLESS=false` shows Web windows.
+
+### Local device setup
+
+Mobile validation used the author's own local Android emulator and iOS simulator on macOS. Prepare your own devices before running; this example does not create or boot simulators or start WebDriverAgent (WDA).
+
+- **Android:** start your emulator in Android Studio or connect a device. Run `adb devices -l` and set `ANDROID_DEVICE_ID` to its serial, listed with status `device`. See the official [Android setup guide](https://midscenejs.com/platforms/android).
+- **iOS:** start your simulator/device and WDA using the official [iOS setup guide](https://midscenejs.com/platforms/ios). Set `WDA_BASE_URL` to that service and verify its `/status` endpoint returns `value.ready: true`.
+
+`emulator-5554` and `http://127.0.0.1:8100` are example defaults from the validation environment. Verify and replace them as needed; `127.0.0.1` means the computer running your tests, not the author's computer.
 
 ```sh
 pnpm start
