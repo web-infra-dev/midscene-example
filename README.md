@@ -6,6 +6,12 @@ Examples for [Midscene.js](https://github.com/web-infra-dev/midscene).
 
 Here are some examples you can refer to:
 
+### Concurrency Showcases
+
+- [Cross-platform concurrency](./concurrency-showcase/cross-platform/): Run the same TodoMVC flows concurrently on Web, Android and iOS. [YAML cases](./concurrency-showcase/cross-platform/cases/todo.yaml).
+- [Device sharding](./concurrency-showcase/device-sharding/): Distribute a large TodoMVC suite across independent targets and compare serial/parallel execution. [YAML template](./concurrency-showcase/device-sharding/cases/todo.yaml).
+- [Mixed-platform collaboration](./concurrency-showcase/mixed-platform/): Create a Todo on a phone, complete it in the Web admin and verify the update on the phone within one case. [YAML case](./concurrency-showcase/mixed-platform/cases/handoff.yaml).
+
 ### Web Browser
 - [Automate with Scripts in YAML](./yaml-scripts-demo/): Automate with scripts in YAML. This is the easiest way to integrate Midscene with your existing project.
 - [Integrate with Playwright](./playwright-demo/): Integrate Midscene with Playwright, including ai action, query ,cache, and report.

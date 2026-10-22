@@ -1,0 +1,18 @@
+# Each phone runs a complete handoff; Android-to-Web and iOS-to-Web run concurrently.
+beforeEach:
+  - todo.open: {}
+
+cases:
+  - name: Create on mobile, complete on Web, verify on mobile
+    steps:
+      - mobile.aiAct: Create exactly one Todo titled "Buy milk" and submit it.
+      - mobile.aiAssert: Exactly one Todo "Buy milk" is visible and unchecked.
+
+      - web.aiWaitFor: The Todo "Buy milk" is visible in the admin list and unchecked.
+      - todo.captureId: Buy milk # Capture the phone-created record ID for the final identity check.
+      - web.aiTap: the unchecked checkbox immediately to the left of "Buy milk"
+      - web.aiAssert: The Todo "Buy milk" is checked and crossed out, with 0 items left.
+
+      - mobile.aiWaitFor: The Todo "Buy milk" is checked and crossed out on this phone.
+      - mobile.aiAssert: Exactly one Todo "Buy milk" is visible, completed, with 0 items left.
+      - todo.verifyId: {}
