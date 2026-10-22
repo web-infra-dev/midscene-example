@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shared TodoMVC</title>
+    <link rel="stylesheet" href="/todomvc.css">
+    <style>
+      body { min-width: 280px; }
+      .todoapp h1 { font-size: 64px; top: -115px; }
+      .workspace { text-align: center; color: #555; margin-top: 24px; overflow-wrap: anywhere; }
+      #error { color: #a00; padding: 12px; white-space: pre-wrap; }
+      .destroy { display: block !important; }
+      .filters { position: static; margin-top: 8px; }
+      .footer { height: auto; min-height: 42px; }
+      .footer::before { pointer-events: none; }
+    </style>
+  </head>
+  <body>
+    <section class="todoapp">
+      <header class="header">
+        <h1 id="heading">todos</h1>
+        <input class="new-todo" placeholder="What needs to be done?" aria-label="New todo" autofocus>
+      </header>
+      <main class="main">
+        <ul class="todo-list"></ul>
+      </main>
+      <footer class="footer">
+        <span class="todo-count"></span>
+        <button class="clear-completed">Clear completed</button>
+        <ul class="filters">
+          <li><a href="#/" data-filter="all">All</a></li>
+          <li><a href="#/active" data-filter="active">Active</a></li>
+          <li><a href="#/completed" data-filter="completed">Completed</a></li>
+        </ul>
+      </footer>
+      <div id="error" role="alert" hidden></div>
+    </section>
+    <p class="workspace" id="workspace"></p>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
