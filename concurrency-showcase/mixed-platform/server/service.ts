@@ -159,9 +159,12 @@ export async function startTodoService(
       }
       throw new HttpError(405, 'Method not allowed.');
     } catch (error) {
-      reply(error instanceof HttpError ? error.status : 500, {
-        error: error instanceof Error ? error.message : String(error),
-      });
+      if (error instanceof HttpError) {
+        reply(error.status, { error: error.message });
+        return;
+      }
+      console.error('Unhandled todo service error:', error);
+      reply(500, { error: 'Internal server error.' });
     }
   });
   await new Promise<void>((resolve, reject) => {
