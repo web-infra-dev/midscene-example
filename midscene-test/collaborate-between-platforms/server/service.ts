@@ -47,7 +47,7 @@ function title(value: unknown): string {
   return value.trim();
 }
 
-/** Minimal shared storage only for the mixed-platform showcase. */
+/** Minimal shared storage for the platform collaboration example. */
 export async function startTodoService(
   options: { host?: string; port?: number } = {},
 ) {

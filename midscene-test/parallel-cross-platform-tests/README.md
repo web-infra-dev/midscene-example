@@ -1,4 +1,4 @@
-# Cross-platform Concurrency
+# Parallel Cross-platform Tests
 
 [All examples](../README.md)
 

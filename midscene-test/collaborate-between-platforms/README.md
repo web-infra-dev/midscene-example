@@ -1,4 +1,4 @@
-# Mixed-platform Collaboration
+# Collaborate Between Platforms
 
 [All examples](../README.md)
 

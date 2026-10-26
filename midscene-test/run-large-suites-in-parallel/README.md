@@ -1,4 +1,4 @@
-# Device Sharding
+# Run Large Suites in Parallel
 
 [All examples](../README.md)
 

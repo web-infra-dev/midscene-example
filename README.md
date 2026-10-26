@@ -6,11 +6,13 @@ Examples for [Midscene.js](https://github.com/web-infra-dev/midscene).
 
 Here are some examples you can refer to:
 
-### Concurrency Showcases
+### Midscene Test
 
-- [Cross-platform concurrency](./concurrency-showcase/cross-platform/): Run the same TodoMVC flows concurrently on Web, Android and iOS. [YAML cases](./concurrency-showcase/cross-platform/cases/todo.yaml).
-- [Device sharding](./concurrency-showcase/device-sharding/): Distribute a large TodoMVC suite across independent targets and compare serial/parallel execution. [YAML template](./concurrency-showcase/device-sharding/cases/todo.yaml).
-- [Mixed-platform collaboration](./concurrency-showcase/mixed-platform/): Create a Todo on a phone, complete it in the Web admin and verify the update on the phone within one case. [YAML case](./concurrency-showcase/mixed-platform/cases/handoff.yaml).
+Runnable examples for the [Midscene Test framework](./midscene-test/).
+
+- [Parallel cross-platform tests](./midscene-test/parallel-cross-platform-tests/): Run the same TodoMVC flows concurrently on Web, Android and iOS. [YAML cases](./midscene-test/parallel-cross-platform-tests/cases/todo.yaml).
+- [Run large suites in parallel](./midscene-test/run-large-suites-in-parallel/): Distribute a large TodoMVC suite across independent targets and compare serial/parallel execution. [YAML template](./midscene-test/run-large-suites-in-parallel/cases/todo.yaml).
+- [Collaborate between platforms](./midscene-test/collaborate-between-platforms/): Create a Todo on a phone, complete it in the Web admin and verify the update on the phone within one case. [YAML case](./midscene-test/collaborate-between-platforms/cases/handoff.yaml).
 
 ### Web Browser
 - [Automate with Scripts in YAML](./yaml-scripts-demo/): Automate with scripts in YAML. This is the easiest way to integrate Midscene with your existing project.

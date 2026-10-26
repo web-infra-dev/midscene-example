@@ -1,5 +1,5 @@
 {
-  "name": "midscene-device-sharding-showcase",
+  "name": "midscene-test-run-large-suites-in-parallel",
   "private": true,
   "type": "module",
   "scripts": {
