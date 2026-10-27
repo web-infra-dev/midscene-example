@@ -1,32 +1,47 @@
 import { defineTestProject } from '@midscene/test/config';
-import { androidSetup, iosSetup, nodes, webSetup } from './setup';
+import {
+  type Context,
+  type SharedContext,
+  androidFileSetup,
+  androidSetup,
+  iosFileSetup,
+  iosSetup,
+  nodes,
+  webFileSetup,
+  webSetup,
+} from './setup';
 
-// One Project owns one browser/device. Its YAML files run sequentially.
-export default defineTestProject({
+const serial = process.env.SERIAL === '1';
+
+// One Project per platform; each file owns a separate browser session or device.
+export default defineTestProject<Context, SharedContext>({
   nodes,
   projects: [
     {
       name: 'web',
       setup: webSetup,
+      fileSetup: webFileSetup,
       files: { include: ['generated/web/*.yaml'] },
-      maxConcurrentFiles: 1,
+      maxConcurrentFiles: serial ? 1 : 2,
     },
     {
       name: 'android',
       setup: androidSetup,
+      fileSetup: androidFileSetup,
       files: { include: ['generated/android/*.yaml'] },
-      maxConcurrentFiles: 1,
+      maxConcurrentFiles: serial ? 1 : 2,
     },
     {
       name: 'ios',
       setup: iosSetup,
+      fileSetup: iosFileSetup,
       files: { include: ['generated/ios/*.yaml'] },
-      maxConcurrentFiles: 1,
+      maxConcurrentFiles: serial ? 1 : 2,
     },
   ],
   test: {
-    maxConcurrentProjects: process.env.SERIAL === '1' ? 1 : 3,
-    maxConcurrentFiles: process.env.SERIAL === '1' ? 1 : 3,
+    maxConcurrentProjects: serial ? 1 : 3,
+    maxConcurrentFiles: serial ? 1 : 6,
     setupTimeout: 120_000,
     testTimeout: 600_000,
   },

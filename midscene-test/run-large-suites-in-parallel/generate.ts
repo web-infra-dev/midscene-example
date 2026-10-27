@@ -2,7 +2,7 @@ import { mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { parse, stringify } from 'yaml';
 
-const count = Number(process.argv[2] || process.env.CASE_COUNT || 300);
+const count = Number(process.argv[2] || process.env.CASE_COUNT || 60);
 if (!Number.isSafeInteger(count) || count < 1 || count > 10_000)
   throw new Error('CASE_COUNT must be an integer from 1 to 10000.');
 const targets = ['web', 'android', 'ios'];
