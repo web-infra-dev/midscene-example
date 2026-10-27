@@ -6,6 +6,14 @@ Examples for [Midscene.js](https://github.com/web-infra-dev/midscene).
 
 Here are some examples you can refer to:
 
+### Midscene Test
+
+Runnable examples for the [Midscene Test framework](./midscene-test/).
+
+- [Parallel cross-platform tests](./midscene-test/parallel-cross-platform-tests/): Run the same TodoMVC flows concurrently on Web, Android and iOS. [YAML cases](./midscene-test/parallel-cross-platform-tests/cases/todo.yaml).
+- [Run large suites in parallel](./midscene-test/run-large-suites-in-parallel/): Run Web, Android and iOS concurrently, with two independent browser sessions/devices per Project and up to six YAML files in flight. [YAML template](./midscene-test/run-large-suites-in-parallel/cases/todo.yaml).
+- [Collaborate between platforms](./midscene-test/collaborate-between-platforms/): Create a Todo on a phone, complete it in the Web admin and verify the update on the phone within one case. [YAML case](./midscene-test/collaborate-between-platforms/cases/handoff.yaml).
+
 ### Web Browser
 - [Automate with Scripts in YAML](./yaml-scripts-demo/): Automate with scripts in YAML. This is the easiest way to integrate Midscene with your existing project.
 - [Integrate with Playwright](./playwright-demo/): Integrate Midscene with Playwright, including ai action, query ,cache, and report.

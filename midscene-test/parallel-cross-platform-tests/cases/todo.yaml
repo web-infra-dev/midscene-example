@@ -1,0 +1,53 @@
+# Run the same cases on Web, Android, and iOS.
+beforeEach:
+  - todo.open: https://todomvc.com/examples/react/dist/#/
+  - aiAct: >-
+      Prepare the TodoMVC All view. Remove all existing Todos, if any.
+      You may complete active Todos and use Clear completed.
+      An already empty list is valid: do not require missing filter links,
+      toggle-all, or Clear completed controls. Leave the All filter selected if visible.
+  - aiAssert: The TodoMVC list is empty, including completed Todos.
+
+cases:
+  - name: Create a Todo
+    tags: [create]
+    steps:
+      - aiAct: Create one Todo titled "Buy milk" and submit it.
+      - aiAssert: Exactly one Todo "Buy milk" is visible, unchecked, with 1 item left.
+
+  - name: Edit a Todo
+    tags: [edit]
+    steps:
+      - aiAct: Create two Todos in order, "Read a book" and "Keep this task".
+      - aiAct: Edit "Read a book" to "Read two books" and save. Keep the other Todo unchanged.
+      - aiAssert: Exactly "Read two books" and "Keep this task" appear in that order, both unchecked.
+
+  - name: Complete a Todo
+    tags: [complete]
+    steps:
+      - aiAct: Create two Todos in order, "Write release notes" and "Keep this task".
+      - aiAct: Mark only "Write release notes" as completed.
+      - aiAssert: >-
+          "Write release notes" is checked and crossed out.
+          "Keep this task" is unchecked, with 1 item left.
+
+  - name: Filter completed Todos
+    tags: [filter]
+    steps:
+      - aiAct: Create "Finished task" and "Active task", then mark only "Finished task" completed.
+      - aiAct: Select the Completed filter at the bottom of the list.
+      - aiAssert: Only "Finished task" is visible, checked and crossed out. The Completed filter is selected.
+
+  - name: Delete a Todo
+    tags: [delete]
+    steps:
+      - aiAct: Create two Todos in order, "Delete this task" and "Keep this task".
+      - aiAct: Delete only "Delete this task" using its delete control.
+      - aiAssert: Exactly "Keep this task" remains, unchecked, with 1 item left.
+
+  - name: Clear completed Todos
+    tags: [clear]
+    steps:
+      - aiAct: Create "Finished task" and "Active task", then mark only "Finished task" completed.
+      - aiAct: Click Clear completed.
+      - aiAssert: Only "Active task" remains, unchecked. No completed Todo remains.

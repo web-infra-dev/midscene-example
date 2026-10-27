@@ -1,0 +1,53 @@
+# Sharding template: generate.ts replaces CASE_ID and writes one case per file.
+beforeEach:
+  - todo.open: https://todomvc.com/examples/react/dist/#/
+  - aiAct: >-
+      Prepare the TodoMVC All view. Remove all existing Todos, if any.
+      You may complete active Todos and use Clear completed.
+      An already empty list is valid: do not require missing filter links,
+      toggle-all, or Clear completed controls. Leave the All filter selected if visible.
+  - aiAssert: The TodoMVC list is empty, including completed Todos.
+
+cases:
+  - name: Create a Todo
+    tags: [create]
+    steps:
+      - aiAct: Create one Todo titled "Buy milk CASE_ID" and submit it.
+      - aiAssert: Exactly one Todo "Buy milk CASE_ID" is visible, unchecked, with 1 item left.
+
+  - name: Edit a Todo
+    tags: [edit]
+    steps:
+      - aiAct: Create two Todos in order, "Read a book CASE_ID" and "Keep this task CASE_ID".
+      - aiAct: Edit "Read a book CASE_ID" to "Read two books CASE_ID" and save. Keep the other Todo unchanged.
+      - aiAssert: Exactly "Read two books CASE_ID" and "Keep this task CASE_ID" appear in that order, both unchecked.
+
+  - name: Complete a Todo
+    tags: [complete]
+    steps:
+      - aiAct: Create two Todos in order, "Write release notes CASE_ID" and "Keep this task CASE_ID".
+      - aiAct: Mark only "Write release notes CASE_ID" as completed.
+      - aiAssert: >-
+          "Write release notes CASE_ID" is checked and crossed out.
+          "Keep this task CASE_ID" is unchecked, with 1 item left.
+
+  - name: Filter completed Todos
+    tags: [filter]
+    steps:
+      - aiAct: Create "Finished task CASE_ID" and "Active task CASE_ID", then mark only "Finished task CASE_ID" completed.
+      - aiAct: Select the Completed filter at the bottom of the list.
+      - aiAssert: Only "Finished task CASE_ID" is visible, checked and crossed out. The Completed filter is selected.
+
+  - name: Delete a Todo
+    tags: [delete]
+    steps:
+      - aiAct: Create two Todos in order, "Delete this task CASE_ID" and "Keep this task CASE_ID".
+      - aiAct: Delete only "Delete this task CASE_ID" using its delete control.
+      - aiAssert: Exactly "Keep this task CASE_ID" remains, unchecked, with 1 item left.
+
+  - name: Clear completed Todos
+    tags: [clear]
+    steps:
+      - aiAct: Create "Finished task CASE_ID" and "Active task CASE_ID", then mark only "Finished task CASE_ID" completed.
+      - aiAct: Click Clear completed.
+      - aiAssert: Only "Active task CASE_ID" remains, unchecked. No completed Todo remains.

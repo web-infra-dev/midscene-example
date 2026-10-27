@@ -1,0 +1,7 @@
+.env
+node_modules/
+midscene_run/
+output/
+generated/
+targets.local.json
+.midscene/
