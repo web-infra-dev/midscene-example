@@ -5,13 +5,15 @@ import { createMidsceneNodes } from '@midscene/test/midscene';
 import type { Context } from './setup';
 
 const mobileNodes = createMidsceneNodes<Context>({
+  namespace: 'mobile',
   agentClass: Agent,
   getAgent: ({ context }) => context.mobile,
-}).map((node) => ({ ...node, name: `mobile.${node.name}` }));
+});
 const webNodes = createMidsceneNodes<Context>({
+  namespace: 'web',
   agentClass: Agent,
   getAgent: ({ context }) => context.web,
-}).map((node) => ({ ...node, name: `web.${node.name}` }));
+});
 
 async function api(path: string, method = 'GET', signal?: AbortSignal) {
   if (!process.env.TODO_LOCAL_URL)

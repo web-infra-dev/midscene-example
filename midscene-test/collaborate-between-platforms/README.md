@@ -4,6 +4,8 @@
 
 Start with **[cases/handoff.yaml](./cases/handoff.yaml)**: phone creates → Web admin completes → phone observes synchronization. One YAML case explicitly calls `mobile.aiAct`, `web.aiTap`, and visual assertions on both sides.
 
+In [nodes.ts](./nodes.ts), `createMidsceneNodes()` uses `namespace: 'mobile'` and `namespace: 'web'` to register each Midscene Agent's Nodes. YAML calls those prefixed names directly. This example pins Midscene packages to `1.17.1`, which includes [namespace support](https://midscenejs.com/midscene-test/configuration#name-nodes-for-multiple-midscene-agents).
+
 Official docs: [Concurrency limits](https://midscenejs.com/midscene-test/configuration#concurrency-and-isolation) and [Execution order](https://midscenejs.com/midscene-test/use#execution-order-and-retries).
 
 Requires Node `^20.19.0 || ^22.12.0 || >=24.0.0` and pnpm:
